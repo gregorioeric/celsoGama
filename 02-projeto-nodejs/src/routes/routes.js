@@ -1,4 +1,8 @@
 const express = require("express");
+const {
+  RegisterUserControllers,
+} = require("../controllers/registerUserControllers");
+const registerUser = new RegisterUserControllers();
 
 const route = express.Router();
 
@@ -22,9 +26,7 @@ route.get("/register", (req, res) => {
   res.render("register");
 });
 
-route.post("/register", (req, res) => {
-  res.render("register");
-});
+route.post("/register", registerUser.store);
 
 module.exports = route;
 

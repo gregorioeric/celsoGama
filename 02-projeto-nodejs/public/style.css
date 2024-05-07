@@ -68,6 +68,33 @@ body{
 
 .content-form-cadastro form{
     width: 40%;
-    background: var(--cor-branco);
     padding: 1rem 0;
+}
+
+.content-form-cadastro form div{
+    padding: 0 0 1rem 0;
+}
+
+.content-form-cadastro form div input{
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    outline: none;
+    border: 0.2rem solid var(--cor-verde);
+    border-radius: 0.5rem;
+}
+
+.content-form-cadastro form .content-btn button{
+    width: 100%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: var(--cor-cinza);
+    border: none;
+    padding: 0.5rem 0;
+    border-radius: 0.5rem;
+    transition: background 300ms ease-in-out;
+}
+
+.content-form-cadastro form .content-btn button:hover{
+    background: var(--cor-verde);
 }
