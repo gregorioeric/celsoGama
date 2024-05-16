@@ -1,8 +1,6 @@
 class RegisterUserControllers {
-  constructor() {}
   store(req, res) {
-    res.render("register");
+    res.render("login");
   }
 }
-
-module.exports = { RegisterUserControllers };
+module.exports = RegisterUserControllers;
