@@ -1,6 +1,9 @@
 class RegisterUserControllers {
   store(req, res) {
-    res.render("login");
+    const name = req.body;
+    console.log("teste");
+    console.log(name);
+    res.send("user register");
   }
 }
 module.exports = RegisterUserControllers;

@@ -4,7 +4,7 @@ const path = require("path");
 const database = require("./src/database/database");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORTSERVER || 3000;
 
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
@@ -18,14 +18,10 @@ database.connect((error) => {
     console.log(error);
   } else {
     console.log("Conectado no banco de dados!");
-    // app.listen(port, () => {
-    //   console.log(`http://localhost:${port}`);
-    // });
+    app.listen(port, () => {
+      console.log(`http://localhost:${port}`);
+    });
   }
-});
-
-app.listen(port, () => {
-  console.log(`http://localhost:${port}`);
 });
 
 // const express = require("express");
@@ -39,7 +35,8 @@ app.listen(port, () => {
 
 // app.use(route);
 
-// app.use(express.urlencoded({ extended: false }));
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
 
 // app.listen(port, () => {
 //   console.log(`http://localhost:${port}`);
