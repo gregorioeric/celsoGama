@@ -29,6 +29,9 @@
               placeholder="Digite seu email"
               id="user-email"
             />
+            <% if(msgEmailError) { %>
+            <div class="msgError"><%= msgEmailError %></div>
+            <% } %>
           </div>
           <div class="input-password">
             <label for="user-password"></label>
@@ -39,6 +42,9 @@
               placeholder="Digite uma Senha"
               id="user-password"
             />
+            <% if(msgPassError) { %>
+            <div class="msgError"><%= msgPassError %></div>
+            <% } %>
           </div>
           <div class="input-confirm-password">
             <label for="user-confirm-password"></label>
@@ -49,6 +55,9 @@
               placeholder="Confirmar a Senha"
               id="user-confirm-password"
             />
+            <% if(msgPassError) { %>
+            <div class="msgError"><%= msgPassError %></div>
+            <% } %>
           </div>
           <div class="content-btn">
             <button>Cadastro</button>
