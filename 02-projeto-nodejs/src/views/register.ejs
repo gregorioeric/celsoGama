@@ -1,34 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<%- include('components/head') %>
-<body>
-    <%- include('components/header')  %>
+  <%- include('components/head') %>
+  <body>
+    <%- include('components/header') %>
     <main>
-        <div class="content-form-cadastro">
-            <h1>Formulario de Cadastro</h1>
-            <form action="/register" method="post">
-                <div class="input-name">
-                    <label for="user-name"></label>
-                    <input type="text" name="user_name" class="user-name" placeholder="Nome completo" id="user-name">
-                </div>
-                <div class="input-email">
-                    <label for="user-email"></label>
-                    <input type="text" name="user_email" class="user-email" placeholder="Digite seu email" id="user-email">
-                </div>
-                <div class="input-password">
-                    <label for="user-password"></label>
-                    <input type="text" name="user_password" class="user-password" placeholder="Digite uma Senha" id="user-password">
-                </div>
-                <div class="input-confirm-password">
-                    <label for="user-confirm-password"></label>
-                    <input type="text" name="userConfirmPassword" class="user-confirm-password" placeholder="Confirmar a Senha" id="user-confirm-password">
-                </div>
-                <div class="content-btn">
-                    <button>Cadastro</button>
-                </div>
-            </form>
-        </div>
+      <div class="content-form-cadastro">
+        <h1>Formulario de Cadastro</h1>
+        <form action="/register" method="post">
+          <div class="input-name">
+            <label for="user-name"></label>
+            <input
+              type="text"
+              name="user_name"
+              class="user-name"
+              placeholder="Nome completo"
+              id="user-name"
+            />
+            <% if(msgNameError) { %>
+            <div class="msgError"><%= msgNameError %></div>
+            <% } %>
+          </div>
+          <div class="input-email">
+            <label for="user-email"></label>
+            <input
+              type="text"
+              name="user_email"
+              class="user-email"
+              placeholder="Digite seu email"
+              id="user-email"
+            />
+          </div>
+          <div class="input-password">
+            <label for="user-password"></label>
+            <input
+              type="text"
+              name="user_password"
+              class="user-password"
+              placeholder="Digite uma Senha"
+              id="user-password"
+            />
+          </div>
+          <div class="input-confirm-password">
+            <label for="user-confirm-password"></label>
+            <input
+              type="text"
+              name="userConfirmPassword"
+              class="user-confirm-password"
+              placeholder="Confirmar a Senha"
+              id="user-confirm-password"
+            />
+          </div>
+          <div class="content-btn">
+            <button>Cadastro</button>
+          </div>
+          <% if(msgFieldsEmpty) { %>
+          <div class="msgError"><%= msgFieldsEmpty %></div>
+          <% } %>
+        </form>
+      </div>
     </main>
     <%- include('components/footer') %>
-</body>
+  </body>
 </html>

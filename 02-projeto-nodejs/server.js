@@ -1,13 +1,18 @@
+require("dotenv").config();
 const express = require("express");
 const route = require("./src/routes/routes");
 const path = require("path");
 const database = require("./src/database/database");
+const exp = require("constants");
 
 const app = express();
 const port = process.env.PORTSERVER || 3000;
 
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "./public")));
 

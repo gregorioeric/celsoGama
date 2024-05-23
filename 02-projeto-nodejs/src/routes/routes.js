@@ -20,9 +20,7 @@ route.get("/produtos", (req, res) => {
   res.render("produtos");
 });
 
-route.get("/register", (req, res) => {
-  res.render("register");
-});
+route.get("/register", registerUser.getRegister);
 
 route.post("/register", registerUser.store);
 
