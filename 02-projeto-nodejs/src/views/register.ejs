@@ -16,8 +16,8 @@
               placeholder="Nome completo"
               id="user-name"
             />
-            <% if(msgNameError) { %>
-            <div class="msgError"><%= msgNameError %></div>
+            <% if(msg.msgNameError) { %>
+            <div class="msgError"><%= msg.msgNameError %></div>
             <% } %>
           </div>
           <div class="input-email">
@@ -29,9 +29,9 @@
               placeholder="Digite seu email"
               id="user-email"
             />
-            <% if(msgEmailError) { %>
-            <div class="msgError"><%= msgEmailError %></div>
-            <% } %>
+            <% //if(msgEmailError) { %>
+            <div class="msgError"><%= //msgEmailError %></div>
+            <% //} %>
           </div>
           <div class="input-password">
             <label for="user-password"></label>
@@ -42,9 +42,9 @@
               placeholder="Digite uma Senha"
               id="user-password"
             />
-            <% if(msgPassError) { %>
-            <div class="msgError"><%= msgPassError %></div>
-            <% } %>
+            <% //if(msgPassError) { %>
+            <div class="msgError"><%= //msgPassError %></div>
+            <% //} %>
           </div>
           <div class="input-confirm-password">
             <label for="user-confirm-password"></label>
@@ -55,15 +55,15 @@
               placeholder="Confirmar a Senha"
               id="user-confirm-password"
             />
-            <% if(msgPassError) { %>
-            <div class="msgError"><%= msgPassError %></div>
-            <% } %>
+            <% //if(msgPassError) { %>
+            <div class="msgError"><%= //msgPassError %></div>
+            <% //} %>
           </div>
           <div class="content-btn">
             <button>Cadastro</button>
           </div>
-          <% if(msgFieldsEmpty) { %>
-          <div class="msgError"><%= msgFieldsEmpty %></div>
+          <% if(msg.msgFieldsEmpty) { %>
+          <div class="msgError"><%= msg.msgFieldsEmpty %></div>
           <% } %>
         </form>
       </div>

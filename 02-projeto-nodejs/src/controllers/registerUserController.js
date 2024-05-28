@@ -1,10 +1,7 @@
-class RegisterUserControllers {
+class RegisterUserController {
   getRegister(req, res) {
     return res.render("register", {
-      msgFieldsEmpty: "",
-      msgNameError: "",
-      msgPassError: "",
-      msgEmailError: "",
+      msg: "",
     });
   }
 
@@ -25,20 +22,22 @@ class RegisterUserControllers {
       !data_user.user_password ||
       !data_user.userConfirmPassword
     ) {
-      return res.render("register", {
+      req.message = {
         msgFieldsEmpty: "Os campos não podem ser vazios!",
-        msgNameError: "",
-        msgPassError: "",
-        msgEmailError: "",
+      };
+
+      return res.render("register", {
+        msg: req.message,
       });
     }
 
     if (data_user.user_name.length < 3) {
-      return res.render("register", {
+      req.message = {
         msgNameError: "Nome precisa ter no minino 3 caracteres!",
-        msgFieldsEmpty: "",
-        msgPassError: "",
-        msgEmailError: "",
+      };
+      console.log(req);
+      return res.render("register", {
+        msg: req.message,
       });
     }
 
@@ -64,4 +63,4 @@ class RegisterUserControllers {
     return res.send("user register");
   }
 }
-module.exports = RegisterUserControllers;
+module.exports = RegisterUserController;

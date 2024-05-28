@@ -1,6 +1,6 @@
 const express = require("express");
-const RegisterUserControllers = require("../controllers/registerUserControllers");
-const registerUser = new RegisterUserControllers();
+const RegisterUserController = require("../controllers/registerUserController");
+const registerUser = new RegisterUserController();
 
 const route = express.Router();
 
