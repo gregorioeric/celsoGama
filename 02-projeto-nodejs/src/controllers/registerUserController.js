@@ -1,3 +1,7 @@
+const RegisterUserModel = require("../models/registerUserModels");
+
+const registerUser = new RegisterUserModel();
+
 class RegisterUserController {
   getRegister(req, res) {
     return res.render("register", {
@@ -35,29 +39,46 @@ class RegisterUserController {
       req.message = {
         msgNameError: "Nome precisa ter no minino 3 caracteres!",
       };
-      console.log(req);
+
       return res.render("register", {
         msg: req.message,
       });
     }
 
     if (!regex_email.test(data_user.user_email)) {
-      return res.render("register", {
+      req.message = {
         msgEmailError: "Digite um email valido!",
-        msgNameError: "",
-        msgFieldsEmpty: "",
-        msgPassError: "",
+      };
+
+      return res.render("register", {
+        msg: req.message,
+      });
+    }
+
+    if (!regex_senha.test(data_user.user_password)) {
+      req.message = {
+        passwordError:
+          "Senha precisa ter Letras Maiusculas, Minusculas, Numeros e Caracteres especiais!",
+      };
+      console.log(req.message);
+      return res.render("register", {
+        msg: req.message,
       });
     }
 
     if (data_user.user_password !== data_user.userConfirmPassword) {
-      return res.render("register", {
+      req.message = {
         msgPassError: "Senha não são iguais",
-        msgNameError: "",
-        msgFieldsEmpty: "",
-        msgEmailError: "",
+      };
+      console.log(req.message);
+      return res.render("register", {
+        msg: req.message,
       });
     }
+
+    const recebeEmailFromModel = registerUser.getByEmail(data_user.user_email);
+    console.log("Estamos na Controller");
+    console.log(recebeEmailFromModel);
 
     console.log(data_user);
     return res.send("user register");
