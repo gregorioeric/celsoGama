@@ -9,7 +9,7 @@ class RegisterUserController {
     });
   }
 
-  store(req, res) {
+  async store(req, res) {
     const { ...data_user } = req.body;
 
     const regex_email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -76,11 +76,12 @@ class RegisterUserController {
       });
     }
 
-    const recebeEmailFromModel = registerUser.getByEmail(data_user.user_email);
+    const recebeEmailFromModel = await registerUser.getByEmail(
+      data_user.user_email
+    );
     console.log("Estamos na Controller");
     console.log(recebeEmailFromModel);
 
-    // console.log(data_user);
     return res.send("user register");
   }
 }
