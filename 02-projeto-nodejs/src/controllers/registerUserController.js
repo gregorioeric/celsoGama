@@ -80,7 +80,7 @@ class RegisterUserController {
     console.log("Estamos na Controller");
     console.log(recebeEmailFromModel);
 
-    console.log(data_user);
+    // console.log(data_user);
     return res.send("user register");
   }
 }
