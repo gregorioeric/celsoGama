@@ -20,6 +20,10 @@ route.get("/produtos", (req, res) => {
   res.render("produtos");
 });
 
+route.get("/loginRegister", (req, res) => {
+  res.render("loginRegister");
+});
+
 route.get("/register", registerUser.getRegister);
 
 route.post("/register", registerUser.store);

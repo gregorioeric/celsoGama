@@ -83,6 +83,10 @@ class RegisterUserController {
     console.log(recebeEmailFromModel);
 
     return res.send("user register");
+    // res.render("register", { msg: "teste" });
+    // setTimeout(function () {
+    //   window.location = "/login";
+    // }, 3000);
   }
 }
 module.exports = RegisterUserController;

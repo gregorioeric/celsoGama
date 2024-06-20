@@ -1,11 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<%- include('components/head') %>
-<body>
-    <%- include('components/header')  %>
+  <%- include('components/head') %>
+  <body>
+    <%- include('components/header') %>
     <main>
-        <h1>Home</h1>
+      <section class="home-page">
+        <div class="search-new">
+          <form>
+            <div class="input-search">
+              <input type="search" name="search" placeholder="Buscar" />
+            </div>
+            <div class="btn-search">
+              <button><i class="bx bx-search-alt-2"></i></button>
+            </div>
+          </form>
+        </div>
+        <div class="content-post">
+          <div class="article-post">
+            <div class="img-post">
+              <img src="/img/computer.jpg" alt="" />
+            </div>
+            <div class="desc">
+              <a href="#">
+                <h3>Titulo do post</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Minus inventore voluptate accusantium labore numquam?
+                  Assumenda, laudantium! Sit iure excepturi, vero quibusdam
+                  sequi praesentium labore laudantium hic nesciunt natus ipsam
+                  asperiores.
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="article-post">
+            <div class="img-post">
+              <img src="/img/computer.jpg" alt="" />
+            </div>
+            <div class="desc">
+              <a href="#">
+                <h3>Titulo do post</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Minus inventore voluptate accusantium labore numquam?
+                  Assumenda, laudantium! Sit iure excepturi, vero quibusdam
+                  sequi praesentium labore laudantium hic nesciunt natus ipsam
+                  asperiores.
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="article-post">
+            <div class="img-post">
+              <img src="/img/computer.jpg" alt="" />
+            </div>
+            <div class="desc">
+              <a href="#">
+                <h3>Titulo do post</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Minus inventore voluptate accusantium labore numquam?
+                  Assumenda, laudantium! Sit iure excepturi, vero quibusdam
+                  sequi praesentium labore laudantium hic nesciunt natus ipsam
+                  asperiores.
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <%- include('components/footer') %>
-</body>
+  </body>
 </html>
