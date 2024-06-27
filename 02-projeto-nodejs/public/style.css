@@ -285,8 +285,9 @@ Estilo do campo pesquisar
     padding-top: 10rem;
 }
 
-.content-form-cadastro, .content-form-login{
-    margin: 2rem 5rem;
+.content-form-login{
+    border-right: 0.5rem solid;
+    padding: 3rem 0;
 }
 
 .content-form-cadastro, .content-form-login{
@@ -294,8 +295,17 @@ Estilo do campo pesquisar
     margin: 0 auto;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    background: var(--cor-branco-alpha);
+    justify-content: center;
+}
+
+.content-form-cadastro h1{
+    padding: 0 0 2rem 0;
+
+}
+
+.content-form-login h1{
+    padding: 2rem 0;
+
 }
 
 .content-form-cadastro h1, .content-form-login h1{
@@ -303,18 +313,42 @@ Estilo do campo pesquisar
     width: 100%;
 }
 
-.content-form-cadastro form, .content-form-login form{
-    width: 80%;
-    padding: 1rem 0;
+.content-form-cadastro form{
+    padding: 1rem 3rem;
 }
 
-.content-form-cadastro form div,
-.content-form-login form div{
+.content-form-login form{
+    padding: 3rem 3rem 0 3rem;
+}
+
+.content-form-cadastro form, .content-form-login form{
+    width: 80%;
+    background: var(--cor-branco-alpha);
+    height: 700px;
+    border-radius: 3rem; 
+}
+
+.content-form-login form .icon-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.content-form-login form .icon-login i{
+    font-size: 10rem;
+    border: 0.5rem solid;
+    border-radius: 50%;
+    box-shadow: 5px 5px 5px 5px var(--cor-cinza);
+}
+
+.content-form-cadastro form div.input,
+.content-form-login form div.input{
     padding: 0 0 1rem 0;
 }
 
-.content-form-cadastro form div input,
-.content-form-login form div input{
+.content-form-cadastro form div.input input,
+.content-form-login form div.input input{
     width: 100%;
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
@@ -340,6 +374,15 @@ Estilo do campo pesquisar
     background: var(--cor-verde);
 }
 
+.content-form-cadastro form .form-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-form-cadastro form .form-logo img{
+    width: 100px;
+}
 
 .download{
     padding-top: 10rem;
