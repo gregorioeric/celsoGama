@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="container">
+      <div class="content content-form">
+        <form class="form" id="form">
+          <div class="content-nome">
+            <input placeholder="Nome" type="text" id="nome" />
+            <div class="nome-vazio disenable" id="nomeError"></div>
+          </div>
+          <div class="content-email">
+            <input placeholder="Email" type="text" id="email" />
+            <div class="email-vazio disenable" id="emailError"></div>
+          </div>
+          <div class="content-senha">
+            <div class="campo-pw">
+              <input placeholder="Senha" type="password" id="senha" />
+              <i class="bx bx-show show-pw" id="show-pw"></i>
+              <i class="bx bx-hide hide-pw" id="hide-pw"></i>
+            </div>
+            <div class="senha-vazio hide" id="senhaError"></div>
+          </div>
+          <div>
+            <button class="btn-salvar" id="btn-salvar">Enviar</button>
+            <div id="msg-error"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>

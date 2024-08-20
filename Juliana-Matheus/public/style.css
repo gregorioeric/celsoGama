@@ -1,0 +1,108 @@
+*, *::before, *::after{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+:root{
+    --cor-branco: rgb(255, 255, 255);
+    --cor-preto: rgb(0, 0, 0);
+    --cor-azul: rgb(8, 151, 191);
+    --cor-azulescuro: rgb(24, 10, 186);
+    --cor-cinza: rgb(139, 139, 139);
+}
+
+body{
+    background: var(--cor-vermelho);
+}
+
+.header-home{
+    display: flex;
+    background: var(--cor-azul);
+
+}
+
+.img-logo img{
+    max-width: 80%;
+}
+
+.main-menu{
+ width: 100%;
+}
+
+.main-menu ul{
+    display: flex;
+}
+
+.main-menu ul li a{
+    display: flex;
+padding:  1rem 2rem;
+font-size: 1.7rem;
+font-weight: bold;
+color: var(--cor-branco);
+transition: all 300ms ease-in-out;
+}
+
+.main-menu ul li a:hover{
+    background: var(--cor-cinza);
+}
+
+/* Estilo do formulario de cadastro */
+
+.content-form-cadastro{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content-form-cadastro h1{
+    text-align: center;
+    width: 100%;
+}
+
+.content-form-cadastro form{
+    width: 40%;
+     padding: 1rem 0;
+}
+
+.content-form-cadastro form div{
+    padding: 0 0 1rem;
+}
+
+.content-form-cadastro form div input{
+    width: 100%;
+font-size: 1.2rem;
+padding: 0.5rem 1rem;
+outline: none;
+border: 0.2rem solid var(--cor-verde);
+border-radius: 0.8rem;
+}
+
+.content-form-cadastro .content-btn button{
+    width: 100%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: var(--cor-cinza);
+    border: 0;
+    padding: 1rem 0.5;
+    border-radius: 0.5rem;
+    transition: background 300ms ease-in-out;
+}
+
+        .content-form-cadastro .content-btn button:hover{
+background: var(--cor-verde);
+        }

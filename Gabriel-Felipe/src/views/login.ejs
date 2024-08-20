@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<%- include('components/head') %>
+<body>
+    <%- include('components/header')  %>
+    <h1 class="msg-antes-login">Efetue Seu Login</h1>
+    <main>
+        <div class="content-form-login">
+            <h1>Login</h1>
+            <form action="/login" method="post">
+                
+                <div class="input-email">
+                    <label for="user-email"></label>
+                    <input type="text" name="userEmail" class="user-email" placeholder="Digite seu email" id="user-email">
+                </div>
+                <div class="input-password">
+                    <label for="user-password"></label>
+                    <input type="text" name="userPassword" class="user-password" placeholder="Digite uma Senha" id="user-password">
+                </div>
+                <div class="content-btn">
+                    <button>Login</button>
+                </div>
+                    <p class="message">Não tem uma conta? <a href="/register">Faça um cadastro aqui</a>.</p>
+                </form>
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include('components/footer') %>
+</body>
+</html>

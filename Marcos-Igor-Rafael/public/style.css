@@ -1,0 +1,141 @@
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    
+    scroll-behavior: smooth;
+}
+
+*{
+    font-family: cursive;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+:root{
+    --cor-branco: rgb(255, 255, 255);
+    --cor-preto: rgb(0, 0, 0);
+    --cor-verde: rgb(60, 135, 41);
+    --cor-vermelho: rgb(255, 0, 0);
+    --cor-vermelho-light: rgb(204, 153, 153);
+    --cor-azul: rgb(43, 17, 160);
+    --cor-cinza: rgb(98, 98, 98);
+    --cor-amarelo: rgb(215, 193, 70);
+}
+
+body{
+    background: var(--cor-azul);
+}
+
+.header-home{
+    display: flex;
+}
+
+.img-logo img{
+    max-width: 30%;
+}
+
+.main-menu{
+    width: 100%;
+}
+
+.main-menu ul{
+    display: flex;
+}
+
+.main-menu ul li a{
+    display: flex;
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--cor-branco);
+    transition: all 300ms ease-in-out;
+}
+
+.main-menu ul li a:hover{
+    background: var(--cor-cinza);
+}
+
+/* Estilo do formulario de cadastro */
+
+.content-form-cadastro{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content-form-cadastro h1{
+    text-align: center;
+    width: 100%;
+}
+
+.content-form-cadastro form{
+    width: 40%;
+    padding: 1rem 0;
+}
+
+.content-form-cadastro form div{
+    padding: 0 0 1rem 0;
+}
+
+.content-form-cadastro form div input{
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    outline: none;
+    border: 0.2rem solid var(--cor-verde);
+    border-radius: 0.5rem;
+}
+
+.content-form-cadastro form .content-btn button{
+    width: 100%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: var(--cor-cinza);
+    border: none;
+    padding: 0.5rem 0;
+    border-radius: 0.5rem;
+    transition: background 300ms ease-in-out;
+}
+
+.content-form-cadastro form .content-btn button:hover{
+    background: var(--cor-verde);
+}
+
+nav.primary-header {
+    align-items: center;
+    background-color: red;
+    display: flex ;
+    flex-direction: row;
+    height: 35px;
+    padding: 0;
+}
+
+nav.main-header, nav main-header .xcontainer-nav {
+    display: flex;
+    margin:0 auto;
+    max-width: var(--cc-container);
+}
+
+nav.main-header{
+    align-items: center;
+    background-color: var(--cc-color-14);
+    height: 100px;
+    overflow: hidden;
+    padding: 0 15px;
+}
+
+.home, .quemsomos, .comoajudar{
+    height: 100vh;
+}

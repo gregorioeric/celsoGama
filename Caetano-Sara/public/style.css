@@ -1,0 +1,175 @@
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*{
+    font-family: candara;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+:root{
+    --cor-branco: rgb(255, 255, 255);
+    --cor-preto: rgb(0, 0, 0);
+    --cor-verde: rgb(60, 135, 41);
+    --cor-vermelho: rgb(255, 0, 0);
+    --cor-vermelho-light: rgb(204, 153, 153);
+    --cor-azul: rgb(25, 85, 105);
+    --cor-cinza: rgb(98, 98, 98);
+    --cor-amarelo: rgb(215, 193, 70);
+}
+
+.container { 
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+img{
+    max-width: 100%;   
+}
+
+.img-logo picture img{
+    width: 16rem;
+}
+
+.main-menu ul{
+    display: flex;
+}
+
+.main-menu ul li a{
+    display: flex;
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--cor-preto);
+    transition: all 300ms ease-in-out;
+}
+
+.main-menu ul li a:hover{
+    background: var(--cor-cinza);
+}
+
+.search{
+     padding: 1rem 0;
+}
+
+.search form{
+    position: relative;
+}
+
+
+.search form input{
+    outline: none;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    width: 80%;
+    font-size: 1.5rem;
+    position: relative;
+}
+
+.search form button{
+    background: var(--cor-branco);
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 0.3rem;
+}
+
+.search form button i{
+    font-size: 2rem;
+}
+
+/* Estilo do formulario de cadastro */
+
+.content-form-cadastro{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content-form-cadastro h1{
+    text-align: center;
+    width: 100%;
+}
+
+.content-form-cadastro form{
+    width: 40%;
+    padding: 1rem 0;
+}
+
+.content-form-cadastro form div{
+    padding: 0 0 1rem 0;
+}
+
+.content-form-cadastro form div input{
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    outline: none;
+    border: 0.2rem solid rgb(25, 85, 105);
+    border-radius: 0.5rem;
+}
+
+.content-form-cadastro form .content-btn button{
+    width: 100%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: beige
+    border: none;
+    padding: 0.5rem 0;
+    border-radius: 0.5rem;
+    transition: background 300ms ease-in-out;
+}
+
+.content-form-cadastro form .content-btn button:hover{
+    background: rgb(25, 85, 105);
+}
+
+.content-post{
+    display: flex;
+    width: 100%;
+    padding: 1.5rem;
+    gap: 7rem;
+    
+}
+
+.home-page .content-post .article-post{
+    width: 33.33%;
+}
+
+.home-page .content-post .article-post .img-post img{
+     border-radius: 1rem;
+     box-shadow: 0 0 10px 5px var(--cor-cinza);
+}
+
+.home-page .content-post .article-post .desc a{
+    color: var(--cor-preto);
+    transition: all 300ms ease-in-out;
+    
+}
+
+.home-page .content-post .article-post .desc a:hover{
+    text-shadow: 5px 5px 5px  rgb(25, 85, 105);
+
+}
+
+.home-page .content-post .article-post .desc a h3{
+    font-size: 1.2rem;
+    padding: 1rem 0;
+}
+
