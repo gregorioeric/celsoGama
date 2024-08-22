@@ -529,3 +529,17 @@ Estilo do formulario de cadastro
   grid-area: item06;
   background: rgb(107, 152, 197);
 }
+
+/*************************************
+  estilo das imagens uploaded
+***************************************/
+
+.group-images {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image {
+  width: 33.333%;
+  padding: 1rem;
+}

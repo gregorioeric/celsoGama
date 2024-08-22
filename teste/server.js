@@ -2,8 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const homeRoute = require("./src/routes/homeRoute");
 const path = require("path");
+const fs = require("fs");
 const database = require("./src/database/database");
-const exp = require("constants");
 const adminRoute = require("./src/routes/adminRoute");
 const dashboardRoute = require("./src/routes/dashboardRoute");
 const loginRoute = require("./src/routes/loginRoute");
@@ -23,6 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "./public")));
+app.use(express.static(path.join(__dirname, "./public/uploads")));
 
 app.use("/", homeRoute);
 app.use("/admin", adminRoute);

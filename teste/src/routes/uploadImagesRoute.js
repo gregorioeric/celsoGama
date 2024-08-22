@@ -11,7 +11,7 @@ uploadImagesRoute.get("/", UploadImagesController.getUploadImages);
 
 uploadImagesRoute.post(
   "/",
-  upload.single("image"),
+  upload.single("user_upload"),
   UploadImagesController.postUploadImages
 );
 
