@@ -22,8 +22,8 @@
               accept="image/*"
             />
           </div>
-          <% if(message.msgErrorUpload) { %>
-          <div class="msgError"><%= message.msgErrorUpload %></div>
+          <% if(message) { %>
+          <div class="msgError"><%= message %></div>
           <% } %>
           <div class="content-btn" id="btn-cad">
             <button>Upload</button>

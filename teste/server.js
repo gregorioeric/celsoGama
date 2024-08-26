@@ -3,6 +3,8 @@ const express = require("express");
 const homeRoute = require("./src/routes/homeRoute");
 const path = require("path");
 const fs = require("fs");
+const session = require("express-session");
+const flash = require("connect-flash");
 const database = require("./src/database/database");
 const adminRoute = require("./src/routes/adminRoute");
 const dashboardRoute = require("./src/routes/dashboardRoute");
@@ -16,14 +18,28 @@ const uploadImagesRoute = require("./src/routes/uploadImagesRoute");
 const app = express();
 const port = process.env.PORTSERVER || 3000;
 
-app.set("view engine", "ejs");
-app.set("views", "./src/views");
+app.use(express.static(path.join(__dirname, "./public")));
+app.use(express.static(path.join(__dirname, "./public/uploads")));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, "./public")));
-app.use(express.static(path.join(__dirname, "./public/uploads")));
+app.use(
+  session({
+    name: "session",
+    secret: process.env.SECRET,
+    resave: true,
+    cookie: {
+      maxAge: 60 * 60 * 1000,
+    },
+    saveUninitialized: true,
+  })
+);
+
+app.use(flash());
+
+app.set("view engine", "ejs");
+app.set("views", "./src/views");
 
 app.use("/", homeRoute);
 app.use("/admin", adminRoute);
@@ -41,32 +57,3 @@ app.listen(port, async () => {
     console.log(`http://localhost:${port}`);
   }
 });
-
-// database.query((error) => {
-//   if (error) {
-//     console.log(error);
-//   } else {
-//     console.log("Conectado no banco de dados!");
-//     app.listen(port, () => {
-//       console.log(`http://localhost:${port}`);
-//     });
-//   }
-// });
-
-// const express = require("express");
-// const route = require("./src/routes/route");
-// const port = 5000;
-
-// const app = express();
-
-// app.set("view engine", "ejs");
-// app.set("views", "./src/views");
-
-// app.use(route);
-
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
-
-// app.listen(port, () => {
-//   console.log(`http://localhost:${port}`);
-// });

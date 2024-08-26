@@ -4,22 +4,27 @@ const UploadImagesModel = require("../models/uploadImagesModel");
 module.exports = class UploadImagesController {
   static async getUploadImages(req, res) {
     const results = await UploadImagesModel.getAllImages();
+    // const messages = req.flash("message");
+    // const success = req.flash("success");
 
-    return res.render("uploadImages", { message: "", results });
+    return res.render("uploadImages", {
+      message: req.query.message,
+      error: req.query.error,
+      results,
+    });
   }
   static async postUploadImages(req, res) {
     const user_image_date = new Date().toJSON().slice(0, 19).replace("T", " ");
     console.log(req.file);
 
     if (!req.file) {
-      req.message = {
-        msgErrorUpload:
-          "Opa você precisa selecionar uma imagem para realizar o Upload",
-      };
-      return res.render("uploadImages", {
-        message: req.message,
-        results: [],
-      });
+      // req.flash(
+      //   "message",
+      //   "Opa você precisa selecionar uma imagem para realizar o Upload"
+      // );
+      return res.redirect(
+        "/uploadImages?message=Opa você precisa selecionar uma imagem para realizar o Upload!&error=false"
+      );
     }
 
     const user_image_path = req.file.filename;
@@ -31,16 +36,13 @@ module.exports = class UploadImagesController {
     const results = await UploadImagesModel.postImages(imgData);
 
     if (!results) {
-      req.message = {
-        msgErrorUpload: "Não Foi possivel fazer Upload da imagem!",
-      };
-      return res.render("uploadImages", { message: req.message });
+      return res.redirect(
+        "/uploadImages?message=Não Foi possivel fazer Upload da imagem!&error=false"
+      );
     }
 
-    // req.message = {
-    //   msgErrorUpload: "Upload da imagem realizado com sucesso!",
-    // };
-    // return res.render("uploadImages", { message: req.message });
-    return res.redirect("/uploadImages");
+    return res.redirect(
+      "/uploadImages?message=Upload da imagem realizado com sucesso!&error=true"
+    );
   }
 };
