@@ -1,7 +1,5 @@
 const RegisterUserModel = require("../models/registerUserModels");
 
-const registerUser = new RegisterUserModel();
-
 class RegisterUserController {
   getRegister(req, res) {
     return res.render("loginRegister", {
@@ -76,7 +74,7 @@ class RegisterUserController {
       });
     }
 
-    const recebeEmailFromModel = await registerUser.getByEmail(
+    const recebeEmailFromModel = await RegisterUserModel.getUserByEmail(
       data_user.user_email
     );
     console.log("Estamos na Controller");

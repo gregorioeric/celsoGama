@@ -4,7 +4,6 @@ const homeRoute = require("./src/routes/homeRoute");
 const path = require("path");
 const fs = require("fs");
 const session = require("express-session");
-const flash = require("connect-flash");
 const database = require("./src/database/database");
 const adminRoute = require("./src/routes/adminRoute");
 const dashboardRoute = require("./src/routes/dashboardRoute");
@@ -35,8 +34,6 @@ app.use(
     saveUninitialized: true,
   })
 );
-
-app.use(flash());
 
 app.set("view engine", "ejs");
 app.set("views", "./src/views");

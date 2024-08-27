@@ -1,11 +1,11 @@
 const express = require("express");
-const RegisterController = require("../controllers/registerController");
+const LoginRegisterController = require("../controllers/loginRegisterController");
 
 const loginRegisterRoute = express.Router();
 
-loginRegisterRoute.get('/', RegisterController.getRegister);
+loginRegisterRoute.get('/', LoginRegisterController.getRegister);
 
-loginRegisterRoute.post('/login', RegisterController.postLogin);
-loginRegisterRoute.post('/register', RegisterController.postRegister);
+loginRegisterRoute.post('/login', LoginRegisterController.postLogin);
+loginRegisterRoute.post('/register', LoginRegisterController.postRegister);
 
 module.exports = loginRegisterRoute;
