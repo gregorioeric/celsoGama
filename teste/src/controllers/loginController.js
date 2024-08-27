@@ -1,6 +1,7 @@
 class LoginController {
   static async getLogin(req, res) {
-    res.render("login");
+    const message = req.query.message;
+    res.render("login", { message });
   }
 
   static async postLogin(req, res) {

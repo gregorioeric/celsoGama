@@ -1,10 +1,10 @@
 const express = require("express");
-const RegisterController = require("../controllers/admin/registerController");
+const RegisterBookController = require("../controllers/registerBooksController");
 
-const registerRoute = express.Router();
+const registerBookRoute = express.Router();
 
-registerRoute.get("/", RegisterController.getRegister);
+registerBookRoute.get("/", RegisterBookController.getRegisterBook);
 
-registerRoute.post("/", RegisterController.postRegister);
+registerBookRoute.post("/", RegisterBookController.postBook);
 
-module.exports = registerRoute;
+module.exports = registerBookRoute;

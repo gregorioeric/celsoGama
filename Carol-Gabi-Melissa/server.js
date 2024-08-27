@@ -7,6 +7,7 @@ const adminRoute = require("./src/routes/adminRoute");
 const loginRoute = require("./src/routes/loginRoute");
 const registerRoute = require("./src/routes/registerRoutes");
 const homeRoute = require("./src/routes/homeRoute");
+const registerBookRoute = require("./src/routes/registerRoutes");
 
 const app = express();
 const port = process.env.PORTSERVER || 3000;
@@ -23,15 +24,11 @@ app.use("/", adminRoute);
 app.use("/home", homeRoute);
 app.use("/dashboard", dashboardRoute);
 app.use("/login", loginRoute);
-app.use("/register", registerRoute);
+app.use("/registerBooks", registerBookRoute);
 
-database.connect((error) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("conectado no banco de dados!");
-    app.listen(port, () => {
-      console.log(`http://localhost:${port}`);
-    });
+app.listen(port, async () => {
+  const [result] = await database.query("SELECT 1");
+  if (result) {
+    console.log(`http://localhost:${port}`);
   }
 });

@@ -1,15 +1,9 @@
-const RegisterUserModel = require("../models/registerUserModels");
-
-const registerUser = new RegisterUserModel();
-
-class RegisterUserController {
-  getRegister(req, res) {
-    return res.render("register", {
-      msg: "",
-    });
+class RegisterMiddleware {
+  static async getRegister(req, res) {
+    return res.render("register");
   }
 
-  async Store(req, res) {
+  static async postRegister(req, res) {
     const { ...data_user } = req.body;
 
     const regex_email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -62,4 +56,4 @@ class RegisterUserController {
   }
 }
 
-module.exports = RegisterUserController;
+module.exports = RegisterMiddleware;

@@ -1,3 +1,5 @@
+const RegisterUserModel = require("../models/registerUserModels");
+
 class RegisterController {
   static async getRegister(req, res) {
     return res.render("register", {
@@ -26,7 +28,7 @@ class RegisterController {
         msgFieldsEmpty: "Os campos não podem ser vazios!",
       };
 
-      return res.render("loginRegister", {
+      return res.render("register", {
         msg: req.message,
       });
     }
@@ -36,7 +38,7 @@ class RegisterController {
         msgNameError: "Nome precisa ter no minino 3 caracteres!",
       };
 
-      return res.render("loginRegister", {
+      return res.render("register", {
         msg: req.message,
       });
     }
@@ -46,7 +48,7 @@ class RegisterController {
         msgEmailError: "Digite um email valido!",
       };
 
-      return res.render("loginRegister", {
+      return res.render("register", {
         msg: req.message,
       });
     }
@@ -57,7 +59,7 @@ class RegisterController {
           "Senha precisa ter Letras Maiusculas, Minusculas, Numeros e Caracteres especiais!",
       };
       console.log(req.message);
-      return res.render("loginRegister", {
+      return res.render("register", {
         msg: req.message,
       });
     }
@@ -67,12 +69,12 @@ class RegisterController {
         msgPassError: "Senha não são iguais",
       };
       console.log(req.message);
-      return res.render("loginRegister", {
+      return res.render("register", {
         msg: req.message,
       });
     }
 
-    const recebeEmailFromModel = await registerUser.getByEmail(
+    const recebeEmailFromModel = await RegisterUserModel.getUserByEmail(
       data_user.user_email
     );
     console.log("Estamos na Controller");
@@ -81,10 +83,8 @@ class RegisterController {
     req.message = {
       msgSuccess: "Cadastro realizado com sucesso!",
     };
-    // return res.render("loginRegister", {
-    //   msg: req.message,
-    // });
-    return res.redirect("login");
+
+    return res.redirect("/login?message=Cadastro realizado com sucesso!");
   }
 }
 

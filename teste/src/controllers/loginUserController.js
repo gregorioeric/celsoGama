@@ -1,6 +1,7 @@
 class LoginUsesrControllers {
   static async getLoginRegister(req, res) {
-    return res.render("loginRegister", { msg: "" });
+    const message = req.query.message;
+    return res.render("loginRegister", { msg: "", message });
   }
 
   static async postLogin(req, res) {

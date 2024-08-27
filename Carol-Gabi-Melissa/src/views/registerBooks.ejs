@@ -6,55 +6,55 @@
     <main>
       <div class="content-form-cadastro">
         <h1>formularia de cadastro</h1>
-        <form action="/register" method="post">
-          <div class="input-name">
-            <label for="user name"></label>
+        <form action="/registerBooks" method="post">
+          <div class="input-book-image">
+            <label for="book_image"></label>
             <input
-              type="text"
-              name="user_name"
-              class="user-name"
+              type="file"
+              name="book_image"
+              class="book_image"
               placeholder="nome completo"
-              id="user-name"
+              id="book_image"
+              accept="image/*"
             />
             <% //if(msg.msgNameError){%>
             <div class="msgError"><%=// msg.msgNameError %></div>
             <% //} %>
           </div>
-          <div class="input-email">
-            <label for="user-email"></label>
+          <div class="input-book-name">
+            <label for="book_name"></label>
             <input
               type="text"
-              name="user_email"
-              class="user-email"
-              placeholder="digite seu email"
-              id="user-email"
+              name="book_name"
+              class="book_name"
+              placeholder="Digite o nome do Livro"
+              id="book_name"
             />
             <%// if( msg.msgEmailError){%>
             <div class="msgError"><%=// msg.msgEmailError %></div>
             <%// } %>
           </div>
-          <div class="input-password">
-            <label for="user-password"></label>
+          <div class="input-book-categoria">
+            <label for="book_categoria"></label>
             <input
               type="text"
-              name="user_password"
-              class="user-password"
-              placeholder="digite uma senha"
-              id="user-password"
+              name="book_categoria"
+              class="book_categoria"
+              placeholder="Digite uma categoria"
+              id="book_categoria"
             />
             <% //if(msg.msgPassError){%>
             <div class="msgError"><%= //msg.msgPassError %></div>
             <%//} %>
           </div>
-          <div class="input-confirm-password">
-            <label for="user-confirm-password"></label>
-            <input
-              type="text"
-              name="userConfirmPassword"
-              class="user-confirm-password"
-              placeholder="confirme sua senha"
-              id="user-confirm-password"
-            />
+          <div class="input-book-desc">
+            <label for="book_desc"></label>
+            <textarea
+              name="book_desc"
+              class="book_desc"
+              placeholder="Digite a descrição do Livro"
+              id="book_desc"
+            ></textarea>
             <% //if(msg.msgPassError){%>
             <div class="msgError"><%= //msg.msgPassError %></div>
             <%// } %>
@@ -62,9 +62,9 @@
           <div class="content-btn">
             <button>cadastro</button>
           </div>
-          <%// if(msg.msgFieldsEmpty){%>
-          <div class="msgError"><%=// msg.msgFieldsEmpty %></div>
-          <%// } %>
+          <% if(msgSuccess){%>
+          <div class="msgError"><%= msgSuccess %></div>
+          <% } %>
         </form>
       </div>
     </main>

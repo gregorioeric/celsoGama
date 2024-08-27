@@ -7,6 +7,9 @@
       <div class="content-form">
         <h1>Login</h1>
         <form action="/login" method="post">
+          <% if(message) { %>
+          <div class="msgError"><%= message %></div>
+          <% } %>
           <div class="input-email">
             <label for="user-email"></label>
             <input
