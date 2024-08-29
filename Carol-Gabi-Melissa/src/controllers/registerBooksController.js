@@ -1,13 +1,17 @@
 class RegisterBookController {
   static async getRegisterBook(req, res) {
+    const msgFields = req.query.msgFields;
     const msgFile = req.query.msgFile;
     const msgName = req.query.msgName;
+    const msgAutor = req.query.msgAutor;
     const msgCategoria = req.query.msgCategoria;
     const msgDesc = req.query.msgDesc;
     const msgSuccess = req.query.msgSuccess;
     return res.render("registerBooks", {
+      msgFields,
       msgFile,
       msgName,
+      msgAutor,
       msgCategoria,
       msgDesc,
       msgSuccess,
@@ -15,10 +19,32 @@ class RegisterBookController {
   }
 
   static async postBook(req, res) {
-    const { book_name, book_categoria, book_desc } = req.body;
-    const bookImg = req.file;
+    const { book_name, book_autor, book_categoria, book_desc } = req.body;
+    const book_date = new Date().toJSON().slice(0, 19).replace("T", " ");
+    const book_image = req.file.filename;
 
-    console.log(req.body);
+    if (
+      !book_name ||
+      !book_autor ||
+      !book_categoria ||
+      !book_desc ||
+      !book_image
+    ) {
+      return res.redirect(
+        "/registerBooks?msgFields=Todos os campos o preenchimento é obrigatorio!"
+      );
+    }
+
+    const book = {
+      book_image,
+      book_name,
+      book_autor,
+      book_categoria,
+      book_desc,
+      book_date,
+    };
+
+    console.log(book);
 
     return res.redirect(
       "/registerBooks?msgSuccess=Livro Cadastrado com Susseco!"

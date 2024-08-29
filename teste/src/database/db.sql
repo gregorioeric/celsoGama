@@ -1,4 +1,4 @@
-DROP DATABASE IF NOT EXISTS login_register_system;
+DROP DATABASE IF EXISTS login_register_system;
 
 CREATE DATABASE IF NOT EXISTS login_register_system;
 
@@ -18,4 +18,10 @@ CREATE TABLE admin_users (
   admin_email VARCHAR(120) NOT NULL,
   admin_password VARCHAR(255) NOT NULL,
   admin_data DATETIME NOT NULL
+);
+
+CREATE TABLE user_images(
+user_image_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+user_image_name VARCHAR(255) NOT NULL,
+user_image_date DATETIME NOT NULL
 );

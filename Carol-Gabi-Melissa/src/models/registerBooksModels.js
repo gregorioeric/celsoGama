@@ -8,13 +8,22 @@ module.exports = class RegisterModel {
   }
 
   static async postBook(book) {
-    const { book_image, book_name, book_categoria, book_desc } = book;
-    const insertBook = `INSERT INTO books (book_image, book_name, book_categoria, book_desc ) VALUES (?, ?, ?, ?)`;
+    const {
+      book_image,
+      book_name,
+      book_autor,
+      book_categoria,
+      book_desc,
+      book_date,
+    } = book;
+    const insertBook = `INSERT INTO books (book_image, book_name, book_autor, book_categoria, book_desc, book_date ) VALUES (?, ?, ?, ?, ?)`;
     const [result] = await database.query(insertBook, [
       book_image,
       book_name,
+      book_autor,
       book_categoria,
       book_desc,
+      book_date,
     ]);
     return result;
   }

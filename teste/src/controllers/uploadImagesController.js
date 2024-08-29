@@ -27,9 +27,9 @@ module.exports = class UploadImagesController {
       );
     }
 
-    const user_image_path = req.file.filename;
+    const user_image_name = req.file.filename;
     const imgData = {
-      user_image_path,
+      user_image_name,
       user_image_date,
     };
 

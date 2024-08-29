@@ -9,11 +9,21 @@
         <form action="/" method="POST" class="form">
           <div class="form-group">
             <div class="input">
-              <input type="text" name="admin_login" class="admin-login" id="admin-login">
+              <input
+                type="text"
+                name="admin_login"
+                class="admin-login"
+                id="admin-login"
+              />
               <label for="admin-login"></label>
             </div>
             <div class="input">
-              <input type="password" name="admin_password" class="admin-password" id="admin-password">
+              <input
+                type="password"
+                name="admin_password"
+                class="admin-password"
+                id="admin-password"
+              />
               <label for="admin-password">Admin Password</label>
             </div>
             <div class="btn-group">
@@ -21,12 +31,10 @@
                 <button>login</button>
               </div>
             </div>
-        </div>
-        
-        </div>
+          </div>
         </form>
       </div>
-    
+      <%- include('components/script') %>
     </main>
   </body>
 </html>

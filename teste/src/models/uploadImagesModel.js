@@ -8,11 +8,11 @@ module.exports = class UploadImagesModel {
   }
 
   static async postImages(imgData) {
-    const { user_image_path, user_image_date } = imgData;
+    const { user_image_name, user_image_date } = imgData;
     const insertImages =
-      "INSERT INTO user_images (user_image_path, user_image_date) VALUES (?, ?)";
+      "INSERT INTO user_images (user_image_name, user_image_date) VALUES (?, ?)";
     const [result] = await database.query(insertImages, [
-      user_image_path,
+      user_image_name,
       user_image_date,
     ]);
     return result;

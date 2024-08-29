@@ -2,72 +2,98 @@
 <html lang="pt-br">
   <%- include('components/head') %>
   <body>
-    <%- include('components/header') %>
     <main>
+      <%- include('components/header') %>
       <div class="content-form-cadastro">
         <h1>formularia de cadastro</h1>
-        <form action="/registerBooks" method="post">
-          <div class="input-book-image">
-            <label for="book_image"></label>
-            <input
-              type="file"
-              name="book_image"
-              class="book_image"
-              placeholder="nome completo"
-              id="book_image"
-              accept="image/*"
-            />
-            <% //if(msg.msgNameError){%>
-            <div class="msgError"><%=// msg.msgNameError %></div>
-            <% //} %>
+        <form
+          action="/registerBooks"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div class="left">
+            <div class="input input-book-image">
+              <label for="book_image" class="image-preview">
+                <!-- <span>Escolha a imagem do Livro</span> -->
+                <img id="img-book" src="/image.png" alt="" />
+              </label>
+              <input
+                type="file"
+                name="book_image"
+                class="book_image"
+                id="book_image"
+                accept="image/*"
+              />
+            </div>
+            <% if(msgFile){%>
+            <div class="msgError"><%= msgFile %></div>
+            <% } %>
           </div>
-          <div class="input-book-name">
-            <label for="book_name"></label>
-            <input
-              type="text"
-              name="book_name"
-              class="book_name"
-              placeholder="Digite o nome do Livro"
-              id="book_name"
-            />
-            <%// if( msg.msgEmailError){%>
-            <div class="msgError"><%=// msg.msgEmailError %></div>
-            <%// } %>
+          <div class="right">
+            <div class="input input-book-name">
+              <label for="book_name"></label>
+              <input
+                type="text"
+                name="book_name"
+                class="book_name"
+                placeholder="Digite o nome do Livro"
+                id="book_name"
+              />
+              <% if(msgName){%>
+              <div class="msgError"><%= msgName %></div>
+              <% } %>
+            </div>
+            <div class="input input-book-autor">
+              <label for="book_autor"></label>
+              <input
+                type="text"
+                name="book_autor"
+                class="book_autor"
+                placeholder="Digite o nome do Autor ou Autora"
+                id="book_autor"
+              />
+              <% if( msgAutor){%>
+              <div class="msgError"><%= msgAutor %></div>
+              <% } %>
+            </div>
+            <div class="input input-book-categoria">
+              <label for="book_categoria"></label>
+              <input
+                type="text"
+                name="book_categoria"
+                class="book_categoria"
+                placeholder="Digite uma categoria"
+                id="book_categoria"
+              />
+              <% if(msgCategoria){%>
+              <div class="msgError"><%= msgCategoria %></div>
+              <%} %>
+            </div>
+            <div class="input input-book-desc">
+              <label for="book_desc"></label>
+              <textarea
+                name="book_desc"
+                class="book_desc"
+                placeholder="Digite a descrição do Livro"
+                id="book_desc"
+              ></textarea>
+              <% if(msgDesc){%>
+              <div class="msgError"><%= msgDesc %></div>
+              <% } %>
+            </div>
+            <div class="content-btn">
+              <button>cadastro</button>
+            </div>
+            <% if(msgSuccess){%>
+            <div class="msgError"><%= msgSuccess %></div>
+            <% } %> <% if(msgFields){%>
+            <div class="msgError"><%= msgFields %></div>
+            <% } %>
           </div>
-          <div class="input-book-categoria">
-            <label for="book_categoria"></label>
-            <input
-              type="text"
-              name="book_categoria"
-              class="book_categoria"
-              placeholder="Digite uma categoria"
-              id="book_categoria"
-            />
-            <% //if(msg.msgPassError){%>
-            <div class="msgError"><%= //msg.msgPassError %></div>
-            <%//} %>
-          </div>
-          <div class="input-book-desc">
-            <label for="book_desc"></label>
-            <textarea
-              name="book_desc"
-              class="book_desc"
-              placeholder="Digite a descrição do Livro"
-              id="book_desc"
-            ></textarea>
-            <% //if(msg.msgPassError){%>
-            <div class="msgError"><%= //msg.msgPassError %></div>
-            <%// } %>
-          </div>
-          <div class="content-btn">
-            <button>cadastro</button>
-          </div>
-          <% if(msgSuccess){%>
-          <div class="msgError"><%= msgSuccess %></div>
-          <% } %>
         </form>
       </div>
+      <%- include('components/footer') %>
     </main>
-    <%- include('components/footer') %>
+    <%- include('components/script') %>
   </body>
 </html>
