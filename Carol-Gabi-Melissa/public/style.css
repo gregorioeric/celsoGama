@@ -22,9 +22,10 @@ li {
 :root {
   --cor-branco: rgb(255, 255, 255);
   --cor-preto: rgb(0, 0, 0);
-  --cor-verde: rgb(9, 255, 198);
+  --cor-verde: rgb(15, 140, 13);
+  --cor-verde-light: rgb(214, 252, 208);
   --cor-vermelho: rgb(255, 9, 9);
-  --cor-vermelho-light: rgb(255, 182, 182);
+  --cor-vermelho-light: rgb(227, 188, 188);
   --cor-lilas: rgb(210, 120, 255);
   --cor-azul: rgb(86, 119, 241);
   --cor-rosa: rgb(255, 164, 246);
@@ -212,6 +213,12 @@ body {
   padding: 1rem;
   color: var(--cor-vermelho);
   background: var(--cor-branco);
+}
+
+.msgSuccess {
+  padding: 1rem;
+  color: var(--cor-verde);
+  background: var(--cor-verde-light);
 }
 
 /********************************

@@ -3,7 +3,20 @@
   <%- include('components/head') %>
   <body>
     <main>
-      <h1>Dashboard</h1>
+      <div class="content-admin">
+        <%- include('components/headerAdmin') %>
+        <div class="content-display">
+          <% if(msgSuccess) { %>
+          <div class="msgSuccess"><%= msgSuccess %></div>
+          <% } %>
+          <div class="admin-profile">
+            <nav>
+              <div><a href="#"><%= adminUser.admin_name %></a></div>
+            </nav>
+          </div>
+          <h1>Dashboard</h1>
+        </div>
+      </div>
     </main>
   </body>
 </html>

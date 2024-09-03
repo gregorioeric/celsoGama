@@ -7,7 +7,7 @@
       <div class="content-form">
         <h1>Formulario de Cadastro</h1>
         <form action="/register" method="post">
-          <div class="input-name">
+          <div class="input-name input">
             <label for="user-name"></label>
             <input
               type="text"
@@ -16,11 +16,13 @@
               placeholder="Nome completo"
               id="user-name"
             />
-            <% if(msg.msgNameError) { %>
-            <div class="msgError"><%= msg.msgNameError %></div>
-            <% } %>
+            <div class="content-msg">
+              <% if(msgNameError) { %>
+              <div class="msgErrorInput"><%= msgNameError %></div>
+              <% } %>
+            </div>
           </div>
-          <div class="input-email">
+          <div class="input-email input">
             <label for="user-email"></label>
             <input
               type="text"
@@ -29,44 +31,54 @@
               placeholder="Digite seu email"
               id="user-email"
             />
-            <% if(msg.msgEmailError) { %>
-            <div class="msgError"><%= msg.msgEmailError %></div>
-            <% } %>
+            <div class="content-msg">
+              <% if(msgEmailError || msgEmailExists) { %>
+              <div class="msgErrorInput">
+                <%= msgEmailError || msgEmailExists%>
+              </div>
+              <% } %>
+            </div>
           </div>
-          <div class="input-password">
+          <div class="input-password input">
             <label for="user-password"></label>
             <input
-              type="text"
+              type="password"
               name="user_password"
               class="user-password"
               placeholder="Digite uma Senha"
               id="user-password"
             />
-            <% if(msg.msgPassError || msg.passwordError) { %>
-            <div class="msgError">
-              <%= msg.msgPassError || msg.passwordError %>
+            <div class="content-msg">
+              <% if(msgPassError || msgPasswordError) { %>
+              <div class="msgErrorInput">
+                <%= msgPassError || msgPasswordError %>
+              </div>
+              <% } %>
             </div>
-            <% } %>
           </div>
-          <div class="input-confirm-password">
+          <div class="input-confirm-password input">
             <label for="user-confirm-password"></label>
             <input
-              type="text"
+              type="password"
               name="userConfirmPassword"
               class="user-confirm-password"
               placeholder="Confirmar a Senha"
               id="user-confirm-password"
             />
-            <% if(msg.msgPassError) { %>
-            <div class="msgError"><%= msg.msgPassError %></div>
-            <% } %>
+            <div class="content-msg">
+              <% if(msgPassError) { %>
+              <div class="msgErrorInput"><%= msgPassError %></div>
+              <% } %>
+            </div>
           </div>
           <div class="content-btn" id="btn-cad">
             <button>Cadastro</button>
           </div>
-          <% if(msg.msgFieldsEmpty) { %>
-          <div class="msgError"><%= msg.msgFieldsEmpty %></div>
-          <% } %>
+          <div class="content-msg">
+            <% if(msgFieldsEmpty) { %>
+            <div class="msgError"><%= msgFieldsEmpty %></div>
+            <% } %>
+          </div>
         </form>
       </div>
     </main>

@@ -7,32 +7,35 @@
       <div class="content-form">
         <h1>Login</h1>
         <form action="/login" method="post">
-          <% if(message) { %>
-          <div class="msgError"><%= message %></div>
-          <% } %>
-          <div class="input-email">
+          <div class="input-email input">
             <label for="user-email"></label>
             <input
               type="text"
-              name="userEmail"
+              name="user_email"
               class="user-email"
               placeholder="Digite seu email"
               id="user-email"
             />
           </div>
-          <div class="input-password">
+          <div class="input-password input">
             <label for="user-password"></label>
             <input
-              type="text"
-              name="userPassword"
+              type="password"
+              name="user_password"
               class="user-password"
               placeholder="Digite uma Senha"
               id="user-password"
             />
           </div>
-
           <div class="content-btn">
             <button>Login</button>
+          </div>
+          <div class="content-msg">
+            <% if(msgSuccess) { %>
+            <p class="msgSuccess"><%= msgSuccess %></p>
+            <% } %> <% if(msgError) { %>
+            <p class="msgError"><%= msgError %></p>
+            <% } %>
           </div>
         </form>
       </div>

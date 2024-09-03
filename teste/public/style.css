@@ -28,8 +28,9 @@ li {
   --cor-branco-alpha: rgba(255, 255, 255, 0.7);
   --cor-preto: rgb(0, 0, 0);
   --cor-verde: rgb(60, 135, 41);
+  --cor-verde-light: rgb(189, 224, 180);
   --cor-vermelho: rgb(255, 0, 0);
-  --cor-vermelho-light: rgb(204, 153, 153);
+  --cor-vermelho-light: rgb(255, 222, 222);
   --cor-azul: rgb(25, 85, 105);
   --cor-cinza: rgb(98, 98, 98);
   --cor-amarelo: rgb(215, 193, 70);
@@ -367,8 +368,8 @@ Estilo do formulario de cadastro
   box-shadow: 5px 5px 5px 5px var(--cor-cinza);
 }
 
+.content-form form .input,
 .content-form-cadastro form div.input,
-.content-form form div,
 .content-form-login form div.input {
   padding: 0 0 1rem 0;
 }
@@ -541,5 +542,61 @@ Estilo do formulario de cadastro
 
 .image {
   width: 33.333%;
+  padding: 1rem;
+}
+
+/*************************************
+  Mensagem de erro e sucesso
+***************************************/
+
+.content-msg {
+  padding-top: 0.5rem;
+}
+
+.msgErrorInput {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.msgError,
+.msgSuccess {
+  padding: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.msgError,
+.msgSuccess,
+.msgErrorInput {
+  text-align: center;
+  font-weight: bold;
+  border-radius: 0.5rem;
+}
+
+.msgError,
+.msgErrorInput {
+  color: var(--cor-vermelho);
+  background: var(--cor-vermelho-light);
+}
+
+.msgSuccess {
+  color: var(--cor-verde);
+  background: var(--cor-verde-light);
+}
+
+/*************************************
+  Mensagem de erro e sucesso
+***************************************/
+
+.content-admin {
+  display: flex;
+  width: 100%;
+}
+
+.content-display {
+  width: 100%;
+}
+
+.img-logo,
+.main-menu-admin {
   padding: 1rem;
 }

@@ -8,7 +8,8 @@ module.exports = class UploadImagesController {
     // const success = req.flash("success");
 
     return res.render("uploadImages", {
-      message: req.query.message,
+      errorMessage: req.query.errorMessage,
+      successMessage: req.query.successMessage,
       error: req.query.error,
       results,
     });
@@ -37,12 +38,12 @@ module.exports = class UploadImagesController {
 
     if (!results) {
       return res.redirect(
-        "/uploadImages?message=Não Foi possivel fazer Upload da imagem!&error=false"
+        "/uploadImages?errorMessage=Não Foi possivel fazer Upload da imagem!&error=false"
       );
     }
 
     return res.redirect(
-      "/uploadImages?message=Upload da imagem realizado com sucesso!&error=true"
+      "/uploadImages?successMessage=Upload da imagem realizado com sucesso!&error=true"
     );
   }
 };

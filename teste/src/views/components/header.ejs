@@ -8,7 +8,6 @@
   <div class="container">
     <nav class="main-menu">
       <ul>
-        <li><a href="/">Livros</a></li>
         <li><a href="/">Home</a></li>
         <!-- <li><a href="/contato">Contato</a></li>
         <li>
@@ -20,12 +19,22 @@
             <li><a href="#">Produto 01</a></li>
           </ul>
         </li> -->
-        <li><a href="/login">Login</a></li>
-        <li><a href="/register">Cadastro</a></li>
-        <li><a href="/loginRegister">Login / Cadastro</a></li>
         <li><a href="/validacpf">CPF</a></li>
         <li><a href="/checkCEP">CEP</a></li>
         <li><a href="/uploadImages">Upload</a></li>
+
+        <% if (locals.session.logged) { %>
+
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+
+        <% } else { %>
+
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Cadastro</a></li>
+        <li><a href="/loginRegister">Login / Cadastro</a></li>
+
+        <% } %>
       </ul>
       <!-- <ul>
         <li><a href="#home">Home</a></li>

@@ -30,6 +30,11 @@
                 <button>Login</button>
               </div>
             </div>
+            <% if(msgError) { %>
+            <div class="msgError"><%= msgError %></div>
+            <% } %> <% if(msgSuccess) { %>
+            <div class="msgSuccess"><%= msgSuccess %></div>
+            <% } %>
           </div>
         </form>
       </div>
