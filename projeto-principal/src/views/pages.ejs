@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+  <body>
+    <main>
+      <div class="content-admin">
+        <%- include('components/headerAdmin') %>
+        <div class="content-display">
+          <h1>Pages</h1>
+          <div class="admin-profile">
+            <nav>
+              <div><a href="#"><%= adminUser.admin_name %></a></div>
+            </nav>
+          </div>
+          <div class="create-pages">
+            <form action="/pages" method="post">
+              <div class="form-group">
+                <div class="btn-create-page">
+                  <!-- <button>Cancelar</button> -->
+                  <button>Salvar</button>
+                </div>
+                <div>
+                  <input type="text" name="page_title" />
+                </div>
+              </div>
+              <textarea
+                name="page_content"
+                id="my-expressjs-tinymce-app"
+              ></textarea>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      type="application/javascript"
+      src="/tinymce/tinymce.min.js"
+    ></script>
+    <script
+      type="application/javascript"
+      src="/javascripts/my-tinymce-config.js"
+    ></script>
+  </body>
+</html>

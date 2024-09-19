@@ -1,9 +1,13 @@
+const RegisterBookModel = require("../models/registerBooksModels");
+
 class HomeController {
   static async getHome(req, res) {
-    res.render("index");
+    const results = await RegisterBookModel.getAllBooks();
+
+    return res.render("index", { results });
   }
   static async postHome(req, res) {
-    res.redirect("/index");
+    return res.redirect("/index");
   }
 }
 

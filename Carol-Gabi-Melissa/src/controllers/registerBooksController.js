@@ -1,3 +1,5 @@
+const RegisterBookModel = require("../models/registerBooksModels");
+
 class RegisterBookController {
   static async getRegisterBook(req, res) {
     const msgFields = req.query.msgFields;
@@ -44,7 +46,14 @@ class RegisterBookController {
       book_date,
     };
 
-    console.log(book);
+    const result = await RegisterBookModel.postBook(book);
+    console.log(result);
+
+    if (!result) {
+      return res.redirect(
+        "/registerBooks?msgError=Não foi possivel realizar o cadastro do livro!"
+      );
+    }
 
     return res.redirect(
       "/registerBooks?msgSuccess=Livro Cadastrado com Susseco!"

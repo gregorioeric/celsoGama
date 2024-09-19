@@ -25,11 +25,12 @@ li {
   --cor-verde: rgb(15, 140, 13);
   --cor-verde-light: rgb(214, 252, 208);
   --cor-vermelho: rgb(255, 9, 9);
-  --cor-vermelho-light: rgb(227, 188, 188);
+  --cor-vermelho-light: rgb(243, 214, 214);
   --cor-lilas: rgb(210, 120, 255);
   --cor-azul: rgb(86, 119, 241);
   --cor-rosa: rgb(255, 164, 246);
   --cor-cinza: rgb(116, 116, 116);
+  --cor-cinza-light: rgb(182, 182, 182);
   --cor-amarelo: rgb(255, 242, 155);
   --cor-laranja: rgb(255, 174, 117);
 }
@@ -37,6 +38,7 @@ li {
 body {
   background-color: var(--cor-azul);
 }
+
 .header-home {
   display: flex;
   flex-direction: column;
@@ -47,6 +49,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem 0;
 }
 .main-menu {
   width: 100%;
@@ -111,7 +114,55 @@ body {
   top: 3.7rem;
 }
 
-/* estilo do formulario de cadastro */
+/*********************************************
+  configurações gerais
+**********************************************/
+.content-main {
+  padding: 2rem 0;
+}
+
+/*********************************************
+  Estilo da home
+**********************************************/
+.home h1 {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 2rem;
+}
+
+.all-books {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.book {
+  width: calc(33.333% - 1rem);
+}
+
+.book-img img {
+  width: 235px;
+  height: 370px;
+}
+
+.no-books h3 {
+  text-align: center;
+}
+
+.no-books h3 a {
+  color: var(--cor-branco);
+  transition: color 300ms ease-in-out;
+}
+
+.no-books h3 a:hover {
+  color: var(--cor-lilas);
+}
+
+/*********************************************
+  estilo do formulario de cadastro
+**********************************************/
 
 .content-form-cadastro {
   width: 80%;
@@ -123,6 +174,7 @@ body {
 .content-form-cadastro h1 {
   text-align: center;
   width: 100%;
+  padding: 3rem;
 }
 
 .content-form-cadastro form {
@@ -197,28 +249,143 @@ body {
   justify-content: center;
   height: 450px;
   color: var(--cor-cinza);
-  padding: 0.5rem 1rem;
   font-size: 1.2rem;
   cursor: pointer;
   border: 0.2rem solid var(--cor-lilas);
-  border-radius: 0.5rem;
+  border-radius: 0.7rem;
   transition: color 300ms ease-in-out;
+}
+.content-form-cadastro .input-book-image img {
+  border-radius: 0.5rem;
 }
 
 .content-form-cadastro .input-book-image .image-preview:hover {
   color: var(--cor-preto);
 }
 
-.msgError {
+/*************************************
+  Mensagem de erro e sucesso
+***************************************/
+
+.content-msg {
+  padding-top: 1rem;
+}
+
+.msgErrorInput {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.msgError,
+.msgSuccess {
   padding: 1rem;
+  font-size: 1rem;
+}
+
+.msgError,
+.msgSuccess,
+.msgErrorInput {
+  text-align: center;
+  font-weight: bold;
+  border-radius: 0.5rem;
+}
+
+.msgError,
+.msgErrorInput {
   color: var(--cor-vermelho);
-  background: var(--cor-branco);
+  background: var(--cor-vermelho-light);
 }
 
 .msgSuccess {
-  padding: 1rem;
   color: var(--cor-verde);
   background: var(--cor-verde-light);
+}
+
+/********************************
+    Login Form
+******************************/
+
+.form-login {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.form-login h1 {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.form-login .form-group .input {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.form-login .form-group .input input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  outline: none;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 300ms ease-in-out;
+}
+
+.form-login .form-group .input input:-webkit-autofill {
+  transition: background-color 5000000000s ease-in-out 0s;
+}
+
+.form-login .form-group .input label {
+  position: absolute;
+  top: 28%;
+  left: 5%;
+  font-weight: bold;
+  color: var(--cor-cinza);
+  transform: translateY(-50%);
+  transition: all 300ms ease-in-out;
+  pointer-events: none;
+}
+
+.form-login .form-group .input input:not(:placeholder-shown) + label,
+.form-login .form-group .input input:focus + label {
+  top: -15%;
+  left: 0;
+  font-size: 0.8rem;
+  padding: 0 0.5rem;
+
+  color: var(--cor-preto);
+}
+
+.form-login .form-group .btn-group .btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.form-login .form-group .btn-group .btn button {
+  border: 0;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: var(--cor-cinza-light);
+  transition: all 300ms ease-in-out;
+}
+
+.form-login .form-group .btn-group .btn button:hover {
+  background: var(--cor-verde);
+}
+
+/********************************
+    Footer
+******************************/
+
+.content-footer {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+  background: var(--cor-cinza);
 }
 
 /********************************

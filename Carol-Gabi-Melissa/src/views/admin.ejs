@@ -4,18 +4,19 @@
   <body>
     <main>
       <%- include('components/header-main') %>
-      <h1>admin</h1>
       <div class="form-admin">
-        <form action="/" method="POST" class="form">
+        <form action="/" method="POST" class="form form-login">
+          <h1>Admin <br />Sala de Leitura</h1>
           <div class="form-group">
             <div class="input">
               <input
                 type="text"
-                name="admin_login"
+                name="admin_email"
                 class="admin-login"
                 id="admin-login"
+                placeholder=""
               />
-              <label for="admin-login"></label>
+              <label for="admin-login">Admin User Login</label>
             </div>
             <div class="input">
               <input
@@ -23,13 +24,21 @@
                 name="admin_password"
                 class="admin-password"
                 id="admin-password"
+                placeholder=""
               />
-              <label for="admin-password">Admin Password</label>
+              <label for="admin-password">Admin User Password</label>
             </div>
             <div class="btn-group">
               <div class="btn">
-                <button>login</button>
+                <button>Login</button>
               </div>
+            </div>
+            <div class="content-msg">
+              <% if(msgError) { %>
+              <div class="msgError"><%= msgError %></div>
+              <% } %> <% if(msgSuccess) { %>
+              <div class="msgSuccess"><%= msgSuccess %></div>
+              <% } %>
             </div>
           </div>
         </form>

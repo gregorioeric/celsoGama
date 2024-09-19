@@ -1,71 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<%- include('components/head') %>
-<body>
-    <%- include('components/header')  %>
+  <%- include('components/head') %>
+  <body>
+    <%- include('components/header') %>
     <main>
-        <div class="home-img">
-            <div class="img-index">
-                <img src="/img/Banner4.png">
+      <div class="container-fg">
+        <section class="home-img section-one">
+          <div class="img-index div-one">
+            <img src="/img/Banner4.png" />
+          </div>
+        </section>
+        <section class="section-two">
+          <div class="index-conteudo div-two">
+            <div class="index-conteudo-texto">
+              <h2 class="index-title">Fichas digitais</h2>
+              <div class="index-texto">
+                Acesso rápido e simplificado a todas as informações de sua
+                ficha. Concentre-se menos nas coisas dificeis de criar uma ficha
+                e foque no que realmente importa que é se divertir ao lado de
+                seus amigos!
+              </div>
             </div>
-        </div>
-        <div class="conteudo-home">
-        <div class="index-margin">
-            <div class="index-conteudo">
-                <div class="index-conteudo-texto">
-                    <div class="index-title">
-                        Fichas digitais
-                        </span> 
-                    </div>
-                    <div class="index-texto">
-                        Acesso rápido e simplificado a todas as informações de sua ficha. Concentre-se menos nas coisas dificeis de criar uma ficha e foque no que realmente importa que é se divertir ao lado de seus amigos!
-                    </div>
-                </div>
-                <div class="index-img">
-                    <img src="/img/ficha.jpg">
-                </div>
-                                                 <!-- segunda parte do home -->
+            <div class="index-img">
+              <img src="/img/ficha.jpg" />
+            </div>
+          </div>
+        </section>
+        <!-- segunda parte do home -->
 
+        <section class="section-three">
+          <div class="conteudo-home2 div-three">
+            <div class="index-conteudo-texto2">
+              <div class="index-title">
+                Suas principais noticias em um só lugar
+              </div>
+              <div class="index-texto">
+                Acompanhe de perto noticias em tempo de real das principais
+                campanhas de rpg do brasil. Chegou a hora de Elevar o nivel da
+                sua experiencia com o rpg
+              </div>
             </div>
-            
-            <div class="conteudo-home2">
-                <div class="index-conteudo-texto2">
-                    <div class="index-title">
-                        Suas principais noticias em um só lugar
-                    </div>
-                    <div class="index-texto">
-                        Acompanhe de perto noticias em tempo de real das principais campanhas de rpg do brasil. Chegou a hora de Elevar o nivel da sua experiencia com o rpg
-                    </div>
-                </div>
-                    <div class="index-img">
-                        <img src="/img/Banner5.jpg">
-                    </div>                        
-                
+            <div class="index-img">
+              <img src="/img/Banner5.jpg" />
             </div>
-            <!-- terceira parte do home -->
-             <div class="conteudo-home3">
-                <div class="index-conteudo-texto3">
-                    <div class="index-title">
-                            Soundtracks Especiais e de Facil acesso!
-                    </div>
-                    <div class="index-texto">
-                        Perca o medo de mestrar rpg e encontre varias soundtracks especiais para suas campanhas, expanda seus horizontes de forma pratica!
-                    </div>
-                    <div class="index-img">
-                        <img src="/img/Banner6.jpg">
-                    </div>
-                </div>
-             
-             <!-- Ultima parte do site -->
-              <div class="index-title-center"><span class="underline">Entre em contato conosco</span></div>
-              <div class="index-conteudo-botao">
-                <button class="index-botao">Clique Aqui</button>
+          </div>
+        </section>
+        <!-- terceira parte do home -->
+        <section class="section-four">
+          <div class="conteudo-home3 div-four">
+            <div class="index-conteudo-texto3">
+              <div class="index-title">
+                Soundtracks Especiais e de Facil acesso!
+              </div>
+              <div class="index-texto">
+                Perca o medo de mestrar rpg e encontre varias soundtracks
+                especiais para suas campanhas, expanda seus horizontes de forma
+                pratica!
+              </div>
+              <div class="index-img">
+                <img src="/img/Banner6.jpg" />
+              </div>
             </div>
-        </div>
-    </div>
-</div>
-    
+          </div>
+        </section>
+        <!-- Ultima parte do site -->
+        <section class="section-five">
+          <div class="index-title-center div-five">
+            <span class="underline">Entre em contato conosco</span>
+          </div>
+          <div class="index-conteudo-botao">
+            <button class="index-botao" id="btn-show-modal">Clique Aqui</button>
+            <div class="index-modal hide-modal" id="index-modal">
+              <button id="btnHideModal">X</button>
+              <h1>Testando</h1>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
     <%- include('components/footer') %>
-</body>
+  </body>
 </html>
