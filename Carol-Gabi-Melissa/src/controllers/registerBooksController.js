@@ -2,21 +2,9 @@ const RegisterBookModel = require("../models/registerBooksModels");
 
 class RegisterBookController {
   static async getRegisterBook(req, res) {
-    const msgFields = req.query.msgFields;
-    const msgFile = req.query.msgFile;
-    const msgName = req.query.msgName;
-    const msgAutor = req.query.msgAutor;
-    const msgCategoria = req.query.msgCategoria;
-    const msgDesc = req.query.msgDesc;
-    const msgSuccess = req.query.msgSuccess;
     return res.render("registerBooks", {
-      msgFields,
-      msgFile,
-      msgName,
-      msgAutor,
-      msgCategoria,
-      msgDesc,
-      msgSuccess,
+      masgError: req.query.msgError,
+      msgSuccess: req.query.msgSuccess,
     });
   }
 

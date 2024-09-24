@@ -5,7 +5,7 @@ class LoginController {
 
   static async postlogin(req, res) {
     req.session.logged = true;
-    return res.redirect("/");
+    return res.redirect("/home");
   }
 }
 

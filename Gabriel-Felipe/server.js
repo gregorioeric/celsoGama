@@ -10,6 +10,8 @@ const loginRoute = require("./src/routes/loginRoute");
 const contatoRoute = require("./src/routes/contatoRoute");
 const produtosRoute = require("./src/routes/produtosRoute");
 const adminRoute = require("./src/routes/admin/adminRoute");
+const logoutRoute = require("./src/routes/logoutRoute");
+const homeRoute = require("./src/routes/homeRoute");
 
 const app = express();
 const port = process.env.PORTSERVER || 3000;
@@ -44,10 +46,11 @@ app.use((req, res, next) => {
 
 app.use("/", loginRoute);
 app.use("/register", routeRegister);
-// app.use("/login", loginRoute);
+app.use("/logout", logoutRoute);
 app.use("/contato", contatoRoute);
-app.use("/produto", produtosRoute);
+app.use("/produtos", produtosRoute);
 app.use("/admin", adminRoute);
+app.use("/home", homeRoute);
 
 app.listen(port, async () => {
   const [result] = await database.query("SELECT 1");
