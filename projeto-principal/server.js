@@ -18,6 +18,7 @@ const profileRoute = require("./src/routes/profileRoute");
 const logoutAdminRoute = require("./src/routes/logoutAdminRoute");
 const logoutRoute = require("./src/routes/logoutRoute");
 const pagesRoute = require("./src/routes/pagesRoute");
+const phoneRoute = require("./src/routes/phoneRoute");
 
 const app = express();
 const port = process.env.PORTSERVER || 3000;
@@ -55,6 +56,7 @@ app.use(
   "/tinymce",
   express.static(path.join(__dirname, "node_modules", "tinymce"))
 );
+
 app.use("/", homeRoute);
 app.use("/admin", adminRoute);
 app.use("/dashboard", dashboardRoute);
@@ -68,6 +70,7 @@ app.use("/logoutAdmin", logoutAdminRoute);
 app.use("/profile", profileRoute);
 app.use("/logout", logoutRoute);
 app.use("/pages", pagesRoute);
+app.use("/telefone", phoneRoute);
 
 app.listen(port, async () => {
   const [result] = await database.query("SELECT 1");

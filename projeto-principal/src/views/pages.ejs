@@ -4,41 +4,77 @@
   <body>
     <main>
       <div class="content-admin">
-        <%- include('components/headerAdmin') %>
+        <%- include('components/menuAdmin') %>
+        <div class="admin-profile">
+          <%- include('components/headerAdmin') %>
+        </div>
         <div class="content-display">
           <h1>Pages</h1>
-          <div class="admin-profile">
-            <nav>
-              <div><a href="#"><%= adminUser.admin_name %></a></div>
-            </nav>
+          <div class="content-msg">
+            <% if(msgSuccess) { %>
+            <div class="msgSuccess">
+              <%= msgSuccess %> <a href="/pages/createPages">X</a>
+            </div>
+            <% } %> <% if(msgError) { %>
+            <div class="msgError">
+              <%= msgError %> <a href="/pages/createPages">X</a>
+            </div>
+            <% } %>
           </div>
-          <div class="create-pages">
-            <form action="/pages" method="post">
-              <div class="form-group">
-                <div class="btn-create-page">
-                  <!-- <button>Cancelar</button> -->
-                  <button>Salvar</button>
+          <div class="content-list-pages">
+            <div class="btn-create-page">
+              <a href="/pages/createPages">Adicionar uma Nova Pagina</a>
+            </div>
+            <div class="list-pages">
+              <div class="table">
+                <div class="row">
+                  <div class="row-border header-page">
+                    <div class="col">Page</div>
+                    <div class="col">Status</div>
+                    <div class="col">Editar</div>
+                    <div class="col">Delete</div>
+                  </div>
                 </div>
-                <div>
-                  <input type="text" name="page_title" />
+                <div class="row">
+                  <% pages.forEach(e => { %>
+                  <div class="row-border">
+                    <div class="col"><%= e.page_title %></div>
+                    <div class="col">Publicado</div>
+                    <div class="col">
+                      <a href="/pages/editPage/<%= e.page_id %>">Editar</a>
+                    </div>
+                    <div class="col">
+                      <!-- <a href="/pages/deletePage/<%= //e.page_id %>">Delete</a> -->
+                      <button
+                        onclick="openDeleteModal(`<%= e.page_id %>`, `<%= e.page_title %>`)"
+                        id="delete"
+                        data-id="<%= e.page_id %>"
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+                  <% }) %>
+                </div>
+                <div class="modal hide-modal" id="modal">
+                  <form action="" method="post">
+                    <div class="content-delete" id="content-delete">
+                      <h3></h3>
+                      <h4>
+                        Se você realmente quer deletar clique em Deletar se não
+                        clique em Cancelar
+                      </h4>
+                      <button id="cancelar" type="reset">Cancelar</button>
+                      <button>Delete</button>
+                    </div>
+                  </form>
                 </div>
               </div>
-              <textarea
-                name="page_content"
-                id="my-expressjs-tinymce-app"
-              ></textarea>
-            </form>
+            </div>
           </div>
         </div>
       </div>
     </main>
-    <script
-      type="application/javascript"
-      src="/tinymce/tinymce.min.js"
-    ></script>
-    <script
-      type="application/javascript"
-      src="/javascripts/my-tinymce-config.js"
-    ></script>
+    <%- include('components/script') %>
   </body>
 </html>

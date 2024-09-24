@@ -1,30 +1,11 @@
 const database = require("../database/database");
 
 module.exports = class RegisterUserModel {
-  getByEmail(getEmailFromUserController) {
-    const selectEmail = "SELECT user_email FROM users WHERE user_email = ?";
-    return new Promise((resolve, reject) => {
-      database.query(
-        selectEmail,
-        getEmailFromUserController,
-        (error, result) => {
-          console.log("Estamos no Model");
-          console.log(getEmailFromUserController);
-          console.log(result);
-          return resolve(result);
-        }
-      );
-    });
+  static async getByEmail(getEmailFromUserController) {
+    const { user_email } = getEmailFromUserController;
+    const selectEmail = "SELECT * FROM users WHERE user_email = ?";
+    const [[result]] = await database.query(selectEmail, [user_email]);
+
+    return result;
   }
 };
-
-// database.query(
-//   selectEmail,
-//   [getEmailFromUserController],
-//   (error, result) => {
-//     console.log("Estamos no Model");
-//     console.log(getEmailFromUserController);
-
-//     return result;
-//   }
-// );

@@ -30,6 +30,7 @@ li {
   --cor-verde: rgb(60, 135, 41);
   --cor-verde-light: rgb(189, 224, 180);
   --cor-vermelho: rgb(255, 0, 0);
+  --cor-vermelho-little-light: rgb(252, 122, 122);
   --cor-vermelho-light: rgb(255, 222, 222);
   --cor-azul: rgb(25, 85, 105);
   --cor-cinza: rgb(98, 98, 98);
@@ -72,9 +73,9 @@ img {
   max-width: 100%;
 }
 
-.img-logo picture img {
+/* .img-logo picture img {
   width: 5rem;
-}
+} */
 
 .main-menu {
   width: 100%;
@@ -584,21 +585,45 @@ Estilo do formulario de cadastro
 }
 
 /*************************************
-  Mensagem de erro e sucesso
+  Estilo das paginas do admin
 ***************************************/
 
 .content-admin {
-  display: flex;
-  width: 100%;
-}
-
-.content-display {
-  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "sidebar nav"
+    "sidebar main";
 }
 
 .img-logo,
 .main-menu-admin {
   padding: 1rem;
+}
+
+.container-header-admin {
+  top: 0;
+  position: sticky;
+  z-index: 99;
+  grid-area: sidebar;
+  height: 100vh;
+  background: var(--cor-cinza);
+}
+
+.admin-profile {
+  top: 0;
+  position: sticky;
+  z-index: 99;
+  grid-area: nav;
+  background: var(--cor-branco);
+  padding: 1rem;
+}
+
+.content-display {
+  grid-area: main;
+  height: 100vh;
+  padding: 1rem 2rem;
 }
 
 /*************************************
@@ -620,16 +645,6 @@ Estilo do formulario de cadastro
   -webkit-transition: background 300ms ease-in-out;
 }
 
-.container-header-admin {
-  position: relative;
-  width: 15rem;
-}
-
-.header-admin {
-  position: fixed;
-  background: var(--cor-cinza);
-}
-
 .main-menu-admin ul li a:hover {
   background: rgb(255, 255, 255);
   background: linear-gradient(
@@ -643,14 +658,238 @@ Estilo do formulario de cadastro
 /*************************************
   Estilo Pages
 ***************************************/
-.create-pages {
-  width: 90%;
-}
 
 .create-pages form .form-group div {
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 .create-pages form textarea {
   height: 600px;
+}
+
+.btn-create-page {
+  display: flex;
+  padding: 1rem 0 0 0;
+}
+
+.btn-create-page a {
+  display: flex;
+  color: var(--cor-preto);
+  background: var(--cor-cinza-light);
+  padding: 0.5rem 1rem;
+  transition: background 350ms ease-in-out;
+}
+
+.btn-create-page a:hover {
+  background: var(--cor-branco);
+}
+
+.btns-controls-page {
+  display: flex;
+  gap: 2rem;
+}
+
+.btns-controls-page a,
+.btns-controls-page button {
+  padding: 0.5rem 2rem;
+  border-radius: 0.3rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.btns-controls-page a {
+  color: var(--cor-branco);
+  background: var(--cor-cinza);
+
+  transition: background 300ms ease-in-out;
+}
+
+.btns-controls-page a:hover {
+  background: var(--cor-vermelho);
+}
+
+.btns-controls-page button {
+  cursor: pointer;
+  border: none;
+  background: var(--cor-branco);
+  transition: background 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.btns-controls-page button:hover {
+  color: var(--cor-branco);
+  background: var(--cor-verde);
+}
+
+.page_title input {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  font-size: 1.3rem;
+  border: none;
+  outline: none;
+  border-radius: 0.3rem;
+}
+
+.page_position label,
+.page_status label {
+  display: flex;
+  padding-bottom: 0.3rem;
+  font-size: 1.2rem;
+  color: var(--cor-branco);
+}
+
+.page_position select,
+.page_status select {
+  width: 30%;
+  padding: 0.5rem 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  outline: none;
+}
+
+.page_position a {
+  padding: 0.5rem 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background: var(--cor-cinza);
+  color: var(--cor-branco);
+  transition: color 300ms ease-in-out, background 300ms ease-in-out;
+}
+
+.page_position a:hover {
+  color: var(--cor-verde);
+  background: var(--cor-cinza-light);
+}
+
+.page_status {
+  padding-bottom: 2rem !important;
+}
+
+/*************************************
+  Estilo da lista de Pages
+***************************************/
+.table {
+  padding: 2rem 0 0 0;
+}
+
+.row {
+  /* grid-template-columns: repeat(auto-fit, minmax(25%, 1fr)); */
+  background: var(--cor-branco);
+  padding: 0.5rem;
+}
+
+.row-border {
+  display: grid;
+  grid-template-columns: 65% 15% 10% 10%;
+  border-bottom: 0.2rem solid;
+  /* border-top: 0.2rem solid; */
+}
+
+.header-page {
+  font-weight: bold;
+}
+
+.col {
+  padding: 0.5rem 1rem;
+}
+
+.modal,
+.modal-add-position {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background: var(--cor-preto-alpha);
+}
+
+.modal form,
+.modal-add-position form {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--cor-cinza-light);
+  width: 50%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 0.8rem;
+  box-shadow: 0px 0px 51px 25px rgba(0, 0, 0, 0.75);
+}
+
+.modal-add-position form {
+  height: 300px;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+}
+
+.hide-modal {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+}
+
+.content-add-position {
+  width: 100%;
+}
+
+.content-add-position h2 {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.cancelar-x {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+}
+
+.cancelar-x a {
+  display: flex;
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--cor-vermelho);
+  transition: transform 300ms ease-in-out;
+}
+
+.cancelar-x a:hover {
+  transform: scale(1.2);
+}
+
+.input-position-name,
+.btn-position {
+  display: flex;
+  justify-content: center;
+}
+
+.input-position-name {
+  padding-bottom: 1rem;
+}
+
+.input-position-name input,
+.btn-position button {
+  border: 0.1rem solid var(--cor-preto);
+  border-radius: 0.2rem;
+  font-size: 1.3rem;
+  padding: 0.3rem 0.6rem;
+  width: 60%;
+}
+
+.btn-position button {
+  background: var(--cor-verde-light);
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 300ms ease-in-out, background 300ms ease-in-out;
+}
+
+.btn-position button:hover {
+  color: var(--cor-branco);
+  background: var(--cor-verde);
 }

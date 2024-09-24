@@ -99,9 +99,9 @@
       </section>
       <section id="section-two" class="section-two">
         <h1>section two</h1>
-        <% if (pages.page_title === 'First Page') { %>
-        <div><%- pages.page_content %></div>
-        <% } %>
+        <% pages.forEach(e => { if (e.page_title === 'Second Page Updated') { %>
+        <div><%- e.page_content %></div>
+        <% } }) %>
       </section>
       <section id="section-three" class="section-three">
         <h1>section three</h1>
