@@ -3,20 +3,19 @@ const PagesModel = require("../../models/pagesModel");
 module.exports = class PagesController {
   static async getPages(req, res) {
     const adminUser = req.session.adminUser;
-    return res.render("pages", { adminUser });
+    const result = await PagesModel.selectAllPages();
+    return res.render("pages", {
+      adminUser,
+      pages: result,
+      msgSuccess: req.query.msgSuccess,
+      msgError: req.query.msgError,
+    });
   }
 
-  static async postPages(req, res) {
-    const { page_title, page_content } = req.body;
-    const page_date = new Date().toJSON().slice(0, 19).replace("T", " ");
+  static async deletePage(req, res) {
+    const getId = req.params.id;
 
-    const page = {
-      page_title,
-      page_content,
-      page_date,
-    };
-
-    const result = await PagesModel.insertPages(page);
+    const result = await PagesModel.deletePage(getId);
     console.log(result);
 
     return res.redirect("/pages");

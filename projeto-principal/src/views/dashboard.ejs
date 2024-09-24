@@ -2,21 +2,24 @@
 <html lang="pt-br">
   <%- include('components/head') %>
   <body>
-    <main>
+    <main class="grid-admin">
       <div class="content-admin">
-        <%- include('components/headerAdmin') %>
+        <%- include('components/menuAdmin') %>
+        <div class="admin-profile">
+          <%- include('components/headerAdmin') %>
+        </div>
         <div class="content-display">
-          <% if(msgSuccess) { %>
-          <div class="msgSuccess"><%= msgSuccess %></div>
-          <% } %>
-          <div class="admin-profile">
-            <nav>
-              <div><a href="#"><%= adminUser.admin_name %></a></div>
-            </nav>
+          <div class="content-msg">
+            <% if(msgSuccess) { %>
+            <div class="msgSuccess">
+              <%= msgSuccess %> <a href="/dashboard">X</a>
+            </div>
+            <% } %>
           </div>
           <h1>Dashboard</h1>
         </div>
       </div>
     </main>
+    <%- include('components/script') %>
   </body>
 </html>
