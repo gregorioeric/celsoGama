@@ -172,3 +172,22 @@ header.menu-scroll .navigation {
 .space {
   padding-top: 15rem;
 }
+
+.div-pricipal{
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.div-pricipal div{
+  width: 30%;
+  background: rgb(255, 255, 255);
+  padding: 1rem;
+  border-radius: .5rem;
+  height: 500px;
+}
+
+.div-pricipal .div-esquerda{
+  background: rgb(60, 135, 41);
+}
