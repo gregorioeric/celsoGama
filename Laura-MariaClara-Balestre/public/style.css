@@ -198,3 +198,13 @@ estilo footer
 .tudoquemsomos {
     display: flex;
 }
+
+.container-materias{
+    display: grid;
+    grid-template-columns: 300px 1fr;
+}
+
+/* .content-questao{
+    width: 70%;
+    margin: 0 auto;
+} */

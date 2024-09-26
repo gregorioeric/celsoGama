@@ -173,19 +173,20 @@ header.menu-scroll .navigation {
   padding-top: 15rem;
 }
 
-.div-pricipal{
-  display: flex;
-  justify-content: space-around;
-  width: 80%;
+.div-principal{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  width: 70%;
   margin: 0 auto;
 }
 
-.div-pricipal div{
-  width: 30%;
+.div-principal div{
+  /* width: 30%; */
   background: rgb(255, 255, 255);
   padding: 1rem;
   border-radius: .5rem;
-  height: 500px;
+  /* height: 100px; */
 }
 
 .div-pricipal .div-esquerda{

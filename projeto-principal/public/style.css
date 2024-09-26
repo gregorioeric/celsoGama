@@ -589,7 +589,16 @@ Estilo do formulario de cadastro
   Estilo das paginas do admin
 ***************************************/
 
-.content-admin {
+.content-admin{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+}
+
+
+
+
+/* .content-admin {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr;
@@ -623,15 +632,14 @@ Estilo do formulario de cadastro
 
 .content-display {
   grid-area: main;
-  height: 100vh;
   padding: 1rem 2rem;
-}
+} */
 
 /*************************************
   Estilo menu do admin
 ***************************************/
 
-.main-menu-admin ul li a {
+/* .main-menu-admin ul li a {
   display: flex;
   padding: 0.5rem 1rem;
   color: var(--cor-branco);
@@ -654,7 +662,7 @@ Estilo do formulario de cadastro
     rgb(255, 255, 255) 100%
   );
   transition: background 300ms ease-in-out;
-}
+} */
 
 /*************************************
   Estilo Pages
