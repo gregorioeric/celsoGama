@@ -9,13 +9,13 @@ pagesRoute.get("/", PagesController.getPages);
 
 // pagesRoute.post("/", PagesController.postPages);
 
-pagesRoute.get("/createPages", CreatePagesController.getCreatePages);
+pagesRoute.get("/createPages", PagesController.getCreatePages);
 
-pagesRoute.post("/createPages", CreatePagesController.postCreatePages);
+pagesRoute.post("/createPages", PagesController.postCreatePages);
 
-pagesRoute.get("/editPage/:id", EditPageController.getEditPage);
+pagesRoute.get("/editPage/:id", PagesController.getEditPage);
 
-pagesRoute.post("/editPage/:id", EditPageController.putEditPage);
+pagesRoute.post("/editPage/:id", PagesController.putEditPage);
 
 pagesRoute.post("/deletePage/:id", PagesController.deletePage);
 

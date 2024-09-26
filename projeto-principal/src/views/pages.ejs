@@ -30,25 +30,29 @@
                 <div class="row">
                   <div class="row-border header-page">
                     <div class="col">Page</div>
+                    <div class="col">Postion</div>
                     <div class="col">Status</div>
                     <div class="col">Editar</div>
                     <div class="col">Delete</div>
                   </div>
                 </div>
                 <div class="row">
-                  <% pages.forEach(e => { %>
+                  <% pages.forEach(page => { %>
                   <div class="row-border">
-                    <div class="col"><%= e.page_title %></div>
-                    <div class="col">Publicado</div>
+                    <div class="col"><%= page.page_title %></div>
+                    <div class="col"><%= page.position_name %></div>
                     <div class="col">
-                      <a href="/pages/editPage/<%= e.page_id %>">Editar</a>
+                      <%= page.page_status === 1 ? 'Publicado' : 'Rascunho' %>
+                    </div>
+                    <div class="col">
+                      <a href="/pages/editPage/<%= page.page_id %>">Editar</a>
                     </div>
                     <div class="col">
                       <!-- <a href="/pages/deletePage/<%= //e.page_id %>">Delete</a> -->
                       <button
-                        onclick="openDeleteModal(`<%= e.page_id %>`, `<%= e.page_title %>`)"
+                        onclick="openDeleteModal(`<%= page.page_id %>`, `<%= page.page_title %>`)"
                         id="delete"
-                        data-id="<%= e.page_id %>"
+                        data-id="<%= page.page_id %>"
                       >
                         Delete
                       </button>

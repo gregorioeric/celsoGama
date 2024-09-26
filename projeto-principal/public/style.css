@@ -47,7 +47,8 @@ body {
 } */
 
 .header-home {
-  display: flex;
+  display: grid;
+  grid-template-columns: 150px 1fr;
   position: fixed;
   background: var(--cor-preto-alpha);
   width: 100%;
@@ -779,7 +780,7 @@ Estilo do formulario de cadastro
 
 .row-border {
   display: grid;
-  grid-template-columns: 65% 15% 10% 10%;
+  grid-template-columns: 40% 25% 15% 10% 10%;
   border-bottom: 0.2rem solid;
   /* border-top: 0.2rem solid; */
 }

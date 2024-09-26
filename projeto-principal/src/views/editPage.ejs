@@ -22,23 +22,50 @@
             <% } %>
           </div>
           <div class="create-pages">
-            <form action="/pages/editPage/<%= result.page_id %>" method="post">
+            <form action="/pages/createPages" method="post">
               <div class="form-group">
-                <div class="btn-create-page">
-                  <!-- <button>Cancelar</button> -->
+                <div class="btns-controls-page">
+                  <a href="/pages">Cancelar</a>
                   <button>Salvar</button>
                 </div>
-                <div>
+                <% result.forEach(page => { %>
+                <div class="page_title" id="page_title">
                   <input
                     type="text"
                     name="page_title"
-                    value="<%= result.page_title %>"
+                    placeholder="Titulo da Pagina"
+                    value="<%= page.page_title %>"
                   />
+                </div>
+                <div class="page_position" id="page_position">
+                  <label for="select_position"> Selecione uma Posição</label>
+                  <select name="page_position_id" id="select_position">
+                    <option value="<%= page.position_id %>">
+                      <%= page.position_name %>
+                    </option>
+                  </select>
+                  <a href="#"><i class="bx bx-plus-medical"></i> Add Posição</a>
+                </div>
+                <div class="page_status" id="page_status">
+                  <label for="select_status">Selecione o Status</label>
+                  <select name="page_status" id="select_status">
+                    <option
+                      value="<%= page.page_status === 1 ? 'Publicado' : 'Rascunho' %>"
+                    >
+                      <%= page.page_status === 1 ? 'Publicado' : 'Rascunho' %>
+                    </option>
+                    <option
+                      value="<%= page.page_status !== 1 ? 'Publicado' : 'Rascunho' %>"
+                    >
+                      <%= page.page_status !== 1 ? 'Publicado' : 'Rascunho' %>
+                    </option>
+                  </select>
                 </div>
               </div>
               <textarea name="page_content" id="my-expressjs-tinymce-app">
-                <%= result.page_content %>
+                  <%= page.page_content %>
               </textarea>
+              <% }) %>
             </form>
           </div>
         </div>

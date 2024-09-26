@@ -37,10 +37,12 @@
                 </div>
                 <div class="page_position" id="page_position">
                   <label for="select_position"> Selecione uma Posição</label>
-                  <select name="page_position" id="select_position">
-                    <option value="home">Home</option>
-                    <option value="contato">Contato</option>
-                    <option value="sobrenos">Sobre Nos</option>
+                  <select name="page_position_id" id="select_position">
+                    <% getPosition.forEach(position => { %>
+                    <option value="<%= position.position_id %>">
+                      <%= position.position_name %>
+                    </option>
+                    <% }) %>
                   </select>
                   <a href="#"><i class="bx bx-plus-medical"></i> Add Posição</a>
                 </div>
