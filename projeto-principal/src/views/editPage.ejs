@@ -22,13 +22,12 @@
             <% } %>
           </div>
           <div class="create-pages">
-            <form action="/pages/createPages" method="post">
+            <form action="/pages/updatePage/<%= page.page_id %>" method="post">
               <div class="form-group">
                 <div class="btns-controls-page">
                   <a href="/pages">Cancelar</a>
                   <button>Salvar</button>
                 </div>
-                <% result.forEach(page => { %>
                 <div class="page_title" id="page_title">
                   <input
                     type="text"
@@ -40,9 +39,11 @@
                 <div class="page_position" id="page_position">
                   <label for="select_position"> Selecione uma Posição</label>
                   <select name="page_position_id" id="select_position">
-                    <option value="<%= page.position_id %>">
-                      <%= page.position_name %>
+                    <% positions.forEach(itemsPosition => { %>
+                    <option value="<%= itemsPosition.position_id %>" <%= page.position_id === itemsPosition.position_id ? 'selected' : '' %>>
+                      <%= itemsPosition.position_name %>
                     </option>
+                    <% }) %>
                   </select>
                   <a href="#"><i class="bx bx-plus-medical"></i> Add Posição</a>
                 </div>
@@ -65,7 +66,6 @@
               <textarea name="page_content" id="my-expressjs-tinymce-app">
                   <%= page.page_content %>
               </textarea>
-              <% }) %>
             </form>
           </div>
         </div>

@@ -13,12 +13,10 @@
           <div class="content-msg">
             <% if(msgSuccess) { %>
             <div class="msgSuccess">
-              <%= msgSuccess %> <a href="/pages/createPages">X</a>
+              <%= msgSuccess %> <a href="/pages">X</a>
             </div>
             <% } %> <% if(msgError) { %>
-            <div class="msgError">
-              <%= msgError %> <a href="/pages/createPages">X</a>
-            </div>
+            <div class="msgError"><%= msgError %> <a href="/pages/">X</a></div>
             <% } %>
           </div>
           <div class="content-list-pages">

@@ -29,7 +29,7 @@ module.exports = class PagesController {
   static async postCreatePages(req, res) {
     const { page_title, page_position_id, page_status, page_content } =
       req.body;
-    const page_date = new Date().toJSON().slice(0, 19).replace("T", " ");
+    // const page_date = new Date().toJSON().slice(0, 19).replace("T", " ");
 
     const statusBoolean = page_status === "Publicado" ? 1 : 0;
     const position_position_id = Number(page_position_id);
@@ -38,7 +38,6 @@ module.exports = class PagesController {
       page_title,
       page_status: statusBoolean,
       page_content,
-      page_date,
       position_position_id,
     };
     // console.log(page);
@@ -55,7 +54,7 @@ module.exports = class PagesController {
     const adminUser = req.session.adminUser;
     const getParams = req.params.id;
 
-    // const result = await PagesModel.selectPageById(getParams);
+    const resultPosition = await PositionModel.selectAllPosition();
     const result = await PagesModel.selectJoinPagesPositionById(getParams);
     // console.log(resultJoin);
 
@@ -63,13 +62,25 @@ module.exports = class PagesController {
       adminUser,
       msgSuccess: req.query.msgSuccess,
       msgError: req.query.msgError,
-      result,
+      page: result,
+      positions: resultPosition,
     });
   }
 
   static async putEditPage(req, res) {
-    const getDataUpdate = req.body;
+    const { page_title, page_position_id, page_status, page_content } =
+      req.body;
     const getParams = req.params.id;
+
+    const statusBoolean = page_status === "Publicado" ? 1 : 0;
+    const position_position_id = Number(page_position_id);
+
+    const getDataUpdate = {
+      page_title,
+      page_status: statusBoolean,
+      page_content,
+      position_position_id,
+    };
 
     const result = await PagesModel.updatePage(getParams, getDataUpdate);
 

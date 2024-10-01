@@ -19,6 +19,7 @@ const logoutAdminRoute = require("./src/routes/logoutAdminRoute");
 const logoutRoute = require("./src/routes/logoutRoute");
 const pagesRoute = require("./src/routes/pagesRoute");
 const phoneRoute = require("./src/routes/phoneRoute");
+const positionRoute = require("./src/routes/positionRoute");
 
 const app = express();
 const port = process.env.PORTSERVER || 3000;
@@ -71,6 +72,7 @@ app.use("/profile", profileRoute);
 app.use("/logout", logoutRoute);
 app.use("/pages", pagesRoute);
 app.use("/telefone", phoneRoute);
+app.use("/position", positionRoute);
 
 app.listen(port, async () => {
   const [result] = await database.query("SELECT 1");
