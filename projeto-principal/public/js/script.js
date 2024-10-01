@@ -114,3 +114,22 @@ if (inputCPF !== null) {
 //     v = v.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3")
 //     v = v.replace(/\.(\d{3})(\d)/, ".$1/$2")
 //     v = v.replace(/(\d{4})(\d)/, "$1-$2")
+
+const troca = document.querySelector("#troca");
+const arroz = document.querySelector("#arroz");
+const feijao = document.querySelector("#feijao");
+const salgado = document.querySelector("#salgado");
+// const optValue = troca.options[troca.selectedIndex].value;
+// const opt = document.querySelector("#arroz");
+
+troca.addEventListener("change", () => {
+  if (troca.value === "arroz") {
+    arroz.style.display = "block";
+    feijao.style.display = "none";
+  }
+
+  if (troca.value === "feijao") {
+    arroz.style.display = "none";
+    feijao.style.display = "block";
+  }
+});

@@ -70,9 +70,10 @@ app.use("/uploadImages", uploadImagesRoute);
 app.use("/logoutAdmin", logoutAdminRoute);
 app.use("/profile", profileRoute);
 app.use("/logout", logoutRoute);
-app.use("/pages", pagesRoute);
+// app.use("/pages", pagesRoute);
 app.use("/telefone", phoneRoute);
 app.use("/position", positionRoute);
+app.use("/pages", pagesRoute);
 
 app.listen(port, async () => {
   const [result] = await database.query("SELECT 1");

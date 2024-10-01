@@ -33,3 +33,12 @@ const openDeleteModal = (id, page_title) => {
   modal.classList.add("show-modal");
   modal.classList.remove("hide-modal");
 };
+
+// const active = document.querySelectorAll("#menu-admin ul li a");
+
+// active.forEach(() => {
+//   active.addEventListener("click", (e) => {
+//     active.forEach((el) => active.classList.remove("active"));
+//     active.classList.add("active");
+//   });
+// });
