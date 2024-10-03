@@ -8,29 +8,28 @@
         <div class="content-main home">
           <h1>Livros</h1>
           <div class="all-books">
-            <% if (results) { results.forEach(element => { %>
+            <% if (results) { results.forEach(livro => { %>
             <div class="book">
-              <!-- <div class="content-book"> -->
               <div class="book-img">
-                <img src="<%= element.book_image %>" alt="" />
+                <img src="<%= livro.book_image %>" alt="" />
               </div>
               <div class="book-info">
-                <h3><%= element.book_name %></h3>
-                <p><%= element.book_autor %></p>
+                <h3><%= livro.book_name %></h3>
+                <p><%= livro.book_autor %></p>
               </div>
               <div class="btn-book">
                 <button>Ver Livro</button>
               </div>
-              <!-- </div> -->
             </div>
             <% });} else { %>
             <div class="no-books">
               <h3>
-                Não existe Livros cadastrado,
-                <a href="/registerBooks">Clique aqui para Cadastro de Livros</a>
+                Não existe livros cadastrados,
+                <a href="/registerBooks"
+                  >Clique aqui para Cadastrar um livro!</a
+                >
               </h3>
             </div>
-
             <% } %>
           </div>
         </div>
@@ -40,3 +39,31 @@
     <%- include('components/script') %>
   </body>
 </html>
+
+<!-- <div class="content-main home">
+  <h1>Livros</h1>
+  <div class="all-books">
+    <% //if (results) { results.forEach(element => { %>
+    <div class="book">
+      <div class="book-img">
+        <img src="<%= //element.book_image %>" alt="" />
+      </div>
+      <div class="book-info">
+        <h3><%= //element.book_name %></h3>
+        <p><%= //element.book_autor %></p>
+      </div>
+      <div class="btn-book">
+        <button>Ver Livro</button>
+      </div>
+    </div>
+    <% //});} else { %>
+    <div class="no-books">
+      <h3>
+        Não existe Livros cadastrado,
+        <a href="/registerBooks">Clique aqui para Cadastro de Livros</a>
+      </h3>
+    </div>
+
+    <% //} %>
+  </div>
+</div> -->

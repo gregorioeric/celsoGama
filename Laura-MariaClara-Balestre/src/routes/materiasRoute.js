@@ -5,4 +5,6 @@ const materiasRoute = express.Router();
 
 materiasRoute.get("/", MateriasController.getMaterias);
 
+materiasRoute.get("/educacao-fisica", MateriasController.getMaterias);
+
 module.exports = materiasRoute;

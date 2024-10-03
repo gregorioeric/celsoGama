@@ -49,19 +49,20 @@ body {
 
 .header-home {
   display: grid;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 300px 1fr;
   position: fixed;
   background: var(--cor-preto-alpha);
   width: 100%;
 }
 
 .img-logo {
-  display: flex;
+  /* display: flex; */
+  padding: 0 2rem;
 }
 
 .img-logo img {
   max-width: 100%;
-  width: 10rem;
+  width: 100%;
 }
 
 .container {

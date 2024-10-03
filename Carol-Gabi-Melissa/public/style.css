@@ -56,6 +56,8 @@ body {
 }
 .main-menu ul {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .main-menu ul li {
@@ -131,21 +133,22 @@ body {
 }
 
 .all-books {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   width: 80%;
   margin: 0 auto;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-.book {
+/* .book {
   width: calc(33.333% - 1rem);
-}
+} */
 
-.book-img img {
+/* .book-img img {
   width: 235px;
   height: 370px;
-}
+} */
 
 .no-books h3 {
   text-align: center;
@@ -301,8 +304,8 @@ body {
   background: var(--cor-verde-light);
 }
 
-/********************************
-    Login Form
+/*****************************
+  Estilo Login Form
 ******************************/
 
 .form-login {
@@ -351,7 +354,6 @@ body {
   left: 0;
   font-size: 0.8rem;
   padding: 0 0.5rem;
-
   color: var(--cor-preto);
 }
 

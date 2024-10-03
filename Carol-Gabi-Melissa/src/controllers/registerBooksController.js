@@ -10,20 +10,20 @@ class RegisterBookController {
 
   static async postBook(req, res) {
     const { book_name, book_autor, book_categoria, book_desc } = req.body;
-    const book_date = new Date().toJSON().slice(0, 19).replace("T", " ");
 
-    if (
-      !book_name ||
-      !book_autor ||
-      !book_categoria ||
-      !book_desc ||
-      !book_image
-    ) {
+    if (!book_name || !book_autor || !book_categoria || !book_desc) {
       return res.redirect(
         "/registerBooks?msgError=Todos os campos o preenchimento é obrigatorio!"
       );
     }
+
     const book_image = req.file.filename;
+
+    if (!book_image) {
+      return res.redirect(
+        "/registerBooks?msgError=Precisa selecionar uma imagem para cadastrar o livro!"
+      );
+    }
 
     const book = {
       book_image,
@@ -31,11 +31,9 @@ class RegisterBookController {
       book_autor,
       book_categoria,
       book_desc,
-      book_date,
     };
 
-    const result = await RegisterBookModel.postBook(book);
-    console.log(result);
+    const result = await RegisterBookModel.insertBook(book);
 
     if (!result) {
       return res.redirect(
