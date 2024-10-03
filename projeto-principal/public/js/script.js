@@ -122,14 +122,22 @@ const salgado = document.querySelector("#salgado");
 // const optValue = troca.options[troca.selectedIndex].value;
 // const opt = document.querySelector("#arroz");
 
-troca.addEventListener("change", () => {
-  if (troca.value === "arroz") {
-    arroz.style.display = "block";
-    feijao.style.display = "none";
-  }
+if (troca !== null) {
+  troca.addEventListener("change", () => {
+    if (troca.value === "arroz") {
+      arroz.style.display = "block";
+      feijao.style.display = "none";
+    }
 
-  if (troca.value === "feijao") {
-    arroz.style.display = "none";
-    feijao.style.display = "block";
-  }
-});
+    if (troca.value === "feijao") {
+      arroz.style.display = "none";
+      feijao.style.display = "block";
+    }
+  });
+}
+
+// const btn = document.querySelector
+const getContentEditable = () => {
+  const contentEditable = document.querySelector("#divEditable").innerText;
+  document.querySelector("#content-text").value = contentEditable;
+};

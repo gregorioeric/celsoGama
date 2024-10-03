@@ -34,11 +34,11 @@ const openDeleteModal = (id, page_title) => {
   modal.classList.remove("hide-modal");
 };
 
-// const active = document.querySelectorAll("#menu-admin ul li a");
+const active = document.querySelectorAll("#menu-admin ul li a");
+const activePage = window.location.pathname;
 
-// active.forEach(() => {
-//   active.addEventListener("click", (e) => {
-//     active.forEach((el) => active.classList.remove("active"));
-//     active.classList.add("active");
-//   });
-// });
+active.forEach((link) => {
+  if (link.href.includes(`${activePage}`)) {
+    link.classList.add("active");
+  }
+});

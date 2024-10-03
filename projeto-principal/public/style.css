@@ -590,16 +590,16 @@ Estilo do formulario de cadastro
   Estilo das paginas do admin
 ***************************************/
 
-.content-admin{
+.content-admin {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr;
-  grid-template-areas: 
+  grid-template-areas:
     "sidebar nav"
     "sidebar main";
 }
 
-.container-header-admin{
+.container-header-admin {
   grid-area: sidebar;
   position: sticky;
   top: 0;
@@ -608,7 +608,7 @@ Estilo do formulario de cadastro
   background: var(--cor-cinza-light);
 }
 
-.admin-profile{
+.admin-profile {
   grid-area: nav;
   position: sticky;
   top: 0;
@@ -617,16 +617,16 @@ Estilo do formulario de cadastro
   padding: 1rem;
 }
 
-.content-display{
+.content-display {
   grid-area: main;
   padding: 1rem 2rem;
 }
 
-.main-menu-admin{
+.main-menu-admin {
   padding: 0 0 0 1rem;
 }
 
-.main-menu-admin ul li a{
+.main-menu-admin ul li a {
   display: flex;
   padding: 0.5rem 0 0.5rem 1rem;
   color: var(--cor-preto);
@@ -634,11 +634,11 @@ Estilo do formulario de cadastro
   transition: background 300ms ease-in-out;
 }
 
-.main-menu-admin ul li a:hover{
+.main-menu-admin ul li a:hover {
   background: var(--cor-azul);
 }
 
-.active{
+.active {
   background: var(--cor-azul);
 }
 
@@ -940,7 +940,8 @@ Estilo do formulario de cadastro
   background: var(--cor-verde);
 }
 
-
-.arroz, .feijao, .salgado{
+.arroz,
+.feijao,
+.salgado {
   display: none;
 }

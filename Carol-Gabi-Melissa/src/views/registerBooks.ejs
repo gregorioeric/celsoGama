@@ -25,9 +25,6 @@
                 accept="image/*"
               />
             </div>
-            <% if(msgFile){%>
-            <div class="msgError"><%= msgFile %></div>
-            <% } %>
           </div>
           <div class="right">
             <div class="input input-book-name">
@@ -39,9 +36,6 @@
                 placeholder="Digite o nome do Livro"
                 id="book_name"
               />
-              <% if(msgName){%>
-              <div class="msgError"><%= msgName %></div>
-              <% } %>
             </div>
             <div class="input input-book-autor">
               <label for="book_autor"></label>
@@ -52,9 +46,6 @@
                 placeholder="Digite o nome do Autor ou Autora"
                 id="book_autor"
               />
-              <% if( msgAutor){%>
-              <div class="msgError"><%= msgAutor %></div>
-              <% } %>
             </div>
             <div class="input input-book-categoria">
               <label for="book_categoria"></label>
@@ -65,9 +56,6 @@
                 placeholder="Digite uma categoria"
                 id="book_categoria"
               />
-              <% if(msgCategoria){%>
-              <div class="msgError"><%= msgCategoria %></div>
-              <%} %>
             </div>
             <div class="input input-book-desc">
               <label for="book_desc"></label>
@@ -77,17 +65,14 @@
                 placeholder="Digite a descrição do Livro"
                 id="book_desc"
               ></textarea>
-              <% if(msgDesc){%>
-              <div class="msgError"><%= msgDesc %></div>
-              <% } %>
             </div>
             <div class="content-btn">
               <button>cadastro</button>
             </div>
             <% if(msgSuccess){%>
             <div class="msgSuccess"><%= msgSuccess %></div>
-            <% } %> <% if(msgFields){%>
-            <div class="msgError"><%= msgFields %></div>
+            <% } %> <% if(msgError){%>
+            <div class="msgError"><%= msgError %></div>
             <% } %>
           </div>
         </form>
