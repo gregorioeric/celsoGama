@@ -10,6 +10,9 @@ const loginRoute = require("./src/routes/loginRoute");
 const homeRoute = require("./src/routes/homeRoute");
 const registerBookRoute = require("./src/routes/registerBookRoutes");
 const logoutRoute = require("./src/routes/logoutRoute");
+const getAllBooksAPIRoute = require("./src/routes/getBooksAPIRoute");
+const alunosRoute = require("./src/routes/alunosRoute");
+const loanRooksRoute = require("./src/routes/loanBooksRoute");
 
 const app = express();
 const port = process.env.PORTSERVER || 3000;
@@ -48,7 +51,10 @@ app.use("/home", homeRoute);
 app.use("/dashboard", dashboardRoute);
 app.use("/login", loginRoute);
 app.use("/registerBooks", registerBookRoute);
+app.use("/alunos", alunosRoute);
+app.use("/loanBooks", loanRooksRoute);
 app.use("/logout", logoutRoute);
+app.use("/getAllBooksAPI", getAllBooksAPIRoute);
 
 app.listen(port, async () => {
   const [result] = await database.query("SELECT 1");

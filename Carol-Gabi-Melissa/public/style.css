@@ -27,6 +27,7 @@ li {
   --cor-vermelho: rgb(255, 9, 9);
   --cor-vermelho-light: rgb(243, 214, 214);
   --cor-lilas: rgb(210, 120, 255);
+  --cor-lilas-light: rgb(237, 201, 255);
   --cor-azul: rgb(86, 119, 241);
   --cor-rosa: rgb(255, 164, 246);
   --cor-cinza: rgb(116, 116, 116);
@@ -108,6 +109,7 @@ body {
   overflow: hidden;
   transition: all 200ms ease-in-out;
   background: var(--cor-cinza);
+  z-index: 99;
 }
 
 .main-menu ul li:hover ul {
@@ -388,6 +390,92 @@ body {
   justify-content: center;
   padding: 3rem;
   background: var(--cor-cinza);
+}
+
+/********************************
+  Estilo do form loan
+********************************/
+
+.form-loan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-loan form {
+  width: 40%;
+}
+
+.select-book {
+  position: relative;
+}
+
+.get-book {
+  position: relative;
+}
+
+.get-book input {
+  width: 100%;
+  outline: none;
+  padding: 0.5rem 1rem;
+  border: none;
+  font-size: 1.1rem;
+  border-radius: 0.4rem;
+}
+
+.get-book::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  border-top: 10px solid var(--cor-preto);
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+}
+
+.list-books {
+  background: var(--cor-branco);
+  border-radius: 0.4rem;
+  position: absolute;
+  color: var(--cor-preto);
+  width: 100%;
+  margin-top: 0.1rem;
+  padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+}
+
+.search-book input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: var(--cor-cinza-light);
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 0.4rem;
+}
+
+.list-books ul {
+  padding-top: 0.5rem;
+  max-height: 300px;
+  overflow: auto;
+}
+
+.list-books ul li {
+  padding: 0.3rem 0.5rem;
+  cursor: pointer;
+  transition: background 300ms ease-in-out;
+}
+
+.list-books ul li:hover {
+  background: var(--cor-lilas-light);
+}
+
+.list-books.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 /********************************

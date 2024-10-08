@@ -57,12 +57,12 @@ body {
 
 .img-logo {
   /* display: flex; */
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 .img-logo img {
   max-width: 100%;
-  width: 100%;
+  width: 150px;
 }
 
 .container {

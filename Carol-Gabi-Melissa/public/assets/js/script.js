@@ -13,3 +13,67 @@ if (inputImage !== null) {
     reader.readAsDataURL(input);
   });
 }
+
+// criando codigo para pegar alivros da API
+
+const showBooks = document.querySelector("#book-options");
+const selectBook = document.querySelector("#select-book");
+const listBooks = document.querySelector("#list-books");
+const getBook = document.querySelector("#get-book");
+const getBookValue = document.querySelector("input[name='loanBook']");
+const searchBook = document.querySelector("input[name='search_book']");
+// const bookOptions = document.querySelector("#book-options");
+const bookOptionsAll = document.querySelectorAll("#book-options li");
+
+const getAllBooks = async () => {
+  const req = await fetch("http://localhost:5222/getAllBooksAPI");
+  const res = await req.json();
+  // console.log(res);
+
+  res.map((book) => {
+    const li = document.createElement("li");
+    li.innerHTML = book.book_name;
+    showBooks.appendChild(li);
+    // showBooks.innerHTML += `<li>${book.book_name}</li>`;
+  });
+
+  const bookOptionsAll = document.querySelectorAll("#book-options li");
+  bookOptionsAll.forEach((single) => {
+    single.addEventListener("click", () => {
+      text = single.textContent;
+      getBookValue.value = text;
+      listBooks.classList.remove("active");
+      // console.log(single.textContent);
+    });
+  });
+
+  searchBook.addEventListener("input", (e) => {
+    const filter = e.target.value.toUpperCase();
+
+    bookOptionsAll.forEach((bookName) => {
+      if (bookName.innerHTML.toUpperCase().startsWith(filter)) {
+        console.log(bookName);
+      }
+    });
+    console.log(filter);
+  });
+
+  // return allBooks;
+};
+
+getBook.addEventListener("click", () => {
+  listBooks.classList.toggle("active");
+});
+
+// if (bookOptionsAll.length !== 0) {
+//   console.log(bookOptions);
+// }
+
+// bookOptionsAll.forEach((single) => {
+//   single.addEventListener("click", () => {
+//     getBookValue.value = text;
+//     listBooks.classList.remove("active");
+//   });
+// });
+
+getAllBooks();

@@ -45,6 +45,12 @@ class RegisterBookController {
       "/registerBooks?msgSuccess=Livro Cadastrado com Susseco!"
     );
   }
+
+  static async getAllBooksAPI(req, res) {
+    const results = await RegisterBookModel.selectAllBooks();
+
+    return res.json(results);
+  }
 }
 
 module.exports = RegisterBookController;

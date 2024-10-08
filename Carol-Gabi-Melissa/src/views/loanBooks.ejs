@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+  <body>
+    <main>
+      <%- include('components/header') %>
+      <div class="main-loan">
+        <h1>Emprestimo de Livros</h1>
+        <div class="form-loan">
+          <form action="/loanBooks" method="post">
+            <div class="select-book" id="select-book">
+              <div class="get-book" id="get-book">
+                <input
+                  type="text"
+                  placeholder="Selecione um livro"
+                  name="loanBook"
+                />
+              </div>
+              <div class="list-books" id="list-books">
+                <div class="search-book" id="search-book">
+                  <input
+                    type="text"
+                    name="search_book"
+                    placeholder="Pesquisar Livro"
+                  />
+                </div>
+                <ul class="book-options" id="book-options"></ul>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <%- include('components/footer') %>
+    </main>
+    <%- include('components/script') %>
+  </body>
+</html>

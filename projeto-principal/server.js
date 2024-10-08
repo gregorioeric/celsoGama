@@ -21,6 +21,7 @@ const pagesRoute = require("./src/routes/pagesRoute");
 const phoneRoute = require("./src/routes/phoneRoute");
 const positionRoute = require("./src/routes/positionRoute");
 const editableRoute = require("./src/routes/editableHtmlRoute");
+const pagesProfRoute = require("./src/routes/pagesProfRoute");
 
 const app = express();
 const port = process.env.PORTSERVER || 3000;
@@ -71,10 +72,10 @@ app.use("/uploadImages", uploadImagesRoute);
 app.use("/logoutAdmin", logoutAdminRoute);
 app.use("/profile", profileRoute);
 app.use("/logout", logoutRoute);
-// app.use("/pages", pagesRoute);
+app.use("/pages", pagesRoute);
 app.use("/telefone", phoneRoute);
 app.use("/position", positionRoute);
-app.use("/pages", pagesRoute);
+app.use("/aulaGetPaginas", pagesProfRoute);
 app.use("/editableHtml", editableRoute);
 
 app.listen(port, async () => {
