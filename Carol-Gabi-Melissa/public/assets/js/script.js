@@ -14,7 +14,7 @@ if (inputImage !== null) {
   });
 }
 
-// criando codigo para pegar alivros da API
+// criando codigo para pegar livros da API
 
 const showBooks = document.querySelector("#book-options");
 const selectBook = document.querySelector("#select-book");
@@ -22,19 +22,16 @@ const listBooks = document.querySelector("#list-books");
 const getBook = document.querySelector("#get-book");
 const getBookValue = document.querySelector("input[name='loanBook']");
 const searchBook = document.querySelector("input[name='search_book']");
-// const bookOptions = document.querySelector("#book-options");
 const bookOptionsAll = document.querySelectorAll("#book-options li");
 
 const getAllBooks = async () => {
   const req = await fetch("http://localhost:5222/getAllBooksAPI");
   const res = await req.json();
-  // console.log(res);
 
   res.map((book) => {
     const li = document.createElement("li");
     li.innerHTML = book.book_name;
     showBooks.appendChild(li);
-    // showBooks.innerHTML += `<li>${book.book_name}</li>`;
   });
 
   const bookOptionsAll = document.querySelectorAll("#book-options li");
@@ -49,31 +46,24 @@ const getAllBooks = async () => {
 
   searchBook.addEventListener("input", (e) => {
     const filter = e.target.value.toUpperCase();
+    const li = showBooks.getElementsByTagName("li");
 
-    bookOptionsAll.forEach((bookName) => {
-      if (bookName.innerHTML.toUpperCase().startsWith(filter)) {
-        console.log(bookName);
+    for (let i = 0; i < li.length; i++) {
+      const liCount = li[i];
+      console.log(liCount);
+
+      const textValue = liCount.textContent || liCount.innerHTML;
+      if (textValue.toUpperCase().indexOf(filter) > -1) {
+        liCount.style.display = "";
+      } else {
+        liCount.style.display = "none";
       }
-    });
-    console.log(filter);
+    }
   });
-
-  // return allBooks;
 };
 
 getBook.addEventListener("click", () => {
   listBooks.classList.toggle("active");
 });
-
-// if (bookOptionsAll.length !== 0) {
-//   console.log(bookOptions);
-// }
-
-// bookOptionsAll.forEach((single) => {
-//   single.addEventListener("click", () => {
-//     getBookValue.value = text;
-//     listBooks.classList.remove("active");
-//   });
-// });
 
 getAllBooks();

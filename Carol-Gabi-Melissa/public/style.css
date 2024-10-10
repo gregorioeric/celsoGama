@@ -432,6 +432,7 @@ body {
   border-top: 10px solid var(--cor-preto);
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
+  transition: transform 300ms ease-in-out;
 }
 
 .list-books {
@@ -476,6 +477,10 @@ body {
 .list-books.active {
   opacity: 1;
   visibility: visible;
+}
+
+.list-books.active .get-book::after {
+  transform: rotate(-90deg);
 }
 
 /********************************
