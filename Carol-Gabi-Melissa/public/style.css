@@ -310,21 +310,59 @@ body {
   Estilo Login Form
 ******************************/
 
+
 .form-login {
   width: 40%;
   margin: 0 auto;
 }
 
+.form-alunos{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form-alunos .form-group{
+  display: grid;
+  grid-template-areas: 
+  'name email cpf'
+  'serie celular .'
+  'btn btn btn';
+  gap: 1rem;
+}
+
+.form-alunos .form-group .aluno_name{
+  grid-area: name;
+}
+
+.form-alunos .form-group .aluno_email{
+  grid-area: email;
+}
+
+.form-alunos .form-group .aluno_cpf{
+  grid-area: cpf;
+}
+
+.form-alunos .form-group .aluno_serie{
+  grid-area: serie;
+}
+
+.form-alunos .form-group .aluno_celular{
+  grid-area: celular;
+}
+
+.form-alunos h1,
 .form-login h1 {
   text-align: center;
   padding: 3rem 0;
 }
 
+.form-alunos .form-group .input,
 .form-login .form-group .input {
   position: relative;
   padding-bottom: 2rem;
 }
 
+.form-alunos .form-group .input input,
 .form-login .form-group .input input {
   width: 100%;
   padding: 0.5rem 1rem;
@@ -335,10 +373,12 @@ body {
   transition: all 300ms ease-in-out;
 }
 
+.form-alunos .form-group .input input:-webkit-autofill,
 .form-login .form-group .input input:-webkit-autofill {
   transition: background-color 5000000000s ease-in-out 0s;
 }
 
+.form-alunos .form-group .input label,
 .form-login .form-group .input label {
   position: absolute;
   top: 28%;
@@ -350,6 +390,8 @@ body {
   pointer-events: none;
 }
 
+.form-alunos .form-group .input input:not(:placeholder-shown) + label,
+.form-alunos .form-group .input input:focus + label,
 .form-login .form-group .input input:not(:placeholder-shown) + label,
 .form-login .form-group .input input:focus + label {
   top: -15%;
@@ -359,12 +401,18 @@ body {
   color: var(--cor-preto);
 }
 
+.form-alunos .form-group .btn-group{
+  grid-area: btn;
+}
+
+.form-alunos .form-group .btn-group .btn,
 .form-login .form-group .btn-group .btn {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
+.form-alunos .form-group .btn-group .btn button,
 .form-login .form-group .btn-group .btn button {
   border: 0;
   width: 100%;
@@ -377,6 +425,7 @@ body {
   transition: all 300ms ease-in-out;
 }
 
+.form-alunos .form-group .btn-group .btn button:hover,
 .form-login .form-group .btn-group .btn button:hover {
   background: var(--cor-verde);
 }

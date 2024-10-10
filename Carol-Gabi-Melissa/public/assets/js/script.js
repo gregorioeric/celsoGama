@@ -25,7 +25,8 @@ const searchBook = document.querySelector("input[name='search_book']");
 const bookOptionsAll = document.querySelectorAll("#book-options li");
 
 const getAllBooks = async () => {
-  const req = await fetch("http://localhost:5222/getAllBooksAPI");
+  // const req = await fetch("http://localhost:5222/getAllBooksAPI");
+  const req = await fetch("http://localhost:7000/getAllBooksAPI");
   const res = await req.json();
 
   res.map((book) => {

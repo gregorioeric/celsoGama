@@ -188,19 +188,95 @@ estilo footer
   background-color: var(--cor-amarelo);
 }
 
-.title-quem-somos {
-  padding-top: 50px;
-  padding-left: 2%;
+/****************************
+estilo Quem Somos
+***************************/
+
+/* alterado este codigo abaixo */
+.tudoquemsomos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 90%;
+  margin: 0 auto;
 }
+/* alterado este codigo acima */
+
+.title-quem-somos {
+  padding: 2rem;
+}
+
+.title-quem-somos h1, .title-quem-somos h2, .title-quem-somos p {
+  padding-bottom: 2rem ;
+}
+
+.title-quem-somos p{
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+.title-quem-somos h1{
+  font-size: 4rem;
+}
+
+.title-quem-somos h2{
+  font-size: 2rem;
+}
+
 .desc-quem-somos {
   padding-left: 2%;
   padding-bottom: 30px;
 }
-.avatar {
-  padding-left: 100px;
+
+.container-avatar{
+  width: 100%;
 }
-.tudoquemsomos {
+
+.content-avatar{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: 2 */
+  grid-template-areas: 
+  'founders founders founders'
+  'avatar1 avatar2 avatar3';
+  align-items: center;
+  justify-content: center;
+}
+
+
+.content-avatar h1{
+  font-size: 4rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.founders{
+  grid-area: founders;
+}
+
+.avatar1{
+  grid-area: avatar1;
+}
+
+.avatar2{
+  grid-area: avatar2;
+}
+
+.avatar3{
+  grid-area: avatar3;
+}
+
+.avatar-photo, .avatar-name {
   display: flex;
+  justify-content: center;
+
+}
+
+.avatar-photo i{
+  font-size: 20rem;
+}
+
+.avatar-name h3{
+  font-size: 3.5rem;
 }
 
 /***********************************
