@@ -23,13 +23,9 @@ app.use("/dashboard", dashboardRoute);
 app.use("/login", loginRoute);
 app.use("/register", RegisterRoute);
 
-database.connect((error) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("conectado no banco de dados!");
-    app.listen(port, () => {
-      console.log(`http://localhost:${port}`);
-    });
+app.listen(port, async () => {
+  const [result] = await database.query("SELECT 1");
+  if (result) {
+    console.log(`http://localhost:${port}`);
   }
 });

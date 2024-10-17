@@ -14,10 +14,10 @@
               class="user-name"
               placeholder="Nome completo"
               id="user-name"
-            /> 
-            <% if(msg.msgNameError) { %>
-                <div class="msgError"><%= msg.msgNameError %></div>
-                <% } %>
+            />
+            <% if(msgErrorName) { %>
+            <div class="msgError"><%= msgErrorName %></div>
+            <% } %>
           </div>
           <div class="input-cpf">
             <label for="user-cpf"></label>
@@ -27,10 +27,10 @@
               class="user-cpf"
               placeholder="CPF"
               id="user-cpf"
-            /> 
-            <% if(msg.msgNameError) { %>
-                <div class="msgError"><%= msg.msgNameError %></div>
-                <% } %>
+            />
+            <% if(msgErrorCPF) { %>
+            <div class="msgError"><%= msgErrorCPF %></div>
+            <% } %>
           </div>
           <div class="input-cep">
             <label for="user-cep"></label>
@@ -40,10 +40,10 @@
               class="user-cep"
               placeholder="CEP"
               id="user-cep"
-            /> 
-            <% if(msg.msgNameError) { %>
-                <div class="msgError"><%= msg.msgNameError %></div>
-                <% } %>
+            />
+            <% if(msgErrorCEP) { %>
+            <div class="msgError"><%= msgErrorCEP %></div>
+            <% } %>
           </div>
           <div class="input-telefone">
             <label for="user-telefone"></label>
@@ -53,10 +53,10 @@
               class="user-telefone"
               placeholder="Telefone"
               id="user-telefone"
-            /> 
-            <% if(msg.msgNameError) { %>
-                <div class="msgError"><%= msg.msgNameError %></div>
-                <% } %>
+            />
+            <% if(msgErrorTelefone) { %>
+            <div class="msgError"><%= msgErrorTelefone %></div>
+            <% } %>
           </div>
           <div class="input-email">
             <label for="user-email"></label>
@@ -67,10 +67,9 @@
               placeholder="Digite seu email"
               id="user-email"
             />
-            <% if(msg.msgEmailError) { %>
-                <div class="msgError"><%= msg.msgEmailError %></div>
-                <% } %>
-           
+            <% if(msgErrorEmail) { %>
+            <div class="msgError"><%= msgErrorEmail %></div>
+            <% } %>
           </div>
           <div class="input-password">
             <label for="user-password"></label>
@@ -81,9 +80,9 @@
               placeholder="Digite sua senha"
               id="user-password"
             />
-            <% if(msg.msgPassError) { %>
-                <div class="msgError"><%=msg.msgPassError %></div>
-                <% } %>
+            <% if(msgErrorPass) { %>
+            <div class="msgError"><%=msgErrorPass %></div>
+            <% } %>
           </div>
           <div class="input-confirm-password">
             <label for="user-confirm-password"></label>
@@ -94,16 +93,20 @@
               placeholder="Confirme a senha"
               id="user-confirm-password"
             />
-            <% if(msg.msgPassError) { %>
-                <div class="msgError"><%= msg.msgPassError %></div>
-                <% } %>
+            <% if(msgErrorPass) { %>
+            <div class="msgError"><%= msgErrorPass %></div>
+            <% } %>
           </div>
           <div class="content-bnt">
             <button>Cadastrar</button>
           </div>
-          <% if(msg.msgFieldsEmpty) { %>
-            <div class="msgError"><%= msg.msgFieldsEmpty %></div>
+          <div class="content-message">
+            <% if(msgErrorFieldsEmpty) { %>
+            <div class="msgError"><%= msgErrorFieldsEmpty %></div>
+            <% } %> <% if(msgSuccess) { %>
+            <div class="msgError"><%= msgSuccess %></div>
             <% } %>
+          </div>
         </form>
       </div>
     </main>
