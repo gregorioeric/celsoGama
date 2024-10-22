@@ -320,38 +320,9 @@ body {
 }
 
 .form-alunos .form-group {
-  display: grid;
-  grid-template-areas:
-    "name name name email email email"
-    "cpf cpf serie serie celular celular"
-    "btn btn btn btn btn btn"
-    "msg msg msg msg msg msg";
-  gap: 1rem;
   padding-bottom: 4rem;
-}
-
-.form-alunos .form-group .aluno_name {
-  grid-area: name;
-}
-
-.form-alunos .form-group .aluno_email {
-  grid-area: email;
-}
-
-.form-alunos .form-group .aluno_cpf {
-  grid-area: cpf;
-}
-
-.form-alunos .form-group .aluno_serie {
-  grid-area: serie;
-}
-
-.form-alunos .form-group .aluno_celular {
-  grid-area: celular;
-}
-
-.form-alunos .form-group .content-msg {
-  grid-area: msg;
+  width: 60%;
+  margin: 0 auto;
 }
 
 .form-alunos h1,

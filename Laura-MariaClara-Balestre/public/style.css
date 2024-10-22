@@ -335,6 +335,12 @@ estilo Quem Somos
   text-align: justify;
 }
 
+.content-questao{
+  background: var(--cor-amarelo);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
 .content-questao form {
   padding: 1rem 0;
 }

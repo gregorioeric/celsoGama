@@ -1,7 +1,5 @@
-class QuemsomosController{
-    static async getQuemsomos(req, res){
-        res.render('quemsomos');
-    }
-}
-
-module.exports = QuemsomosController;
+module.exports = class QuemsomosController {
+  static async getQuemsomos(req, res) {
+    return res.render("quemsomos");
+  }
+};

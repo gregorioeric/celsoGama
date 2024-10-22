@@ -25,14 +25,10 @@ app.use("/vestibulares", vestibularesRoute);
 app.use("/quemSomos", quemsomosRoute);
 app.use("/loginRegister", loginRegisterRoute);
 
-database.connect((error) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("Conectado no banco de dados!");
-    app.listen(port, () => {
-      console.log(`http://localhost:${port}`);
-    });
+app.listen(port, async () => {
+  const [result] = await database.query("SELECT 1");
+  if (result) {
+    console.log(`http://localhost:${port}`);
   }
 });
 
