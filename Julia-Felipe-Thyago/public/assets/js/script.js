@@ -14,6 +14,20 @@ if (inputCEP !== null) {
   });
 }
 
+if (inputCPF !== null) {
+  inputCPF.addEventListener("input", (e) => {
+    e.target.value = e.target.value.replace(/\D+/g, "");
+    let value = e.target.value.replace(/\D+/g, "");
+    if (value.length <= 11) {
+      value = value.replace(/(\d{3})(\d)/, "$1.$2");
+      value = value.replace(/(\d{3})(\d)/, "$1.$2");
+      value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+    }
+
+    e.target.value = value;
+  });
+}
+
 if (inputPhone !== null) {
   inputPhone.addEventListener("input", (e) => {
     e.target.value = e.target.value.replace(/\D+/g, "");
@@ -32,19 +46,5 @@ if (inputPhone !== null) {
     value = value.replace(/(\d)(\d{4})$/, "$1-$2");
 
     return (e.target.value = value);
-  });
-}
-
-if (inputCPF !== null) {
-  inputCPF.addEventListener("input", (e) => {
-    e.target.value = e.target.value.replace(/\D+/g, "");
-    let value = e.target.value.replace(/\D+/g, "");
-    if (value.length <= 11) {
-      value = value.replace(/(\d{3})(\d)/, "$1.$2");
-      value = value.replace(/(\d{3})(\d)/, "$1.$2");
-      value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-    }
-
-    e.target.value = value;
   });
 }

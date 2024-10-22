@@ -29,7 +29,6 @@ module.exports = class PagesController {
   static async postCreatePages(req, res) {
     const { page_title, page_position_id, page_status, page_content } =
       req.body;
-    // const page_date = new Date().toJSON().slice(0, 19).replace("T", " ");
 
     const statusBoolean = page_status === "Publicado" ? 1 : 0;
     const position_position_id = Number(page_position_id);

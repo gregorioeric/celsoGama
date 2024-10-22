@@ -43,6 +43,12 @@ class RegisterController {
       return res.redirect("/register?msgErrorEmail=Digite um email valido!");
     }
 
+    if (!regex_senha.test(data_user.user_password)) {
+      return res.redirect(
+        "/register?msgErrorPass=Senhas precisa ter Letras Maisculas, Minusculas, Numeros e Caracteres especiais!"
+      );
+    }
+
     if (data_user.user_password !== data_user.userConfirmPassword) {
       return res.redirect("/register?msgErrorPass=Senhas nao sao iguais");
     }

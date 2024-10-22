@@ -5,7 +5,7 @@
     <main>
       <%- include('components/header') %>
       <div class="main-alunos">
-        <form action="/" method="POST" class="form form-alunos">
+        <form action="/alunos" method="POST" class="form form-alunos">
           <h1>Cadastro de Alunos na Biblioteca</h1>
           <div class="form-group">
             <div class="input aluno_name">
@@ -31,12 +31,12 @@
             <div class="input aluno_cpf">
               <input
                 type="text"
-                name="aluno_cpf"
-                class="aluno_cpf"
-                id="aluno_cpf"
+                name="aluno_code"
+                class="aluno_code"
+                id="aluno_code"
                 placeholder=""
               />
-              <label for="aluno_cpf">CPF do Aluno</label>
+              <label for="aluno_code">Codigo do Aluno</label>
             </div>
             <div class="input aluno_serie">
               <input

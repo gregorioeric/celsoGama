@@ -25,14 +25,15 @@ const searchBook = document.querySelector("input[name='search_book']");
 const bookOptionsAll = document.querySelectorAll("#book-options li");
 
 const getAllBooks = async () => {
-  // const req = await fetch("http://localhost:5222/getAllBooksAPI");
   const req = await fetch("http://localhost:7000/getAllBooksAPI");
   const res = await req.json();
 
   res.map((book) => {
     const li = document.createElement("li");
     li.innerHTML = book.book_name;
-    showBooks.appendChild(li);
+    if (showBooks !== null) {
+      showBooks.appendChild(li);
+    }
   });
 
   const bookOptionsAll = document.querySelectorAll("#book-options li");
@@ -41,30 +42,32 @@ const getAllBooks = async () => {
       text = single.textContent;
       getBookValue.value = text;
       listBooks.classList.remove("active");
-      // console.log(single.textContent);
     });
   });
 
-  searchBook.addEventListener("input", (e) => {
-    const filter = e.target.value.toUpperCase();
-    const li = showBooks.getElementsByTagName("li");
+  if (searchBook !== null) {
+    searchBook.addEventListener("input", (e) => {
+      const filter = e.target.value.toUpperCase();
+      const li = showBooks.getElementsByTagName("li");
 
-    for (let i = 0; i < li.length; i++) {
-      const liCount = li[i];
-      console.log(liCount);
+      for (let i = 0; i < li.length; i++) {
+        const liCount = li[i];
 
-      const textValue = liCount.textContent || liCount.innerHTML;
-      if (textValue.toUpperCase().indexOf(filter) > -1) {
-        liCount.style.display = "";
-      } else {
-        liCount.style.display = "none";
+        const textValue = liCount.textContent || liCount.innerHTML;
+        if (textValue.toUpperCase().indexOf(filter) > -1) {
+          liCount.style.display = "";
+        } else {
+          liCount.style.display = "none";
+        }
       }
-    }
-  });
+    });
+  }
 };
 
-getBook.addEventListener("click", () => {
-  listBooks.classList.toggle("active");
-});
+if (getBook !== null) {
+  getBook.addEventListener("click", () => {
+    listBooks.classList.toggle("active");
+  });
+}
 
 getAllBooks();
