@@ -13,6 +13,7 @@ const logoutRoute = require("./src/routes/logoutRoute");
 const getAllBooksAPIRoute = require("./src/routes/getBooksAPIRoute");
 const alunosRoute = require("./src/routes/alunosRoute");
 const loanRooksRoute = require("./src/routes/loanBooksRoute");
+const alunosRouteAPI = require("./src/routes/alunosRouteAPI");
 
 const app = express();
 const port = process.env.PORTSERVER || 3000;
@@ -55,6 +56,7 @@ app.use("/alunos", alunosRoute);
 app.use("/loanBooks", loanRooksRoute);
 app.use("/logout", logoutRoute);
 app.use("/getAllBooksAPI", getAllBooksAPIRoute);
+app.use("/getAllAlunosAPI", alunosRouteAPI);
 
 app.listen(port, async () => {
   const [result] = await database.query("SELECT 1");

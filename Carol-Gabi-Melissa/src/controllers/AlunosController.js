@@ -1,3 +1,5 @@
+const AlunoModel = require("../models/alunoModel");
+
 module.exports = class AlunosController {
   static async getAlunos(req, res) {
     return res.render("alunos", {
@@ -7,28 +9,36 @@ module.exports = class AlunosController {
   }
 
   static async postAluno(req, res) {
-    const { ...aluno } = req.body;
-    let code_num = 1000;
+    const { aluno_name, aluno_email, aluno_serie } = req.body;
 
-    const generateId = () => {
-      code_num++;
-      const id = `A${code_num}`;
-
-      return id;
-    };
+    if (!aluno_name || !aluno_email || !aluno_serie) {
+      return res.redirect(
+        "/alunos?msgError=Todos os campos precisam ser preenchidos!"
+      );
+    }
 
     const dataAluno = {
-      aluno_name: aluno.aluno_name,
-      aluno_email: aluno.aluno_email,
-      aluno_code: generateId(),
-      aluno_serie: aluno.aluno_serie,
-      aluno_celular: aluno.aluno_celular,
+      aluno_name,
+      aluno_email,
+      aluno_serie,
     };
 
-    console.log(dataAluno);
+    const result = await AlunoModel.insertAluno(dataAluno);
+
+    if (!result) {
+      return res.redirect(
+        "/alunos?msgError=Não foi possivel cadastrar o aluno!"
+      );
+    }
 
     return res.redirect(
       "/alunos?msgSuccess=Emprestimo casdastrado com sucesso!"
     );
+  }
+
+  static async getAllAlunosAPI(req, res) {
+    const result = await AlunoModel.selectAllAluno();
+
+    return res.json(result);
   }
 };

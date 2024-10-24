@@ -437,16 +437,22 @@ body {
 
 .form-loan form {
   width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
+.select-aluno,
 .select-book {
   position: relative;
 }
 
+.get-aluno,
 .get-book {
   position: relative;
 }
 
+.get-aluno input,
 .get-book input {
   width: 100%;
   outline: none;
@@ -456,6 +462,7 @@ body {
   border-radius: 0.4rem;
 }
 
+.get-aluno::after,
 .get-book::after {
   content: "";
   position: absolute;
@@ -468,6 +475,7 @@ body {
   transition: transform 300ms ease-in-out;
 }
 
+.list-alunos,
 .list-books {
   background: var(--cor-branco);
   border-radius: 0.4rem;
@@ -479,8 +487,10 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+  z-index: 99;
 }
 
+.search-aluno input,
 .search-book input {
   width: 100%;
   border: none;
@@ -491,27 +501,32 @@ body {
   border-radius: 0.4rem;
 }
 
+.list-alunos ul,
 .list-books ul {
   padding-top: 0.5rem;
   max-height: 300px;
   overflow: auto;
 }
 
+.list-alunos ul li,
 .list-books ul li {
   padding: 0.3rem 0.5rem;
   cursor: pointer;
   transition: background 300ms ease-in-out;
 }
 
+.list-alunos ul li:hover,
 .list-books ul li:hover {
   background: var(--cor-lilas-light);
 }
 
+.list-alunos.active,
 .list-books.active {
   opacity: 1;
   visibility: visible;
 }
 
+.list-alunos.active .get-aluno::after,
 .list-books.active .get-book::after {
   transform: rotate(-90deg);
 }
