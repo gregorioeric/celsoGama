@@ -15,11 +15,11 @@ module.exports = class PositionController {
 
   static async postPositionPage(req, res) {
     const { position_name } = req.body;
-    // const position_date = new Date().toJSON().slice(0, 19).replace("T", " ");
 
     if (!position_name) {
       return res.redirect(
-        "/pages/createPages?msgError=Não é possivel criar uma Posição em branco. Crie uma Posição com no minimo 3 caracteres!"
+        `/pages/createPages?msgError=Não é possivel criar uma Posição em branco.
+        Crie uma Posição com no minimo 3 caracteres!`
       );
     }
 
@@ -33,11 +33,11 @@ module.exports = class PositionController {
 
   static async postPosition(req, res) {
     const { position_name } = req.body;
-    // const position_date = new Date().toJSON().slice(0, 19).replace("T", " ");
 
     if (!position_name) {
       return res.redirect(
-        "/position?msgError=Não é possivel criar uma Posição em branco. Crie uma Posição com no minimo 3 caracteres!"
+        `/position?msgError=Não é possivel criar uma Posição em branco.
+        Crie uma Posição com no minimo 3 caracteres!`
       );
     }
 
@@ -45,10 +45,7 @@ module.exports = class PositionController {
       position_name,
     };
 
-    console.log(position);
-
     const result = await PositionModel.insertPosition(position);
-    console.log(result);
 
     return res.redirect(
       "/position?msgSuccess=Cadastro da Position realizado com sucesso."

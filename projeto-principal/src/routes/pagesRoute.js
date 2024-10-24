@@ -1,13 +1,9 @@
 const express = require("express");
 const PagesController = require("../controllers/admin/pagesContoller");
-const CreatePagesController = require("../controllers/admin/createPagesController");
-const EditPageController = require("../controllers/admin/editPageController");
 
 const pagesRoute = express.Router();
 
 pagesRoute.get("/", PagesController.getPages);
-
-// pagesRoute.post("/", PagesController.postPages);
 
 pagesRoute.get("/createPages", PagesController.getCreatePages);
 
