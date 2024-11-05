@@ -1,5 +1,4 @@
 const PositionModel = require("../../models/positionModel");
-const PositionPageModel = require("../../models/positionPageModel");
 
 module.exports = class PositionController {
   static async getPosition(req, res) {
@@ -23,7 +22,7 @@ module.exports = class PositionController {
       );
     }
 
-    const result = await PositionPageModel.insertPosition(position_name);
+    const result = await PositionModel.insertPosition(position_name);
     console.log(result);
 
     return res.redirect(
@@ -50,5 +49,36 @@ module.exports = class PositionController {
     return res.redirect(
       "/position?msgSuccess=Cadastro da Position realizado com sucesso."
     );
+  }
+
+  static async getEditPosition(req, res) {
+    const adminUser = req.session.adminUser;
+    const getParams = req.params.id;
+
+    const result = await PositionModel.selectPositionById(getParams);
+
+    return res.render("editPosition", {
+      msgError: req.query.msgError,
+      msgSuccess: req.query.msgSuccess,
+      position: result,
+      adminUser,
+    });
+  }
+
+  static async putEditPosition(req, res) {
+    const { position_name } = req.body;
+    const getParams = req.params.id;
+
+    const result = await PositionModel.updatePosition(getParams, position_name);
+
+    return res.redirect("/position?msgSuccess=Atualizado com sucesso!");
+  }
+
+  static async deletePosition(req, res) {
+    const getParams = req.params.id;
+
+    const result = await PositionModel.deletePosition(getParams);
+
+    return res.redirect("/position?msgSuccess=Deletado com sucesso!");
   }
 };

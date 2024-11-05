@@ -22,6 +22,7 @@ const phoneRoute = require("./src/routes/phoneRoute");
 const positionRoute = require("./src/routes/positionRoute");
 const editableRoute = require("./src/routes/editableHtmlRoute");
 const pagesProfRoute = require("./src/routes/pagesProfRoute");
+const uploadAdmin = require("./src/routes/uploadAdmin");
 
 const app = express();
 const port = process.env.PORTSERVER || 3000;
@@ -43,7 +44,7 @@ app.use(
     saveUninitialized: true,
     resave: true,
     cookie: {
-      maxAge: 60 * 60 * 1000,
+      maxAge: 24 * 60 * 60 * 1000,
       httpOnly: true,
     },
   })
@@ -68,6 +69,7 @@ app.use("/register", registerRoute);
 app.use("/loginRegister", loginRegisterRoute);
 app.use("/validacpf", validaCPFRoute);
 app.use("/checkCEP", checkCEPRoute);
+app.use("/upload", uploadAdmin);
 app.use("/uploadImages", uploadImagesRoute);
 app.use("/logoutAdmin", logoutAdminRoute);
 app.use("/profile", profileRoute);

@@ -1,5 +1,6 @@
 const PagesModel = require("../../models/pagesModel");
 const PositionModel = require("../../models/positionModel");
+const UploadImagesModel = require("../../models/uploadImagesModel");
 
 module.exports = class PagesController {
   static async getPages(req, res) {
@@ -17,18 +18,26 @@ module.exports = class PagesController {
   static async getCreatePages(req, res) {
     const adminUser = req.session.adminUser;
     const getPosition = await PositionModel.selectAllPosition();
+    const getImages = await UploadImagesModel.selectAllImages();
 
     return res.render("createPages", {
       adminUser,
       getPosition,
       msgSuccess: req.query.msgSuccess,
       msgError: req.query.msgError,
+      images: getImages,
     });
   }
 
   static async postCreatePages(req, res) {
     const { page_title, page_position_id, page_status, page_content } =
       req.body;
+
+    if (!page_title || !page_position_id || !page_status || !page_content) {
+      return res.redirect(
+        "/pages/createPages?msgError=Você precisa preencher todos os campos para cadastrar uma página!"
+      );
+    }
 
     const statusBoolean = page_status === "Publicado" ? 1 : 0;
     const position_position_id = Number(page_position_id);
@@ -39,7 +48,6 @@ module.exports = class PagesController {
       page_content,
       position_position_id,
     };
-    // console.log(page);
 
     const result = await PagesModel.insertPages(page);
     console.log(result);
@@ -55,7 +63,7 @@ module.exports = class PagesController {
 
     const resultPosition = await PositionModel.selectAllPosition();
     const result = await PagesModel.selectJoinPagesPositionById(getParams);
-    // console.log(resultJoin);
+    const getImages = await UploadImagesModel.selectAllImages();
 
     return res.render("editPage", {
       adminUser,
@@ -63,6 +71,7 @@ module.exports = class PagesController {
       msgError: req.query.msgError,
       page: result,
       positions: resultPosition,
+      images: getImages,
     });
   }
 

@@ -34,6 +34,13 @@ const openDeleteModal = (id, page_title) => {
   modal.classList.remove("hide-modal");
 };
 
+const openModalDeletePosition = (id, position_name) => {
+  modalForm.action = `/position/deletePosition/${id}`;
+  text_h3.innerHTML = position_name;
+  modal.classList.add("show-modal");
+  modal.classList.remove("hide-modal");
+};
+
 const active = document.querySelectorAll("#menu-admin ul li a");
 const activePage = window.location.pathname;
 
@@ -41,4 +48,25 @@ active.forEach((link) => {
   if (link.href.includes(`${activePage}`)) {
     link.classList.add("active");
   }
+});
+
+const clickImage = document.querySelectorAll("#content_image");
+const getDataId = document.querySelector("#content_image");
+const clickImageSingle = document.querySelector("#image_name");
+const getImgName = document.querySelectorAll("#img_name");
+
+clickImage.forEach((img) => {
+  img.addEventListener("click", () => {
+    // console.log(img.getAttribute("data-id"));
+    img.classList.add("active_color");
+
+    // clickImage.forEach((imageActive) => {
+    //   console.log(imageActive.classList.contains("active_color"));
+    //   // imageActive.classList.remove("active_color");
+    //   // this.classList.add("active_color");
+    //   console.log(imageActive[0]);
+    // });
+
+    navigator.clipboard.writeText(img.innerText);
+  });
 });

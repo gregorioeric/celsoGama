@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <%- include('components/head') %>
+
   <body>
     <%- include('components/header') %>
     <main>
@@ -99,9 +100,13 @@
       </section>
       <section id="section-two" class="section-two">
         <h1>section two</h1>
-        <% pages.forEach(e => { if (e.page_title === 'Second Page Updated') { %>
-        <div><%- e.page_content %></div>
-        <% } }) %>
+        <% pages.forEach(page=> {%>
+        <div>
+          <% if (page.position_name === "Home Section Four"){ %>
+          <div><%- page.page_content %></div>
+          <% } %>
+        </div>
+        <% }) %>
       </section>
       <section id="section-three" class="section-three">
         <h1>section three</h1>
@@ -111,12 +116,25 @@
           <option value="feijao">Feijão</option>
           <option value="salgado">Salgado</option>
         </select>
-        <div class="arroz" id="arroz"><h1>Arroz</h1></div>
-        <div class="feijao" id="feijao"><h1>feijao</h1></div>
-        <div class="salgado" id="salgado"><h1>salgado</h1></div>
+        <div class="arroz" id="arroz">
+          <h1>Arroz</h1>
+        </div>
+        <div class="feijao" id="feijao">
+          <h1>feijao</h1>
+        </div>
+        <div class="salgado" id="salgado">
+          <h1>salgado</h1>
+        </div>
       </section>
       <section id="section-four" class="section-four">
         <h1>section four</h1>
+        <% pages.forEach(page=> {%>
+        <div>
+          <% if (page.position_name === "Home Section Three"){ %>
+          <div><%- page.page_content %></div>
+          <% } %>
+        </div>
+        <% }) %>
       </section>
     </main>
     <%- include('components/footer') %>

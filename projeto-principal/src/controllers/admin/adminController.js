@@ -37,11 +37,11 @@ class AdminController {
     const tokenAdmin = jwt.sign(
       { admin_email: result.admin_email },
       process.env.SECRET,
-      { expiresIn: 60 * 60 * 24 * 1000 }
+      { expiresIn: 24 * 60 * 60 * 1000 }
     );
 
     res.cookie("tokenAdmin", tokenAdmin, {
-      maxAge: 60 * 60 * 24 * 1000,
+      maxAge: 24 * 60 * 60 * 1000,
       httpOnly: true,
     });
 

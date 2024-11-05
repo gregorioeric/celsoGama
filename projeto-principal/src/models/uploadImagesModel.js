@@ -1,7 +1,7 @@
 const database = require("../database/database");
 
 module.exports = class UploadImagesModel {
-  static async getAllImages() {
+  static async selectAllImages() {
     const selectAllImages = "SELECT * FROM user_images";
     const [results] = await database.query(selectAllImages);
     return results;

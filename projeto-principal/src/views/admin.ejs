@@ -3,9 +3,9 @@
   <%- include('components/head') %>
   <body>
     <main>
-      <h1>Admin</h1>
       <div class="form-admin">
         <form action="/admin" method="post" class="form">
+          <h1>Admin</h1>
           <div class="form-group">
             <div class="input">
               <input
@@ -13,6 +13,7 @@
                 name="admin_email"
                 class="admin-email"
                 id="admin-email"
+                placeholder=""
               />
               <label for="admin-email">Admin Login</label>
             </div>
@@ -22,6 +23,7 @@
                 name="admin_password"
                 class="admin-password"
                 id="admin-password"
+                placeholder=""
               />
               <label for="admin-password">Admin Password</label>
             </div>

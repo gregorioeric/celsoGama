@@ -43,9 +43,64 @@
             </form>
           </div>
           <div class="list-position">
-            <% position.forEach(position => { %>
-            <div><%= position.position_name %></div>
-            <% }) %>
+            <div class="table">
+              <div class="row">
+                <div class="grid_position header-page">
+                  <div class="col">Postion</div>
+                  <div class="col">Editar</div>
+                  <div class="col">Delete</div>
+                </div>
+              </div>
+              <div class="row">
+                <% position.forEach(position => { %>
+                <div class="grid_position">
+                  <div class="col"><%= position.position_name %></div>
+                  <div class="col">
+                    <a
+                      class="edit"
+                      href="position/editPosition/<%= position.position_id %>"
+                    >
+                      <i class="bx bxs-edit"></i>
+                      Editar
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a
+                      class="delete"
+                      onclick="openModalDeletePosition(`<%= position.position_id %>`, `<%= position.position_name %>`)"
+                      id="delete"
+                      data-id="<%= position.position_id %>"
+                      href="#"
+                    >
+                      <i class="bx bxs-trash"></i>
+                      Deletar
+                    </a>
+                  </div>
+                </div>
+                <% }) %>
+              </div>
+              <div class="modal hide-modal" id="modal">
+                <form action="" method="post">
+                  <div class="content-delete" id="content-delete">
+                    <p>Você está prestes a deletar a posição</p>
+                    <h3></h3>
+                    <p>
+                      Se você realmente quer deletar clique em Deletar, se não,
+                      clique em Cancelar
+                    </p>
+                    <div class="btns_delete">
+                      <button class="btn_cancel" id="cancelar" type="reset">
+                        Cancelar
+                      </button>
+                      <button class="btn_delete">
+                        <i class="bx bxs-trash"></i>
+                        Deletar
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -43,17 +43,26 @@
                       <%= page.page_status === 1 ? 'Publicado' : 'Rascunho' %>
                     </div>
                     <div class="col">
-                      <a href="/pages/editPage/<%= page.page_id %>">Editar</a>
+                      <a
+                        class="edit"
+                        href="/pages/editPage/<%= page.page_id %>"
+                      >
+                        <i class="bx bxs-edit"></i>
+                        Editar
+                      </a>
                     </div>
                     <div class="col">
                       <!-- <a href="/pages/deletePage/<%= //e.page_id %>">Delete</a> -->
-                      <button
+                      <a
+                        class="delete"
                         onclick="openDeleteModal(`<%= page.page_id %>`, `<%= page.page_title %>`)"
                         id="delete"
                         data-id="<%= page.page_id %>"
+                        href="#"
                       >
+                        <i class="bx bxs-trash"></i>
                         Delete
-                      </button>
+                      </a>
                     </div>
                   </div>
                   <% }) %>
@@ -66,8 +75,12 @@
                         Se você realmente quer deletar clique em Deletar se não
                         clique em Cancelar
                       </h4>
-                      <button id="cancelar" type="reset">Cancelar</button>
-                      <button>Delete</button>
+                      <div class="btns_delete">
+                        <button class="btn_cancel" id="cancelar" type="reset">
+                          Cancelar
+                        </button>
+                        <button class="btn_delete">Delete</button>
+                      </div>
                     </div>
                   </form>
                 </div>
