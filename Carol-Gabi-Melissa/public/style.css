@@ -67,7 +67,7 @@ body {
 
 .main-menu ul li a {
   display: flex;
-  padding: 1rem 2rem;
+  padding: 1rem;
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--cor-branco);
@@ -142,15 +142,6 @@ body {
   gap: 1rem;
   flex-wrap: wrap;
 }
-
-/* .book {
-  width: calc(33.333% - 1rem);
-} */
-
-/* .book-img img {
-  width: 235px;
-  height: 370px;
-} */
 
 .no-books h3 {
   text-align: center;
@@ -421,7 +412,7 @@ body {
 ********************************/
 
 .main-loan {
-  padding: 4rem 0;
+  padding: 4rem 0 0 0;
 }
 
 .main-loan h1 {
@@ -439,7 +430,7 @@ body {
   width: 40%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .select-aluno,
@@ -529,6 +520,48 @@ body {
 .list-alunos.active .get-aluno::after,
 .list-books.active .get-book::after {
   transform: rotate(-90deg);
+}
+
+/************************************************
+    estilo da lista de emprestimos
+*************************************************/
+.content_loan_books {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.content_loan_books h1 {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.row {
+  background: var(--cor-branco);
+  padding: 0.7rem;
+}
+
+.header-row {
+  font-weight: bold;
+}
+
+.border-row {
+  display: grid;
+  grid-template-columns: 25% 25% 17% 17% 8% 8%;
+  border-bottom: 0.1rem solid var(--cor-preto);
+}
+
+.border-row:nth-of-type(1) {
+  border-top: 0.1rem solid var(--cor-preto);
+}
+
+.col {
+  border-left: 0.1rem solid var(--cor-preto);
+  padding: 0.3rem 0 0.3rem 0.5rem;
+}
+
+.col:nth-last-child(1) {
+  border-right: 0.1rem solid var(--cor-preto);
 }
 
 /********************************

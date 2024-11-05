@@ -31,9 +31,7 @@ module.exports = class AlunosController {
       );
     }
 
-    return res.redirect(
-      "/alunos?msgSuccess=Emprestimo casdastrado com sucesso!"
-    );
+    return res.redirect("/alunos?msgSuccess=Aluno casdastrado com sucesso!");
   }
 
   static async getAllAlunosAPI(req, res) {

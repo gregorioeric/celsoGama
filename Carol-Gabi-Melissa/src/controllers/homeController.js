@@ -3,7 +3,6 @@ const RegisterBookModel = require("../models/registerBooksModels");
 class HomeController {
   static async getHome(req, res) {
     const results = await RegisterBookModel.selectAllBooks();
-    console.log(results);
 
     return res.render("index", { results });
   }
