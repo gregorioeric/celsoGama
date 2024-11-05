@@ -7,20 +7,29 @@
   <div class="container">
     <nav class="main-menu">
       <ul>
-        <li><a href="/materias">Matérias</a></li>
-        <li><a href="/vestibulares">Vestibulares</a></li>
         <li><a href="/quemSomos">Quem Somos? </a></li>
 
         <% if (!locals.session.logged) { %>
 
         <li><a href="/loginRegister">Login / Cadastro</a></li>
+
         <% } else { %>
-        <li><a href="/profile"><div class="icon-perfil">
-          <i class="bx bxs-user"></i>
-        </div></a></li>
-        <li><a href="/logout"><div class='icon-sair'>
-         <i class=" bx bxs-log-out"></i>
-        </div></a></li>
+
+        <li><a href="/materias">Matérias</a></li>
+        <li><a href="/vestibulares">Vestibulares</a></li>
+        <li>
+          <a href="/profile">
+            <div class="icon-perfil">
+              <i class="bx bxs-user"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/logout"
+            ><div class="icon-sair">
+              <i class="bx bxs-log-out"></i></div
+          ></a>
+        </li>
         <% } %>
       </ul>
     </nav>
