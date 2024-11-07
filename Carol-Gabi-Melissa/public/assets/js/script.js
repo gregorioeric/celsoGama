@@ -8,6 +8,7 @@ if (inputImage !== null) {
 
     reader.addEventListener("load", (e) => {
       imgBook.src = e.target.result;
+      console.log(e.target.result);
     });
 
     reader.readAsDataURL(input);

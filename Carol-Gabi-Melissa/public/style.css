@@ -523,45 +523,71 @@ body {
 }
 
 /************************************************
-    estilo da lista de emprestimos
+    estilo da lista de emprestimos, alunos e books
 *************************************************/
+.content_books,
+.content_alunos,
 .content_loan_books {
   width: 90%;
   margin: 0 auto;
   padding: 2rem 0;
 }
 
+.content_books h1,
+.content_alunos h1,
 .content_loan_books h1 {
   text-align: center;
   padding-bottom: 2rem;
 }
 
-.row {
+.content_alunos .row,
+.content_loan_books .row {
   background: var(--cor-branco);
   padding: 0.7rem;
 }
 
-.header-row {
+.content_alunos .row .header-row,
+.content_loan_books .row .header-row {
   font-weight: bold;
 }
 
-.border-row {
+.content_alunos .row .border-row {
+  display: grid;
+  grid-template-columns: 30% 30% 10% 15% 15%;
+  border-bottom: 0.1rem solid var(--cor-preto);
+}
+
+.content_loan_books .row .border-row {
   display: grid;
   grid-template-columns: 25% 25% 17% 17% 8% 8%;
   border-bottom: 0.1rem solid var(--cor-preto);
 }
 
-.border-row:nth-of-type(1) {
+.content_alunos .row .border-row:nth-of-type(1),
+.content_loan_books .row .border-row:nth-of-type(1) {
   border-top: 0.1rem solid var(--cor-preto);
 }
 
-.col {
+.content_alunos .row .border-row .col,
+.content_loan_books .row .col {
   border-left: 0.1rem solid var(--cor-preto);
   padding: 0.3rem 0 0.3rem 0.5rem;
 }
 
-.col:nth-last-child(1) {
+.content_alunos .row .border-row .col:nth-last-child(1),
+.content_loan_books .row .col:nth-last-child(1) {
   border-right: 0.1rem solid var(--cor-preto);
+}
+
+.content_books .row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+
+.content_books .row .border-row {
+  padding: 0.5rem;
+  background: var(--cor-branco);
 }
 
 /********************************

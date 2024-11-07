@@ -2,9 +2,11 @@ const AlunoModel = require("../models/alunoModel");
 
 module.exports = class AlunosController {
   static async getAlunos(req, res) {
+    const results = await AlunoModel.selectAllAluno();
     return res.render("alunos", {
       msgError: req.query.msgError,
       msgSuccess: req.query.msgSuccess,
+      alunos: results,
     });
   }
 
