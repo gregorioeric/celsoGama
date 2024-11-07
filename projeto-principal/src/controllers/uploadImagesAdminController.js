@@ -29,7 +29,6 @@ module.exports = class UploadImagesAdminController {
       user_image_name,
       user_image_date,
     };
-    console.log(user_image_name);
 
     const results = await UploadImagesModel.postImages(imgData);
 

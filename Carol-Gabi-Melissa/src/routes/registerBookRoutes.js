@@ -20,4 +20,22 @@ registerBookRoute.post(
   RegisterBookController.postBook
 );
 
+registerBookRoute.get(
+  "/editBook/:id",
+  AuthAdminMiddleware.adminAuthorization,
+  RegisterBookController.getEditBook
+);
+
+registerBookRoute.post(
+  "/updateBook/:id",
+  upload.single("book_image"),
+  RegisterBookController.postUpdateBook
+);
+
+registerBookRoute.post(
+  "/deleteBook/:id",
+  upload.single("book_image"),
+  RegisterBookController.postDeleteBook
+);
+
 module.exports = registerBookRoute;

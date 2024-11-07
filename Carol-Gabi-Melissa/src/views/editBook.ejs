@@ -7,7 +7,7 @@
       <div class="content-form-cadastro">
         <h1>Cadastro de Livros</h1>
         <form
-          action="/registerBooks"
+          action="/registerBooks/updateBook/<%= book.book_id %>"
           method="post"
           enctype="multipart/form-data"
         >
@@ -15,7 +15,7 @@
             <div class="input input-book-image">
               <label for="book_image" class="image-preview">
                 <!-- <span>Escolha a imagem do Livro</span> -->
-                <img id="img-book" src="/image.png" alt="" />
+                <img id="img-book" src="<%= book.book_image %>" alt="" />
               </label>
               <input
                 type="file"
@@ -23,6 +23,11 @@
                 class="book_image"
                 id="book_image"
                 accept="image/*"
+              />
+              <input
+                type="hidden"
+                name="book_image"
+                value="<%= book.book_image %>"
               />
             </div>
           </div>
@@ -35,6 +40,7 @@
                 class="book_name"
                 placeholder="Digite o nome do Livro"
                 id="book_name"
+                value="<%= book.book_name %>"
               />
             </div>
             <div class="input input-book-autor">
@@ -45,6 +51,7 @@
                 class="book_autor"
                 placeholder="Digite o nome do Autor ou Autora"
                 id="book_autor"
+                value="<%= book.book_autor %>"
               />
             </div>
             <div class="input input-book-categoria">
@@ -55,6 +62,7 @@
                 class="book_categoria"
                 placeholder="Digite uma categoria"
                 id="book_categoria"
+                value="<%= book.book_categoria %>"
               />
             </div>
             <div class="input input-book-desc">
@@ -64,7 +72,10 @@
                 class="book_desc"
                 placeholder="Digite a descrição do Livro"
                 id="book_desc"
-              ></textarea>
+              >
+<%= book.book_desc %>
+            </textarea
+              >
             </div>
             <div class="content-btn">
               <button>cadastro</button>
@@ -76,31 +87,6 @@
             <% } %>
           </div>
         </form>
-      </div>
-      <div class="container_books">
-        <div class="content_books">
-          <h1>Lista de Livros</h1>
-          <div class="row">
-            <% if (books.length > 0) { books.forEach(book => { %>
-            <div class="border-row">
-              <div class="col"><img src="<%= book.book_image %>" alt="" /></div>
-              <div class="col"><%= book.book_name %></div>
-              <div class="col"><%= book.book_autor %></div>
-              <div class="col"><%= book.book_categoria %></div>
-              <div class="col">
-                <a href="/registerBooks/editBook/<%= book.book_id %>">Editar</a>
-              </div>
-              <div class="col">
-                <a href="/registerBooks/deleteBook/<%= book.book_id %>"
-                  >Deletar</a
-                >
-              </div>
-            </div>
-            <% })} else { %>
-            <div>Nenhum registro encontrado!</div>
-            <% } %>
-          </div>
-        </div>
       </div>
       <%- include('components/footer') %>
     </main>

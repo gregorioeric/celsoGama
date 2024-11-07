@@ -55,6 +55,37 @@
           </div>
         </form>
       </div>
+      <div class="container_alunos">
+        <div class="content_alunos">
+          <h1>Lista de Alunos</h1>
+          <div class="row">
+            <div class="border-row header-row">
+              <div class="col">Alunos</div>
+              <div class="col">Email</div>
+              <div class="col">Serie</div>
+              <div class="col">Editar</div>
+              <div class="col">Deletar</div>
+            </div>
+          </div>
+          <div class="row">
+            <% if (alunos.length > 0) { alunos.forEach(aluno => { %>
+            <div class="border-row">
+              <div class="col"><%= aluno.aluno_name %></div>
+              <div class="col"><%= aluno.aluno_email %></div>
+              <div class="col"><%= aluno.aluno_serie %></div>
+              <div class="col">
+                <a href="/alunos/editAluno/<%= aluno.aluno_id %>">Editar</a>
+              </div>
+              <div class="col">
+                <a href="/alunos/deleteAluno/<%= aluno.aluno_id %>">Deletar</a>
+              </div>
+            </div>
+            <% })} else { %>
+            <div>Nenhum registro encontrado!</div>
+            <% } %>
+          </div>
+        </div>
+      </div>
       <%- include('components/footer') %>
     </main>
     <%- include('components/script') %>

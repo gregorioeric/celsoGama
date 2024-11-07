@@ -2,9 +2,11 @@ const RegisterBookModel = require("../models/registerBooksModels");
 
 class RegisterBookController {
   static async getRegisterBook(req, res) {
+    const results = await RegisterBookModel.selectAllBooks();
     return res.render("registerBooks", {
       msgError: req.query.msgError,
       msgSuccess: req.query.msgSuccess,
+      books: results,
     });
   }
 
@@ -17,7 +19,7 @@ class RegisterBookController {
       );
     }
 
-    const book_image = req.file.filename;
+    const book_image = `/${req.file.filename}`;
 
     if (!book_image) {
       return res.redirect(
@@ -50,6 +52,61 @@ class RegisterBookController {
     const results = await RegisterBookModel.selectAllBooks();
 
     return res.json(results);
+  }
+
+  static async getEditBook(req, res) {
+    const getParams = req.params.id;
+    const result = await RegisterBookModel.selectBookById(getParams);
+
+    return res.render("editBook", {
+      msgError: req.query.msgError,
+      msgSuccess: req.query.msgSuccess,
+      book: result,
+    });
+  }
+
+  static async postUpdateBook(req, res) {
+    const { book_name, book_autor, book_categoria, book_desc } = req.body;
+    const getParams = req.params.id;
+    console.log(req.body);
+
+    if (!book_name || !book_autor || !book_categoria || !book_desc) {
+      return res.redirect(
+        `/registerBooks/editBook/${getParams}?msgError=Todos os campos o preenchimento é obrigatorio!`
+      );
+    }
+
+    // if (!req.file) {
+    //   return res.redirect(
+    //     `/registerBooks/editBook/${getParams}?msgError=Precisa selecionar uma imagem para cadastrar o livro!`
+    //   );
+    // }
+
+    let book_image;
+
+    if (req.file) {
+      book_image = `/${req.file.filename}`;
+    } else {
+      book_image = req.body.book_image;
+    }
+
+    const book = {
+      book_image,
+      book_name,
+      book_autor,
+      book_categoria,
+      book_desc,
+    };
+    console.log(book);
+
+    const result = await RegisterBookModel.updateBook(book, getParams);
+    return res.redirect("/registerBooks?msgSuccess=Atualizado com sucesso!");
+  }
+
+  static async postDeleteBook(req, res) {
+    const getParams = req.params.id;
+    const result = await RegisterBookModel.deleteBook(getParams);
+    return res.redirect("/registerBooks?msgError=Deletado com sucesso!");
   }
 }
 
