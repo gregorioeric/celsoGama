@@ -4,53 +4,71 @@
   <body>
     <%- include('components/header') %>
     <main>
-      
-   
-    <div class="home2">  
-    <div class="materias">
-      <div class="content-form-login2">
-        <form action="/loginRegister/login" method="post">
-          <h1  style="color:  var(--cor-verde);">Matérias</h1>
-          <ul>
-            <li>
-               <h3> Ciências da Natureza </h3><br>
-               (Biologia, Química, Física)<br> <br>
-               <h3>Ciências Humanas</h3><br>
-               (História, Geografia, Filosofia, Sociologia)<br> <br>
-               <h3>Linguagens, Códigos e 
-                suas tecnologias</h3><br>
-               (Português, Literatura, Língua Estrangeira, Artes,
-               Educação Física, Tecnologia da informação e comunicação)<br> <br>
-               <h3>Matemática e suas Tecnologias</h3>
-            </li>
-          </ul>
-          </div>
-        </form>
-      </div>
-      <div class="centralizado">
-      <div class="vestibulares">
-        <div class="content-form-login2">
-          <form action="/loginRegister/login" method="post">
-            <h1 style="color:  var(--cor-verde);">Vestibulares</h1>
-            <ul>
-              <li>
-                 <h3 id="enem">  <p>Enem</p> </h3><br>
-                 <a href="http://localhost:5000/vestibulares">
-                  <img src="/img/1.png" alt="Descrição da Imagem">
-                  <br>
-                </a>
-                <br>
+      <div class="home2">
+        <div class="materias">
+          <div class="content-form-login2">
+            <form action="/loginRegister/login" method="post">
+              <h1 style="color: var(--cor-verde)">Matérias</h1>
+              <ul>
                 <li>
-                  <h3>↑ Clique aqui e você será direcionado aos vestibulares disponíveis.</h3>
+                  <h3>Ciências da Natureza</h3>
+                  <p>
+                    (<a href="/materias/ciencias-da-natureza">Biologia</a>,
+                    <a href="/materias/quimica">Química</a>,
+                    <a href="/materias/fisica">Física</a>)
+                  </p>
                 </li>
+                <li>
+                  <h3>Ciências Humanas</h3>
+                  <p>
+                    (<a href="/materias/ciencias-humanas">História</a>,
+                    <a href="/materias/ciencias-humanas">Geografia</a>,
+                    <a href="/materias/ciencias-humanas">Filosofia</a>,
+                    <a href="/materias/ciencias-humanas">Sociologia</a>)
+                  </p>
+                </li>
+                <li>
+                  <h3>Linguagens, Códigos e suas tecnologias</h3>
+                  <p>
+                    (<a href="/materias/portugues">Português</a>,
+                    <a href="/materias/espanhol">Espanhol</a>,
+                    <a href="/materias/ingles">Inglês</a>, Artes, Educação
+                    Física, Tecnologia da informação e comunicação)
+                  </p>
+                </li>
+                <li>
+                  <h3><a href="/materias/matematica">Matemática</a></h3>
+                </li>
+              </ul>
+            </form>
+          </div>
+          <div class="centralizado">
+            <div class="vestibulares">
+              <div class="content-form-login2">
+                <form action="/loginRegister/login" method="post">
+                  <h1 style="color: var(--cor-verde)">Vestibulares</h1>
+                  <ul>
+                    <li>
+                      <h3 id="enem">Enem</h3>
+                      <a href="http://localhost:5000/vestibulares">
+                        <img src="/img/1.png" alt="Descrição da Imagem" />
+                        <br />
+                      </a>
+                    </li>
+                    <li>
+                      <h3>
+                        ↑ Clique aqui e você será direcionado aos vestibulares
+                        disponíveis.
+                      </h3>
+                    </li>
+                  </ul>
+                </form>
               </div>
-              </li>
-            </ul>
             </div>
-          </form>
+          </div>
         </div>
-      </div> 
-    </main> 
+      </div>
+    </main>
     <%- include('components/footer') %>
   </body>
 </html>

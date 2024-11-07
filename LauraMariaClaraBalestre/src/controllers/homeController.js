@@ -1,7 +1,5 @@
-class HomeController{
-    static async getHome(req, res){
-        res.render('home');
-    }
-}
-
-module.exports = HomeController;
+module.exports = class HomeController {
+  static async getHome(req, res) {
+    res.render("home");
+  }
+};

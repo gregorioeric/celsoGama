@@ -4,7 +4,6 @@ const LoginRegisterModel = require("../models/registerUserModels");
 module.exports = class AuthMiddleware {
   static async authorization(req, res, next) {
     const { token } = req.cookies;
-    console.log(token);
 
     if (!token) {
       return res.redirect(
@@ -14,11 +13,13 @@ module.exports = class AuthMiddleware {
 
     const verifyToken = jwt.verify(token, process.env.SECRET);
 
-    const result = await LoginRegisterModel.getUserById(verifyToken.user_id);
+    const result = await LoginRegisterModel.getUserById(
+      verifyToken.user.user_id
+    );
 
     if (!result) {
       return res.redirect(
-        "/loginRegister?msgError=Você precisa se autenticar para acessar seu Perfil!"
+        "/loginRegister?msgError=Você precisa se autenticar para acessar o sistema"
       );
     }
 

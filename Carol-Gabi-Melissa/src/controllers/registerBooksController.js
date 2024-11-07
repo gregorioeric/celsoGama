@@ -76,12 +76,6 @@ class RegisterBookController {
       );
     }
 
-    // if (!req.file) {
-    //   return res.redirect(
-    //     `/registerBooks/editBook/${getParams}?msgError=Precisa selecionar uma imagem para cadastrar o livro!`
-    //   );
-    // }
-
     let book_image;
 
     if (req.file) {
