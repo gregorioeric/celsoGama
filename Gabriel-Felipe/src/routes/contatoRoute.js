@@ -1,9 +1,9 @@
-const express = require("express");
+const express = require('express');
+const fichaController = require('../controllers/contatoController');
+const ContatoController = require('../controllers/contatoController');
 
 const contatoRoute = express.Router();
 
-contatoRoute.get("/", (req, res) => {
-  return res.render("contato");
-});
+contatoRoute.get('/', ContatoController.getcontato );
 
 module.exports = contatoRoute;

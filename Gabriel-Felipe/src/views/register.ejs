@@ -3,8 +3,7 @@
   <%- include('components/head') %>
   <body>
     <%- include('components/header') %>
-    <main>
-      <h1 class="msg-antes-cadastro">Olá,Seja bem vindo a Página</h1>
+    <main class="login-main">
       <div class="content-form-cadastro">
         <h1>Cadastro</h1>
         <form action="/register" method="post">
@@ -67,9 +66,12 @@
           </div>
           <% if(msg.msgFieldsEmpty) { %>
           <div class="msgError"><%= msg.msgFieldsEmpty %></div>
+          <% } %><% if(msg.msgErrorDB) { %>
+          <div class="msgError"><%= msg.msgErrorDB %></div>
           <% } %>
-          <p class="message">Ja possui uma conta?<a href="/login"> Faça seu Login aqui</a>.</p>
-        </form>
+          <p class="message">
+            Ja possui uma conta?<a href="/"> Faça seu Login aqui</a>.
+          </p>
         </form>
       </div>
     </main>

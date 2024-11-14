@@ -1,10 +1,10 @@
 const express = require("express");
-
+const AdminController = require("../controllers/admin/adminController");
 const route = express.Router();
 
-// route.get("/", (req, res) => {
-//   return res.render("login");
-// });
+route.get("/", (req, res) => {
+  return res.render("index");
+});
 
 // route.get("/contato", (req, res) => {
 //   return res.render("contato");
@@ -14,8 +14,7 @@ const route = express.Router();
 //   return res.render("produtos");
 // });
 
-// route.get("/login", LoginUserControllers.getLogin);
 
-// route.post("/login", LoginUserControllers.postLogin);
 
 module.exports = route;
+
