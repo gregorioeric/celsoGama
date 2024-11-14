@@ -170,6 +170,25 @@ const sumDays = (getDayInput) => {
     formatDate(date);
 };
 
+const cancelar = document.querySelector("#cancelar");
+const modal = document.querySelector("#modal");
+const modalForm = document.querySelector("#modal form");
+const text_h3 = document.querySelector("#content-delete h3");
+
+if (cancelar !== null) {
+  cancelar.addEventListener("click", () => {
+    modal.classList.add("hide-modal");
+    modal.classList.remove("show-modal");
+  });
+}
+
+const openModalDeleteBook = (id, book_name) => {
+  modalForm.action = `/registerBooks/deleteBook/${id}`;
+  text_h3.innerHTML = book_name;
+  modal.classList.add("show-modal");
+  modal.classList.remove("hide-modal");
+};
+
 getAllBooks();
 getAllAlunos();
 currentDate();

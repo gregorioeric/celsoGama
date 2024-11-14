@@ -1,3 +1,5 @@
+const fs = require("fs");
+const path = require("path");
 const RegisterBookModel = require("../models/registerBooksModels");
 
 class RegisterBookController {
@@ -99,8 +101,29 @@ class RegisterBookController {
 
   static async postDeleteBook(req, res) {
     const getParams = req.params.id;
+    const resultFilePath = await RegisterBookModel.selectBookById(getParams);
+    console.log(resultFilePath);
+    const deleteImage =
+      path.join("public", "uploads") + resultFilePath.book_image;
+    console.log(deleteImage);
+
     const result = await RegisterBookModel.deleteBook(getParams);
-    return res.redirect("/registerBooks?msgError=Deletado com sucesso!");
+
+    if (!result) {
+      return res.redirect(
+        "/registerBooks?msgError=Não foi possivel deletar o Livro!"
+      );
+    }
+
+    fs.unlink(deleteImage, (error) => {
+      if (error) {
+        throw error;
+      } else {
+        console.log("img deleted");
+      }
+    });
+
+    return res.redirect("/registerBooks?msgSuccess=Deletado com sucesso!");
   }
 }
 

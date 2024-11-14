@@ -1,0 +1,8 @@
+git add .
+
+git commit -m 'dentro das aspas vai a mensagem'  
+
+git push    (quando terminar o codigo)  
+
+
+git pull    (antes de digitar o codigo)

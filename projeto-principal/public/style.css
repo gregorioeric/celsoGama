@@ -23,7 +23,7 @@ html {
 }
 
 *::-webkit-scrollbar-thumb {
-  background: var(--cor-branco);
+  background: rgb(255, 255, 255);
   border-radius: 10px;
 }
 
@@ -593,7 +593,6 @@ Estilo do formulario de cadastro
 }
 
 .content-form-upload form .input-upload input {
-  /* display: none; */
   text-align: center;
   width: 100%;
 }
@@ -960,7 +959,7 @@ Estilo do formulario de cadastro
   left: 50%;
   transform: translate(-50%, -50%);
   background: var(--cor-cinza-light);
-  width: 40%;
+  width: 60%;
   height: 300px;
   display: flex;
   justify-content: center;

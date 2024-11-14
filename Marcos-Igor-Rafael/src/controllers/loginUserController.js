@@ -1,5 +1,5 @@
 class LoginUsesrControllers {
-  loginGet() {
+  static async loginGet() {
     console.log("Login Page");
   }
 }

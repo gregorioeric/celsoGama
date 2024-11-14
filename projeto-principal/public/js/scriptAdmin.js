@@ -29,7 +29,7 @@ if (plus_position !== null) {
 
 const openDeleteModal = (id, page_title) => {
   modalForm.action = `/pages/deletePage/${id}`;
-  text_h3.innerHTML = `Você está prestes a deletar a pagina ${page_title}`;
+  text_h3.innerHTML = page_title;
   modal.classList.add("show-modal");
   modal.classList.remove("hide-modal");
 };

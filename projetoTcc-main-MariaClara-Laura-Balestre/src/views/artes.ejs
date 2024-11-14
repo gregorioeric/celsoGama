@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+  <head>
+    <title>Página de Questões</title>
+  </head>
+  <body>
+    <%- include('components/header') %>
+    <main>
+      <h1>Artes</h1>
+
+      <h2>Página de Questões</h2>
+
+      <div class="container-materias">
+        <%- include('components/menuMaterias') %>
+        <div class="content-questao">
+          <div class="questao">
+            <h2>
+              1. QUESTÃO 1-(Enem 2018)<br />
+              <br>
+            <img src="/img/IMAGEM DE ARTES ENEM QUESTAO 1.png">
+            <br>
+            <br>
+            As duas imagens são produções que têm a cerâmica como matéria-prima. A obra Estrutura vertical dupla se distingue da urna funerária marajoara ao
+
+            </h2>
+            <form id="form1">
+              <br />
+              <input
+                type="radio"
+                id="A-evidenciar a simetria na disposição das peças."
+                name="questao1"
+                value="A-evidenciar a simetria na disposição das peças."
+              />
+              <label
+                for="A-evidenciar a simetria na disposição das peças."
+                >A-evidenciar a simetria na disposição das peças.</label
+              ><br />
+              <input
+                type="radio"
+                id="B-materializar a técnica sem função utilitária."
+                name="questao1"
+                value="B-materializar a técnica sem função utilitária."
+              />
+              <label
+                for="B-materializar a técnica sem função utilitária."
+                >B-materializar a técnica sem função utilitária.
+                </label
+              ><br />
+              <input
+                type="radio"
+                id="C-abandonar a regularidade na composição."
+                name="questao1"
+                value="C-abandonar a regularidade na composição."
+              />
+              <label for="C-abandonar a regularidade na composição."
+                >C-abandonar a regularidade na composição. </label
+              ><br />
+              <input
+                type="radio"
+                id="D-anular possibilidades de leituras afetivas."
+                name="questao1"
+                value="D-anular possibilidades de leituras afetivas."
+              />
+              <label
+                for="D-anular possibilidades de leituras afetivas."
+                >D-anular possibilidades de leituras afetivas. </label
+              ><br />
+              <input
+                type="radio"
+                id="E-integrar o suporte em sua constituição."
+                name="questao1"
+                value="E-integrar o suporte em sua constituição."
+              />
+              <label
+                for="E-integrar o suporte em sua constituição."
+                >E-integrar o suporte em sua constituição. </label
+              ><br />
+              <button type="button" onclick="verificarQuestao1A()">Verificar</button>
+            </form>
+            <div class="resultado" id="resultado1"></div>
+            <div id="resolucao1" style="display: none">
+              <p>
+                <strong>Resolução:</strong>B-materializar a técnica sem função utilitária.
+
+                <br />
+                <br> Na obra escultórica apresentada no TEXTO I, a cerâmica é apresentada como suporte para a arte com característica estética e conceitual, 
+                sem função utilitária. Já no TEXTO II, a urna funerária marajoara possui a função de conter os restos mortais de um ser humano, tendo portanto um objetivo prático na sociedade em que foi produzida.<br>
+                
+                A-INCORRETA. A obra Estrutura Vertical não apresenta formas simétricas, pelo contrário. Nota-se que ela exibe formas como se fossem "pedras empilhadas" que se dispõem de maneira despojada e assimétrica.<br>
+                
+                C- INCORRETA. Embora a obra abandone a regularidade, não é isso que a faz se distinguir da peça marajoara, o que destaca-se como diferencial é a sua função não-utilitária.<br>
+                
+                D- INCORRETA. Não é porque a obra possui características de arte conceitual que ela não tem a possibilidade de leituras afetivas. 
+                A interpretação da arte cabe ao público e geralmente cada uma desperta interpretações distintas, inclusive afetivas.<br>
+                
+                E- INCORRETA. A obra não integra o suporte em sua composição.
+                
+              </p>
+            </div>
+          </div>
+    
+          <div class="questao">
+            <h2>2. QUESTÃO 2-(Enem-2017/adaptado) <br />
+              <br> TEXTO I <br>
+              <img src="/img/IMAGEM DE ARTES QUESTÃO 2.png">
+
+              <br>TEXTO II<br>
+
+              Ao ser questionado sobre seu processo de criação de ready-mades, Marcel Duchamp afirmou:
+
+              — Isto dependia do objeto; em geral, era preciso tomar cuidado com o seu look . É muito difícil escolher um objeto porque depois 
+             de quinze dias você começa a gostar dele ou a detestá-lo. É preciso chegar a qualquer coisa com uma indiferença tal que você não 
+              tenha nenhuma emoção estética. A escolha do ready-made é sempre baseada na indiferença visual e, ao mesmo tempo, numa ausência total de bom ou mau gosto.
+
+              Relacionando o texto e a imagem da obra, entende-se que o artista Marcel Duchamp, ao criar os ready-mades, inaugurou um modo de fazer arte que consiste em:
+
+                </h2>
+            <form id="form2">
+              <br /><input type="radio" id="A-designar ao artista de vanguarda a tarefa de ser o artifície do século XX."
+               name="questao2" value="A-designar ao artista de vanguarda a tarefa de ser o artifície do século XX." />
+              <label for="A-designar ao artista de vanguarda a tarefa de ser o artifície do século XX.">A-designar ao artista de vanguarda a tarefa de ser o artifície do século XX.
+            </label><br />
+              <input type="radio" id="B-considerar a forma dos objetos como elemento essencial da obra de arte."
+               name="questao2" value="B-considerar a forma dos objetos como elemento essencial da obra de arte." />
+              <label for="B-considerar a forma dos objetos como elemento essencial da obra de arte.">B-considerar a forma dos objetos como elemento essencial da obra de arte.
+            </label><br />
+              <input type="radio" id="C-revitalizar de maneira radical o conceito clássico do belo na arte."
+               name="questao2" value="C-definiram a carreira de skatista profissional." />
+              <label for="C-definiram a carreira de skatista profissional.">C-definiram a carreira de skatista profissional.
+            </label><br />
+            <input type="radio" id="D-criticar os princípios que determinam o que é uma obra de arte."
+             name="questao2" value="D-criticar os princípios que determinam o que é uma obra de arte." />
+            <label for="D-criticar os princípios que determinam o que é uma obra de arte.">D-criticar os princípios que determinam o que é uma obra de arte.
+            </label><br />
+             <input type="radio" id="E-atribuir aos objetos industriais o status de obra de arte."
+                name="questao2" value="E-atribuir aos objetos industriais o status de obra de arte." />
+               <label for="E-atribuir aos objetos industriais o status de obra de arte.">E-atribuir aos objetos industriais o status de obra de arte.
+            </label><br />
+              <button type="button" onclick="verificarQuestao2A()">Verificar</button>
+            </form>
+            <div class="resultado" id="resultado2"></div>
+            <div id="resolucao2" style="display: none">
+              <p><strong>Resolução:</strong> D-criticar os princípios que determinam o que é uma obra de arte.   <br />
+                <br> Duchamp integrou o movimento de vanguarda dadaísta, que tinha como um dos princípios questionar a obra de arte como uma 
+                atitude "antiarte". Portanto, ao colocar em um salão de exposições um objeto já produzido anteriormente, o artista 
+                questiona os motivos que apontam e definem o que é ou não uma obra de arte.<br>
+                
+                A-INCORRETA. O termo "artíficie" se refere à artesão ou artista. Marcel Duchamp não tinha a intenção de fazer dos artistas de 
+                vanguardas os "únicos" ou as "referências" da arte do século XX, mas sim de inovar nas ideias e trazer reflexões à tona.<br>
+                
+                B-INCORRETA. A intenção de Duchamp não estava relacionada com a forma dos objetos, muito menos ditar o que era essencial à arte ou não.<br>
+                
+                C-INCORRETA. A preocupação não era de trazer novo conceito de belo, o que ele propunha era questioná-lo, bem como de questionar a própria arte.<br>
+                
+                E-INCORRETA. Ele tampouco tinha como meta transformar necessariamente objetos industriais em arte, entretanto utilizava alguns deles para questionar o conceito de arte.<br>
+                
+                
+                </p>
+            </div>
+          </div>
+          <div class="questao">
+            <h2>3. QUESTÃO 3-(Enem-2017)  <br />
+
+              <img src="/img/IMAGEM DE ARTES QUESTÃO 3.png"> 
+              <br>
+              O texto matiza algumas transformações das funções da arte na atualidade. No trabalho citado, do artista Jaime Prades, considera-se a
+              
+                </h2>
+            <form id="form3">
+              <br /><input type="radio" id="A-reflexão sobre a responsabilidade ambiental do homem."
+               name="questao3" value="A-reflexão sobre a responsabilidade ambiental do homem." />
+              <label for="A-reflexão sobre a responsabilidade ambiental do homem.">
+                A-reflexão sobre a responsabilidade ambiental do homem.
+              </label><br />
+
+              <input type="radio" id="B-valorização da poética em detrimento do conteúdo."
+               name="questao3" value="B-valorização da poética em detrimento do conteúdo." />
+              <label for="B-valorização da poética em detrimento do conteúdo.">
+                B-valorização da poética em detrimento do conteúdo.
+    
+            </label><br />
+    
+              <input type="radio" id="C-preocupação com o belo encontrado na natureza."
+               name="questao3" value="C-preocupação com o belo encontrado na natureza." />
+              <label for="C-preocupação com o belo encontrado na natureza.">
+                C-preocupação com o belo encontrado na natureza.
+            </label><br />
+    
+            <input type="radio" id="D-percepção da obra como suporte da memória."
+             name="questao3" value="D-percepção da obra como suporte da memória." />
+            <label for="D-percepção da obra como suporte da memória.">
+              D-percepção da obra como suporte da memória.
+
+            </label><br />
+    
+             <input type="radio" id="E-reutilização do lixo como forma de consumo."
+                name="questao3" value="E-reutilização do lixo como forma de consumo." />
+               <label for="E-reutilização do lixo como forma de consumo.">
+                E-reutilização do lixo como forma de consumo.
+
+            </label><br />
+    
+              <button type="button" onclick="verificarQuestao3A()">Verificar</button>
+            </form>
+    
+            <div class="resultado" id="resultado3"></div>
+            <div id="resolucao3" style="display: none">
+              <p><strong>Resolução:</strong> 
+                A-reflexão sobre a responsabilidade ambiental do homem.
+                 <br />
+                <br> A-reflexão sobre a responsabilidade ambiental do homem.
+                O artista busca trazer questionamentos acerca da crise ambiental. Isso fica claro no trecho do texto "(...) 
+                passei a perceber o desastre que é a ecologia urbana. Quando a gente fala em questão ambiental sempre se refere 
+                à natureza, mas a crise ambiental urbana é forte."<br>
+                
+                B-INCORRETA. O artista propõe questionamentos e reflexões, aliando o conteúdo à poética.<br>
+                
+                C-INCORRETA. A preocupação do artista não é necessariamente com o belo, mas em trazer à tona reflexões sobre ecologia.<br>
+                
+                D-INCORRETA. A obra não tem a intenção de trabalhar questões relacionadas com a memória, a proposta é discutir o impacto ambiental.<br>
+                
+                E-INCORRETA. O artista não busca o consumo através do lixo, sua preocupação é em levantar reflexões.<br>
+                
+                
+                </p>
+            </div>
+          </div>
+          <div class="questao">
+            <h2>4. QUESTÃO 4-(Enem-2017)<br />
+              <img src="/img/IMAGEM DE ARTES QUESTÃO 4.png"> 
+              <br>
+              Em 1956, o artista Flávio de Resende Carvalho desfilou pela Avenida Paulista com o traje New Look uma 
+              proposta tropical para o guarda-roupa masculino. Suas obras mais conhecidas são relacionadas às performances. 
+              A imagem permite relacionar como características dessa manifestação artística o uso:
+
+
+                </h2>
+            <form id="form4">
+              <br /><input type="radio" id="A-da intimidade, da política e do corpo."
+               name="questao4" value="A-da intimidade, da política e do corpo." />
+              <label for="A-da intimidade, da política e do corpo.">
+                A-da intimidade, da política e do corpo.
+              </label><br />
+
+              <input type="radio" id="B-do público, da ironia e da dor. "
+               name="questao4" value="B-do público, da ironia e da dor. " />
+              <label for="B-do público, da ironia e da dor. ">
+                B-do público, da ironia e da dor.
+            </label><br />
+    
+              <input type="radio" id="C-do espaço urbano, da intimidade e do drama."
+               name="questao4" value="C-do espaço urbano, da intimidade e do drama." />
+              <label for="C-do espaço urbano, da intimidade e do drama. ">
+                C-do espaço urbano, da intimidade e do drama.
+
+            </label><br />
+    
+            <input type="radio" id="D-da moda, do drama e do humor."
+             name="questao4" value="D-da moda, do drama e do humor." />
+            <label for="D-da moda, do drama e do humor.">
+              D-da moda, do drama e do humor.
+
+            </label><br />
+    
+             <input type="radio" id="E-do corpo, da provocação e da moda."
+                name="questao4" value="E-do corpo, da provocação e da moda." />
+               <label for="E-do corpo, da provocação e da moda.">
+               E-do corpo, da provocação e da moda.
+
+
+            </label><br />
+    
+              <button type="button" onclick="verificarQuestao4A()">Verificar</button>
+            </form>
+    
+            <div class="resultado" id="resultado4"></div>
+            <div id="resolucao4" style="display: none">
+              <p><strong>Resolução:</strong> 
+                E-do corpo, da provocação e da moda.
+                 <br />
+                <br>  O artista usa a moda com o objetivo de trazer uma nova proposta de vestimenta para os homens; 
+                usa seu corpo como instrumento e suporte para comunicar pela arte; e usa também a provocação pois 
+                propõe um tipo de traje que não era utilizado por homens, e sim considerado uma "roupa feminina".<br>
+                
+                A-INCORRETA. Não podemos dizer que a intimidade seja relacionada aqui com a performance de Flávio de Carvalho.<br>
+                
+                B-INCORRETA. O elemento "dor" aqui não é trabalhado.<br>
+                
+                C-INCORRETA. Intimidade e drama também não são elementos que o artista utilizou.<br>
+                
+                D-INCORRETA. Drama não é uma característica da performance citada.<br>
+                
+                
+                </p>
+            </div>
+        </div>
+        <div class="questao">
+          <h2>5. QUESTÃO 5-(Enem 2019)  <br />
+            Para que a passagem da produção ininterrupta de novidade a seu consumo seja feita continuamente, há necessidade de mecanismos, de engrenagens.
+            Uma espécie de grande máquina industrial, incitante, tentacular, entra em ação. Mas bem depressa a simples lei da oferta e da procura 
+            segundo as necessidades não vale mais: é preciso excitar a demanda, excitar o acontecimento, provocá-lo, espicaçá-lo, fabricá-lo, 
+            pois a modernidade se alimenta disso.
+            
+            No contexto da arte contemporânea, o texto da autora Anne Cauquelin reflete ações que explicitam:
+            
+
+              </h2>
+          <form id="form5">
+            <br /><input type="radio" id="A-métodos utilizados pelo mercado de arte."
+             name="questao5" value="A-métodos utilizados pelo mercado de arte." />
+            <label for="A-métodos utilizados pelo mercado de arte.">
+            A-métodos utilizados pelo mercado de arte.
+
+            </label><br />
+
+            <input type="radio" id="B- investimentos realizados por mecenas."
+             name="questao5" value="B- investimentos realizados por mecenas." />
+            <label for="B- investimentos realizados por mecenas.">
+             B- investimentos realizados por mecenas.
+
+          </label><br />
+  
+            <input type="radio" id="C-interesses do consumidor de arte."
+             name="questao5" value="C-interesses do consumidor de arte." />
+            <label for="C-interesses do consumidor de arte.">
+            C-interesses do consumidor de arte.
+
+          </label><br />
+  
+          <input type="radio" id="D-práticas cotidianas do artista."
+           name="questao5" value="D-práticas cotidianas do artista." />
+          <label for="D-práticas cotidianas do artista.">
+          D-práticas cotidianas do artista.
+
+
+          </label><br />
+  
+           <input type="radio" id="E-fomentos públicos à cultura."
+              name="questao5" value="E-fomentos públicos à cultura." />
+             <label for="E-fomentos públicos à cultura.">
+             E-fomentos públicos à cultura.
+
+          </label><br />
+  
+            <button type="button" onclick="verificarQuestao5A()">Verificar</button>
+          </form>
+  
+          <div class="resultado" id="resultado5"></div>
+          <div id="resolucao5" style="display: none">
+            <p><strong>Resolução:</strong> 
+              A-métodos utilizados pelo mercado de arte.
+
+               <br />
+              <br>A autora do texto busca explicitar as motivações do mercado da arte em busca de novas necessidades.
+
+              B-INCORRETA. Hoje em dia não se usa mais a denominação “mecenas”, de qualquer forma há ainda patrocínio cultural. 
+              Entretanto, o texto não aborda esse aspecto, é possível perceber isso na passagem “grande máquina industrial, incitante, tentacular, entra em ação”.
+              
+              C-INCORRETA. O assunto não diz respeito a ações de consumidores, mas sim da indústria.
+              
+              D-INCORRETA. Os processos criativos dos artistas e suas práticas não entram em questão na fala de Anne Cauquelin. A autora não cita esse ponto em nenhum momento.
+              
+              E-INCORRETA. O texto aborda as motivações para a criação de novos conteúdos, e não o financiamento da cultura.
+                            
+              </p>
+          </div>
+      </div>
+
+      
+    </main>
+    <%- include('components/footer') %>
+  </body>
+</html>

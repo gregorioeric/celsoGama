@@ -22,7 +22,7 @@ const phoneRoute = require("./src/routes/phoneRoute");
 const positionRoute = require("./src/routes/positionRoute");
 const editableRoute = require("./src/routes/editableHtmlRoute");
 const pagesProfRoute = require("./src/routes/pagesProfRoute");
-const uploadAdmin = require("./src/routes/uploadAdmin");
+const uploadAdminRoute = require("./src/routes/uploadAdminRoute");
 
 const app = express();
 const port = process.env.PORTSERVER || 3000;
@@ -69,7 +69,6 @@ app.use("/register", registerRoute);
 app.use("/loginRegister", loginRegisterRoute);
 app.use("/validacpf", validaCPFRoute);
 app.use("/checkCEP", checkCEPRoute);
-app.use("/upload", uploadAdmin);
 app.use("/uploadImages", uploadImagesRoute);
 app.use("/logoutAdmin", logoutAdminRoute);
 app.use("/profile", profileRoute);
@@ -79,6 +78,7 @@ app.use("/telefone", phoneRoute);
 app.use("/position", positionRoute);
 app.use("/aulaGetPaginas", pagesProfRoute);
 app.use("/editableHtml", editableRoute);
+app.use("/upload", uploadAdminRoute);
 
 app.listen(port, async () => {
   const [result] = await database.query("SELECT 1");

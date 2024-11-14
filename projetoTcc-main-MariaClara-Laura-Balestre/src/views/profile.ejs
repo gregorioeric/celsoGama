@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+
+  <body>
+    <%- include('components/header') %>
+    <main>
+      <!DOCTYPE html>
+      <html lang="pt-BR">
+        <head>
+          <meta charset="UTF-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <title>Perfil de Usuário</title>
+          <title>Página Editável</title>
+          <style>
+            .editable {
+              border: 1px solid #ccc;
+              padding: 10px;
+              min-height: 50px;
+              width: 500px;
+            }
+
+            .editable div {
+              display: grid;
+              grid-template-columns: 170px 300px;
+              /* grid-template-columns: repeat(2, 1fr); */
+              padding: 0.3rem;
+            }
+
+            .editable div span {
+              padding: 0.2rem;
+              border-bottom: 1px solid;
+              text-align: right;
+            }
+
+            .editable div input {
+              background: transparent;
+              border: none;
+              border-bottom: 1px solid rgb(0, 0, 0);
+              font-weight: bold;
+              font-size: 1rem;
+              color: rgb(0, 0, 0);
+            }
+
+            .container {
+              display: flex;
+              justify-content: space-between;
+              margin: 10px;
+            }
+
+            .menu {
+              font-size: 1.2em;
+              display: flex;
+              gap: 10px;
+            }
+
+            .menu a {
+              text-decoration: none;
+              color: black;
+            }
+
+            .menu a:hover {
+              text-decoration: underline;
+            }
+
+            .perfil {
+              display: flex;
+              justify-content: space-between;
+              background-color: white;
+              border-radius: 8px;
+              padding: 10px;
+
+              margin-top: 10px;
+            }
+
+            .perfil-info {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 10px;
+            }
+
+            .perfil-info img {
+              width: 100px;
+              height: 100px;
+              border-radius: 50%;
+            }
+
+            .perfil-info p {
+              font-size: 1.2em;
+              margin: 0;
+            }
+
+            .editar {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+            }
+
+            .editar button {
+              background-color: #5dade2;
+              border: none;
+              padding: 10px 20px;
+              border-radius: 5px;
+              cursor: pointer;
+              color: white;
+              font-size: 1em;
+            }
+
+            .editar button:hover {
+              background-color: #3498db;
+            }
+
+            .quest-icon img {
+              width: 200px;
+            }
+
+            .activeInput {
+              background: rgb(180, 180, 180) !important;
+            }
+          </style>
+        </head>
+
+        <body>
+          <section class="perfil container">
+            <div class="perfil-info">
+              <li>
+                <div class="icon-perfil-profile">
+                  <i class="bx bxs-user"></i>
+                </div>
+              </li>
+              <div class="editable">
+                <form action="profile" method="post">
+                  <div><strong>username</strong></div>
+                  <div>
+                    <span>Nome:</span>
+                    <input
+                      type="text"
+                      disabled
+                      name="user_name"
+                      value="<%= userLogged.user_name %>"
+                      id="activeInput"
+                    />
+                  </div>
+                  <div>
+                    <span>Email:</span>
+                    <input
+                      type="text"
+                      disabled
+                      name="user_email"
+                      value="<%= userLogged.user_email %>"
+                      id="activeInput"
+                    />
+                  </div>
+                  <div>
+                    <span>CEP:</span>
+                    <input
+                      type="text"
+                      disabled
+                      name="user_cep"
+                      value="<%= userLogged.user_cep %>"
+                      id="activeInput"
+                    />
+                  </div>
+                  <div>
+                    <span>Gênero:</span>
+                    <input
+                      type="text"
+                      disabled
+                      name="user_genero"
+                      value="<%= userLogged.user_genero %>"
+                      id="activeInput"
+                    />
+                  </div>
+                  <div>
+                    <span>Idade:</span>
+                    <input
+                      type="text"
+                      disabled
+                      name="user_idade"
+                      value="<%= userLogged.user_idade %>"
+                      id="activeInput"
+                    />
+                  </div>
+                  <div>
+                    <span>Escolaridade:</span>
+                    <input
+                      type="text"
+                      disabled
+                      name="user_escolaridade"
+                      value="<%= userLogged.user_escolaridade %>"
+                      id="activeInput"
+                    />
+                  </div>
+                  <div>
+                    <span>Curso de Interesse:</span>
+                    <input
+                      type="text"
+                      disabled
+                      name="user_curso_interesse"
+                      value="<%= userLogged.user_curso_interesse %>"
+                      id="activeInput"
+                    />
+                  </div>
+                  <button type="submit">Atualizar Perfil</button>
+                </form>
+              </div>
+              <div contenteditable="true" class="editable">
+                <p>Você também pode editar o conteúdo dentro desta div.</p>
+              </div>
+
+              <button onclick="salvarConteudo()">Salvar Alterações</button>
+            </div>
+            <div class="editar" id="editable">
+              <button>Editar</button>
+            </div>
+            <div class="quest-icon">
+              <img src="/img/logo.png" />
+            </div>
+          </section>
+        </body>
+      </html>
+    </main>
+    <script>
+      const editable = document.querySelector("#editable");
+      editable.addEventListener("click", () => {
+        // const activeEditable = document.querySelectorAll("#activeEditable");
+        const activeInput = document.querySelectorAll("#activeInput");
+        // const setValue = document.querySelectorAll("#setValue");
+
+        // setValue.value = activeEditable.innerText;
+
+        // activeEditable.forEach((edit) => {
+        //   edit.setAttribute("contenteditable", "true");
+        //   edit.classList.add("active");
+        // });
+        activeInput.forEach((edit) => {
+          edit.removeAttribute("disabled");
+          edit.classList.add("activeInput");
+        });
+      });
+
+      function salvarConteudo() {
+        const conteudos = document.querySelectorAll(".editable");
+        conteudos.forEach((conteudo, index) => {
+          console.log(`Conteúdo ${index + 1}:`, conteudo.innerHTML);
+          // Aqui você poderia enviar o conteúdo para um servidor, salvar em localStorage, etc.
+        });
+        alert("Alterações salvas (ver no console).");
+      }
+    </script>
+    <%- include('components/footer') %>
+  </body>
+</html>

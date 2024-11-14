@@ -136,8 +136,15 @@ if (troca !== null) {
   });
 }
 
-// const btn = document.querySelector
 const getContentEditable = () => {
-  const contentEditable = document.querySelector("#divEditable").innerText;
-  document.querySelector("#content-text").value = contentEditable;
+  // const contentEditable = document.querySelector("#divEditable").innerText;
+  const contentEditable = document.querySelector("#divEditable");
+  // const setValue = document.querySelector("#content-text").value;
+  const setValue = document.querySelector("#content-text");
+
+  setValue.addEventListener("change", () => {
+    console.log(contentEditable.innerText);
+  });
+
+  setValue = contentEditable;
 };
