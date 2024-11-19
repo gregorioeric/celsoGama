@@ -5,7 +5,7 @@
     <main>
       <%- include('components/header') %>
       <div class="content-form-cadastro">
-        <h1>Cadastro de Livros</h1>
+        <h1>Atualizar Livro</h1>
         <form
           action="/registerBooks/updateBook/<%= book.book_id %>"
           method="post"
@@ -78,7 +78,8 @@
               >
             </div>
             <div class="content-btn">
-              <button>cadastro</button>
+              <button>Atualizar</button>
+              <a href="/home">Cancelar a Edição</a>
             </div>
             <% if(msgSuccess){%>
             <div class="msgSuccess"><%= msgSuccess %></div>

@@ -6,3 +6,5 @@ const blogRoute = express.Router();
 quemsomosRoute.get("/", BlogController.getblog);
 
 module.exports = blogRoute;
+
+

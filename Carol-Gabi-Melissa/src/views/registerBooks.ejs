@@ -6,6 +6,13 @@
       <%- include('components/header') %>
       <div class="content-form-cadastro">
         <h1>Cadastro de Livros</h1>
+        <div class="content-msg">
+          <% if(msgSuccess){%>
+          <div class="msgSuccess"><%= msgSuccess %></div>
+          <% } %> <% if(msgError){%>
+          <div class="msgError"><%= msgError %></div>
+          <% } %>
+        </div>
         <form
           action="/registerBooks"
           method="post"
@@ -69,11 +76,6 @@
             <div class="content-btn">
               <button>cadastro</button>
             </div>
-            <% if(msgSuccess){%>
-            <div class="msgSuccess"><%= msgSuccess %></div>
-            <% } %> <% if(msgError){%>
-            <div class="msgError"><%= msgError %></div>
-            <% } %>
           </div>
         </form>
       </div>

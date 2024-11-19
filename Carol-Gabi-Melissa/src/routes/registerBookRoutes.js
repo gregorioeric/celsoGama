@@ -38,4 +38,10 @@ registerBookRoute.post(
   RegisterBookController.postDeleteBook
 );
 
+registerBookRoute.post(
+  "/deleteBookBySlug/:id",
+  upload.single("book_image"),
+  RegisterBookController.deleteBookBySlug
+);
+
 module.exports = registerBookRoute;

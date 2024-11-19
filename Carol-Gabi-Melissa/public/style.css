@@ -22,6 +22,7 @@ li {
 :root {
   --cor-branco: rgb(255, 255, 255);
   --cor-preto: rgb(0, 0, 0);
+  --cor-preto-alpha: rgba(0, 0, 0, 0.5);
   --cor-verde: rgb(15, 140, 13);
   --cor-verde-light: rgb(214, 252, 208);
   --cor-vermelho: rgb(255, 9, 9);
@@ -99,7 +100,7 @@ body {
 .main-menu ul li ul {
   position: absolute;
   top: 6rem;
-  width: 14rem;
+  width: 10rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -115,7 +116,7 @@ body {
 .main-menu ul li:hover ul {
   opacity: 1;
   visibility: visible;
-  top: 3.7rem;
+  top: 3.4rem;
 }
 
 /*********************************************
@@ -264,7 +265,7 @@ body {
 ***************************************/
 
 .content-msg {
-  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .msgErrorInput {
@@ -676,6 +677,107 @@ body {
   background: var(--cor-vermelho);
 }
 
+/************************************************
+  Estilo que mostra um unico livro
+************************************************/
+.content-book {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+.content-book h1 {
+  text-align: center;
+  padding: 3rem 0;
+  font-size: 3rem;
+}
+
+.content-book .book {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.content-book .book .book-img {
+  padding: 0 3rem;
+}
+
+.content-book .book .book-info {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+}
+
+.content-book .book .book-info .autor,
+.content-book .book .book-info .categoria,
+.content-book .book .book-info .desc {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  padding-bottom: 1rem;
+  align-items: center;
+}
+
+.content-book .book .book-info .desc {
+  align-items: start;
+}
+
+.content-book .book .book-info .desc span {
+  display: block;
+  padding-bottom: 1rem;
+}
+
+.content-book .book .book-info .autor p,
+.content-book .book .book-info .categoria p,
+.content-book .book .book-info .desc p {
+  font-size: 1.2rem;
+  color: var(--cor-branco);
+}
+
+.content-book .book .book-info .desc p {
+  text-align: justify;
+  overflow: auto;
+}
+
+.btns-book {
+  display: grid;
+  grid-template-columns: 40% 30% 30%;
+  gap: 1rem;
+}
+
+.btns-book a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3rem;
+  font-size: 1.4rem;
+  padding: 0.5rem 1rem;
+  color: var(--cor-preto);
+  font-weight: bold;
+  transition: background 300ms ease-in-out;
+}
+
+.btns-book a.voltar {
+  background: var(--cor-cinza);
+}
+
+.btns-book a.edit {
+  background: var(--cor-verde-light);
+}
+
+.btns-book a.delete {
+  background: var(--cor-vermelho-light);
+}
+
+.btns-book a.voltar:hover {
+  background: var(--cor-branco);
+}
+
+.btns-book a.edit:hover {
+  background: var(--cor-verde);
+}
+
+.btns-book a.delete:hover {
+  background: var(--cor-vermelho);
+}
+
 /********************************
     responsivo
 ******************************/
@@ -697,5 +799,13 @@ body {
 @media screen and (max-width: 1450px) {
   .content-form-cadastro form {
     width: 100%;
+  }
+
+  .btns-book a {
+    font-size: 1.2rem;
+  }
+
+  .main-menu ul li a {
+    font-size: 1.2rem;
   }
 }

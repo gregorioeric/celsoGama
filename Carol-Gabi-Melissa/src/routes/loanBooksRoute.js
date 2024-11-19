@@ -1,10 +1,16 @@
 const express = require("express");
 const LoanBooksController = require("../controllers/loanBooksController");
 
-const loanRooksRoute = express.Router();
+const loanBooksRoute = express.Router();
 
-loanRooksRoute.get("/", LoanBooksController.getLoanBooks);
+loanBooksRoute.get("/", LoanBooksController.getLoanBooks);
 
-loanRooksRoute.post("/", LoanBooksController.postLoanBook);
+loanBooksRoute.post("/", LoanBooksController.postLoanBook);
 
-module.exports = loanRooksRoute;
+loanBooksRoute.get("/editLoan/:id", LoanBooksController.editLoan);
+
+loanBooksRoute.post("/updateLoan/:id", LoanBooksController.updateLoan);
+
+loanBooksRoute.post("/deleteLoan/:id", LoanBooksController.deleteLoan);
+
+module.exports = loanBooksRoute;

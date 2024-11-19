@@ -10,11 +10,12 @@
             <div class="input">
               <input
                 type="text"
-                name="admin_login"
-                class="admin-login"
-                id="admin-login"
+                name="admin_email"
+                class="admin-email"
+                id="admin-email"
+                placeholder=""
               />
-              <label for="admin-login">Admin Login</label>
+              <label for="admin-email">Admin Login</label>
             </div>
             <div class="input">
               <input
@@ -22,6 +23,7 @@
                 name="admin_password"
                 class="admin-password"
                 id="admin-password"
+                placeholder=""
               />
               <label for="admin-password">Admin Password</label>
             </div>
@@ -29,6 +31,11 @@
               <button>Login</button>
             </div>
           </div>
+          <% if (msgError) { %>
+             <div class="msgError"><div><%= msgError %></div> 
+             <% } %> <% if(msgSuccess) { %>
+              <div class="msgSuccess"><% msgSuccess %></div>
+              <% } %>
         </form>
       </div>
     </main>

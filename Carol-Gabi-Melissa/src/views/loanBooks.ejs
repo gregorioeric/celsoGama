@@ -6,6 +6,13 @@
       <%- include('components/header') %>
       <div class="main-loan">
         <h1>Emprestimo de Livros</h1>
+        <div class="content-msg">
+          <% if(msgError) { %>
+          <div class="msgError"><%= msgError %></div>
+          <% } %> <% if(msgSuccess) { %>
+          <div class="msgSuccess"><%= msgSuccess %></div>
+          <% } %>
+        </div>
         <div class="form-loan">
           <form action="/loanBooks" method="post">
             <div class="select-book" id="select-book">
@@ -47,6 +54,7 @@
               </div>
             </div>
             <div class="date-now">
+              <label for="today">Data Atual</label>
               <input type="date" name="loan_date_atual" id="today" />
             </div>
             <div class="select-time">
@@ -57,17 +65,11 @@
               <input type="radio" name="addDays" id="30" value="30" /> 30
             </div>
             <div class="date-final">
-              <input type="date" name="loan_date_entrega" />
+              <label for="entrega">Data de Entrega</label>
+              <input type="date" id="entrega" name="loan_date_entrega" />
             </div>
             <div class="btn-cadastrar-loan">
               <button>Cadastrar Emprestimo</button>
-            </div>
-            <div class="content-msg">
-              <% if(msgError) { %>
-              <div class="msgError"><%= msgError %></div>
-              <% } %> <% if(msgSuccess) { %>
-              <div class="msgSuccess"><%= msgSuccess %></div>
-              <% } %>
             </div>
           </form>
         </div>
@@ -93,10 +95,14 @@
               <div class="col"><%= loan.loan_date_atual %></div>
               <div class="col"><%= loan.loan_date_entrega %></div>
               <div class="col">
-                <a href="/loan/editLoan/<%= loan.loan_id %>">Editar</a>
+                <a href="/loanBooks/editLoan/<%= loan.loan_id %>">Editar</a>
               </div>
               <div class="col">
-                <a href="/loan/deleteLoan/<%= loan.loan_id %>">Deletar</a>
+                <a
+                  onclick="openModalDeleteLoan(`<%= loan.loan_id %>`, `<%= loan.book_name %>`)"
+                  href="#"
+                  >Deletar</a
+                >
               </div>
             </div>
             <% }) } else { %>
@@ -105,6 +111,24 @@
             <% } %>
           </div>
         </div>
+      </div>
+      <div class="modal hide-modal" id="modal">
+        <form action="" method="post">
+          <div class="content-delete" id="content-delete">
+            <p>Você está prestes a deletar o Cadastro do Emprestimo do Livro</p>
+            <h3></h3>
+            <h4>
+              Se você realmente quer deletar clique em Deletar se não clique em
+              Cancelar
+            </h4>
+            <div class="btns_delete">
+              <button class="btn_cancel" id="cancelar" type="reset">
+                Cancelar
+              </button>
+              <button class="btn_delete">Delete</button>
+            </div>
+          </div>
+        </form>
       </div>
       <%- include('components/footer') %>
     </main>

@@ -4,7 +4,6 @@ const LoginRegisterModel = require("../models/registerUserModels");
 module.exports = class AuthMiddleware {
   static async authorization(req, res, next) {
     const { token } = req.cookies;
-    console.log(token);
 
     if (!token) {
       return res.redirect(

@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
 const database = require("./src/database/database");
 const dashboardRoute = require("./src/routes/dashboardRoute");
 const adminRoute = require("./src/routes/adminRoute");
@@ -12,8 +13,10 @@ const registerBookRoute = require("./src/routes/registerBookRoutes");
 const logoutRoute = require("./src/routes/logoutRoute");
 const getAllBooksAPIRoute = require("./src/routes/getBooksAPIRoute");
 const alunosRoute = require("./src/routes/alunosRoute");
-const loanRooksRoute = require("./src/routes/loanBooksRoute");
 const alunosRouteAPI = require("./src/routes/alunosRouteAPI");
+const bookRoute = require("./src/routes/bookRoute");
+const loanBooksRoute = require("./src/routes/loanBooksRoute");
+const categoriesRoute = require("./src/routes/categoriesBooksRoute");
 
 const app = express();
 const port = process.env.PORTSERVER || 3000;
@@ -21,7 +24,7 @@ const port = process.env.PORTSERVER || 3000;
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
 
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "./public")));
@@ -35,7 +38,7 @@ app.use(
     saveUninitialized: true,
     resave: true,
     cookie: {
-      maxAge: 60 * 60 * 1000,
+      maxAge: 24 * 60 * 60 * 1000,
       httpOnly: true,
     },
   })
@@ -53,8 +56,10 @@ app.use("/dashboard", dashboardRoute);
 app.use("/login", loginRoute);
 app.use("/registerBooks", registerBookRoute);
 app.use("/alunos", alunosRoute);
-app.use("/loanBooks", loanRooksRoute);
+app.use("/loanBooks", loanBooksRoute);
 app.use("/logout", logoutRoute);
+app.use("/book", bookRoute);
+app.use("/livros", categoriesRoute);
 app.use("/getAllBooksAPI", getAllBooksAPIRoute);
 app.use("/getAllAlunosAPI", alunosRouteAPI);
 

@@ -5,15 +5,26 @@
     <main>
       <%- include('components/header') %>
       <div class="main-loan">
-        <h1>Emprestimo de Livros</h1>
+        <h1>Ataulizar o Cadastro do Livro Emprestado</h1>
+        <div class="content-msg">
+          <% if(msgError) { %>
+          <div class="msgError"><%= msgError %></div>
+          <% } %> <% if(msgSuccess) { %>
+          <div class="msgSuccess"><%= msgSuccess %></div>
+          <% } %>
+        </div>
         <div class="form-loan">
-          <form action="/loanBooks" method="post">
+          <form
+            action="/loanBooks/updateLoan/<%= loanBook.loan_id %>"
+            method="post"
+          >
             <div class="select-book" id="select-book">
               <div class="get-book" id="get-book">
                 <input
                   type="text"
                   placeholder="Selecione um livro"
                   name="loan_book"
+                  value="<%= loanBook.book_name %>"
                 />
               </div>
               <div class="list-books" id="list-books">
@@ -33,6 +44,7 @@
                   type="text"
                   placeholder="Selecione o Aluno"
                   name="loan_aluno"
+                  value="<%= loanBook.aluno_name %>"
                 />
               </div>
               <div class="list-alunos" id="list-alunos">
@@ -47,7 +59,15 @@
               </div>
             </div>
             <div class="date-now">
-              <input type="date" name="loan_date_atual" id="today" />
+              <p>
+                OBS: DATA ABAIXO NÃO É A DATA ATUAL. <br />
+                É A DATA QUE REALIZOU O EMPRESTIMO!
+              </p>
+              <input
+                type="date"
+                name="loan_date_atual"
+                value="<%= loanBook.loan_date_atual %>"
+              />
             </div>
             <div class="select-time">
               <input type="radio" name="addDays" id="10" value="10" /> 10
@@ -57,55 +77,22 @@
               <input type="radio" name="addDays" id="30" value="30" /> 30
             </div>
             <div class="date-final">
-              <input type="date" name="loan_date_entrega" />
+              <label for="entrega">Data de Entrega</label>
+              <input
+                type="date"
+                id="entrega"
+                name="loan_date_entrega"
+                value="<%= loanBook.loan_date_entrega %>"
+              />
             </div>
             <div class="btn-cadastrar-loan">
-              <button>Cadastrar Emprestimo</button>
-            </div>
-            <div class="content-msg">
-              <% if(msgError) { %>
-              <div class="msgError"><%= msgError %></div>
-              <% } %> <% if(msgSuccess) { %>
-              <div class="msgSuccess"><%= msgSuccess %></div>
-              <% } %>
+              <button>Atualizar Cadastro do Emprestimo</button>
+              <a href="/loanBooks">Voltar ao Cadastro de Emprestimo</a>
             </div>
           </form>
         </div>
       </div>
-      <div class="container_loan_books">
-        <div class="content_loan_books">
-          <h1>Livros Emprestados</h1>
-          <div class="row">
-            <div class="border-row header-row">
-              <div class="col">Livro</div>
-              <div class="col">Aluno</div>
-              <div class="col">Data da Retirada</div>
-              <div class="col">Data da Entrega</div>
-              <div class="col">Editar</div>
-              <div class="col">Deletar</div>
-            </div>
-          </div>
-          <div class="row">
-            <% if (loanBooks.length > 0) { loanBooks.forEach(loan => { %>
-            <div class="border-row">
-              <div class="col"><%= loan.book_name %></div>
-              <div class="col"><%= loan.aluno_name %></div>
-              <div class="col"><%= loan.loan_date_atual %></div>
-              <div class="col"><%= loan.loan_date_entrega %></div>
-              <div class="col">
-                <a href="/loan/editLoan/<%= loan.loan_id %>">Editar</a>
-              </div>
-              <div class="col">
-                <a href="/loan/deleteLoan/<%= loan.loan_id %>">Deletar</a>
-              </div>
-            </div>
-            <% }) } else { %>
-            <div>Não foi encontrado nenhum registro!</div>
 
-            <% } %>
-          </div>
-        </div>
-      </div>
       <%- include('components/footer') %>
     </main>
     <%- include('components/script') %>

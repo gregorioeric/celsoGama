@@ -1,6 +1,8 @@
 class DashboardController {
   static async getDashboard(req, res) {
-    res.render("dashboard");
+    const msgSuccess = req.query.msgSuccess;
+    const adminUser = req.session.adminUser;
+    return res.render("dashboard", { msgSuccess, adminUser });
   }
 }
 

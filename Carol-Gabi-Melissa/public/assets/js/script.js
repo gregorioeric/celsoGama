@@ -130,7 +130,10 @@ const currentDate = () => {
   const month = String(date.getMonth() + 1).padStart(2, "0");
   const today = String(date.getDate()).padStart(2, "0");
   const fullDate = `${year}-${month}-${today}`;
-  document.querySelector("#today").value = fullDate;
+  const showDate = document.querySelector("#today");
+  if (showDate !== null) {
+    showDate.value = fullDate;
+  }
 };
 
 const formatDate = (date) => {
@@ -184,6 +187,27 @@ if (cancelar !== null) {
 
 const openModalDeleteBook = (id, book_name) => {
   modalForm.action = `/registerBooks/deleteBook/${id}`;
+  text_h3.innerHTML = book_name;
+  modal.classList.add("show-modal");
+  modal.classList.remove("hide-modal");
+};
+
+const openModalDeleteBookBySlug = (id, book_name) => {
+  modalForm.action = `/registerBooks/deleteBookBySlug/${id}`;
+  text_h3.innerHTML = book_name;
+  modal.classList.add("show-modal");
+  modal.classList.remove("hide-modal");
+};
+
+const openModalDeleteAluno = (id, aluno_name) => {
+  modalForm.action = `/alunos/deleteAluno/${id}`;
+  text_h3.innerHTML = aluno_name;
+  modal.classList.add("show-modal");
+  modal.classList.remove("hide-modal");
+};
+
+const openModalDeleteLoan = (id, book_name) => {
+  modalForm.action = `/loanBooks/deleteLoan/${id}`;
   text_h3.innerHTML = book_name;
   modal.classList.add("show-modal");
   modal.classList.remove("hide-modal");

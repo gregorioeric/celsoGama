@@ -36,6 +36,7 @@
               text-align: right;
             }
 
+            .editable div textarea,
             .editable div input {
               background: transparent;
               border: none;
@@ -127,16 +128,16 @@
         <body>
           <section class="perfil container">
             <div class="perfil-info">
-              <li>
-                <div class="icon-perfil-profile">
-                  <i class="bx bxs-user"></i>
-                </div>
-              </li>
+              <div class="icon-perfil-profile">
+                <i class="bx bxs-user"></i>
+              </div>
               <div class="editable">
                 <form action="profile" method="post">
-                  <div><strong>username</strong></div>
+                  <h2>username</h2>
                   <div>
                     <span>Nome:</span>
+                    <!-- <span id="editableName"><%= //userLogged.user_name %></span>
+                    <input type="hidden" name="user_name" id="inputName" /> -->
                     <input
                       type="text"
                       disabled
@@ -205,17 +206,19 @@
                       id="activeInput"
                     />
                   </div>
-                  <button type="submit">Atualizar Perfil</button>
+                  <div>
+                    <span>OBS:</span>
+                    <textarea>
+Você também pode editar o conteúdo dentro desta div.
+                    </textarea>
+                  </div>
+
+                  <div class="editar" id="editable">
+                    <button type="submit">Atualizar Perfil</button>
+                    <button>Editar</button>
+                  </div>
                 </form>
               </div>
-              <div contenteditable="true" class="editable">
-                <p>Você também pode editar o conteúdo dentro desta div.</p>
-              </div>
-
-              <button onclick="salvarConteudo()">Salvar Alterações</button>
-            </div>
-            <div class="editar" id="editable">
-              <button>Editar</button>
             </div>
             <div class="quest-icon">
               <img src="/img/logo.png" />
@@ -227,8 +230,13 @@
     <script>
       const editable = document.querySelector("#editable");
       editable.addEventListener("click", () => {
-        // const activeEditable = document.querySelectorAll("#activeEditable");
-        const activeInput = document.querySelectorAll("#activeInput");
+        // const editableName = document.querySelector("#editableName");
+        // const inputName = document.querySelector("#inputName");
+
+        // inputName.value = editableName.innerText;
+
+        // console.log(inputName.value);
+
         // const setValue = document.querySelectorAll("#setValue");
 
         // setValue.value = activeEditable.innerText;
@@ -237,6 +245,8 @@
         //   edit.setAttribute("contenteditable", "true");
         //   edit.classList.add("active");
         // });
+        const activeInput = document.querySelectorAll("#activeInput");
+
         activeInput.forEach((edit) => {
           edit.removeAttribute("disabled");
           edit.classList.add("activeInput");

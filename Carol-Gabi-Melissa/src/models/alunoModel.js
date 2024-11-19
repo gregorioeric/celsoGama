@@ -10,7 +10,7 @@ module.exports = class AlunoModel {
 
   static async selectAlunoById(aluno_id) {
     const selectAlunoById = "SELECT * FROM alunos WHERE aluno_id = ?;";
-    const [result] = await database.query(selectAlunoById, [aluno_id]);
+    const [[result]] = await database.query(selectAlunoById, [aluno_id]);
 
     return result;
   }

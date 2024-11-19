@@ -14,28 +14,42 @@ module.exports = class RegisterBookModel {
   }
 
   static async insertBook(book) {
-    const { book_image, book_name, book_autor, book_categoria, book_desc } =
-      book;
-    const insertBook = `INSERT INTO books (book_image, book_name, book_autor, book_categoria, book_desc ) VALUES (?, ?, ?, ?, ?);`;
+    const {
+      book_image,
+      book_name,
+      book_autor,
+      book_categoria,
+      book_desc,
+      book_slug,
+    } = book;
+    const insertBook = `INSERT INTO books (book_image, book_name, book_autor, book_categoria, book_desc, book_slug ) VALUES (?, ?, ?, ?, ?, ?);`;
     const [result] = await database.query(insertBook, [
       book_image,
       book_name,
       book_autor,
       book_categoria,
       book_desc,
+      book_slug,
     ]);
     return result;
   }
 
   static async updateBook(book, book_id) {
-    const { book_image, book_name, book_autor, book_categoria, book_desc } =
-      book;
+    const {
+      book_image,
+      book_name,
+      book_autor,
+      book_categoria,
+      book_desc,
+      book_slug,
+    } = book;
     const updateBook = `UPDATE books SET 
         book_image = ?,
         book_name = ?,
         book_autor = ?,
         book_categoria = ?,
-        book_desc = ?
+        book_desc = ?,
+        book_slug = ?
       WHERE
         book_id = ?;`;
     const [result] = await database.query(updateBook, [
@@ -44,6 +58,7 @@ module.exports = class RegisterBookModel {
       book_autor,
       book_categoria,
       book_desc,
+      book_slug,
       book_id,
     ]);
     return result;

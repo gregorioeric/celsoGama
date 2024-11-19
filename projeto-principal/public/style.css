@@ -63,7 +63,7 @@ body {
 
 .header-home {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 200px 1fr;
   position: fixed;
   background: var(--cor-preto-alpha);
   width: 100%;
@@ -101,7 +101,7 @@ img {
 .main-menu ul {
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   width: 100%;
 }
 
@@ -111,7 +111,7 @@ img {
 
 .main-menu ul li a {
   display: flex;
-  padding: 1rem 2rem;
+  padding: 1rem;
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--cor-branco);
@@ -1165,4 +1165,12 @@ Estilo do formulario de cadastro
 .form-admin .form .form-group .btn-group button:hover {
   background: var(--cor-verde);
   color: var(--cor-branco);
+}
+
+/*************************************************************
+    Estilo do Profile
+**************************************************************/
+
+.container-profile {
+  padding-top: 8rem;
 }

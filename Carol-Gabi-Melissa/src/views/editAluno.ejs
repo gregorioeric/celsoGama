@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+  <body>
+    <main>
+      <%- include('components/header') %>
+      <div class="main-alunos">
+        <form
+          action="/alunos/updateAluno/<%= aluno.aluno_id %>"
+          method="POST"
+          class="form form-alunos"
+        >
+          <h1>Atualizar dados do(a) Aluno(a) <%= aluno.aluno_name %></h1>
+          <div class="content-msg">
+            <% if(msgError) { %>
+            <div class="msgError"><%= msgError %></div>
+            <% } %> <% if(msgSuccess) { %>
+            <div class="msgSuccess"><%= msgSuccess %></div>
+            <% } %>
+          </div>
+          <div class="form-group">
+            <div class="input aluno_name">
+              <input
+                type="text"
+                name="aluno_name"
+                class="aluno_name"
+                id="aluno_name"
+                placeholder=""
+                value="<%= aluno.aluno_name %>"
+              />
+              <label for="aluno_name">Nome do Aluno</label>
+            </div>
+            <div class="input aluno_email">
+              <input
+                type="text"
+                name="aluno_email"
+                class="aluno_email"
+                id="aluno_email"
+                placeholder=""
+                value="<%= aluno.aluno_email %>"
+              />
+              <label for="aluno_email">Email do Aluno</label>
+            </div>
+
+            <div class="input aluno_serie">
+              <input
+                type="text"
+                name="aluno_serie"
+                class="aluno_serie"
+                id="aluno_serie"
+                placeholder=""
+                value="<%= aluno.aluno_serie %>"
+              />
+              <label for="aluno_serie">Serie do Aluno(a)</label>
+            </div>
+
+            <div class="btn-group">
+              <div class="btn">
+                <button>Atualizar Aluno(a)</button>
+              </div>
+              <div class="btn">
+                <a href="/alunos">Cancelar Atualização</a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <%- include('components/footer') %>
+    </main>
+    <%- include('components/script') %>
+  </body>
+</html>
