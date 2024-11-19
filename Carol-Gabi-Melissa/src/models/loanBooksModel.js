@@ -85,11 +85,11 @@ module.exports = class LoanBooksModel {
         loan.loan_date_atual,
         loan.loan_date_entrega
       FROM 
-        carol_gabi_melissa.loan
+        loan
       JOIN 
-        carol_gabi_melissa.alunos ON loan.alunos_aluno_id = alunos.aluno_id
+        alunos ON loan.alunos_aluno_id = alunos.aluno_id
       JOIN 
-        carol_gabi_melissa.books ON loan.books_book_id = books.book_id;`;
+        books ON loan.books_book_id = books.book_id;`;
     const [result] = await database.query(selectJoin);
 
     return result;
