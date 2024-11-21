@@ -1,3 +1,6 @@
+ALTER TABLE books ADD book_slug VARCHAR(255);
+ALTER TABLE books MODIFY COLUMN book_slug VARCHAR(255) AFTER book_desc;
+
 -- -----------------------------------------------------
 -- Table `alunos`
 -- -----------------------------------------------------

@@ -18,7 +18,6 @@ class RegisterController {
 
   static async postRegister(req, res) {
     const { user_name, user_email, user_password } = req.body;
-    const user_date = new Date().toJSON().slice(0, 19).replace("T", " ");
 
     const passworHashed = await bcrypt.hash(user_password, 10);
 
@@ -26,7 +25,6 @@ class RegisterController {
       user_name,
       user_email,
       user_password: passworHashed,
-      user_date,
     };
 
     const resultInsert = await RegisterUserModel.postUser(userData);
