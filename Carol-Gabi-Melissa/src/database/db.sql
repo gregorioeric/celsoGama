@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS `books` (
   `book_autor` VARCHAR(100) NOT NULL,
   `book_categoria` VARCHAR(100) NOT NULL,
   `book_desc` TEXT NOT NULL,
+  `book_slug` VARCHAR(255),
   `book_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`book_id`))
 ENGINE = InnoDB;
