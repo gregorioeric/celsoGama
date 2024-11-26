@@ -38,6 +38,7 @@ li {
   --cor-branco: rgb(255, 255, 255);
   --cor-preto: rgb(0, 0, 0);
   --cor-verde: rgb(60, 135, 41);
+  --cor-verde-light: rgb(201, 235, 193);
   --cor-vermelho: rgb(255, 0, 0);
   --cor-vermelho-s-light: rgb(255, 214, 214);
   --cor-vermelho-light: rgb(204, 153, 153);
@@ -45,6 +46,7 @@ li {
   --cor-azul-escuro: rgb(135, 206, 250);
   --cor-cinza: rgb(98, 98, 98);
   --cor-amarelo: rgb(255, 189, 89);
+  --cor-amarelo-light: rgb(255, 226, 186);
   --cor-laranja: rgb(240, 173, 78);
 }
 
@@ -95,9 +97,10 @@ body {
 /* Estilo do formulario de cadastro */
 
 .materias {
-  display: flex;
-  padding: 3rem 0;
-  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* padding: 3rem 0;
+  width: 50%; */
 }
 
 .vestibulares {
@@ -319,7 +322,7 @@ estilo da pagina vestibular
 /* novo codigo comeco */
 .container-materias {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 300px 1fr;
 }
 .menu-materias {
   position: sticky;
@@ -344,9 +347,9 @@ estilo da pagina vestibular
   border-right: 8px solid var(--cor-amarelo);
   background: var(--cor-verde);
 }
-.active {
+.active__materias {
   border-right: 8px solid var(--cor-amarelo) !important;
-  background: var(--cor-cinza);
+  background: var(--cor-azul);
 }
 .container-questao {
   padding: 2rem;
@@ -360,23 +363,48 @@ estilo da pagina vestibular
 }
 .questao p {
   text-align: justify;
+  line-height: 1.8rem;
 }
+
+.content-questao {
+  background: var(--cor-amarelo);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
 .content-questao form {
   padding: 1rem 0;
 }
 .select-answer div {
-  padding-bottom: 0.3rem;
+  padding-bottom: 1rem;
 }
 .content-questao form button {
   padding: 0.5rem 2rem;
   cursor: pointer;
   font-weight: bold;
 }
-.resolucao1 p {
+.resolucao p {
   text-align: justify;
+  line-height: 1.8rem;
 }
-.resolucao1 p:nth-child(1) {
-  padding-bottom: 1rem;
+.resolucao p:nth-child(1) {
+  padding: 1rem 0;
+}
+
+.errou,
+.acertou {
+  text-align: center;
+  padding: 0.7rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.acertou {
+  background: var(--cor-verde-light);
+}
+
+.errou {
+  background: var(--cor-vermelho);
 }
 /* novo codigo final */
 
@@ -423,9 +451,10 @@ estilo da pagina vestibular
   margin-left: 60rem;
 }
 
-.home2 {
+/* .home2 {
   display: flex;
-}
+  grid-template-columns: repeat(2, 1fr);
+} */
 
 #enem {
   font-size: 40px;
@@ -435,7 +464,7 @@ estilo da pagina vestibular
   text-align: center;
   display: flex;
   align-items: center;
-  width: 50%;
+  width: 100%;
 }
 
 .rodape {
@@ -453,7 +482,7 @@ estilo da pagina vestibular
   margin-left: 1800px;
   margin-top: 18px;
 }
-h1 {
+/* h1 {
   text-align: center;
 }
 .questao {
@@ -478,9 +507,9 @@ h1 {
 
 .container-materias nav {
   padding: 0 0 0 2rem;
-}
+} */
 
-.container-materias nav ul li {
+/* .container-materias nav ul li {
   list-style: disc;
 }
 
@@ -490,12 +519,12 @@ h1 {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--cor-preto);
-}
+} */
 
-.content-questao {
+/* .content-questao {
   width: 90%;
   margin: 0 auto;
-}
+} */
 
 /* estilo das páginas do admin */
 /* codigo do video */
@@ -858,7 +887,7 @@ h1 {
 }
 
 .msgError,
-.msgSucess {
+.msgSuccess {
   padding: 1rem 0;
   font-size: 1.2rem;
   display: flex;
@@ -867,7 +896,7 @@ h1 {
 }
 
 .msgError,
-.msgSucess,
+.msgSuccess,
 .msgErrorInput {
   text-align: center;
   font-weight: bold;
@@ -880,12 +909,12 @@ h1 {
   background: var(--cor-vermelho-s-light);
 }
 
-.msgSucess {
+.msgSuccess {
   color: var(--cor-verde);
   background: var(--cor-verde-light);
 }
 
-.msgSucess a,
+.msgSuccess a,
 .msgError a {
   font-size: 2rem;
   font-weight: bold;
@@ -1118,7 +1147,7 @@ h1 {
   color: var(--cor-branco);
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1400px) {
   .content-form-cadastro form,
   .content-form-login form {
     width: 80%;
@@ -1137,4 +1166,126 @@ h1 {
     padding: 2rem 1rem;
     font-size: 1.2rem;
   }
+}
+
+/*********************************************************
+    Estilo da pagina Profile
+**************************************************************/
+
+.editable {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 50px;
+  width: 500px;
+}
+
+.editable div.grid_profile {
+  display: grid;
+  grid-template-columns: 170px 300px;
+  padding: 0.3rem;
+}
+
+.editable div span {
+  padding: 0.2rem;
+  border-bottom: 1px solid;
+  text-align: right;
+}
+
+.editable div textarea,
+.editable div input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.menu {
+  font-size: 1.2em;
+  display: flex;
+  gap: 10px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.perfil {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+
+  margin-top: 10px;
+}
+
+.perfil-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.perfil-info img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.perfil-info p {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.editar div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.editar a,
+.editar button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background 300ms ease-in-out;
+}
+
+.editar a {
+  background-color: #5dade2;
+  color: white;
+  cursor: pointer;
+}
+
+.enabled {
+  background-color: #5dade2;
+  color: white;
+  cursor: pointer;
+}
+
+.editar a:hover,
+.enabled:hover {
+  background-color: #3498db;
+}
+
+.quest-icon img {
+  width: 200px;
+}
+
+.activeInput {
+  background: rgb(255, 189, 89) !important;
 }

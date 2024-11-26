@@ -8,10 +8,13 @@ function verificarQuestao1EF() {
     if (radio.checked) {
       if (radio.value === respostaCerta) {
         resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
       } else {
         resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
       }
       resolucao.style.display = "block";
+      document.querySelector("#btnQ1EF").disabled = true;
       return;
     }
   }
@@ -28,10 +31,13 @@ function verificarQuestao2EF() {
     if (radio.checked) {
       if (radio.value === respostaCerta) {
         resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
       } else {
         resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
       }
       resolucao.style.display = "block";
+      document.querySelector("#btnQ2EF").disabled = true;
       return;
     }
   }
@@ -49,10 +55,13 @@ function verificarQuestao3EF() {
     if (radio.checked) {
       if (radio.value === respostaCerta) {
         resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
       } else {
         resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
       }
       resolucao.style.display = "block";
+      document.querySelector("#btnQ3EF").disabled = true;
       return;
     }
   }
@@ -70,10 +79,13 @@ function verificarQuestao4EF() {
     if (radio.checked) {
       if (radio.value === respostaCerta) {
         resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
       } else {
         resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
       }
       resolucao.style.display = "block";
+      document.querySelector("#btnQ4EF").disabled = true;
       return;
     }
   }
@@ -90,10 +102,13 @@ function verificarQuestao5EF() {
     if (radio.checked) {
       if (radio.value === respostaCerta) {
         resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
       } else {
         resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
       }
       resolucao.style.display = "block";
+      document.querySelector("#btnQ5EF").disabled = true;
       return;
     }
   }
@@ -306,7 +321,8 @@ function verificarQuestao5A() {
 
 function verificarQuestao1H() {
   const radios = document.getElementsByName("questao1");
-  let respostaCerta = "D-fiscalização estatal diante das particularidades econômicas.";
+  let respostaCerta =
+    "D-fiscalização estatal diante das particularidades econômicas.";
   let resultado = document.getElementById("resultado1");
   let resolucao = document.getElementById("resolucao1");
 
@@ -323,3 +339,48 @@ function verificarQuestao1H() {
   }
   resultado.textContent = "Por favor, selecione uma resposta.";
 }
+
+const active = document.querySelectorAll("#menu-materias nav ul li a");
+const activePage = window.location.pathname;
+
+active.forEach((link) => {
+  const newLink = new URL(link.href).pathname;
+
+  if (activePage === newLink) {
+    link.classList.add("active__materias");
+  }
+});
+
+// const editable = document.querySelector("#editable");
+
+const btnUpdateProfile = document.querySelector("#update");
+const btnEditProfile = document.querySelector("#edit");
+const btnCancel = document.querySelector("#cancel");
+
+btnCancel.style.display = "none";
+
+btnEditProfile.addEventListener("click", () => {
+  btnCancel.style.display = "flex";
+  btnEditProfile.style.display = "none";
+  btnUpdateProfile.classList.add("enabled");
+  const activeInput = document.querySelectorAll("#form_profile input");
+  btnUpdateProfile.disabled = false;
+
+  activeInput.forEach((edit) => {
+    edit.disabled = false;
+    edit.classList.add("activeInput");
+  });
+});
+
+btnCancel.addEventListener("click", () => {
+  btnCancel.style.display = "none";
+  btnEditProfile.style.display = "flex";
+  btnUpdateProfile.classList.remove("enabled");
+  const activeInput = document.querySelectorAll("#form_profile input");
+  btnUpdateProfile.disabled = true;
+
+  activeInput.forEach((edit) => {
+    edit.disabled = true;
+    edit.classList.remove("activeInput");
+  });
+});

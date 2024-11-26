@@ -5,6 +5,6 @@ const profileRoute = express.Router();
 
 profileRoute.get("/", ProfileController.getProfile);
 
-profileRoute.post("/", ProfileController.postProfile);
+profileRoute.post("/:id", ProfileController.postProfile);
 
 module.exports = profileRoute;

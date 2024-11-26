@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
   <%- include('components/head') %>
+    <title>Página de Questões</title>
+  </head>
   <body>
     <%- include('components/header') %>
     <main>
       <div class="container-materias">
         <%- include('components/menuMaterias') %>
+        <div class="container-questao">
+      <h1>Educação Física</h1>
+
+      <h2>Página de Questões</h2>
 
         <div class="content-questao">
-          <h1>Educação Física</h1>
-          <h2>Página de Questões</h2>
-          <div class="content-questao">
           <div class="questao">
             <h2>
-              1.QUESTÃO 1-(Enem 2021)<br />
+              1. QUESTÃO 1-(Enem 2021)<br />
               A história do futebol brasileiro contém, ao longo de um século,
               registros de episódios racistas. Eis o paradoxo: se, de um lado, a
               atividade futebolística era depreciada aos olhos da “boa sociedade”
@@ -40,37 +44,29 @@
               reafirmar o mito da democracia racial. O texto atribui o
               enfraquecimento do mito da democracia racial no futebol à:
             </h2>
-            </div>
             <form id="form1">
-              <div class="select-answer">
-                <div>
               <br />
               <input
                 type="radio"
-                id="questao1"
+                id="A-Responsabilização dos jogadores negros pela derrota na final da Copa de 1950."
                 name="questao1"
                 value="A-Responsabilização dos jogadores negros pela derrota na final da Copa de 1950."
               />
-              <label for="questao1">
+              <label
                 for="A-Responsabilização dos jogadores negros pela derrota na final da Copa de 1950."
                 >A-Responsabilização dos jogadores negros pela derrota na final da
-                Copa de 1950.
-              </label>
-              </div>
-              <div>
-              <br />
+                Copa de 1950.</label
+              ><br />
               <input
                 type="radio"
-                id="questao1"
+                id="B-Projeção mundial da nação por um esporte antes destinados aos pobres."
                 name="questao1"
                 value="B-Projeção mundial da nação por um esporte antes destinados aos pobres."
               />
-              <label for="questao1">
-                B-Projeção mundial da nação por um esporte antes destinados aos
-                pobres.
-              </label>
-              </div>
-              <div>
+              <label
+                for="B-Projeção mundial da nação por um esporte antes destinados aos pobres."
+                >B-Projeção mundial da nação por um esporte antes destinados aos
+                pobres.</label
               ><br />
               <input
                 type="radio"
@@ -78,13 +74,9 @@
                 name="questao1"
                 value="C-Depreciação de um esporte associado a marginalidade."
               />
-              <label 
-              for="C-Depreciação de um esporte associado a marginalidade."
-                >C-Depreciação de um esporte associado a marginalidade. 
-              </label>
-              </div>
-              <div>
-              <br />
+              <label for="C-Depreciação de um esporte associado a marginalidade."
+                >C-Depreciação de um esporte associado a marginalidade. </label
+              ><br />
               <input
                 type="radio"
                 id="D-Interdição da palavra racismo no contexto esportivo."
@@ -94,11 +86,8 @@
               <label
                 for="D-Interdição da palavra racismo no contexto esportivo.
                 "
-                >D-Interdição da palavra racismo no contexto esportivo. 
-              </label>
-              </div>
-              <div>
-              <br />
+                >D-Interdição da palavra racismo no contexto esportivo. </label
+              ><br />
               <input
                 type="radio"
                 id="E-Atitude contestadora de um jogador-problema."
@@ -108,17 +97,12 @@
               <label
                 for="E-Atitude contestadora de um jogador-problema.
                 "
-                >E-Atitude contestadora de um jogador-problema. 
-              </label>
-              </div>
-              </div>
-              <br />
-              <button type="button" onclick="verificarQuestao1()">
-                Verificar
-              </button>
+                >E-Atitude contestadora de um jogador-problema. </label
+              ><br />
+              <button type="button" onclick="verificarQuestao1EF()">Verificar</button>
             </form>
             <div class="resultado" id="resultado1"></div>
-            <div id="resolucao1" id="resolucao1">
+            <div id="resolucao1" style="display: none">
               <p>
                 <strong>Resolução:</strong>E-Atitude contestadora de um
                 jogador-problema.
@@ -137,8 +121,7 @@
           </div>
     
           <div class="questao">
-            <h2>
-              2. QUESTÃO 2-(Enem 2021) <br />
+            <h2>2. QUESTÃO 2-(Enem 2021) <br />
                 O skate apareceu como forma de vivência no lazer em períodos de baixa nas ondas e ficou conhecido como “surfinho”. No início foram 
                 utilizados eixos e rodinhas de patins pregados numa madeira qualquer, para sua composição, sendo as rodas de borracha ou ferro. 
                 O grande marco na história do skate ocorreu em 1974, quando o engenheiro químico chamado Frank Nasworthy descobriu o uretano, 
@@ -169,7 +152,7 @@
                 name="questao2" value="E-indicaram a autonomia dos praticantes de skate." />
                <label for="E-indicaram a autonomia dos praticantes de skate.">E-indicaram a autonomia dos praticantes de skate.
             </label><br />
-              <button type="button" onclick="verificarQuestao2()">Verificar</button>
+              <button type="button" onclick="verificarQuestao2EF()">Verificar</button>
             </form>
             <div class="resultado" id="resultado2"></div>
             <div id="resolucao2" style="display: none">
@@ -229,7 +212,7 @@
 
             </label><br />
     
-              <button type="button" onclick="verificarQuestao3()">Verificar</button>
+              <button type="button" onclick="verificarQuestao3EF()">Verificar</button>
             </form>
     
             <div class="resultado" id="resultado3"></div>
@@ -292,7 +275,7 @@
 
             </label><br />
     
-              <button type="button" onclick="verificarQuestao4()">Verificar</button>
+              <button type="button" onclick="verificarQuestao4EF()">Verificar</button>
             </form>
     
             <div class="resultado" id="resultado4"></div>
@@ -354,7 +337,7 @@
 
           </label><br />
   
-            <button type="button" onclick="verificarQuestao5()">Verificar</button>
+            <button type="button" onclick="verificarQuestao5EF()">Verificar</button>
           </form>
   
           <div class="resultado" id="resultado5"></div>
@@ -370,11 +353,10 @@
               hábitos saudáveis de alimentação e exercícios físicos, com o auxílio de profissionais qualificados, se necessário.
                             
               </p>
-            </div>
           </div>
       </div>
-
-      
+      </div>
+    </div>
     </main>
     <%- include('components/footer') %>
   </body>

@@ -2,10 +2,14 @@ const express = require("express");
 const RegisterController = require("../controllers/registerController");
 const RegisterUserMiddleware = require("../middlewares/registerUserMiddleware");
 
-const RegisterRoute = express.Router();
+const registerRoute = express.Router();
 
-RegisterRoute.get("/", RegisterController.getRegister);
+registerRoute.get("/", RegisterController.getRegister);
 
-RegisterRoute.post("/", RegisterUserMiddleware.verifyFields, RegisterController.postRegister);
+registerRoute.post(
+  "/",
+  RegisterUserMiddleware.verifyFields,
+  RegisterController.postRegister
+);
 
-module.exports = RegisterRoute;
+module.exports = registerRoute;

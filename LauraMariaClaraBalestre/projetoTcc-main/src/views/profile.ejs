@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+  <body>
+    <%- include('components/header') %>
+    <main>
+
+      <!DOCTYPE html>
+      <html lang="pt-BR">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Perfil de Usuário</title>
+          <title>Página Editável</title>
+      <style>
+        .editable {
+            border: 1px solid #ccc;
+            padding: 10px;
+            min-height: 50px;
+            width: 300px;
+        }
+      </style>
+          <style>
+             
+              .container {
+                  display: flex;
+                  justify-content: space-between;
+                  margin: 10px;
+              }
+              .menu {
+                  font-size: 1.2em;
+                  display: flex;
+                  gap: 10px;
+              }
+              .menu a {
+                  text-decoration: none;
+                  color: black;
+              }
+              .menu a:hover {
+                  text-decoration: underline;
+              }
+              .perfil {
+                  display: flex;
+                  justify-content: space-between;
+                  background-color: white;
+                  border-radius: 8px;
+                  padding: 10px;
+                  
+                  margin-top: 10px;
+              }
+              .perfil-info {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                  gap: 10px;
+              }
+              .perfil-info img {
+                  width: 100px;
+                  height: 100px;
+                  border-radius: 50%;
+              }
+              .perfil-info p {
+                  font-size: 1.2em;
+                  margin: 0;
+              }
+              .editar {
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+              }
+              .editar button {
+                  background-color: #5DADE2;
+                  border: none;
+                  padding: 10px 20px;
+                  border-radius: 5px;
+                  cursor: pointer;
+                  color: white;
+                  font-size: 1em;
+              }
+              .editar button:hover {
+                  background-color: #3498DB;
+              }
+              .quest-icon img {
+                  width: 200px;
+                
+              }
+          </style>
+      </head>
+      <body>
+          
+      
+          <section class="perfil container">
+              <div class="perfil-info">
+                <li><p><div class="icon-perfil-profile">
+                  <i class="bx bxs-user"></i>
+                </div></p></li>
+                <p contenteditable="true" class="editable">
+                  <p><strong>username</strong></p>
+                  <p>nome completo</p>
+                  <p>Email: @huhedwsh.com</p>
+                  <p>CEP: 238437210</p>
+                  <p>Gênero: prefiro não informar</p>
+                  <p>Idade: 17</p>
+                  <p>Escolaridade: Ensino Médio</p>
+                  <p>Curso de Interesse: Medicina</p>
+                </p>
+                <div contenteditable="true" class="editable">
+                  <p>Você também pode editar o conteúdo dentro desta div.</p>
+              </div>
+          
+              <button onclick="salvarConteudo()">Salvar Alterações</button>
+          
+              <script>
+                  function salvarConteudo() {
+                      const conteudos = document.querySelectorAll('.editable');
+                      conteudos.forEach((conteudo, index) => {
+                          console.log(`Conteúdo ${index + 1}:`, conteudo.innerHTML);
+                          // Aqui você poderia enviar o conteúdo para um servidor, salvar em localStorage, etc.
+                      });
+                      alert('Alterações salvas (ver no console).');
+                  }
+              </script>
+              </div>
+              <div class="editar">
+                  <button>Editar</button>
+              </div>
+              <div class="quest-icon">
+                  <img src="/img/logo.png">
+              </div>
+          </section>
+      </body>
+      </html>
+      
+        
+    </main> 
+        <%- include('components/footer') %>
+  </body>
+</html>

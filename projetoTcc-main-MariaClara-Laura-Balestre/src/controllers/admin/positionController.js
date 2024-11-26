@@ -1,6 +1,6 @@
 const PositionModel = require("../../models/positionModel");
 
-module.exports = class PositionController {
+class PositionController {
   static async getPosition(req, res) {
     const adminUser = req.session.adminUser;
     const results = await PositionModel.selectAllPosition();
@@ -76,4 +76,6 @@ module.exports = class PositionController {
 
     return res.redirect("/position?msgSuccess=Deletado com sucesso!");
   }
-};
+}
+
+module.exports = PositionController;

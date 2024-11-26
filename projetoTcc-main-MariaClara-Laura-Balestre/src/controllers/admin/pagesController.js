@@ -2,7 +2,7 @@ const PagesModel = require("../../models/pagesModel");
 const PositionModel = require("../../models/positionModel");
 const UploadImagesModel = require("../../models/uploadImagesModel");
 
-module.exports = class PagesController {
+class PagesController {
   static async getPages(req, res) {
     const adminUser = req.session.adminUser;
     const result = await PagesModel.selectJoinPagesPosition();
@@ -59,12 +59,11 @@ module.exports = class PagesController {
 
   static async getEditPage(req, res) {
     const adminUser = req.session.adminUser;
-    const getParams = req.params.id;
+    const getParams = Number(req.params.id);
 
     const resultPosition = await PositionModel.selectAllPosition();
     const result = await PagesModel.selectJoinPagesPositionById(getParams);
     const getImages = await UploadImagesModel.selectAllImages();
-    console.log(result);
 
     return res.render("editPage", {
       adminUser,
@@ -104,4 +103,6 @@ module.exports = class PagesController {
 
     return res.redirect("/pages?msgSuccess=Pagina deletada com sucesso!");
   }
-};
+}
+
+module.exports = PagesController;

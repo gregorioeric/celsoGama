@@ -23,7 +23,6 @@ module.exports = class PositionController {
     }
 
     const result = await PositionModel.insertPosition(position_name);
-    console.log(result);
 
     return res.redirect(
       "/pages/createPages?msgSuccess=Cadastro de Position realizado com sucesso."
@@ -39,7 +38,6 @@ module.exports = class PositionController {
                 Crie uma Posição com no minimo 3 caracteres!`
       );
     }
-    console.log(position_name);
 
     const result = await PositionModel.insertPosition(position_name);
 

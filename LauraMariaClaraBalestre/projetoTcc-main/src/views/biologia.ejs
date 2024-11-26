@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+  <head>
+    <title>Página de Questões</title>
+  </head>
+  <body>
+    <%- include('components/header') %>
+    <main>
+      <h1>Biologia</h1>
+
+      <h2>Página de Questões</h2>
+
+      <div class="container-materias">
+        <%- include('components/menuMaterias') %>
+        <div class="content-questao">
+          <div class="questao">
+            <h2>
+              1.QUESTÃO 1-(Enem/2018)<br />
+              Corredores ecológicos visam mitigar os efeitos da fragmentação dos ecossistemas promovendo a ligação entre diferentes áreas, 
+              com o objetivo de proporcionar o deslocamento de animais, a dispersão de sementes e o aumento da cobertura vegetal. 
+              São instituídos com base em informações como estudos sobre o deslocamento de espécies, sua área de vida (área necessária 
+              para o suprimento de suas necessidades vitais e reprodutivas) e a distribuição de suas populações.
+              
+              Nessa estratégia, a recuperação da biodiversidade é efetiva porque:
+              
+            </h2>
+            <form id="form1">
+              <br />
+              <input
+                type="radio"
+                id="A-propicia o fluxo gênico."
+                name="questao1"
+                value="A-propicia o fluxo gênico."
+              />
+              <label
+                for="A-propicia o fluxo gênico."
+                >A-propicia o fluxo gênico.</label
+              ><br />
+              <input
+                type="radio"
+                id="B-intensifica o manejo de espécies."
+                name="questao1"
+                value="B-intensifica o manejo de espécies."
+              />
+              <label
+                for="B-intensifica o manejo de espécies."
+                >B-intensifica o manejo de espécies.</label
+              ><br />
+              <input
+                type="radio"
+                id="C-amplia o processo de ocupação humana."
+                name="questao1"
+                value="C-amplia o processo de ocupação humana."
+              />
+              <label for="C-amplia o processo de ocupação humana."
+                >C-amplia o processo de ocupação humana. </label
+              ><br />
+              <input
+                type="radio"
+                id="D-aumenta o número de indivíduos nas populações."
+                name="questao1"
+                value="D-aumenta o número de indivíduos nas populações."
+              />
+              <label
+                for="D-aumenta o número de indivíduos nas populações.
+                "
+                >D-aumenta o número de indivíduos nas populações. </label
+              ><br />
+              <input
+                type="radio"
+                id="E-favorece a formação de ilhas de proteção integral."
+                name="questao1"
+                value="E-favorece a formação de ilhas de proteção integral."
+              />
+              <label
+                for="E-favorece a formação de ilhas de proteção integral.
+                "
+                >E-favorece a formação de ilhas de proteção integral. </label
+              ><br />
+              <button type="button" onclick="verificarQuestao1B()">Verificar</button>
+            </form>
+            <div class="resultado" id="resultado1"></div>
+            <div id="resolucao1" style="display: none">
+              <p>
+                <strong>Resolução:</strong>A-propicia o fluxo gênico.
+                <br />
+                <br> O fluxo gênico corresponde ao aumento da diversidade sob o ponto de vista genético. Dessa forma, os corredores ecológicos 
+                permitem o deslocamento dos animais e a dispersão de sementes.
+                
+                Isso resulta no aumento da cobertura vegetal que, por sua vez, faz com que os seres vivos possam se intercruzar.
+                
+                As demais alternativas estão erradas pois:<br>
+                
+                B- O manejo de espécies tem como característica controlar possíveis danos e consequências negativas causados para a 
+                sociedade e até mesmo para o nicho ecológico.<br>
+                
+                C- O processo de ocupação humana não está relacionado aos corredores ecológicos.<br>
+                
+                D- A estratégia apresentada no enunciado não faz relação com o aumento do número de indivíduos.<br>
+                
+                E- Os corredores ecológicos não favorecem a formação de ilhas de proteção integral.<br>
+                
+              </p>
+            </div>
+          </div>
+    
+          <div class="questao">
+            <h2>2. QUESTÃO 2-(Enem/2018) <br />
+              Insetos podem apresentar três tipos de desenvolvimento. Um deles, a holometabolia (desenvolvimento completo), 
+              é constituído pelas fases de ovo, larva, pupa e adulto sexualmente maduro, que ocupam diversos hábitats. 
+              Os insetos com holometabolia pertencem às ordens mais numerosas em termos de espécies conhecidas. Esse tipo 
+              de desenvolvimento está relacionado a um maior número de espécies em razão da
+              
+                </h2>
+            <form id="form2">
+              <br /><input type="radio" id="A-proteção na fase de pupa, favorecendo a sobrevivência de adultos férteis."
+               name="questao2" value="A-proteção na fase de pupa, favorecendo a sobrevivência de adultos férteis." />
+              <label for="A-proteção na fase de pupa, favorecendo a sobrevivência de adultos férteis.">A-proteção na fase de pupa, favorecendo a sobrevivência de adultos férteis.
+            </label><br />
+              <input type="radio" id="B-produção de muitos ovos, larvas e pupas, aumentando o número de adultos."
+               name="questao2" value="B-produção de muitos ovos, larvas e pupas, aumentando o número de adultos." />
+              <label for="B-produção de muitos ovos, larvas e pupas, aumentando o número de adultos.">B-produção de muitos ovos, larvas e pupas, aumentando o número de adultos.
+            </label><br />
+              <input type="radio" id="C-exploração de diferentes nichos, evitando a competição entre as fases da vida."
+               name="questao2" value="C-exploração de diferentes nichos, evitando a competição entre as fases da vida." />
+              <label for="C-exploração de diferentes nichos, evitando a competição entre as fases da vida.">C-exploração de diferentes nichos, evitando a competição entre as fases da vida.
+            </label><br />
+            <input type="radio" id="D-ingestão de alimentos em todas as fases de vida, garantindo o surgimentos do adulto."
+             name="questao2" value="D-ingestão de alimentos em todas as fases de vida, garantindo o surgimentos do adulto." />
+            <label for="D-ingestão de alimentos em todas as fases de vida, garantindo o surgimentos do adulto.">D-ingestão de alimentos em todas as fases de vida, garantindo o surgimentos do adulto.
+            </label><br />
+             <input type="radio" id="E-utilização do mesmo alimento em todas as fases, otimizando a nutrição do organismo."
+                name="questao2" value="E-utilização do mesmo alimento em todas as fases, otimizando a nutrição do organismo." />
+               <label for="E-utilização do mesmo alimento em todas as fases, otimizando a nutrição do organismo.">E-utilização do mesmo alimento em todas as fases, otimizando a nutrição do organismo.
+            </label><br />
+              <button type="button" onclick="verificarQuestao2B()">Verificar</button>
+            </form>
+            <div class="resultado" id="resultado2"></div>
+            <div id="resolucao2" style="display: none">
+              <p><strong>Resolução:</strong> C-exploração de diferentes nichos, evitando a competição entre as fases da vida. <br />
+                <br> Cada fase de desenvolvimento apresenta um habitat e um nicho diferentes, o que impede a competição entre as 
+                espécies, ou seja, a competição intraespecífica. Dessa forma, é aumentada a efetividade do animal dentro de 
+                seu ambiente, bem como sua adaptação ao meio.
+                
+                As demais alternativas destacam etapas do desenvolvimento que existem, porém não se relacionam com o aumento do 
+                número de espécies e nem com a justificativa apresentada.
+                
+                
+                </p>
+            </div>
+          </div>
+         </div>
+         </div>
+         
+
+      
+    </main>
+    <%- include('components/footer') %>
+  </body>
+</html>

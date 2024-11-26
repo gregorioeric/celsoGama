@@ -16,7 +16,7 @@ module.exports = class PositionModel {
   }
 
   static async insertPosition(position_name) {
-    const insertPosition = `INSERT INTO position set position_name = ?;`;
+    const insertPosition = `INSERT INTO position SET position_name = ?;`;
     const [result] = await database.query(insertPosition, [position_name]);
 
     return result;

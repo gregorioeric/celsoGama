@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+
+  <body>
+    <%- include('components/header') %>
+    <main>
+      <div class="container_profile">
+        <div class="content_profile">
+          <h1>Meu Perfil</h1>
+          <div class="content-msg grid_area">
+            <% if(msgSuccess) { %>
+            <div class="msgSuccess">
+              <%= msgSuccess %> <a href="/profile">X</a>
+            </div>
+            <% } %> <% if(msgError) { %>
+            <div class="msgError"><%= msgError %> <a href="/profile">X</a></div>
+            <% } %>
+          </div>
+          <header class="menu_profile">
+            <nav>
+              <ul>
+                <li><a href="/reclamacoes">Meu Perfil</a></li>
+                <li><a href="/reclamacoes/listPostsReclamacoes">Posts</a></li>
+                <li>
+                  <a href="/reclamacoes/createPostReclamacoes">Criar Post</a>
+                </li>
+              </ul>
+            </nav>
+          </header>
+          <div class="fields_post">
+            <h2>Editar Post</h2>
+            <form
+              action="/reclamacoes/editPost/<%= post.post_reclamacoes_id %>"
+              method="post"
+            >
+              <div class="table">
+                <div class="column">
+                  <div class="create_post">
+                    <div class="titulos">
+                      <div>Titulo:</div>
+                      <div>
+                        <input
+                          type="text"
+                          name="post_reclamacoes_title"
+                          value="<%= post.post_reclamacoes_title %>"
+                        />
+                      </div>
+                    </div>
+                    <div class="bairro">
+                      <div>Bairro:</div>
+                      <div>
+                        <input
+                          type="text"
+                          value="<%= post.post_reclamacoes_bairro %>"
+                          name="post_reclamacoes_bairro"
+                        />
+                      </div>
+                    </div>
+                    <div class="cidade">
+                      <div>Cidade:</div>
+                      <div>
+                        <input
+                          type="text"
+                          value="<%= post.post_reclamacoes_cidade %>"
+                          name="post_reclamacoes_cidade"
+                        />
+                      </div>
+                    </div>
+                    <div class="estado">
+                      <div>Estado:</div>
+                      <div>
+                        <input
+                          type="text"
+                          value="<%= post.post_reclamacoes_uf %>"
+                          name="post_reclamacoes_uf"
+                        />
+                      </div>
+                    </div>
+                    <div class="dados">
+                      <div>Mensagem:</div>
+                      <div>
+                        <textarea name="post_reclamacoes_content" id="">
+<%= post.post_reclamacoes_content %>
+                        </textarea>
+                      </div>
+                    </div>
+                    <div class="btns_post" id="btns_post">
+                      <span></span>
+                      <div>
+                        <a href="/reclamacoes/listPostsReclamacoes">Cancelar</a>
+                        <button>Atualizar Post</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include('components/footer') %>
+  </body>
+</html>

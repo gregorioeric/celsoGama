@@ -9,6 +9,14 @@ module.exports = class RegisterUserModel {
 
     return result;
   }
+
+  static async selectUserById(user_id) {
+    const selectEmail = "SELECT * FROM users WHERE user_id = ?";
+    const [[result]] = await database.query(selectEmail, [user_id]);
+
+    return result;
+  }
+
   static async getAllUser() {
     const selectAllUsers = "SELECT * FROM users";
     const [result] = await database.query(selectAllUsers);
@@ -25,15 +33,32 @@ module.exports = class RegisterUserModel {
       user_email,
       user_password,
     } = data_user;
-    const inserUser =
+    const insertUser =
       "INSERT INTO users(user_name, user_cpf, user_cep, user_telefone, user_email, user_password) VALUES (?, ?, ?, ?, ?, ?)";
-    const [result] = await database.query(insertUser, {
+    const [result] = await database.query(insertUser, [
       user_name,
       user_cpf,
       user_cep,
       user_telefone,
       user_email,
       user_password,
+    ]);
+
+    return result;
+  }
+
+  static async updateUser(user_id, data_user) {
+    const { user_name, user_cpf, user_cep, user_telefone, user_email } =
+      data_user;
+    const updateUser =
+      "UPDATE users SET user_name = ?, user_cpf = ?, user_cep = ?, user_telefone = ?, user_email = ? WHERE user_id = ?;";
+    const [result] = await database.query(updateUser, {
+      user_name,
+      user_cpf,
+      user_cep,
+      user_telefone,
+      user_email,
+      user_id,
     });
 
     return result;
