@@ -22,11 +22,8 @@ module.exports = class UploadImagesAdminController {
     }
 
     const user_image_name = `/${req.file.filename}`;
-    const imgData = {
-      user_image_name,
-    };
 
-    const results = await UploadImagesModel.postImages(imgData);
+    const results = await UploadImagesModel.postImages(user_image_name);
 
     if (!results) {
       return res.redirect(

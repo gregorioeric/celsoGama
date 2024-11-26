@@ -8,6 +8,9 @@ USE login_register_system;
 CREATE TABLE users(
 user_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 user_name VARCHAR (120) NOT NULL,
+user_cpf VARCHAR (120) NOT NULL,
+user_cep VARCHAR (120) NOT NULL,
+user_telefone VARCHAR (120) NOT NULL,
 user_email VARCHAR (120) NOT NULL,
 user_password VARCHAR (255) NOT NULL,
 user_date DATETIME NOT NULL

@@ -18,14 +18,13 @@ module.exports = class RegisterUserModel {
   }
 
   static async postUser(userDate) {
-    const { user_name, user_email, user_password, user_date } = userDate;
+    const { user_name, user_email, user_password } = userDate;
     const insertUser =
-      "INSERT INTO users(user_name, user_email, user_password, user_date) VALUES (?, ?, ?, ?)";
+      "INSERT INTO users(user_name, user_email, user_password) VALUES (?, ?, ?)";
     const [result] = await database.query(insertUser, [
       user_name,
       user_email,
       user_password,
-      user_date,
     ]);
 
     return result;

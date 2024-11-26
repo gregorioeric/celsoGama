@@ -43,7 +43,7 @@ li {
   --cor-vermelho-s-light: rgb(255, 214, 214);
   --cor-vermelho-light: rgb(204, 153, 153);
   --cor-azul: #75a0e1;
-  --cor-azul-escuro: rgb(135, 206, 250);
+  --cor-azul-escuro: rgb(8, 127, 201);
   --cor-cinza: rgb(98, 98, 98);
   --cor-amarelo: rgb(255, 189, 89);
   --cor-amarelo-light: rgb(255, 226, 186);
@@ -1288,4 +1288,14 @@ estilo da pagina vestibular
 
 .activeInput {
   background: rgb(255, 189, 89) !important;
+}
+
+.materias_home li a{
+  color: var(--cor-preto);
+  transition: color 300ms ease-in-out;
+}
+
+.materias_home li a:hover{
+  border-bottom: 2px solid var(--cor-azul-escuro);
+  color: var(--cor-azul-escuro);
 }
