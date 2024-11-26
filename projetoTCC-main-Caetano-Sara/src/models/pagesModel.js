@@ -52,10 +52,16 @@ module.exports = class PagesModel {
   }
 
   static async selectJoinPagesPosition() {
-    const selectJoin = `SELECT p.page_id, p.page_title, p.page_status, p.page_content, p.page_date, pos.position_name, pos.position_date
-    FROM pages p
-    JOIN position pos
-    ON p.position_position_id = pos.position_id;`;
+    const selectJoin = `SELECT p.page_id,
+            p.page_title,
+            p.page_status,
+            p.page_content,
+            p.page_date,
+            pos.position_name,
+            pos.position_date
+          FROM pages p
+          JOIN position pos
+          ON p.position_position_id = pos.position_id;`;
     const [result] = await database.query(selectJoin);
 
     return result;
