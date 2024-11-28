@@ -3,8 +3,6 @@ const BlogController = require("../controllers/blogController");
 
 const blogRoute = express.Router();
 
-quemsomosRoute.get("/", BlogController.getblog);
+blogRoute.get("/", BlogController.getblog);
 
 module.exports = blogRoute;
-
-

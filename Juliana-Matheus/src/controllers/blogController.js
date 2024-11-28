@@ -1,8 +1,12 @@
+const PagesModel = require("../models/pagesModel");
+
 class BlogController {
   static async getblog(req, res) {
-    res.render("blog");
+    const result = await PagesModel.selectJoinPagesPosition();
+    res.render("blog", {
+      pages: result,
+    });
   }
 }
 
 module.exports = BlogController;
-

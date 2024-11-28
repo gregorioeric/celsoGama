@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_telefone` VARCHAR(15) NOT NULL,
   `user_email` VARCHAR(120) NOT NULL,
   `user_password` VARCHAR(255) NOT NULL,
+  `user_img_profile` VARCHAR(255),
   `user_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`user_id`))
 ENGINE = InnoDB;
@@ -30,6 +31,7 @@ CREATE TABLE IF NOT EXISTS `post_reclamacoes` (
   `post_reclamacoes_uf` VARCHAR(30) NOT NULL,
   `post_reclamacoes_content` LONGTEXT NOT NULL,
   `post_reclamacoes_slug` VARCHAR(255) NOT NULL,
+  `post_reclamacoes_img` VARCHAR(255),
   `post_reclamacoes_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `users_user_id` INT NOT NULL,
   PRIMARY KEY (`post_reclamacoes_id`),
@@ -41,5 +43,5 @@ CREATE TABLE IF NOT EXISTS `post_reclamacoes` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-ALTER TABLE post_reclamacoes ADD post_reclamacoes_img VARCHAR(255);
-ALTER TABLE users ADD user_img_profile VARCHAR(255);
+-- ALTER TABLE post_reclamacoes ADD post_reclamacoes_img VARCHAR(255);
+-- ALTER TABLE users ADD user_img_profile VARCHAR(255);

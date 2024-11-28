@@ -13,6 +13,7 @@ const logoutAdminRoute = require("./src/routes/logoutAdminRoute");
 const pagesRoute = require("./src/routes/pagesRoute");
 const positionRoute = require("./src/routes/positionRoute");
 const uploadAdminRoute = require("./src/routes/uploadAdminRoute");
+const blogRoute = require("./src/routes/blogRoute");
 
 const app = express();
 const port = process.env.PORTSERVER || 3000;
@@ -50,7 +51,7 @@ app.use(
   express.static(path.join(__dirname, "node_modules", "tinymce"))
 );
 
-app.use("/", route);
+app.use("/", blogRoute);
 app.use("/admin", adminRoute);
 app.use("/dashboard", dashboardRoute);
 app.use("/dicas", dicasRoute);
