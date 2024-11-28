@@ -1,4 +1,4 @@
-const RegisterUserModel = require("../models/registerUserModels");
+const RegisterUserModel = require("../models/registerModel");
 
 module.exports = class RegisterUserMiddleware {
   static async verifyFields(req, res, next) {

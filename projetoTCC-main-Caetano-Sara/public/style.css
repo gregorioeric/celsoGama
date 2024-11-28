@@ -1127,3 +1127,27 @@ img {
 .show_post .user_post .user_img img {
   position: absolute;
 }
+
+.show_post .by_post h1 {
+  padding: 1rem 0;
+}
+
+/***********************************************
+  Estilo do menu do Profile
+************************************************/
+
+.menu_profile nav ul li a {
+  display: flex;
+  color: var(--cor-preto);
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0.4rem 0;
+  transition: color 300ms ease-in-out;
+
+  border-bottom: 2px solid transparent;
+}
+
+.menu_profile nav ul li a:hover {
+  color: var(--cor-azul);
+  border-bottom: 2px solid var(--cor-azul);
+}

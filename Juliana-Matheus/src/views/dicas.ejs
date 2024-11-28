@@ -9,7 +9,15 @@
   <body>
     <%- include('components/header') %>
     <main>
-      <h1>Dicas</h1>
+      <div class="content_pages">
+        <% pages.forEach((page) => {%>
+        <div>
+          <% if (page.position_name === "Dicas"){ %>
+          <div><%- page.page_content %></div>
+          <% } %>
+        </div>
+        <% }) %>
+      </div>
       <%- include('components/footer') %>
     </main>
   </body>

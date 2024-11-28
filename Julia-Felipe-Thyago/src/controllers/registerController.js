@@ -1,5 +1,5 @@
 const bcrypt = require("bcryptjs");
-const RegisterUserModel = require("../models/registerUserModels");
+const RegisterUserModel = require("../models/registerModel");
 
 class RegisterController {
   static async getRegister(req, res) {
@@ -18,7 +18,6 @@ class RegisterController {
 
   static async postRegister(req, res) {
     const { ...data_user } = req.body;
-    console.log(data_user);
 
     const passwordHashed = await bcrypt.hash(data_user.user_password, 10);
 
@@ -32,8 +31,6 @@ class RegisterController {
     };
 
     const result = await RegisterUserModel.insertUser(dataUser);
-
-    console.log(result);
 
     return res.redirect("/login?msgSucess=Cadastro realizado com sucesso!");
   }

@@ -1,5 +1,5 @@
 const PostReclamacoesModel = require("../models/postReclamacoesModel");
-const RegisterUserModel = require("../models/registerUserModels");
+const RegisterUserModel = require("../models/registerModel");
 
 module.exports = class ReclamacoesController {
   static async getReclamacoes(req, res) {
@@ -8,6 +8,8 @@ module.exports = class ReclamacoesController {
     const result = await RegisterUserModel.getUserByEmail(
       userProfile.user_email
     );
+    console.log(result);
+
     return res.render("reclamacoes", {
       user: result,
       msgSuccess: req.query.msgSuccess,
@@ -15,11 +17,18 @@ module.exports = class ReclamacoesController {
     });
   }
 
-  static async updateReclamacoes(req, res) {
-    const { user_name, user_email } = req.body;
+  static async updateUserReclamacoes(req, res) {
+    const { user_name, user_email, user_cpf, user_cep, user_telefone } =
+      req.body;
     const user_id = Number(req.params.id);
     const result = await RegisterUserModel.getUserByEmail(user_email);
     let user_img_profile = "";
+
+    if (!user_name || !user_email || !user_cpf || !user_cep || !user_telefone) {
+      return res.redirect(
+        "/reclamacoes?msgError=Os campos não podem ser vazios!"
+      );
+    }
 
     if (!result.user_img_profile && !req.file) {
       user_img_profile = "";
@@ -35,14 +44,14 @@ module.exports = class ReclamacoesController {
 
     const updateUser = {
       user_name,
+      user_cpf,
+      user_cep,
+      user_telefone,
       user_email,
       user_img_profile,
     };
 
-    const setUpdate = await RegisterUserModel.updateUserProfile(
-      user_id,
-      updateUser
-    );
+    const setUpdate = await RegisterUserModel.updateUser(user_id, updateUser);
 
     if (!setUpdate) {
       return res.redirect(
@@ -79,6 +88,24 @@ module.exports = class ReclamacoesController {
       post_reclamacoes_content,
     } = req.body;
 
+    if (
+      !post_reclamacoes_title ||
+      !post_reclamacoes_bairro ||
+      !post_reclamacoes_cidade ||
+      !post_reclamacoes_uf ||
+      !post_reclamacoes_content
+    ) {
+      return res.redirect("/login?msgError=Campos não podem ser vazios!");
+    }
+
+    if (!req.file) {
+      return res.redirect(
+        "/reclamacoes/createPostReclamacoes?msgError=Opa você precisa selecionar uma imagem para realizar o Upload!&error=false"
+      );
+    }
+
+    const post_reclamacoes_img = `/${req.file.filename}`;
+
     const user_id = req.params.id;
     const post_reclamacoes_slug = post_reclamacoes_title.replace(/\s+/g, "-");
 
@@ -98,8 +125,8 @@ module.exports = class ReclamacoesController {
       post_reclamacoes_content,
       post_reclamacoes_slug,
       users_user_id: getuser.user_id,
+      post_reclamacoes_img,
     };
-    console.log(post);
 
     const result = await PostReclamacoesModel.insertPost(post);
 
@@ -123,8 +150,6 @@ module.exports = class ReclamacoesController {
       (posts) => posts.users_user_id === userProfile.user_id
     );
 
-    console.log(findPostsById);
-
     return res.render("listPostsReclamacoes", {
       posts: findPostsById,
       msgSuccess: req.query.msgSuccess,
@@ -143,15 +168,40 @@ module.exports = class ReclamacoesController {
   }
 
   static async postEditPostReclamacoes(req, res) {
-    const { post_title, post_content } = req.body;
+    const {
+      post_reclamacoes_title,
+      post_reclamacoes_bairro,
+      post_reclamacoes_cidade,
+      post_reclamacoes_uf,
+      post_reclamacoes_content,
+    } = req.body;
     const getPostId = Number(req.params.id);
 
-    const post_slug = post_title.replace(/\s+/g, "-");
+    const getPost = await PostReclamacoesModel.selectPostById(getPostId);
+    let post_reclamacoes_img = "";
+
+    if (!getPost.post_reclamacoes_img && !req.file) {
+      post_reclamacoes_img = "";
+    }
+
+    if (getPost.post_reclamacoes_img && !req.file) {
+      post_reclamacoes_img = getPost.post_reclamacoes_img;
+    }
+
+    if (req.file) {
+      post_reclamacoes_img = `/${req.file.filename}`;
+    }
+
+    const post_reclamacoes_slug = post_reclamacoes_title.replace(/\s+/g, "-");
 
     const post = {
-      post_title,
-      post_content,
-      post_slug,
+      post_reclamacoes_title,
+      post_reclamacoes_bairro,
+      post_reclamacoes_cidade,
+      post_reclamacoes_uf,
+      post_reclamacoes_content,
+      post_reclamacoes_slug,
+      post_reclamacoes_img,
     };
 
     const result = await PostReclamacoesModel.updatePost(getPostId, post);

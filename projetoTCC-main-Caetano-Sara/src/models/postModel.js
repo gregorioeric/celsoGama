@@ -65,7 +65,9 @@ module.exports = class PostModel {
                         INNER JOIN 
                             posts 
                         ON 
-                            users.user_id = posts.users_user_id;`;
+                            users.user_id = posts.users_user_id
+                        ORDER BY 
+                            posts.post_date DESC;`;
     const [result] = await database.query(selectJoin);
 
     return result;

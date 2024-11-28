@@ -3,9 +3,9 @@
   <%- include('components/head') %>
   <body>
     <main>
-      <h1>admin</h1>
       <div class="form-admin">
         <form action="/admin" method="post" class="form">
+          <h1>admin</h1>
           <div class="form-group">
             <div class="input">
               <input
@@ -31,11 +31,13 @@
               <button>Login</button>
             </div>
           </div>
-          <% if (msgError) { %>
-             <div class="msgError"><div><%= msgError %></div> 
-             <% } %> <% if(msgSuccess) { %>
-              <div class="msgSuccess"><% msgSuccess %></div>
-              <% } %>
+          <div class="content-msg">
+            <% if (msgError) { %>
+            <div class="msgError"><%= msgError %></div>
+            <% } %> <% if(msgSuccess) { %>
+            <div class="msgSuccess"><% msgSuccess %></div>
+            <% } %>
+          </div>
         </form>
       </div>
     </main>

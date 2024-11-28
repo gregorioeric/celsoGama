@@ -5,13 +5,15 @@ const ReclamacoesController = require("../controllers/reclamacoesController");
 
 const reclamacoesRoute = express.Router();
 const upload = multer({ storage: storage });
+// const uploadCreate = multer({ storage: storage });
+// const uploadEdit = multer({ storage: storage });
 
 reclamacoesRoute.get("/", ReclamacoesController.getReclamacoes);
 
 reclamacoesRoute.post(
   "/:id",
   upload.single("user_img_profile"),
-  ReclamacoesController.updateReclamacoes
+  ReclamacoesController.updateUserReclamacoes
 );
 
 reclamacoesRoute.get(
@@ -21,6 +23,7 @@ reclamacoesRoute.get(
 
 reclamacoesRoute.post(
   "/createPostReclamacoes/:id",
+  upload.single("user_img_profile"),
   ReclamacoesController.createPostReclamacoes
 );
 
@@ -36,6 +39,7 @@ reclamacoesRoute.get(
 
 reclamacoesRoute.post(
   "/editPostReclamacoes/:id",
+  upload.single("user_img_profile"),
   ReclamacoesController.postEditPostReclamacoes
 );
 

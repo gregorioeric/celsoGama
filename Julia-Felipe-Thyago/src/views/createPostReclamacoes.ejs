@@ -11,28 +11,38 @@
           <div class="content-msg grid_area">
             <% if(msgSuccess) { %>
             <div class="msgSuccess">
-              <%= msgSuccess %> <a href="/profile">X</a>
+              <%= msgSuccess %>
+              <a href="/reclamacoes/createPostReclamacoes">X</a>
             </div>
             <% } %> <% if(msgError) { %>
-            <div class="msgError"><%= msgError %> <a href="/profile">X</a></div>
+            <div class="msgError">
+              <%= msgError %> <a href="/reclamacoes/createPostReclamacoes">X</a>
+            </div>
             <% } %>
           </div>
           <header class="menu_profile">
             <nav>
               <ul>
                 <li><a href="/reclamacoes">Meu Perfil</a></li>
-                <li><a href="/reclamacoes/listPostsReclamacoes">Posts</a></li>
                 <li>
-                  <a href="/reclamacoes/createPostReclamacoes">Criar Post</a>
+                  <a href="/reclamacoes/listPostsReclamacoes">
+                    Minhas Reclamações
+                  </a>
+                </li>
+                <li>
+                  <a href="/reclamacoes/createPostReclamacoes">
+                    Criar Reclamação
+                  </a>
                 </li>
               </ul>
             </nav>
           </header>
           <div class="fields_post">
-            <h2>Criar Post</h2>
+            <h2>Criar Reclamação</h2>
             <form
               action="/reclamacoes/createPostReclamacoes/<%= user.user_id %>"
               method="post"
+              enctype="multipart/form-data"
             >
               <!-- <input type="hidden" name="user_id" value="" /> -->
               <div class="table">
@@ -61,6 +71,22 @@
                       <div>
                         <input type="text" name="post_reclamacoes_uf" />
                       </div>
+                    </div>
+                    <div class="content_image">
+                      <div class="img_rec">
+                        <div>Selecione uma imagem:</div>
+                        <label for="input_rec">
+                          <img src="/img/image.png" alt="" id="profile" />
+                        </label>
+                      </div>
+                      <input
+                        type="file"
+                        name="user_img_profile"
+                        class="input_profile"
+                        id="input_rec"
+                        accept="image/*"
+                        value="/img/image.png"
+                      />
                     </div>
                     <div class="dados">
                       <div>Mensagem:</div>

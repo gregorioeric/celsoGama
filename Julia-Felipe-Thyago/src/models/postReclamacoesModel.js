@@ -25,6 +25,7 @@ module.exports = class PostReclamacoesModel {
       post_reclamacoes_content,
       post_reclamacoes_slug,
       users_user_id,
+      post_reclamacoes_img,
     } = post;
     const insertPost = `INSERT INTO post_reclamacoes(
         post_reclamacoes_title,
@@ -33,9 +34,10 @@ module.exports = class PostReclamacoesModel {
         post_reclamacoes_uf,
         post_reclamacoes_content,
         post_reclamacoes_slug,
-        users_user_id)
+        users_user_id, 
+        post_reclamacoes_img)
       VALUES
-        (?, ?, ?, ?, ?, ?, ?);`;
+        (?, ?, ?, ?, ?, ?, ?, ?);`;
     const [result] = await database.query(insertPost, [
       post_reclamacoes_title,
       post_reclamacoes_bairro,
@@ -44,6 +46,7 @@ module.exports = class PostReclamacoesModel {
       post_reclamacoes_content,
       post_reclamacoes_slug,
       users_user_id,
+      post_reclamacoes_img,
     ]);
 
     return result;
@@ -57,6 +60,7 @@ module.exports = class PostReclamacoesModel {
       post_reclamacoes_uf,
       post_reclamacoes_content,
       post_reclamacoes_slug,
+      post_reclamacoes_img,
     } = post;
     const updatePost = `UPDATE post_reclamacoes SET 
           post_reclamacoes_title = ?, 
@@ -65,6 +69,7 @@ module.exports = class PostReclamacoesModel {
           post_reclamacoes_uf = ?,
           post_reclamacoes_content = ?,
           post_reclamacoes_slug = ?,
+          post_reclamacoes_img = ?
       WHERE 
           post_reclamacoes_id = ?;`;
     const [result] = await database.query(updatePost, [
@@ -74,6 +79,7 @@ module.exports = class PostReclamacoesModel {
       post_reclamacoes_uf,
       post_reclamacoes_content,
       post_reclamacoes_slug,
+      post_reclamacoes_img,
       post_reclamacoes_id,
     ]);
 
@@ -99,7 +105,8 @@ module.exports = class PostReclamacoesModel {
             pr.post_reclamacoes_cidade,
             pr.post_reclamacoes_uf,
             pr.post_reclamacoes_content,
-            pr.post_reclamacoes_date
+            pr.post_reclamacoes_date,
+            pr.post_reclamacoes_img
         FROM 
             users u
         INNER JOIN 
@@ -124,7 +131,8 @@ module.exports = class PostReclamacoesModel {
             pr.post_reclamacoes_cidade,
             pr.post_reclamacoes_uf,
             pr.post_reclamacoes_content,
-            pr.post_reclamacoes_date
+            pr.post_reclamacoes_date,
+            pr.post_reclamacoes_img
         FROM 
             users u
         INNER JOIN 

@@ -1,6 +1,11 @@
+const PagesModel = require("../models/pagesModel");
+
 class QuemsomosController {
   static async getQuemsomos(req, res) {
-    res.render("quemsomos");
+    const result = await PagesModel.selectJoinPagesPosition();
+    return res.render("quemsomos", {
+      pages: result,
+    });
   }
 }
 

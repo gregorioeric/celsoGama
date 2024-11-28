@@ -10,11 +10,8 @@ class AdminController {
 
   static async postAdmim(req, res) {
     const { admin_email, admin_password } = req.body;
-    console.log(admin_email);
-    console.log(admin_password);
 
     const result = await AdminModel.selectAdminbyEmail(admin_email);
-    console.log(result);
 
     if (!result) {
       return res.redirect("/admin?msgError=Login realizado com sucesso!");

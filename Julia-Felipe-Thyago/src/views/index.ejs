@@ -1,26 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-   <%- include('components/head') %>
-<body>
-   <%- include('components/header') %>
+  <%- include('components/head') %>
+  <body>
+    <%- include('components/header') %>
     <main>
-     <section>
-     <div class="search">
-      <form >
-         <div class="input-search">
-            <input type="search" name="search" placeholder="Buscar">
-         </div>
-         <div class="btn-search">
-            <button><i class='bx bx-search-alt-2'></i></button>
-         </div>
-      </form>
-     </div>
-        
-     </section>
-
-     
+      <section>
+        <div class="search">
+          <form>
+            <div class="input-search">
+              <input type="search" name="search" placeholder="Buscar" />
+            </div>
+            <div class="btn-search">
+              <button><i class="bx bx-search-alt-2"></i></button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section>
+        <div class="container_rec">
+          <div class="content_rec">
+            <div class="list_posts_rec">
+              <h1>Reclamações</h1>
+              <% posts.forEach(post => { %>
+              <div class="single_post">
+                <div class="img_rec">
+                  <img src="<%= post.post_reclamacoes_img %>" alt="" />
+                </div>
+                <div class="info_post">
+                  <div class="name">
+                    <span>Nome:</span>
+                    <span><%= post.user_name %></span>
+                  </div>
+                  <div class="title_rec">
+                    <span>Titulo da Reclamação:</span>
+                    <span><%= post.post_reclamacoes_title %></span>
+                  </div>
+                  <div class="bairro_rec">
+                    <span>Bairro:</span>
+                    <span><%= post.post_reclamacoes_bairro %></span>
+                  </div>
+                  <div class="cidade_rec">
+                    <span>Cidade:</span>
+                    <span><%= post.post_reclamacoes_cidade %></span>
+                  </div>
+                  <div class="estado_rec">
+                    <span>Estado:</span>
+                    <span><%= post.post_reclamacoes_uf %></span>
+                  </div>
+                  <div class="desc_rec">
+                    <span>Descrição:</span>
+                    <span><%= post.post_reclamacoes_content %></span>
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <%- include('components/footer') %>
-    
-</body>
+  </body>
 </html>

@@ -1,6 +1,6 @@
-const RegisterUserModel = require("../models/registerUserModels");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const RegisterUserModel = require("../models/registerModel");
 
 class LoginController {
   static async getLogin(req, res) {

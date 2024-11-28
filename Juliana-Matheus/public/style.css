@@ -724,3 +724,11 @@ body {
   background: var(--cor-verde);
   color: var(--cor-branco);
 }
+
+/*********************************************************
+    Estilo para as paginas Dicas Quem somos Blog
+**********************************************************/
+.content_pages {
+  width: 80%;
+  margin: 0 auto;
+}

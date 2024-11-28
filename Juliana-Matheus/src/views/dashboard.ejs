@@ -9,11 +9,12 @@
         <div class="content-display">
           <div class="content-msg">
             <% if (msgSuccess) { %>
-            <div class="msgSuccess"><%- msgSuccess %></div>
+            <div class="msgSuccess">
+              <%= msgSuccess %> <a href="/dashboard">X</a>
+            </div>
             <% } %>
           </div>
           <h1>dashboard</h1>
-          <p>lorem*50</p>
         </div>
       </div>
     </main>

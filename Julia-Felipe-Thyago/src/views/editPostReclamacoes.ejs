@@ -21,18 +21,25 @@
             <nav>
               <ul>
                 <li><a href="/reclamacoes">Meu Perfil</a></li>
-                <li><a href="/reclamacoes/listPostsReclamacoes">Posts</a></li>
                 <li>
-                  <a href="/reclamacoes/createPostReclamacoes">Criar Post</a>
+                  <a href="/reclamacoes/listPostsReclamacoes">
+                    Minhas Reclamações
+                  </a>
+                </li>
+                <li>
+                  <a href="/reclamacoes/createPostReclamacoes">
+                    Criar Reclamação
+                  </a>
                 </li>
               </ul>
             </nav>
           </header>
           <div class="fields_post">
-            <h2>Editar Post</h2>
+            <h2>Editar Reclamação</h2>
             <form
-              action="/reclamacoes/editPost/<%= post.post_reclamacoes_id %>"
+              action="/reclamacoes/editPostReclamacoes/<%= post.post_reclamacoes_id %>"
               method="post"
+              enctype="multipart/form-data"
             >
               <div class="table">
                 <div class="column">
@@ -76,6 +83,29 @@
                           name="post_reclamacoes_uf"
                         />
                       </div>
+                    </div>
+                    <div class="content_image">
+                      <div class="img_rec">
+                        <div>Mensagem:</div>
+                        <label for="input_rec">
+                          <img
+                            src="<%= post.post_reclamacoes_img %>"
+                            alt=""
+                            id="profile"
+                          />
+                          <!-- <div class="change_img" id="change_img">
+                            <span><i class="bx bxs-user-plus"></i></span>
+                          </div> -->
+                        </label>
+                      </div>
+                      <input
+                        type="file"
+                        name="user_img_profile"
+                        class="input_profile"
+                        id="input_rec"
+                        accept="image/*"
+                        value="/img/image.png"
+                      />
                     </div>
                     <div class="dados">
                       <div>Mensagem:</div>

@@ -109,8 +109,6 @@ module.exports = class ProfileController {
       (posts) => posts.users_user_id === userProfile.user_id
     );
 
-    console.log(findPostsById);
-
     return res.render("listPosts", {
       posts: findPostsById,
       msgSuccess: req.query.msgSuccess,

@@ -55,6 +55,9 @@ const update = document.querySelector("#btns_profile button");
 const file = document.querySelector('input[name="user_img_profile"]');
 const userName = document.querySelector('input[name="user_name"]');
 const userEmail = document.querySelector('input[name="user_email"]');
+const userCpf = document.querySelector('input[name="user_cpf"]');
+const userCep = document.querySelector('input[name="user_cep"]');
+const userTelefone = document.querySelector('input[name="user_telefone"]');
 const activePlus = document.querySelector("#change_img");
 const imgProfile = document.querySelector("#profile");
 const modalForm = document.querySelector("#modal form");
@@ -73,8 +76,14 @@ if (editar !== null) {
     file.disabled = false;
     userName.disabled = false;
     userEmail.disabled = false;
+    userCpf.disabled = false;
+    userCep.disabled = false;
+    userTelefone.disabled = false;
     userName.classList.add("enable_input");
     userEmail.classList.add("enable_input");
+    userCpf.classList.add("enable_input");
+    userCep.classList.add("enable_input");
+    userTelefone.classList.add("enable_input");
     activePlus.style.display = "block";
     cancel.style.display = "flex";
     editar.style.display = "none";
@@ -89,8 +98,14 @@ if (cancel !== null) {
     file.disabled = true;
     userName.disabled = true;
     userEmail.disabled = true;
+    userCpf.disabled = true;
+    userCep.disabled = true;
+    userTelefone.disabled = true;
     userName.classList.remove("enable_input");
     userEmail.classList.remove("enable_input");
+    userCpf.classList.remove("enable_input");
+    userCep.classList.remove("enable_input");
+    userTelefone.classList.remove("enable_input");
     activePlus.style.display = "none";
     cancel.style.display = "none";
     editar.style.display = "flex";
@@ -107,6 +122,7 @@ if (file !== null) {
     });
 
     reader.readAsDataURL(input);
+    console.log(input);
   });
 }
 

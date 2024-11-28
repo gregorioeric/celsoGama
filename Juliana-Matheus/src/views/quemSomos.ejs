@@ -4,11 +4,16 @@
   <body>
     <%- include('components/header') %>
     <main>
-      <h1>Quem somos?</h1>
-      <%- include('components/footer') %>
-
-    
+      <div class="content_pages">
+        <% pages.forEach((page) => {%>
+        <div>
+          <% if (page.position_name === "Quem somos"){ %>
+          <div><%- page.page_content %></div>
+          <% } %>
+        </div>
+        <% }) %>
       </div>
+      <%- include('components/footer') %>
     </main>
   </body>
 </html>
