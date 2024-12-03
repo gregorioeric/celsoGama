@@ -122,7 +122,6 @@ if (file !== null) {
     });
 
     reader.readAsDataURL(input);
-    console.log(input);
   });
 }
 

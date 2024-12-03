@@ -32,7 +32,7 @@ module.exports = class PagesModel {
   static async updatePage(page_id, page) {
     const { page_title, page_status, page_content, position_position_id } =
       page;
-    const insertPages = `UPDATE pages SET page_title = ?, page_status = ?, page_content = ?`;
+    const insertPages = `UPDATE pages SET page_title = ?, page_status = ?, page_content = ?, position_position_id = ? WHERE page_id = ?;`;
     const [result] = await database.query(insertPages, [
       page_title,
       page_status,

@@ -1,6 +1,5 @@
 require("dotenv").config();
 const express = require("express");
-const route = require("./src/routes/routes");
 const path = require("path");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
@@ -13,6 +12,7 @@ const logoutAdminRoute = require("./src/routes/logoutAdminRoute");
 const pagesRoute = require("./src/routes/pagesRoute");
 const positionRoute = require("./src/routes/positionRoute");
 const uploadAdminRoute = require("./src/routes/uploadAdminRoute");
+const homeRoute = require("./src/routes/homeRoute");
 
 const app = express();
 const port = process.env.PORTSERVER || 3000;
@@ -50,7 +50,7 @@ app.use(
   express.static(path.join(__dirname, "node_modules", "tinymce"))
 );
 
-app.use("/", route);
+app.use("/", homeRoute);
 app.use("/admin", adminRoute);
 app.use("/dashboard", dashboardRoute);
 app.use("/eventos", eventosRoute);

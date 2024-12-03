@@ -1,6 +1,11 @@
+const PagesModel = require("../models/pagesModel");
+
 class ContatoController {
   static async getContato(req, res) {
-    res.render("contato");
+    const getPages = await PagesModel.selectJoinPagesPosition();
+    res.render("contato", {
+      pages: getPages,
+    });
   }
 }
 

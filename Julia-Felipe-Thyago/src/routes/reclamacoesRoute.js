@@ -5,8 +5,6 @@ const ReclamacoesController = require("../controllers/reclamacoesController");
 
 const reclamacoesRoute = express.Router();
 const upload = multer({ storage: storage });
-// const uploadCreate = multer({ storage: storage });
-// const uploadEdit = multer({ storage: storage });
 
 reclamacoesRoute.get("/", ReclamacoesController.getReclamacoes);
 

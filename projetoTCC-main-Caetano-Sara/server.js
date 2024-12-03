@@ -15,6 +15,7 @@ const pagesRoute = require("./src/routes/pageRoutes");
 const uploadAdminRoute = require("./src/routes/uploadAdminRoute");
 const positionRoute = require("./src/routes/positionRoute");
 const homeRoute = require("./src/routes/homeRoute");
+const artigosRoute = require("./src/routes/artigosRoute");
 
 const app = express();
 const port = process.env.PORTSERVER || 3000;
@@ -63,6 +64,7 @@ app.use("/profile", profileRoute);
 app.use("/pages", pagesRoute);
 app.use("/upload", uploadAdminRoute);
 app.use("/position", positionRoute);
+app.use("/artigos", artigosRoute);
 
 app.listen(port, async () => {
   const [result] = await database.query("SELECT 1");

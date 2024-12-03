@@ -224,7 +224,7 @@ module.exports = class ReclamacoesController {
 
     if (!result) {
       return res.redirect(
-        "/reclamacoes/editPostReclamacoes?msgError=Não foi possivel atualizar o post. Tente novamente!"
+        "/reclamacoes/editPostReclamacoes?msgError=Não foi possivel deletar o post. Tente novamente!"
       );
     }
 

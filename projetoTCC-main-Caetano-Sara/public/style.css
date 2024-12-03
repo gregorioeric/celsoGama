@@ -166,15 +166,16 @@ img {
 }
 
 .content-post {
-  display: flex;
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* width: 100%; */
   padding: 1.5rem;
-  gap: 7rem;
+  gap: 2rem;
 }
 
-.home-page .content-post .article-post {
+/* .home-page .content-post .article-post {
   width: 33.33%;
-}
+} */
 
 .home-page .content-post .article-post .img-post img {
   border-radius: 1rem;
