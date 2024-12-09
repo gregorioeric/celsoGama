@@ -97,6 +97,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `comment_content` LONGTEXT NULL,
   `users_user_id` INT NOT NULL,
   `posts_post_id` INT NOT NULL,
+  `comment_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`commnet_id`),
   INDEX `fk_comments_users1_idx` (`users_user_id` ASC) VISIBLE,
   INDEX `fk_comments_posts1_idx` (`posts_post_id` ASC) VISIBLE,

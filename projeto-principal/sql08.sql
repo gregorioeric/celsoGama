@@ -191,3 +191,28 @@ SELECT pages.page_id,
 
 
 SELECT * FROM users WHERE user_email = 'greogrio.eric@gmail.com';
+
+ALTER TABLE comments DROP COLUMN position_date;
+
+ALTER TABLE comments ADD `comment_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+CREATE TABLE IF NOT EXISTS `comments` (
+  `commnet_id` INT NOT NULL AUTO_INCREMENT,
+  `comment_content` LONGTEXT NULL,
+  `users_user_id` INT NOT NULL,
+  `posts_post_id` INT NOT NULL,
+  `comment_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`commnet_id`),
+  INDEX `fk_comments_users1_idx` (`users_user_id` ASC) VISIBLE,
+  INDEX `fk_comments_posts1_idx` (`posts_post_id` ASC) VISIBLE,
+  CONSTRAINT `fk_comments_users1`
+    FOREIGN KEY (`users_user_id`)
+    REFERENCES `users` (`user_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_comments_posts1`
+    FOREIGN KEY (`posts_post_id`)
+    REFERENCES `posts` (`post_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
