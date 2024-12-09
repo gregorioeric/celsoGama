@@ -1,9 +1,8 @@
-const express = require('express');
+const express = require("express");
+const NoticiasController = require("../controllers/noticiasController");
 
 const noticiasRoute = express.Router();
 
-noticiasRoute.get("/", (req, res) => {
-    return res.render("noticias");
-  });
+noticiasRoute.get("/", NoticiasController.getNoticias);
 
 module.exports = noticiasRoute;

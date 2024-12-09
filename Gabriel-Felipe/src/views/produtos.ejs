@@ -26,45 +26,27 @@
                 <a class="carousel-control next" href="#">&#10095;</a>
             </div>
             <div class="all">
-            <div class="prod"><h2>Nossos Produtos</h2></div>
+            <div class="prod"><h2>Baixe Já Nossos PDF</h2></div>
             <div class="content-prod">
 
                 <div class="principal">
                     <ul class="conteudo-produto-ul">
                         <li>
                             <div class="content-livro">
-                                <img src="/img/capa.png" />
-                                <div class="ver-mais"><span>Ver Mais</span></div>
+                                <img src="/img/4.jpeg" />
+                                <div class="ver-mais"><a href="/File/Ficha de Personagem - Ruína RPG 1.2 - Página1.pdf" download>Baixar</a></div>
                             </div>
 
-                            <p class="p-prod">Ordem Paranormal</p>
+                            <p class="p-prod">Ficha</p>
 
                         </li>
                         <li>
                             <div class="content-livro">
-                                <img src="/img/capa2.png" />
-                                <div class="ver-mais"><span>Ver Mais</span></div>
+                                <img src="/img/5.jpeg" />
+                                <div class="ver-mais"><a href="/File/Ruína v1.2 - PDF Oficial.pdf" download>Baixar</a></div>
                             </div>
 
-                            <p class="p-prod">Dado Selvagem</p>
-
-                        </li>
-                        <li>
-                            <div class="content-livro">
-                                <img src="/img/capa3.png" />
-                                <div class="ver-mais"><span>Ver Mais</span></div>
-                            </div>
-
-                            <p class="p-prod">Dracula</p>
-
-                        </li>
-                        <li>
-                            <div class="content-livro">
-                                <img src="/img/capa4.png" />
-                                <div class="ver-mais"><span>Ver Mais</span></div>
-                            </div>
-
-                            <p class="p-prod">A Lenda de Drizz</p>
+                            <p class="p-prod">Pdf de Regras</p>
 
                         </li>
                     </ul>
@@ -74,29 +56,6 @@
             </div>
         </div>
     </div>
-
-            <script> document.addEventListener('DOMContentLoaded', () => {
-                    const prev = document.querySelector('.prev');
-                    const next = document.querySelector('.next');
-                    const carouselInner = document.querySelector('.carousel-inner');
-                    let index = 0;
-
-                    function updateCarousel() {
-                        const offset = -index * 100;
-                        carouselInner.style.transform = `translateX(${offset}%)`;
-                    }
-
-                    prev.addEventListener('click', () => {
-                        index = (index > 0) ? index - 1 : 2;
-                        updateCarousel();
-                    });
-
-                    next.addEventListener('click', () => {
-                        index = (index < 2) ? index + 1 : 0;
-                        updateCarousel();
-                    });
-                });
-            </script>
 
             <%- include('components/footer') %>
     </body>

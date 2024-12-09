@@ -75,3 +75,53 @@ function selectTCV(value) {
   selectedTCV.innerText = `TCV: [ ${value} ]`;
   toggleTCVOptions(); // Fecha as opções após a seleção
 }
+
+
+        const slider = document.querySelector('.slider');
+        const next = document.querySelector('.next');
+        const prev = document.querySelector('.prev');
+        const totalItems = document.querySelectorAll('.news-item').length;
+
+        let index = 0;
+
+        function updateSlider() {
+            const width = document.querySelector('.news-item').offsetWidth;
+            slider.style.transform = `translateX(-${index * width}px)`;
+        }
+
+        next.addEventListener('click', () => {
+            index = (index + 1) % totalItems;
+            updateSlider();
+        });
+
+        prev.addEventListener('click', () => {
+            index = (index - 1 + totalItems) % totalItems;
+            updateSlider();
+        });
+
+        setInterval(() => {
+            index = (index + 1) % totalItems;
+            updateSlider();
+        }, 5000); 
+
+        document.addEventListener('DOMContentLoaded', () => {
+          const prev = document.querySelector('.prev');
+          const next = document.querySelector('.next');
+          const carouselInner = document.querySelector('.carousel-inner');
+          let index = 0;
+
+          function updateCarousel() {
+              const offset = -index * 100;
+              carouselInner.style.transform = `translateX(${offset}%)`;
+          }
+
+          prev.addEventListener('click', () => {
+              index = (index > 0) ? index - 1 : 2;
+              updateCarousel();
+          });
+
+          next.addEventListener('click', () => {
+              index = (index < 2) ? index + 1 : 0;
+              updateCarousel();
+          });
+      });

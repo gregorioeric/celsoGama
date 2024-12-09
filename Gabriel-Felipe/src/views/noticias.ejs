@@ -1,38 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <%- include('components/head') %>
+  <%- include('components/head') %>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal de Notícias</title>
-    <%- include('components/header')  %>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal de Notícias</title>
+  <%- include('components/header') %>
 
-    <body>
-    <!-- Artigo de Destaque -->
-    <section class="featured-article">
-        <div class="container-noticias">
-            <h1>Notícia de Destaque: entenda o processo de adaptação do universo Ordem Paranormal, criado por Cellbit</h1>
-                <p>Mistério e investigação são as essências de Ordem Paranormal, um mundo ficcional criado pelo produtor de conteúdo e streamer Rafael Lange, o Cellbit, que ganhou uma nova dimensão com a publicação da história em quadrinho O Segredo na Floresta: Parte 1. Lançada em dezembro pela Jambô,
-                editora de Porto Alegre, a obra adapta às páginas a narrativa da segunda temporada de um RPG transmitido e jogado ao vivo na internet.</p>
-            
-         
-            <p></p>
-                <ul style="list-style-type: none; padding: 0; display: inline-flex; align-items: center; justify-content: center;">
-                    <li style="margin: 0 20px; text-align: center;">
-                        <img src="/img/cellbit.jpg" alt="Imagem 1" style="vertical-align: middle; margin-bottom: 10px;">
-                        <p style="margin-top: 10px;">Imagem Representativa de Rafael Lange Mais conhecido como Cellbit</p>
-                        <div class="index-conteudo-botao">
-                            <button class="index-botao2"><a href="https://g1.globo.com/rs/rio-grande-do-sul/noticia/2023/12/22/live-quadrinho-cellbit.ghtml">Leia mais</a></button>
-                        </div>
-                    </li>
-                </ul>
-    </section>
-
+  <!-- Artigo de Destaque -->
+  <body style="margin: 0; padding: 0; height: 100vh; background-color: #f4f4f4">
+    <div class="news-slider">
+      <button class="nav prev">&#10094;</button>
+      <div class="slider-wrapper">
+        <div class="slider">
+          <div class="news-item">
+            <img src="img/1.jpg" alt="Notícia 1" />
+            <div class="news-text">
+              <h2>
+                Nasa lança jogo RPG de tabuleiro gratuito; veja como funciona
+              </h2>
+              <p>"The Lost Universe" é adaptável a outras mesas de RPG e convida os jogadores a aprender sobre o espaço enquanto se divertem</p>
+              <a
+                href="https://g1.globo.com/rs/rio-grande-do-sul/noticia/2023/12/22/live-quadrinho-cellbit.ghtml"
+                class="btn"
+                >Clique aqui</a
+              >
+            </div>
+          </div>
+          <div class="news-item">
+            <img src="img/2.jpg" alt="Notícia 2" />
+            <div class="news-text">
+              <h2>“Tem todas as qualidades dos filmes dos anos 1980”, diz Chris Pine sobre “Dungeons & Dragons”</h2>
+              <p>Baseado no jogo de RPG, o longa estreia nos cinemas brasileiros nesta quinta-feira (13)</p>
+              <a href="https://www.cnnbrasil.com.br/entretenimento/tem-todas-as-qualidades-dos-filmes-dos-anos-1980-diz-chris-pine-sobre-dungeons-dragons/" class="btn">Clique aqui</a>
+            </div>
+          </div>
+          <div class="news-item">
+            <img
+              src="img/3.jpg"
+              alt="Notícia 3"
+            />
+            <div class="news-text">
+              <h2>Guia do Mestre 2024: entenda o novo livro de Dungeons & Dragons</h2>
+              <p>Chegou a vez de o Guia do Mestre migrar para o mundo novo de Dungeons & Dragons 2024.</p>
+              <a href="https://movimentorpg.com.br/guia-do-mestre-2024-entenda-o-novo-livro-de-dungeons-dragons/" class="btn">Clique aqui</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="nav next">&#10095;</button>
     </div>
-    
+    <div class="back_noticias">
+    <section>
+      <% pages.forEach(page => { %> <% if (page.position_name === 'noticias') {
+      %> <%- page.page_content %> <% } %> <% }) %>
+    </section>
+    <p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+  </div>
+  
     <%- include('components/footer') %>
-    <style>
-    </style>
-
-</body>
+  </body>
 </html>

@@ -1,48 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <%- include('components/head') %>
-  <body>
-    <%- include('components/header') %>
+<%- include('components/head') %>
+<body>
+    <%- include('components/header')  %>
     <main class="login-main">
-      <div class="content-form-login">
-        <h1>Efetue Seu Login</h1>
-        <form action="/login" method="post">
-          <div class="input-email">
-            <label for="user-email">Email</label>
-            <input
-              type="email"
-              name="user_email"
-              class="user-email"
-              placeholder="Digite seu email"
-              id="user-email"
-            />
-          </div>
-          <div class="input-password">
-            <label for="user-password">Senha</label>
-            <input
-              type="password"
-              name="user_password"
-              class="user-password"
-              placeholder="Digite sua senha"
-              id="user-password"
-            />
-          </div>
-          <div class="content-btn">
-            <button type="submit">Login</button>
-          </div>
-          <div class="content-msg">
-            <% if (msgSuccess) { %>
-            <p class="msgSuccess"><%= msgSuccess %></p>
-            <% } %> <% if (msgError) { %>
-            <p class="msgError"><%= msgError %></p>
-            <% } %>
-          </div>
-          <p class="message">
-            Não tem uma conta? <a href="/register">Faça um cadastro aqui</a>.
-          </p>
-        </form>
-      </div>
+        <div class="content-form-login">
+            <h1>Efetue Seu Login</h1>
+            <form action="/" method="post">
+                <div class="input-email">
+                    <label for="user-email">Email</label>
+                    <input type="email" name="user_email" class="user-email" placeholder="Digite seu email" id="user-email">
+                </div>
+                <div class="input-password">
+                    <label for="user-password">Senha</label>
+                    <input type="password" name="user_password" class="user-password" placeholder="Digite sua senha" id="user-password">
+                </div>
+                <div class="content-btn">
+                    <button type="submit">Login</button>
+                </div>
+                <div class="content-msg">
+                    <% if (msgSuccess) { %>
+                        <p class="msgSuccess"> <%= msgSuccess %></p>
+                    <% } %> <% if (msgError) { %>
+                    <p class="msgError"><%= msgError %> </p> <% } %>
+                </div>
+                <p class="message">Não tem uma conta? <a href="/register">Faça um cadastro aqui</a>.</p>
+            </form>
+        </div>
     </main>
     <%- include('components/footer') %>
-  </body>
+</body>
 </html>

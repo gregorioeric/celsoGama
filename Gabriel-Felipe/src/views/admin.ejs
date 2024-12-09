@@ -3,9 +3,9 @@
   <%- include('components/head') %>
   <body>
     <main>
-      <h1>Admin</h1>
       <div class="form-admin">
         <form action="/admin" method="post" class="form">
+          <h1>Admin</h1>
           <div class="form-group">
             <div class="input">
               <input
@@ -31,9 +31,9 @@
               </div>
             </div>
             <% if(msgError) { %>
-              <div class="msgError"><%= msgError %></div>
+            <div class="msgError"><%= msgError %></div>
             <% } %> <% if(msgSuccess) { %>
-              <div class="msgSucess"><%= msgSuccess %></div>
+            <div class="msgSucess"><%= msgSuccess %></div>
             <% } %>
           </div>
         </form>
