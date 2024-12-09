@@ -14,19 +14,6 @@
   padding: 0;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-*::-webkit-scrollbar-thumb {
-  background: var(--cor--branco);
-  border-radius: 10px;
-}
-
 a {
   text-decoration: none;
 }
@@ -42,7 +29,9 @@ li {
 :root {
   --cor-branco: rgb(255, 255, 255);
   --cor-preto: rgb(0, 0, 0);
+  --cor-preto-alpha: rgba(0, 0, 0, 0.54);
   --cor-verde: rgb(60, 135, 41);
+  --cor-verde-light: rgb(140, 200, 125);
   --cor-vermelho: rgb(255, 0, 0);
   --cor-vermelho-light: rgb(204, 153, 153);
   --cor-azul: rgb(25, 85, 105);
@@ -108,7 +97,7 @@ header {
 .main-menu ul {
   display: flex;
   justify-content: center;
-  /* gap: 5rem; */
+  gap: 2rem;
   height: 80px;
 }
 
@@ -482,7 +471,7 @@ footer {
 }
 
 .content-prod {
-  height: 40vh;
+  /* height: 40vh; */
   margin: 0rem 5rem 0rem 5rem;
 }
 
@@ -521,12 +510,14 @@ footer {
   border-radius: 10px;
   border: solid 3px var(--cor-branco-cinza);
 }
+
 .conteudo-produto-ul {
   list-style-type: none; /* Remove os marcadores padrão da lista */
   padding: 0; /* Remove o preenchimento padrão da lista */
   margin: 0; /* Remove a margem padrão da lista */
-  display: flex; /* Alinha os itens horizontalmente */
-  gap: 40px; /* Adiciona espaçamento entre os itens */
+  display: grid; /* Alinha os itens horizontalmente */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem; /* Adiciona espaçamento entre os itens */
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -644,7 +635,8 @@ footer {
 
 .index-conteudo {
   margin: 5px auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   justify-content: space-between;
   background-color: var(--cor-preto);
   border: solid 3px var(--cor-branco-claro);
@@ -769,16 +761,13 @@ footer {
 }
 
 .msgError,
-.msgSucess {
+.msgSuccess {
   padding: 1rem 0;
   font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .msgError,
-.msgSucess,
+.msgSuccess,
 .msgErrorInput {
   text-align: center;
   font-weight: bold;
@@ -791,9 +780,9 @@ footer {
   background: var(--cor-branco-claro);
 }
 
-.msgSucess {
-  color: var(--cor-branco-reluzente);
-  color: var(--cor-cinza-claro);
+.msgSuccess {
+  color: var(--cor-preto);
+  background: var(--cor-verde-light);
 }
 
 .msgSuccess a,
@@ -861,50 +850,6 @@ footer {
 }
 
 /*********************************************
-    estilo da modal delete page e position
-**********************************************/
-
-.content-delete h3 {
-  font-size: 1.8rem;
-}
-
-.content-delete p {
-  font-size: 1.4rem;
-}
-
-.content-delete h3,
-.content-delete p {
-  text-align: center;
-  padding-bottom: 0.5rem;
-}
-
-.btns_delete {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  padding-top: 2rem;
-}
-
-.btns_delete button {
-  font-size: 1.3rem;
-  font-weight: bold;
-  padding: 0.2rem 2rem;
-  cursor: pointer;
-  border: 0.1rem solid var(--cor-preto);
-  border-radius: 0.2rem;
-  transition: background 300ms ease-in-out, color 300ms ease-in-out;
-}
-
-.btns_delete button.btn_cancel:hover {
-  background: var(--cor-azul);
-}
-
-.btns_delete button.btn_delete:hover {
-  background: var(--cor-vermelho);
-}
-
-/*********************************************
 menu-hamburger
 **********************************************/
 
@@ -964,13 +909,13 @@ menu-hamburger
   left: 0;
   transition: translate var(--animation-timing);
   translate: -100%;
-  padding: calc(var(--hamburger-height) + var(--hamburger-margin) + 3rem) 2rem
+  padding: calc(var(--hamburger-height) + var(--hamburger-margin) + 3rem) 1rem
     2rem 2rem;
   background: var(--background);
   width: 10rem;
   height: 100%;
   z-index: 999;
-  background-color: var(--cor-azul-escuro);
+  background-color: var(--cor-azul-escuro-contraste);
 }
 
 a {
@@ -980,11 +925,15 @@ a {
   translate: 0;
 }
 
-.main-menu-hamburger ul {
+.main-menu-hamburger {
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  height: calc(100vh - 8rem);
+  grid-template-rows: 1fr auto;
 }
+
+.main-menu-hamburger ul li a {
+  display: block;
+}
+
 /*****************************************************************
                 Estilo das paginas do admin
   ******************************************************************/
@@ -1191,6 +1140,21 @@ a {
   font-weight: bold;
 }
 
+.col .delete {
+  color: var(--cor-vermelho-little-light);
+  font-weight: bold;
+  border-bottom: 5px solid transparent;
+  transition: border-bottom 300ms ease-in-out;
+}
+
+.col .delete:hover {
+  border-bottom: 5px solid var(--cor-vermelho-little-light);
+}
+
+.col .delete i {
+  font-weight: bold;
+}
+
 .modal,
 .modal-add-position {
   position: fixed;
@@ -1199,7 +1163,7 @@ a {
   width: 100%;
   height: 100%;
   z-index: 999;
-  background: var(--cor-preto);
+  background: var(--cor-preto-alpha);
 }
 
 .modal form,
@@ -1209,7 +1173,7 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
   background: var(--cor-cinza);
-  width: 40%;
+  width: 50%;
   height: 300px;
   display: flex;
   justify-content: center;
@@ -1217,7 +1181,6 @@ a {
   position: relative;
   border-radius: 0.8rem;
   box-shadow: 0px 0px 51px 25px rgba(0, 0, 0, 0.75);
-  padding: 2rem;
 }
 
 .modal-add-position form {
@@ -1397,11 +1360,11 @@ a {
   background-color: #5c0067;
 }
 
-/* li {
+.ul-ficha li {
   margin: 20px 0;
   display: flex;
   align-items: center;
-} */
+}
 
 .icon {
   width: 30px;
@@ -1729,19 +1692,248 @@ a {
   }
 }
 
-.main-menu-hamburger ul li {
-  font-size: 25px;
+/*****************************************************
+  estilo do formulario de upload das imagens uploaded
+*******************************************************/
+
+.group-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
+
+.image {
+  padding: 1rem;
+  overflow: hidden;
+  height: 200px;
+  position: relative;
+}
+
+.content-form-upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-form-upload form {
+  width: 60%;
+}
+
+.content-form-upload form .input-upload label {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border: 0.13rem solid var(--cor-preto);
+  border-radius: 0.2rem;
+  background: var(--cor-branco-alpha);
+  font-size: 1.3rem;
+  padding: 1rem 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.content-form-upload form .input-upload input {
+  text-align: center;
+  width: 100%;
+}
+
+.content-form-upload form .input-upload input::-webkit-file-upload-button {
+  display: none;
+}
+
+.content-form-upload form .content-btn {
+  padding: 1rem 0;
+}
+
+.content-form-upload form .content-btn button {
+  width: 100%;
+  border: 0.13rem solid var(--cor-preto);
+  border-radius: 0.2rem;
+  font-size: 1.3rem;
+  padding: 1rem 0;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 300ms ease-in-out;
+}
+
+.content-form-upload form .content-btn button:hover {
+  background: var(--cor-verde-light);
+}
+
+/*************************************
+  Estilo da galeria de imagens
+***************************************/
+.container-galeria h3 {
+  font-size: 1.5rem;
+  color: var(--cor-branco);
+}
+
+.all_images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 1rem;
+  gap: 1rem;
+  align-items: center;
+  height: 400px;
+  overflow: auto;
+  margin-bottom: 2rem;
+  border: 0.1rem solid var(--cor-cinza-light);
+}
+
+.content_image {
+  background: var(--cor-branco);
+  position: relative;
+  padding: 0.3rem;
+}
+
+.show_img {
+  cursor: pointer;
+  height: 100px;
+  overflow: hidden;
+}
+
+.show_img img {
+  min-width: 100px;
+}
+
+.img_name {
+  position: absolute;
+  opacity: 0;
+  left: -800px;
+  overflow: hidden;
+}
+
+.active_color {
+  background: var(--cor-verde);
+}
+
+/*************************************
+    Estilo do login admin
+  ***************************************/
+
+.form-admin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.form-admin .form {
+  width: 40%;
+}
+
+.form-admin .form h1 {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.form-admin .form .form-group .input {
+  position: relative;
+  padding: 1rem 0;
+}
+
+.form-admin .form .form-group .input input {
+  font-size: 1.3rem;
+  width: 100%;
+  outline: none;
+  padding: 0.3rem 1rem;
+  border: 0.13rem solid var(--cor-preto);
+  border-radius: 0.2rem;
+  transition: all 300ms ease-in-out;
+}
+
+.form-admin .form .form-group .input label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  transition: all 300ms ease-in-out;
+  pointer-events: none;
+  color: var(--cor-cinza);
+  font-size: 1.2rem;
+}
+
+.form-admin .form .form-group .input input:not(:placeholder-shown) + label,
+.form-admin .form .form-group .input input:focus + label {
+  top: 5%;
+  left: 0;
+  padding: 0 0.5rem;
+  color: var(--cor-preto);
+}
+
+.form-admin .form .form-group .btn-group {
+  padding: 1rem 0;
+}
+
+.form-admin .form .form-group .btn-group button {
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 0.5rem 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  border: 0.13rem solid var(--cor-preto);
+  background: var(--cor-verde-light);
+  transition: background 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.form-admin .form .form-group .btn-group button:hover {
+  background: var(--cor-verde);
+  color: var(--cor-branco);
+}
+
+/*************************************
+  Estilo da modal delete page e position
+***************************************/
+.content-delete h3 {
+  font-size: 1.8rem;
+}
+
+.content-delete p {
+  font-size: 1.4rem;
+}
+
+.content-delete h3,
+.content-delete p {
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+.btns_delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 2rem;
+}
+
+.btns_delete button {
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 0.2rem 2rem;
+  cursor: pointer;
+  border: 0.1rem solid var(--cor-preto);
+  border-radius: 0.2rem;
+  transition: background 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.btns_delete button.btn_cancel:hover {
+  background: var(--cor-azul-light);
+}
+
+.btns_delete button.btn_delete:hover {
+  background: var(--cor-vermelho);
+}
+
+/* Slider Noticias */
 
 .news-slider {
   position: relative;
-  /* width: 80%;
-             */
-  max-width: 100%;
+  width: 100%;
   overflow: hidden;
   border: 1px solid #ddd;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  height: 50%;
+  height: 80%;
 }
 
 .slider-wrapper {
@@ -1834,290 +2026,32 @@ a {
 .nav.next {
   right: 10px;
 }
-
-/* Compra */
-
-.details {
-  flex-grow: 1;
-  color: #fff;
-}
-
-.details h2 {
-  font-size: 2.5rem;
-  color: gold;
-}
-
-.details p {
-  margin-top: 15px;
-  line-height: 1.5;
-}
-
-.details p.price {
-  font-size: 1.8rem;
-  color: gold;
-  font-weight: bold;
-  margin: 20px 0;
-}
-
-.details button {
-  background: gold;
-  border: none;
-  padding: 15px 25px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #000;
-}
-
-.details button:hover {
-  background: darkgoldenrod;
-}
-
-.container2 {
-  max-width: 900px;
-  margin: 40px auto;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 30px;
-  border: 2px solid var(--cor-azul-escuro-contraste);
-  border-radius: 10px;
-  box-shadow: 0 0 20px #000;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.image-container img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #000;
-}
-
-.background-compra {
-  background-color: var(--cor-azul-escuro);
-}
-
-/* PosCompra */
-
-.container3 {
-  max-width: 800px;
-  margin: 40px auto;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 30px;
-  border: 2px solid var(--cor-azul-escuro-contraste);
-  border-radius: 10px;
-  box-shadow: 0 0 20px #000;
-}
-
-.container3 h2 {
-  text-align: center;
-  color: gold;
-  font-size: 2rem;
-}
-
-.order-summary {
-  margin-top: 20px;
-  background: rgba(30, 30, 30, 0.8);
-  border-radius: 10px;
-  padding: 20px;
-}
-
-.order-summary h3 {
-  margin: 0;
-  color: gold;
-  font-size: 1.5rem;
-  border-bottom: 1px solid gold;
-  padding-bottom: 10px;
-}
-
-.order-item {
-  display: flex;
-  align-items: center;
-  margin-top: 15px;
-}
-
-.order-item img {
-  width: 100px;
-  height: 100px;
-  border-radius: 10px;
-  margin-right: 15px;
-}
-
-.order-item div {
-  flex-grow: 1;
-}
-
-.order-item div h4 {
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-.order-item div p {
-  margin: 5px 0;
-}
-
-.confirmation {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.confirmation button {
-  background: gold;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #000;
-}
-
-.confirmation button:hover {
-  background: darkgoldenrod;
-}
-
-/* Estilo do Formulario de upload das imagens uploaded */
-
-.group-images {
+/**********************************/
+.container__noticias {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "col01 col01 col01"
+    "col02 col03 col04";
 }
 
-.image {
-  padding: 1rem;
-  overflow: hidden;
-  height: 200px;
-  position: relative;
+.noticia-1 {
+  grid-area: col01;
 }
 
-.content-form-upload {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.noticia-2 {
+  grid-area: col02;
 }
 
-.content-form-upload form {
-  width: 60%;
+.noticia-3 {
+  grid-area: col03;
 }
 
-.content-form-upload form .input-upload label {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  border: 0.13rem solid var(--cor-preto);
-  border-radius: 0.2rem;
-  background: var(--cor-branco);
-  font-size: 1.3rem;
-  padding: 1rem 0;
-  font-weight: bold;
-  cursor: pointer;
+.noticia-4 {
+  grid-area: col04;
 }
 
-.content-form-upload form .input-upload input {
-  text-align: center;
-  width: 100%;
-}
-
-.content-form-upload form .input-upload input::-webkit-file-upload-button {
-  display: none;
-}
-
-.content-form-upload form .content-btn {
-  padding: 1rem 0;
-}
-
-.content-form-upload form .content-btn button {
-  width: 100%;
-  border: 0.13rem solid var(--cor-preto);
-  border-radius: 0.2rem;
-  font-size: 1.3rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 300ms ease-in-out;
-}
-
-.content-form-upload form .content-btn button:hover {
-  background: var(--cor-verde);
-}
-
-/*********************************************
-      Estilo Galeria de Imagens
-**********************************************/
-.container-galeria h3 {
-  font-size: 1.5rem;
-  color: var(--cor-branco);
-}
-
-.all_images {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 1rem;
-  gap: 1rem;
-  align-items: center;
-  height: 400px;
-  overflow: auto;
-  margin-bottom: 2rem;
-  border: 0.1rem solid var(--cor-cinza-claro);
-}
-
-.content_image {
-  background: var(--cor-branco);
-  position: relative;
-  padding: 0.3rem;
-}
-
-.show_img {
-  cursor: pointer;
-  height: 100px;
-  overflow: hidden;
-}
-
-.show_img img {
-  min-width: 100px;
-}
-
-.img_name {
-  position: absolute;
-  opacity: 0;
-  left: -8000px;
-  overflow: hidden;
-}
-
-.active color {
-  background: var(--cor-verde);
-}
-
-/*********************************************
-Estilo do Login Admin
-**********************************************/
-
-.form-admin {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60vh;
-}
-
-.form-admin .form {
-  width: 40%;
-}
-
-.form-admin .form h1 {
-  text-align: center;
-  padding-bottom: 2rem;
-}
-
-.form-admin .form .form-group .input {
-  position: relative;
-  padding: 1rem 0;
-}
-
-.form-admin .form .form-group .input input {
-  font-size: 1.3rem;
-  width: 100%;
-  outline: none;
-  padding: 0.3rem 1rem;
-  border: 0.13rem solid var(--cor-preto);
-  border-radius: 0.2rem;
-  transition: all 300ms ease-in-out;
+@media screen and (max-width: 1200px) {
+  .main-menu ul li a {
+    font-size: 1.2rem;
+  }
 }

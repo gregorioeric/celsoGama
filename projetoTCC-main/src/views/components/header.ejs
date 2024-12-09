@@ -1,0 +1,38 @@
+<header>
+  <div class="container">
+    <% if (locals.session.logged) { %>
+
+    <label class="hamburger-menu">
+      <input type="checkbox" />
+    </label>
+    <nav class="main-menu-hamburger">
+      <ul>
+        <li>
+          <div class="header-a">
+            <a href="/ficha">Sua Ficha</a>
+          </div>
+        </li>
+        <li></li>
+        <li><a href="/logout">Sair</a></li>
+      </ul>
+    </nav>
+    <nav class="main-menu">
+      <ul>
+        <li><a href="/index">Home</a></li>
+        <li><a href="/noticias">Notícias</a></li>
+        <li><a href="/produtos">Produtos</a></li>
+        <li><a href="/compra">compra</a></li>
+        <li><a href="/poscompra">Pós Compra</a></li>
+      </ul>
+    </nav>
+    <% } else { %>
+    <nav class="main-menu">
+      <ul>
+        <li><a href="/index">Home</a></li>
+        <li><a href="/">Login</a></li>
+        <li><a href="/register">Cadastro</a></li>
+      </ul>
+    </nav>
+    <% } %>
+  </div>
+</header>

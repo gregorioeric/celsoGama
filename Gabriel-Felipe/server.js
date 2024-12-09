@@ -61,8 +61,8 @@ app.use(
   express.static(path.join(__dirname, "node_modules", "tinymce"))
 );
 
-app.use("/", loginRoute);
-app.use("/index", route);
+app.use("/", route);
+app.use("/login", loginRoute);
 app.use("/register", routeRegister);
 app.use("/noticias", noticiasRoute);
 app.use("/produtos", produtosRoute);

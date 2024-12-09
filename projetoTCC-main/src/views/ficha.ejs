@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+  <body>
+    <%- include('components/header') %>
+    <div class="container-powers">
+      <div class="content-powers">
+        <div class="header">
+          <div class="profile-pic"></div>
+          <div class="info">
+            <label>Nome:</label>
+            <input
+              type="text"
+              class="editable"
+              placeholder="Nome do personagem"
+            />
+            <label>Idade:</label>
+            <input type="number" class="editable" placeholder="Idade" />
+            <label for="cars">Escolha uma formação:</label>
+<div class="select-ficha">
+<select name="formacao" id="formacao">
+  <option value="">Militar</option>
+  <option value="">Médico</option>
+  <option value="">Psicólogo</option>
+  <option value="">Integrante de Banda</option>
+  <option value="">Operário</option>
+  <option value="">Farmacêutico</option>
+  <option value="">Artista</option>
+  <option value="">Atleta</option>
+  <option value="">Cientista da Computação</option>
+  <option value="">Sobrevivente</option>
+  <option value="">Pesquisador do Paranormal</option>
+  <option value="">Marginal</option>
+  <option value="">Lutador</option>
+  <option value="">Detetive Particular</option>
+  <option value="">Cirurgião</option>
+  <option value="">Militar</option>
+  <option value="">Físico-químico</option>
+  <option value="">BOPE</option>
+  <option value="">Discípulo</option>
+  <option value="">Foragido</option>
+  <option value="">Programador</option>
+  <option value="">Engenheiro</option>
+  <option value="">Agente Investigativo</option>
+</select>
+</div>
+
+<!-- Militar
+Tanque
+Pugilista
+Arcano
+Ilusionista
+Músico
+Adjutor
+Assassino
+Criminoso
+Atirador
+Especialista de Campo
+Narcótico
+Pacifista
+Espadachim
+Necromante-->
+
+<label for="classe">Escolha uma Classe:</label>
+<div class="select-ficha">
+<select name="classe" id="classe">
+  <option value="">Tanque</option>
+  <option value="">Pugilista</option>
+  <option value="">Arcano</option>
+  <option value="">Ilusionista</option>
+  <option value="">Músico</option>
+  <option value="">Adjutor</option>
+  <option value="">Assassino</option>
+  <option value="">Criminoso</option>
+  <option value="">Atirador</option>
+  <option value="">Especialista de Campo</option>
+  <option value="">Narcótico</option>
+  <option value="">Pacifista</option>
+  <option value="">Espadachim</option>
+  <option value="">Necromante</option>
+</select>
+</div>
+          </div>
+        </div>
+        <div class="attributes">
+          <div class="attribute">
+            <label>Força:</label>
+            <input type="number" class="editable" placeholder="I" />
+          </div>
+          <div class="attribute">
+            <label>Integridade:</label>
+            <input type="number" class="editable" placeholder="I" />
+          </div>
+          <div class="attribute">
+            <label>Essência:</label>
+            <input type="number" class="editable" placeholder="I" />
+          </div>
+          <div class="attribute">
+            <label>Destreza:</label>
+            <input type="number" class="editable" placeholder="I" />
+          </div>
+          <div class="attribute">
+            <label>Intelecto:</label>
+            <input type="number" class="editable" placeholder="I" />
+          </div>
+          <div class="attribute">
+            <label>Vigor:</label>
+            <input type="number" class="editable" placeholder="I" />
+          </div>
+        </div>
+        <div class="health-info">
+          <h2>Atributos</h2>
+          <ul class="ul-ficha">
+            <li>
+              <div id="selected-tcv" style="margin-bottom: 10px">TCV: [ ]</div>
+              <!-- TCV fica aqui -->
+              <button class="arrow-button" onclick="toggleTCVOptions()">
+                Selecionar TCV
+              </button>
+              <div id="tcv-options" style="display: none">
+                <button class="tcv-option" onclick="selectTCV(5)">5</button>
+                <button class="tcv-option" onclick="selectTCV(10)">10</button>
+                <button class="tcv-option" onclick="selectTCV(15)">15</button>
+                <button class="tcv-option" onclick="selectTCV(20)">20</button>
+                <button class="tcv-option" onclick="selectTCV(25)">25</button>
+                <button class="tcv-option" onclick="selectTCV(30)">30</button>
+                <button class="tcv-option" onclick="selectTCV(35)">35</button>
+                <button class="tcv-option" onclick="selectTCV(40)">40</button>
+                <button class="tcv-option" onclick="selectTCV(45)">45</button>
+                <button class="tcv-option" onclick="selectTCV(50)">50</button>
+                <button class="tcv-option" onclick="selectTCV(55)">55</button>
+                <button class="tcv-option" onclick="selectTCV(60)">60</button>
+              </div>
+            </li>
+            <li>
+              <span class="attribute-label">Força</span>
+              <input
+                type="number"
+                class="attribute-points"
+                value="0"
+                min="0"
+                onchange="updateAttribute('forca', this)"
+              />
+            </li>
+            <li>
+              <span class="attribute-label">Essência</span>
+              <input
+                type="number"
+                class="attribute-points"
+                value="0"
+                min="0"
+                onchange="updateAttribute('essencia', this)"
+              />
+            </li>
+            <li>
+              <span class="attribute-label">Vigor</span>
+              <input
+                type="number"
+                class="attribute-points"
+                value="0"
+                min="0"
+                onchange="updateAttribute('vigor', this)"
+              />
+            </li>
+            <li>
+              <span class="attribute-label">Integridade</span>
+              <input
+                type="number"
+                class="attribute-points"
+                value="0"
+                min="0"
+                onchange="updateAttribute('integridade', this)"
+              />
+            </li>
+          </ul>
+
+          <h2>Barras de Vida</h2>
+          <ul class="health-container" >
+            <li>
+              <span class="attribute-label">PV</span>
+              <button class="arrow-button" onclick="alterarVida('pv', -1)">
+                ←
+              </button>
+              <div class="health-bar pv-bar">
+                <div class="fill" id="pv-fill" style="width: 100%"></div>
+                <span class="bar-label" id="pv-label">30/30</span>
+              </div>
+              <button class="arrow-button" onclick="alterarVida('pv', 1)">
+                →
+              </button>
+            </li>
+            <li>
+              <span class="attribute-label">PE</span>
+              <button class="arrow-button" onclick="alterarVida('pe', -1)">
+                ←
+              </button>
+              <div class="health-bar pe-bar">
+                <div class="fill" id="pe-fill" style="width: 100%"></div>
+                <span class="bar-label" id="pe-label">10/50</span>
+              </div>
+              <button class="arrow-button" onclick="alterarVida('pe', 1)">
+                →
+              </button>
+            </li>
+            <li>
+              <span class="attribute-label">PD</span>
+              <button class="arrow-button" onclick="alterarVida('pd', -1)">
+                ←
+              </button>
+              <div class="health-bar pd-bar">
+                <div class="fill" id="pd-fill" style="width: 100%"></div>
+                <span class="bar-label" id="pd-label">5/20</span>
+              </div>
+              <button class="arrow-button" onclick="alterarVida('pd', 1)">
+                →
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="content-system">
+        <div class="dice-system">
+          <h3>Sistema de Dados</h3>
+          <div class="container">
+            <ul>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Atletismo')"
+                  />
+                  Atletismo:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Artes')"
+                  />
+                  Artes:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Arrombar')"
+                  />
+                  Arrombar:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Atletismo')"
+                  />
+                  Biologia:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Artes')"
+                  />
+                  Controle:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Arrombar')"
+                  />
+                  Combate:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Atletismo')"
+                  />
+                  Enganação:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Artes')"
+                  />
+                  Esquiva:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Arrombar')"
+                  />
+                  Furto:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Atletismo')"
+                  />
+                  Furtividade
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Artes')"
+                  />
+                  Ferramentaria:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Arrombar')"
+                  />
+                  Iniciativa:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Atletismo')"
+                  />
+                  Intimidação:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Artes')"
+                  />
+                  Investigação:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Arrombar')"
+                  />
+                  Lábia:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Atletismo')"
+                  />
+                  Mira:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Artes')"
+                  />
+                  Música:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Arrombar')"
+                  />
+                  Medicina:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Atletismo')"
+                  />
+                  Percepção
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Artes')"
+                  />
+                  Psicologia:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Arrombar')"
+                  />
+                  Química:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Atletismo')"
+                  />
+                  Rastrear:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Artes')"
+                  />
+                  Reflexo:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Arrombar')"
+                  />
+                  Resistência:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Atletismo')"
+                  />
+                  Sanidade:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Artes')"
+                  />
+                  Sigilação:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+              <li>
+                <div class="label">
+                  <img
+                    src="/img/d20-icon-TtjmS7-Z.png"
+                    alt="Dado"
+                    class="icon"
+                    onclick="rolarDado(this, 'Arrombar')"
+                  />
+                  Tecnologia:
+                </div>
+                <input
+                  type="number"
+                  class="dado-input"
+                  placeholder="Qtd Dados"
+                  min="1"
+                />
+                <input type="number" class="bonus-input" placeholder="Bônus" />
+              </li>
+            </ul>
+
+
+            <div id="notification-area"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include('components/footer') %>
+  </body>
+</html>

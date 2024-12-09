@@ -40,7 +40,7 @@ class LoginController {
     req.session.logged = true;
     req.session.user = resultDB;
 
-    return res.redirect("/index");
+    return res.redirect("/");
   }
 }
 

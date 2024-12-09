@@ -30,6 +30,9 @@
                 <div><%= post.post_content %></div>
               </div>
             </div>
+            <div class="read_more">
+              <a href="/post/<%= post.post_slug %>">Continuar Lendo Post</a>
+            </div>
             <% }) } else { %>
             <div class="no_posts">
               <h3>Nenhum post Encontrado!</h3>

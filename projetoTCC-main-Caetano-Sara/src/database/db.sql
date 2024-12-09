@@ -87,3 +87,7 @@ INNER JOIN
     posts 
 ON 
     users.user_id = posts.users_user_id;
+
+ALTER TABLE posts ADD post_comentarios LONGTEXT;
+
+ALTER TABLE posts MODIFY COLUMN users_user_id INT AFTER post_date;
