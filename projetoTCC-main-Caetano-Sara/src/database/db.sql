@@ -112,3 +112,11 @@ CREATE TABLE IF NOT EXISTS `comments` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+ALTER TABLE `comments`
+DROP FOREIGN KEY `fk_comments_posts1`,
+ADD CONSTRAINT `fk_comments_posts1`
+FOREIGN KEY (`posts_post_id`)
+REFERENCES `posts` (`post_id`)
+ON DELETE CASCADE
+ON UPDATE NO ACTION;
