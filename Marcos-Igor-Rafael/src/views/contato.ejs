@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <%- include('components/head') %>
-<body>
-    <%- include('components/header')  %>
+  <%- include('components/head') %>
+  <body>
+    <%- include('components/header') %>
     <main>
-        <div class="space">
+      <div class="space">
         <h1>Contato</h1>
+        <% pages.forEach((page) => {%>
+        <div>
+          <% if (page.position_name === "Contato"){ %>
+          <div><%- page.page_content %></div>
+          <% } %>
         </div>
+        <% }) %>
+      </div>
     </main>
     <%- include('components/footer') %>
-</body>
+  </body>
 </html>

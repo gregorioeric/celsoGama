@@ -6,7 +6,7 @@
     <main>
       <section id="home" class="home">
         <div class="space">
-          <h1>Home</h1>
+          <h1>Gente que ajuda gente!</h1>
           <div class="div-principal">
             <div class="div-esquerda">
               <!-- <p>teste 12345</p> -->
@@ -16,12 +16,6 @@
             <div class="div-centro">
               <img src="/img/moletom.png" />
             </div>
-            <div class="div-direita">
-              <img src="/img/anjos.png" />
-            </div>
-            <div class="div-direita">
-              <img src="/img/anjos.png" />
-            </div>
           </div>
         </div>
       </section>
@@ -30,22 +24,27 @@
         <div class="space">
           <% pages.forEach((page) => {%>
           <div>
-            <% if (page.position_name === "Quem Somos"){ %>
+            <% if (page.position_name === "Quem somos"){ %>
             <div><%- page.page_content %></div>
             <% } %>
           </div>
           <% }) %>
+          <!-- FR$5TGHY6 -->
         </div>
       </section>
       <section id="comoAjudar" class="comoajudar">
         <div class="space">
           <% pages.forEach((page) => {%>
           <div>
-            <% if (page.position_name === "Como ajudar"){ %>
+            <% if (page.position_name === "Como Ajudar"){ %>
             <div><%- page.page_content %></div>
             <% } %>
           </div>
           <% }) %>
+
+          <!-- <div class="ajuda">
+            <img src="/img/anjos.png" width="550px" />
+          </div> -->
         </div>
       </section>
     </main>

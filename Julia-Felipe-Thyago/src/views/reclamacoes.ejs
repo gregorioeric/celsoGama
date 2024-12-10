@@ -11,10 +11,12 @@
           <div class="content-msg grid_area">
             <% if(msgSuccess) { %>
             <div class="msgSuccess">
-              <%= msgSuccess %> <a href="/profile">X</a>
+              <%= msgSuccess %> <a href="/reclamacoes">Fechar</a>
             </div>
             <% } %> <% if(msgError) { %>
-            <div class="msgError"><%= msgError %> <a href="/profile">X</a></div>
+            <div class="msgError">
+              <%= msgError %> <a href="/reclamacoes">Fechar</a>
+            </div>
             <% } %>
           </div>
           <header class="menu_profile">

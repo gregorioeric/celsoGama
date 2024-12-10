@@ -4,7 +4,7 @@
   <body>
     <%- include('components/header') %>
     <main>
-      <section>
+      <!-- <section>
         <div class="search">
           <form>
             <div class="input-search">
@@ -14,6 +14,18 @@
               <button><i class="bx bx-search-alt-2"></i></button>
             </div>
           </form>
+        </div>
+      </section> -->
+
+      <section class="container-page">
+        <div class="content-page">
+          <% pages.forEach((page) => { %>
+          <div>
+            <% if (page.position_name === "Home"){ %>
+            <div><%- page.page_content %></div>
+            <% } %>
+          </div>
+          <% }) %>
         </div>
       </section>
       <section>

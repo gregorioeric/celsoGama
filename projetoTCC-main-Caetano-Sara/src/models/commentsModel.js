@@ -27,7 +27,7 @@ class CommentsModel {
 
   static async selectCommentsByPostId(post_id) {
     const selectCommentsByPostId = `SELECT 
-                    c.commnet_id AS comment_id,
+                    c.comment_id AS comment_id,
                     c.comment_content AS comment_content,
                     u.user_id AS user_id,
                     u.user_name AS user_name,
