@@ -1,171 +1,254 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <%- include('components/head') %>
   <head>
-    <title>Página de Questões</title>
+    <%- include('components/head') %>
+    <title>filosofia</title>
   </head>
   <body>
     <%- include('components/header') %>
     <main>
-      <h1>Filosofia</h1>
-
-      <h2>Página de Questões</h2>
-
       <div class="container-materias">
         <%- include('components/menuMaterias') %>
-        <div class="content-questao">
-          <div class="questao">
-            <h2>
-              1.QUESTÃO 1-(Enem/2017) <br />
-              Uma conversação de tal natureza transforma o ouvinte; o contato de Sócrates paralisa e embaraça; leva a refletir sobre si mesmo, a imprimir à 
-              atenção uma direção incomum: os temperamentais, como Alcibíades sabem que encontrarão junto dele todo o bem de que são capazes, mas fogem porque 
-              receiam essa influência poderosa, que os leva a se censurarem. Sobretudo a esses jovens, muitos quase crianças, que ele tenta imprimir sua orientação.
-              
-              O texto evidencia características do modo de vida socrático, que se baseava na:
-              
-            </h2>
+        <div class="container-questao">
+          <h1>Filosofia</h1>
+
+          <h2>Página de Questões</h2>
+
+          <div class="content-questao">
+            <div class="questao">
+              <h3>1.QUESTÃO 1-(Enem/2017)</h3>
+              <P>
+                Uma conversação de tal natureza transforma o ouvinte; o contato
+                de Sócrates paralisa e embaraça; leva a refletir sobre si mesmo,
+                a imprimir à atenção uma direção incomum: os temperamentais,
+                como Alcibíades sabem que encontrarão junto dele todo o bem de
+                que são capazes, mas fogem porque receiam essa influência
+                poderosa, que os leva a se censurarem. Sobretudo a esses jovens,
+                muitos quase crianças, que ele tenta imprimir sua orientação. O
+                texto evidencia características do modo de vida socrático, que
+                se baseava na:
+              </P>
+            </div>
             <form id="form1">
-              <br />
-              <input
-                type="radio"
-                id="A-Contemplação da tradição mítica."
-                name="questao1"
-                value="A-Contemplação da tradição mítica."
-              />
-              <label
-                for="A-Contemplação da tradição mítica."
-                >A-Contemplação da tradição mítica.</label
-              ><br />
-              <input
-                type="radio"
-                id="B-Sustentação do método dialético."
-                name="questao1"
-                value="B-Sustentação do método dialético."
-              />
-              <label
-                for="B-Sustentação do método dialético."
-                >B-Sustentação do método dialético.</label
-              ><br />
-              <input
-                type="radio"
-                id="C- Relativização do saber verdadeiro."
-                name="questao1"
-                value="C- Relativização do saber verdadeiro."
-              />
-              <label for="C- Relativização do saber verdadeiro."
-                >C- Relativização do saber verdadeiro. </label
-              ><br />
-              <input
-                type="radio"
-                id="D-Valorização da argumentação retórica.
+              <div class="select-answer">
+                <div>
+                  <input
+                    type="radio"
+                    id="A-Contemplação da tradição mítica."
+                    name="questao1"
+                    value="A-Contemplação da tradição mítica."
+                  />
+                  <label for="A-Contemplação da tradição mítica."
+                    >A-Contemplação da tradição mítica.</label
+                  >
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="B-Sustentação do método dialético."
+                    name="questao1"
+                    value="B-Sustentação do método dialético."
+                  />
+                  <label for="B-Sustentação do método dialético."
+                    >B-Sustentação do método dialético.</label
+                  >
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="C- Relativização do saber verdadeiro."
+                    name="questao1"
+                    value="C- Relativização do saber verdadeiro."
+                  />
+                  <label for="C- Relativização do saber verdadeiro."
+                    >C- Relativização do saber verdadeiro.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="D-Valorização da argumentação retórica.
               "
-                name="questao1"
-                value="D-Valorização da argumentação retórica.
+                    name="questao1"
+                    value="D-Valorização da argumentação retórica.
               "
-              />
-              <label
-                for="D-Valorização da argumentação retórica.
+                  />
+                  <label
+                    for="D-Valorização da argumentação retórica.
               
                 "
-                >D-Valorização da argumentação retórica.
-               </label
-              ><br />
-              <input
-                type="radio"
-                id="E-Investigação dos fundamentos da natureza.
+                    >D-Valorização da argumentação retórica.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="E-Investigação dos fundamentos da natureza.
               "
-                name="questao1"
-                value="E-Investigação dos fundamentos da natureza.
+                    name="questao1"
+                    value="E-Investigação dos fundamentos da natureza.
               "
-              />
-              <label
-                for="E-Investigação dos fundamentos da natureza.
+                  />
+                  <label
+                    for="E-Investigação dos fundamentos da natureza.
               
                 "
-                >E-Investigação dos fundamentos da natureza.
-               </label
-              ><br />
-              <button type="button" onclick="verificarQuestao1F()">Verificar</button>
+                    >E-Investigação dos fundamentos da natureza.
+                  </label>
+                </div>
+                <button
+                  id="btnQ1F"
+                  type="button"
+                  onclick="verificarQuestao1F()"
+                >
+                  Verificar
+                </button>
+              </div>
             </form>
             <div class="resultado" id="resultado1"></div>
-            <div id="resolucao1" style="display: none">
+            <div class="resolucao" id="resolucao1" style="display: none">
               <p>
                 <strong>Resolução:</strong>B-Sustentação do método dialético.
-                <br />
-                <br>Sócrates foi um defensor da ignorância como o princípio básico para o conhecimento. Daí a importância da sua 
-                frase "só sei que nada sei". Para ele, é preferível não saber a julgar saber.
-                Sendo assim, Sócrates construiu um método que, através do diálogo (método dialético), as falsas certezas e 
-                os pré-conceitos eram abandonados, o interlocutor assumia a sua ignorância. A partir daí, buscava o conhecimento verdadeiro.
-                As outras alternativas estão erradas porque:
-                
-                A- Sócrates busca abandonar os mitos e as opiniões para a construção do conhecimento verdadeiro.
-                
-                C- Sócrates acreditava que existe um conhecimento verdadeiro e esse pode ser despertado através da razão. 
-                Teceu diversas críticas aos sofistas por esses assumirem uma perspetiva de relativização do saber.
-                
-                D- Os sofistas afirmavam que a verdade é um mero ponto de vista, estando baseada no argumento mais convincente. 
-                Para Sócrates, essa posição era contrária à essência do saber verdadeiro, próprio da alma humana.
-                
-                E- O filósofo dá início ao período antropológico da filosofia grega. As questões relativas à vida humana viram o centro das atenções, 
-                deixando de lado a busca sobre os fundamentos da natureza, própria do período pré-socrático.
-                
               </p>
+              <P>
+                Sócrates foi um defensor da ignorância como o princípio básico
+                para o conhecimento. Daí a importância da sua frase "só sei que
+                nada sei". Para ele, é preferível não saber a julgar saber.
+                Sendo assim, Sócrates construiu um método que, através do
+                diálogo (método dialético), as falsas certezas e os
+                pré-conceitos eram abandonados, o interlocutor assumia a sua
+                ignorância. A partir daí, buscava o conhecimento verdadeiro. As
+                outras alternativas estão erradas porque: </P
+              ><P>
+                A- Sócrates busca abandonar os mitos e as opiniões para a
+                construção do conhecimento verdadeiro. </P
+              ><P>
+                C- Sócrates acreditava que existe um conhecimento verdadeiro e
+                esse pode ser despertado através da razão. Teceu diversas
+                críticas aos sofistas por esses assumirem uma perspetiva de
+                relativização do saber. </P
+              ><P>
+                D- Os sofistas afirmavam que a verdade é um mero ponto de vista,
+                estando baseada no argumento mais convincente. Para Sócrates,
+                essa posição era contrária à essência do saber verdadeiro,
+                próprio da alma humana. </P
+              ><P>
+                E- O filósofo dá início ao período antropológico da filosofia
+                grega. As questões relativas à vida humana viram o centro das
+                atenções, deixando de lado a busca sobre os fundamentos da
+                natureza, própria do período pré-socrático.
+              </P>
             </div>
           </div>
-    
-          <div class="questao">
-            <h2>2. QUESTÃO 2-(Enem/2019)<br />
-              Para Maquiavel, quando um homem decide dizer a verdade pondo em risco a própria integridade física, tal resolução diz 
-              respeito apenas a sua pessoa. Mas se esse mesmo homem é um chefe de Estado, os critérios pessoais não são mais adequados 
-              para decidir sobre ações cujas consequências se tornam tão amplas, já que o prejuízo não será apenas individual, mas coletivo. 
-              Nesse caso, conforme as circunstâncias e os fins a serem atingidos, pode-se decidir que o melhor para o bem comum seja mentir.
-              
-              O texto aponta uma inovação na teoria política na época moderna expressa na distinção entre :              
-                </h2>
+          <div class="content-questao">
+            <div class="questao">
+              <h3>2. QUESTÃO 2-(Enem/2019)</h3>
+              <P
+                >Para Maquiavel, quando um homem decide dizer a verdade pondo em
+                risco a própria integridade física, tal resolução diz respeito
+                apenas a sua pessoa. Mas se esse mesmo homem é um chefe de
+                Estado, os critérios pessoais não são mais adequados para
+                decidir sobre ações cujas consequências se tornam tão amplas, já
+                que o prejuízo não será apenas individual, mas coletivo. Nesse
+                caso, conforme as circunstâncias e os fins a serem atingidos,
+                pode-se decidir que o melhor para o bem comum seja mentir. O
+                texto aponta uma inovação na teoria política na época moderna
+                expressa na distinção entre:</P
+              >
+            </div>
             <form id="form2">
-              <br /><input type="radio" id="A-idealidade e efetividade da moral."
-               name="questao2" value="A-idealidade e efetividade da moral." />
-              <label for="A-idealidade e efetividade da moral.">A-idealidade e efetividade da moral.
-            </label><br />
-              <input type="radio" id="B-nulidade e preservabilidade da liberdade.
+              <div class="select-answer">
+                <div>
+                  <input
+                    type="radio"
+                    id="A-idealidade e efetividade da moral."
+                    name="questao2"
+                    value="A-idealidade e efetividade da moral."
+                  />
+                  <label for="A-idealidade e efetividade da moral."
+                    >A-idealidade e efetividade da moral.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="B-nulidade e preservabilidade da liberdade.
               "
-               name="questao2" value="B-nulidade e preservabilidade da liberdade.
-              " />
-              <label for="B-nulidade e preservabilidade da liberdade.
-              ">B-nulidade e preservabilidade da liberdade.
-              
-            </label><br />
-              <input type="radio" id="C-ilegalidade e legitimidade do governante."
-               name="questao2" value="C-ilegalidade e legitimidade do governante." />
-              <label for="C-ilegalidade e legitimidade do governante.">C-ilegalidade e legitimidade do governante.
-            </label><br />
-            <input type="radio" id="D- verificabilidade e possibilidade da verdade."
-             name="questao2" value="D- verificabilidade e possibilidade da verdade." />
-            <label for="D- verificabilidade e possibilidade da verdade.">D- verificabilidade e possibilidade da verdade.
-            </label><br />
-             <input type="radio" id="E-objetividade e subjetividade do conhecimento."
-                name="questao2" value="E-objetividade e subjetividade do conhecimento." />
-               <label for="E-objetividade e subjetividade do conhecimento.">E-objetividade e subjetividade do conhecimento.
-            </label><br />
-              <button type="button" onclick="verificarQuestao2F()">Verificar</button>
+                    name="questao2"
+                    value="B-nulidade e preservabilidade da liberdade.
+              "
+                  />
+                  <label
+                    for="B-nulidade e preservabilidade da liberdade.
+              "
+                    >B-nulidade e preservabilidade da liberdade.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="C-ilegalidade e legitimidade do governante."
+                    name="questao2"
+                    value="C-ilegalidade e legitimidade do governante."
+                  />
+                  <label for="C-ilegalidade e legitimidade do governante."
+                    >C-ilegalidade e legitimidade do governante.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="D- verificabilidade e possibilidade da verdade."
+                    name="questao2"
+                    value="D- verificabilidade e possibilidade da verdade."
+                  />
+                  <label for="D- verificabilidade e possibilidade da verdade."
+                    >D- verificabilidade e possibilidade da verdade.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="E-objetividade e subjetividade do conhecimento."
+                    name="questao2"
+                    value="E-objetividade e subjetividade do conhecimento."
+                  />
+                  <label for="E-objetividade e subjetividade do conhecimento."
+                    >E-objetividade e subjetividade do conhecimento.
+                  </label>
+                </div>
+                <button
+                  id="btnQ2F"
+                  type="button"
+                  onclick="verificarQuestao2F()"
+                >
+                  Verificar
+                </button>
+              </div>
             </form>
             <div class="resultado" id="resultado2"></div>
-            <div id="resolucao2" style="display: none">
-              <p><strong>Resolução:</strong>A-idealidade e efetividade da moral. <br />
-                <br> A filosofia maquiaveliana é marcada pela forte distinção entre o dever do indivíduo comum e o dever do príncipe (Estado).
-                Assim, a idealidade da moral, aplicada aos indivíduos comuns, não pode ser aplicada à lógica do governo. 
-                A responsabilidade do príncipe é com a governança, sendo assim, está ligada a efetividade de suas ações, ainda que contrariem a moral ideal.
-                Em outras palavras, a virtú do governante está fundamentada em sua capacidade de se antecipar às imprevisibilidades 
-                da história e tomar medidas eficazes, que se distinguem da moral cristã tradicional.
-                As outras alternativas estão erradas porque:
-                Nenhuma das outras alternativas apresenta uma distinção relevante no pensamento de Maquiavel.
-                
-                </p>
+            <div class="resolucao" id="resolucao2" style="display: none">
+              <p>
+                <strong>Resolução:</strong>A-idealidade e efetividade da moral.
+              </p>
+              <P>
+                A filosofia maquiaveliana é marcada pela forte distinção entre o
+                dever do indivíduo comum e o dever do príncipe (Estado). Assim,
+                a idealidade da moral, aplicada aos indivíduos comuns, não pode
+                ser aplicada à lógica do governo. A responsabilidade do príncipe
+                é com a governança, sendo assim, está ligada a efetividade de
+                suas ações, ainda que contrariem a moral ideal. Em outras
+                palavras, a virtú do governante está fundamentada em sua
+                capacidade de se antecipar às imprevisibilidades da história e
+                tomar medidas eficazes, que se distinguem da moral cristã
+                tradicional. As outras alternativas estão erradas porque:
+                Nenhuma das outras alternativas apresenta uma distinção
+                relevante no pensamento de Maquiavel.
+              </P>
             </div>
           </div>
-          </div>
-          </div>
-                
+        </div>
+      </div>
     </main>
     <%- include('components/footer') %>
   </body>

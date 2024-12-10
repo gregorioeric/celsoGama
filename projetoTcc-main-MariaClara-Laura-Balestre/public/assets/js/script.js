@@ -125,10 +125,13 @@ function verificarQuestao1TI() {
     if (radio.checked) {
       if (radio.value === respostaCerta) {
         resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
       } else {
         resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
       }
       resolucao.style.display = "block";
+      document.querySelector("#btnQ1TI").disabled = true;
       return;
     }
   }
@@ -146,10 +149,13 @@ function verificarQuestao2TI() {
     if (radio.checked) {
       if (radio.value === respostaCerta) {
         resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
       } else {
         resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
       }
       resolucao.style.display = "block";
+      document.querySelector("#btnQ2TI").disabled = true;
       return;
     }
   }
@@ -166,10 +172,13 @@ function verificarQuestao3TI() {
     if (radio.checked) {
       if (radio.value === respostaCerta) {
         resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
       } else {
         resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
       }
       resolucao.style.display = "block";
+      document.querySelector("#btnQ3TI").disabled = true;
       return;
     }
   }
@@ -187,10 +196,13 @@ function verificarQuestao4TI() {
     if (radio.checked) {
       if (radio.value === respostaCerta) {
         resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
       } else {
         resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
       }
       resolucao.style.display = "block";
+      document.querySelector("#btnQ4TI").disabled = true;
       return;
     }
   }
@@ -208,10 +220,13 @@ function verificarQuestao5TI() {
     if (radio.checked) {
       if (radio.value === respostaCerta) {
         resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
       } else {
         resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
       }
       resolucao.style.display = "block";
+      document.querySelector("#btnQ5TI").disabled = true;
       return;
     }
   }
@@ -228,10 +243,13 @@ function verificarQuestao1A() {
     if (radio.checked) {
       if (radio.value === respostaCerta) {
         resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
       } else {
         resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
       }
       resolucao.style.display = "block";
+      document.querySelector("#btnQ1A").disabled = true;
       return;
     }
   }
@@ -249,10 +267,13 @@ function verificarQuestao2A() {
     if (radio.checked) {
       if (radio.value === respostaCerta) {
         resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
       } else {
         resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
       }
       resolucao.style.display = "block";
+      document.querySelector("#btnQ2A").disabled = true;
       return;
     }
   }
@@ -269,10 +290,13 @@ function verificarQuestao3A() {
     if (radio.checked) {
       if (radio.value === respostaCerta) {
         resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
       } else {
         resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
       }
       resolucao.style.display = "block";
+      document.querySelector("#btnQ3A").disabled = true;
       return;
     }
   }
@@ -289,10 +313,13 @@ function verificarQuestao4A() {
     if (radio.checked) {
       if (radio.value === respostaCerta) {
         resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
       } else {
         resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
       }
       resolucao.style.display = "block";
+      document.querySelector("#btnQ4A").disabled = true;
       return;
     }
   }
@@ -309,10 +336,13 @@ function verificarQuestao5A() {
     if (radio.checked) {
       if (radio.value === respostaCerta) {
         resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
       } else {
         resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
       }
       resolucao.style.display = "block";
+      document.querySelector("#btnQ5A").disabled = true;
       return;
     }
   }
@@ -330,10 +360,784 @@ function verificarQuestao1H() {
     if (radio.checked) {
       if (radio.value === respostaCerta) {
         resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
       } else {
         resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
       }
       resolucao.style.display = "block";
+      document.querySelector("#btnQ1H").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao2H() {
+  const radios = document.getElementsByName("questao2");
+  let respostaCerta =
+    "B-utilizar os vestígios restaurados para justificar o regime político.";
+  let resultado = document.getElementById("resultado2");
+  let resolucao = document.getElementById("resolucao2");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ2H").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao1G() {
+  const radios = document.getElementsByName("questao1");
+  let respostaCerta =
+    "E-desterritorialização forçada de populações afetadas por conflitos armados.";
+  let resultado = document.getElementById("resultado1");
+  let resolucao = document.getElementById("resolucao1");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ1G").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao2G() {
+  const radios = document.getElementsByName("questao2");
+  let respostaCerta = "B-conclusão da transição demográfica.";
+  let resultado = document.getElementById("resultado2");
+  let resolucao = document.getElementById("resolucao2");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ2G").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao1F() {
+  const radios = document.getElementsByName("questao1");
+  let respostaCerta = "B-Sustentação do método dialético.";
+  let resultado = document.getElementById("resultado1");
+  let resolucao = document.getElementById("resolucao1");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ1F").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao2F() {
+  const radios = document.getElementsByName("questao2");
+  let respostaCerta = "A-idealidade e efetividade da moral.";
+  let resultado = document.getElementById("resultado2");
+  let resolucao = document.getElementById("resolucao2");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ2F").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao1S() {
+  const radios = document.getElementsByName("questao1");
+  let respostaCerta = "B-debate livre e racional entre cidadãos e Estado.";
+  let resultado = document.getElementById("resultado1");
+  let resolucao = document.getElementById("resolucao1");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ1S").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao2S() {
+  const radios = document.getElementsByName("questao2");
+  let respostaCerta = "B-cotas de gênero nas candidaturas partidárias.";
+  let resultado = document.getElementById("resultado2");
+  let resolucao = document.getElementById("resolucao2");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ2S").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao1B() {
+  const radios = document.getElementsByName("questao1");
+  let respostaCerta = "A-propicia o fluxo gênico.";
+  let resultado = document.getElementById("resultado1");
+  let resolucao = document.getElementById("resolucao1");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ1B").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao2B() {
+  const radios = document.getElementsByName("questao2");
+  let respostaCerta =
+    "C-exploração de diferentes nichos, evitando a competição entre as fases da vida.";
+  let resultado = document.getElementById("resultado2");
+  let resolucao = document.getElementById("resolucao2");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ2B").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao1Q() {
+  const radios = document.getElementsByName("questao1");
+  let respostaCerta = "A-fórmula estrutural.";
+  let resultado = document.getElementById("resultado1");
+  let resolucao = document.getElementById("resolucao1");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ1Q").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao2Q() {
+  const radios = document.getElementsByName("questao2");
+  let respostaCerta =
+    "A-reduzir a quantidade de resíduos tóxicos nos efluentes da lavagem.";
+  let resultado = document.getElementById("resultado2");
+  let resolucao = document.getElementById("resolucao2");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ2Q").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao1FISICA() {
+  const radios = document.getElementsByName("questao1");
+  let respostaCerta = "B-2";
+  let resultado = document.getElementById("resultado1");
+  let resolucao = document.getElementById("resolucao1");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ1FISICA").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao2FISICA() {
+  const radios = document.getElementsByName("questao2");
+  let respostaCerta = "A-amplitude e velocidade.";
+  let resultado = document.getElementById("resultado2");
+  let resolucao = document.getElementById("resolucao2");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ2FISICA").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao1PORT() {
+  const radios = document.getElementsByName("questao1");
+  let respostaCerta =
+    "B-apontar a hipocrisia do discurso conservador na defesa da escravidão.";
+  let resultado = document.getElementById("resultado1");
+  let resolucao = document.getElementById("resolucao1");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ1PORT").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao2PORT() {
+  const radios = document.getElementsByName("questao2");
+  let respostaCerta = "C-brevidade no tratamento da temática.";
+  let resultado = document.getElementById("resultado2");
+  let resolucao = document.getElementById("resolucao2");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ2PORT").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao3PORT() {
+  const radios = document.getElementsByName("questao3");
+  let respostaCerta = "D-comercialização de pontos de vista.";
+  let resultado = document.getElementById("resultado3");
+  let resolucao = document.getElementById("resolucao3");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ3PORT").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao4PORT() {
+  const radios = document.getElementsByName("questao4");
+  let respostaCerta = "A-reaproveitamento de material.";
+  let resultado = document.getElementById("resultado4");
+  let resolucao = document.getElementById("resolucao4");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ4PORT").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao5PORT() {
+  const radios = document.getElementsByName("questao5");
+  let respostaCerta =
+    "A-amalgamada pelo processo comum de desertificação e de solidão.";
+  let resultado = document.getElementById("resultado5");
+  let resolucao = document.getElementById("resolucao5");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ5PORT").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao1ES() {
+  const radios = document.getElementsByName("questao1");
+  let respostaCerta = "B-dar voz ao movimento popular";
+  let resultado = document.getElementById("resultado1");
+  let resolucao = document.getElementById("resolucao1");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ1ES").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao2ES() {
+  const radios = document.getElementsByName("questao2");
+  let respostaCerta =
+    "B-destino trágico de Santiago, que Plácida foi incapaz de prever nos sonhos";
+  let resultado = document.getElementById("resultado2");
+  let resolucao = document.getElementById("resolucao2");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ2ES").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao3ES() {
+  const radios = document.getElementsByName("questao3");
+  let respostaCerta =
+    "E-permanência da inconstância em uma sociedade marcada por contínuas mudanças";
+  let resultado = document.getElementById("resultado3");
+  let resolucao = document.getElementById("resolucao3");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ3ES").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao4ES() {
+  const radios = document.getElementsByName("questao4");
+  let respostaCerta = "A-constatação de sua existência no entrelugar";
+  let resultado = document.getElementById("resultado4");
+  let resolucao = document.getElementById("resolucao4");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ4ES").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao5ES() {
+  const radios = document.getElementsByName("questao5");
+  let respostaCerta =
+    "D-explorar as relações entre as línguas estudadas para promover a diversidade";
+  let resultado = document.getElementById("resultado5");
+  let resolucao = document.getElementById("resolucao5");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ5ES").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao1ING() {
+  const radios = document.getElementsByName("questao1");
+  let respostaCerta =
+    "B-os ratos e os humanos possuem a mesma via metabólica para produção de morfina.";
+  let resultado = document.getElementById("resultado1");
+  let resolucao = document.getElementById("resolucao1");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ1ING").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao2ING() {
+  const radios = document.getElementsByName("questao2");
+  let respostaCerta =
+    "D-reforçar a ideia de que os jovens precisam de amor, mas também de firmeza ";
+  let resultado = document.getElementById("resultado2");
+  let resolucao = document.getElementById("resolucao2");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ2ING").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao3ING() {
+  const radios = document.getElementsByName("questao3");
+  let respostaCerta = "D-demonstra consciência de sua identidade linguística.";
+  let resultado = document.getElementById("resultado3");
+  let resolucao = document.getElementById("resolucao3");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ3ING").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao4ING() {
+  const radios = document.getElementsByName("questao4");
+  let respostaCerta =
+    "A-festeja o fato de ter sido ousado na escolha que fez em sua vida.";
+  let resultado = document.getElementById("resultado4");
+  let resolucao = document.getElementById("resolucao4");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ4ING").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao5ING() {
+  const radios = document.getElementsByName("questao5");
+  let respostaCerta = "A-coragem, pela superação.";
+  let resultado = document.getElementById("resultado5");
+  let resolucao = document.getElementById("resolucao5");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ5ING").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao1MAT() {
+  const radios = document.getElementsByName("questao1");
+  let respostaCerta = "B-6√3 ";
+  let resultado = document.getElementById("resultado1");
+  let resolucao = document.getElementById("resolucao1");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ1MAT").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao2MAT() {
+  const radios = document.getElementsByName("questao2");
+  let respostaCerta = "A-2640.";
+  let resultado = document.getElementById("resultado2");
+  let resolucao = document.getElementById("resolucao2");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ2MAT").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao3MAT() {
+  const radios = document.getElementsByName("questao3");
+  let respostaCerta = "D-um pátio com 100 m².";
+  let resultado = document.getElementById("resultado3");
+  let resolucao = document.getElementById("resolucao3");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ3MAT").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao4MAT() {
+  const radios = document.getElementsByName("questao4");
+  let respostaCerta = "B-20º dia.";
+  let resultado = document.getElementById("resultado4");
+  let resolucao = document.getElementById("resolucao4");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ4MAT").disabled = true;
+      return;
+    }
+  }
+  resultado.textContent = "Por favor, selecione uma resposta.";
+}
+
+function verificarQuestao5MAT() {
+  const radios = document.getElementsByName("questao5");
+  let respostaCerta = "D-1: 700.000";
+  let resultado = document.getElementById("resultado5");
+  let resolucao = document.getElementById("resolucao5");
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      if (radio.value === respostaCerta) {
+        resultado.textContent = "Você acertou!";
+        resultado.classList.add("acertou");
+      } else {
+        resultado.textContent = "Você errou.";
+        resultado.classList.add("errou");
+      }
+      resolucao.style.display = "block";
+      document.querySelector("#btnQ5MAT").disabled = true;
       return;
     }
   }

@@ -1,67 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <%- include('components/head') %>
-
   <body>
     <%- include('components/header') %>
-    <main class="main-index">
-      <div class="img-index"">
-          <img src="/img/Banner4.png" />
+    <main>
+      <section class="home-page">
+        <% pages.forEach((page) => { %>
+        <div>
+          <% if (page.position_name === 'Home text one') { %>
+          <div><%- page.page_content %></div>
         </div>
-      <div class="conteudo-home">
-        <div class="index-margin">
-          <div class="index-conteudo">
-            <div class="index-conteudo-texto">
-              <div class="index-title">Fichas digitais</div>
-              <div class="index-texto">
-                Acesso rápido e simplificado a todas as informações de sua
-                ficha. Concentre-se menos nas coisas dificeis de criar uma ficha
-                e foque no que realmente importa que é se divertir ao lado de
-                seus amigos!
+        <% } %> <% }) %>
+      </section>
+      <section>
+        <div class="show_all_posts">
+          <div class="list_posts">
+            <% if (posts.length > 0) { posts.forEach(post => { %>
+            <div class="show_post">
+              <div class="user_post">
+                <div class="user_img">
+                  <img src="<%= post.user_img_profile %>" alt="" />
+                </div>
+                <div class="user_name">
+                  <span><%= post.user_name %></span>
+                </div>
+              </div>
+              <div class="by_post">
+                <h1><%= post.post_title %></h1>
+                <div><%= post.post_content %></div>
               </div>
             </div>
-            <div class="index-img">
-              <img src="/img/ficha.jpg" />
+            <div class="read_more">
+              <a href="/post/<%= post.post_slug %>">Continuar Lendo Post</a>
             </div>
-            <!-- segunda parte do home -->
-          </div>
-
-          <div class="conteudo-home2">
-            <div class="index-conteudo-texto2">
-              <div class="index-title">
-                     Suas principais noticias em um só lugar
-              </div>
-              <div class="index-texto">
-                Acompanhe de perto noticias em tempo de real das principais
-                campanhas de rpg do brasil. Chegou a hora de Elevar o nivel da
-                sua experiencia com o rpg
-              </div>
+            <% }) } else { %>
+            <div class="no_posts">
+              <h3>Nenhum post Encontrado!</h3>
             </div>
-            <div class="index-img">
-              <img src="/img/Banner5.jpg" />
-            </div>
-          </div>
-          <!-- terceira parte do home -->
-          <div class="conteudo-home3">
-            <div class="index-conteudo-texto3">
-              <div class="index-title">
-                Soundtracks Especiais e de Facil acesso!
-              </div>
-              <div class="index-texto">
-                Perca o medo de mestrar rpg e encontre varias soundtracks
-                especiais para suas campanhas, expanda seus horizontes de forma
-                pratica!
-              </div>
-              <div class="index-img">
-                <img src="/img/Banner6.jpg" />
-              </div>
-            </div>
-
-            <!-- Ultima parte do site -->
+            <%} %>
           </div>
         </div>
-      </div>
+      </section>
     </main>
     <%- include('components/footer') %>
   </body>
 </html>
+<!-- <div class="content-post">
+  <div class="article-post">
+  <div class="img-post"><img src="/1732900372728-433658766_metallica.jpg" alt=""></div>
+  <div class="desc"><a href="#">
+  <h3>Primeiro post</h3>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere quos assumenda consequatur blanditiis nemo eos ipsum eaque reiciendis voluptatum quia. Nobis similique ea animi et odit optio provident doloribus neque!</p>
+  </a></div>
+  </div>
+  <div class="article-post">
+  <div class="img-post"><img src="/1732900365860-202582621_linkin-park-4k-b2u2ed8psvzljc02.jpg" alt=""></div>
+  <div class="desc"><a href="#">
+  <h3>Segundo post</h3>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere quos assumenda consequatur blanditiis nemo eos ipsum eaque reiciendis voluptatum quia. Nobis similique ea animi et odit optio provident doloribus neque!</p>
+  </a></div>
+  </div>
+  <div class="article-post">
+  <div class="img-post"><img src="/1732900525783-907936300_dubstep_03.jpg" alt=""></div>
+  <div class="desc"><a href="#">
+  <h3>Terceiro post</h3>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere quos assumenda consequatur blanditiis nemo eos ipsum eaque reiciendis voluptatum quia. Nobis similique ea animi et odit optio provident doloribus neque!</p>
+  </a></div>
+  </div>
+  </div> -->

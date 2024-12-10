@@ -1,38 +1,29 @@
 <header>
   <div class="container">
-    <% if (locals.session.logged) { %>
-
-    <label class="hamburger-menu">
-      <input type="checkbox" />
-    </label>
-    <nav class="main-menu-hamburger">
-      <ul>
-        <li>
-          <div class="header-a">
-            <a href="/ficha">Sua Ficha</a>
-          </div>
-        </li>
-        <li></li>
-        <li><a href="/logout">Sair</a></li>
-      </ul>
-    </nav>
+    <div class="img-logo">
+      <picture>
+        <img src="/img/calmcoree.png" alt="" />
+      </picture>
+    </div>
     <nav class="main-menu">
       <ul>
-        <li><a href="/index">Home</a></li>
-        <li><a href="/noticias">Notícias</a></li>
-        <li><a href="/produtos">Produtos</a></li>
-        <li><a href="/compra">compra</a></li>
-        <li><a href="/poscompra">Pós Compra</a></li>
-      </ul>
-    </nav>
-    <% } else { %>
-    <nav class="main-menu">
-      <ul>
-        <li><a href="/index">Home</a></li>
-        <li><a href="/">Login</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/artigos">Artigos</a></li>
+        <% if (!locals.session.logged) { %>
+        <li><a href="/login">Login</a></li>
         <li><a href="/register">Cadastro</a></li>
+        <% } else { %>
+
+        <li><a href="/profile">Perfil</a></li>
+        <li><a href="/logout">Sair</a></li>
+        <% } %>
       </ul>
     </nav>
-    <% } %>
+    <div class="search">
+      <form>
+        <input type="search" name="pesquisa" placeholder="Pesquisar" />
+        <button><i class="bx bx-search"></i></button>
+      </form>
+    </div>
   </div>
 </header>

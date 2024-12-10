@@ -1,195 +1,296 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <%- include('components/head') %>
   <head>
-    <title>Página de Questões</title>
+    <%- include('components/head') %>
+    <title>Geografia</title>
   </head>
   <body>
     <%- include('components/header') %>
     <main>
-      <h1>Geografia</h1>
-
-      <h2>Página de Questões</h2>
-
       <div class="container-materias">
         <%- include('components/menuMaterias') %>
-        <div class="content-questao">
-          <div class="questao">
-            <h2>
-              1.QUESTÃO 1-(Enem/2018)<br />
-              Em Beirute, no Líbano, quando perguntado sobre onde se encontram os refugiados sírios, a resposta do homem é 
-              imediata: “em todos os lugares e em lugar nenhum”. Andando ao acaso, não é raro ver, sob um prédio ou num canto 
-              de calçada, ao abrigo do vento, uma família refugiada em volta de uma refeição frugal posta sobre jornais como se 
-              fossem guardanapos. Também se vê de vez em quando uma tenda com a sigla ACNUR (Alto Comissariado das Nações Unidas para Refugiados), 
-              erguida em um dos raros terrenos vagos da capital.
-              
-              O cenário descrito aponta para uma crise humanitária que é explicada pelo processo de :
-                            
-            </h2>
+        <div class="container-questao">
+          <h1>Geografia</h1>
+
+          <h2>Página de Questões</h2>
+
+          <div class="content-questao">
+            <div class="questao">
+              <h3>1.QUESTÃO 1-(Enem/2018)</h3>
+              <p>
+                Em Beirute, no Líbano, quando perguntado sobre onde se encontram
+                os refugiados sírios, a resposta do homem é imediata: “em todos
+                os lugares e em lugar nenhum”. Andando ao acaso, não é raro ver,
+                sob um prédio ou num canto de calçada, ao abrigo do vento, uma
+                família refugiada em volta de uma refeição frugal posta sobre
+                jornais como se fossem guardanapos. Também se vê de vez em
+                quando uma tenda com a sigla ACNUR (Alto Comissariado das Nações
+                Unidas para Refugiados), erguida em um dos raros terrenos vagos
+                da capital. O cenário descrito aponta para uma crise humanitária
+                que é explicada pelo processo de:
+              </p>
+            </div>
             <form id="form1">
-              <br />
-              <input
-                type="radio"
-                id="A-migração massiva de pessoas atingidas por catástrofe natural.
+              <div class="select-answer">
+                <div>
+                  <input
+                    type="radio"
+                    id="A-migração massiva de pessoas atingidas por catástrofe natural.
 "
-                name="questao1"
-                value="A-migração massiva de pessoas atingidas por catástrofe natural.
+                    name="questao1"
+                    value="A-migração massiva de pessoas atingidas por catástrofe natural.
 "
-              />
-              <label
-                for="A-migração massiva de pessoas atingidas por catástrofe natural.
+                  />
+                  <label
+                    for="A-migração massiva de pessoas atingidas por catástrofe natural.
 "
-                >A-migração massiva de pessoas atingidas por catástrofe natural.
-                </label
-              ><br />
-              <input
-                type="radio"
-                id="B-hibridização cultural de grupos caracterizados por homogeneidade social."
-                name="questao1"
-                value="B-hibridização cultural de grupos caracterizados por homogeneidade social."
-              />
-              <label
-                for="B-hibridização cultural de grupos caracterizados por homogeneidade social."
-                >B-hibridização cultural de grupos caracterizados por homogeneidade social.</label
-              ><br />
-              <input
-                type="radio"
-                id="C-desmobilização voluntária de militantes cooptados por seitas extremistas.
-"
-                name="questao1"
-                value="C-desmobilização voluntária de militantes cooptados por seitas extremistas.
-"
-              />
-              <label for="C-desmobilização voluntária de militantes cooptados por seitas extremistas.
-"
-                >C-desmobilização voluntária de militantes cooptados por seitas extremistas.
- </label
-              ><br />
-              <input
-                type="radio"
-                id="D-peregrinações religiosas de fiéis orientados por lideranças fundamentalistas."
-                name="questao1"
-                value="D-peregrinações religiosas de fiéis orientados por lideranças fundamentalistas."
-              />
-              <label
-                for="D-peregrinações religiosas de fiéis orientados por lideranças fundamentalistas.
+                    >A-migração massiva de pessoas atingidas por catástrofe
+                    natural.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="B-hibridização cultural de grupos caracterizados por homogeneidade social."
+                    name="questao1"
+                    value="B-hibridização cultural de grupos caracterizados por homogeneidade social."
+                  />
+                  <label
+                    for="B-hibridização cultural de grupos caracterizados por homogeneidade social."
+                    >B-hibridização cultural de grupos caracterizados por
+                    homogeneidade social.</label
+                  >
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="C-desmobilização voluntária de militantes cooptados por seitas extremistas."
+                    name="questao1"
+                    value="C-desmobilização voluntária de militantes cooptados por seitas extremistas."
+                  />
+                  <label
+                    for="C-desmobilização voluntária de militantes cooptados por seitas extremistas."
+                    >C-desmobilização voluntária de militantes cooptados por
+                    seitas extremistas.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="D-peregrinações religiosas de fiéis orientados por lideranças fundamentalistas."
+                    name="questao1"
+                    value="D-peregrinações religiosas de fiéis orientados por lideranças fundamentalistas."
+                  />
+                  <label
+                    for="D-peregrinações religiosas de fiéis orientados por lideranças fundamentalistas.
                 "
-                >D-peregrinações religiosas de fiéis orientados por lideranças fundamentalistas. </label
-              ><br />
-              <input
-                type="radio"
-                id="E-desterritorialização forçada de populações afetadas por conflitos armados."
-                name="questao1"
-                value="E-desterritorialização forçada de populações afetadas por conflitos armados."
-              />
-              <label
-                for="E-desterritorialização forçada de populações afetadas por conflitos armados.
+                    >D-peregrinações religiosas de fiéis orientados por
+                    lideranças fundamentalistas.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="E-desterritorialização forçada de populações afetadas por conflitos armados."
+                    name="questao1"
+                    value="E-desterritorialização forçada de populações afetadas por conflitos armados."
+                  />
+                  <label
+                    for="E-desterritorialização forçada de populações afetadas por conflitos armados.
                 "
-                >E-desterritorialização forçada de populações afetadas por conflitos armados. </label
-              ><br />
-              <button type="button" onclick="verificarQuestao1G()">Verificar</button>
+                    >E-desterritorialização forçada de populações afetadas por
+                    conflitos armados.
+                  </label>
+                </div>
+                <button
+                  id="btnQ1G"
+                  type="button"
+                  onclick="verificarQuestao1G()"
+                >
+                  Verificar
+                </button>
+              </div>
             </form>
             <div class="resultado" id="resultado1"></div>
-            <div id="resolucao1" style="display: none">
+            <div class="resolucao" id="resolucao1" style="display: none">
               <p>
-                <strong>Resolução:</strong>E-desterritorialização forçada de populações afetadas por conflitos armados.
-                <br />
-                <br> A- ERRADA. Os refugiados sírios não foram vítimas de catástrofes naturais (enchentes ou terremotos, por exemplo). 
-                O temor gerado pela guerra civil força o deslocamento de grupos sírios para outros países em busca de segurança.
-                
-                B- ERRADA. O relato não faz referência a nenhum tipo de interculturalidade ou homogeneidade social. Pelo contrário, 
-                no trecho dá a entender que os grupos de refugiados encontram-se marginalizados e dependentes da ajuda de órgãos internacionais como a ONU.
-                
-                C- ERRADA. Os refugiados são forçados a abandonar seu território de origem por conta da violência causada pela guerra. 
-                Não há, necessariamente, uma desmobilização voluntária de militantes. Caso haja, não possui números expressivos no que diz respeito ao volume de refugiados.
-                
-                D- ERRADA. Os refugiados sírios estão fugindo da guerra civil. Sua movimentação não representa nenhum tipo de peregrinação religiosa.
-                
-                E- CORRETA. Os diversos conflitos armados existentes no mundo são a principal causa da desterritorialização e do deslocamento 
-                de refugiados na atualidade. Trata-se de uma migração forçada, que gera efeitos em diversos países compreendidos como os principais destinos das vítimas da guerra.
-                
-                Na Síria, a guerra civil iniciada em 2011, tem feito com que vários habitantes sejam forçados a buscar asilo em outros países. 
-                O Líbano tem sido um dos principais destinos de sírios que temem por suas vidas e deslocam-se em busca de segurança.
-                
-                
+                <strong>Resolução:</strong>E-desterritorialização forçada de
+                populações afetadas por conflitos armados.
+              </p>
+              <P>
+                A- ERRADA. Os refugiados sírios não foram vítimas de catástrofes
+                naturais (enchentes ou terremotos, por exemplo). O temor gerado
+                pela guerra civil força o deslocamento de grupos sírios para
+                outros países em busca de segurança. </P
+              ><P>
+                B- ERRADA. O relato não faz referência a nenhum tipo de
+                interculturalidade ou homogeneidade social. Pelo contrário, no
+                trecho dá a entender que os grupos de refugiados encontram-se
+                marginalizados e dependentes da ajuda de órgãos internacionais
+                como a ONU. </P
+              ><P>
+                C- ERRADA. Os refugiados são forçados a abandonar seu território
+                de origem por conta da violência causada pela guerra. Não há,
+                necessariamente, uma desmobilização voluntária de militantes.
+                Caso haja, não possui números expressivos no que diz respeito ao
+                volume de refugiados. </P
+              ><P>
+                D- ERRADA. Os refugiados sírios estão fugindo da guerra civil.
+                Sua movimentação não representa nenhum tipo de peregrinação
+                religiosa. </P
+              ><P>
+                E- CORRETA. Os diversos conflitos armados existentes no mundo
+                são a principal causa da desterritorialização e do deslocamento
+                de refugiados na atualidade. Trata-se de uma migração forçada,
+                que gera efeitos em diversos países compreendidos como os
+                principais destinos das vítimas da guerra. Na Síria, a guerra
+                civil iniciada em 2011, tem feito com que vários habitantes
+                sejam forçados a buscar asilo em outros países. O Líbano tem
+                sido um dos principais destinos de sírios que temem por suas
+                vidas e deslocam-se em busca de segurança.
+              </P>
             </div>
           </div>
-    
-          <div class="questao">
-            <h2>2. QUESTÃO 2-(Enem/2018) <br />
-              Os países industriais adotaram uma concepção diferente das relações familiares e do lugar da fecundidade na vida familiar e social. 
-              A preocupação de garantir uma transmissão integral das vantagens econômicas e sociais adquiridas tem como resultado uma ação voluntária 
-              de limitação do número de nascimentos.
-              
-              Em meados do século XX, o fenômeno social descrito contribuiu para o processo europeu de :
-            </h2>
+          <div class="content-questao">
+            <div class="questao">
+              <h3>2. QUESTÃO 2-(Enem/2018)</h3>
+              <P
+                >Os países industriais adotaram uma concepção diferente das
+                relações familiares e do lugar da fecundidade na vida familiar e
+                social. A preocupação de garantir uma transmissão integral das
+                vantagens econômicas e sociais adquiridas tem como resultado uma
+                ação voluntária de limitação do número de nascimentos. Em meados
+                do século XX, o fenômeno social descrito contribuiu para o
+                processo europeu de:</P
+              >
+            </div>
             <form id="form2">
-              <br /><input type="radio" id="A- estabilização da pirâmide etária.
+              <div class="select-answer">
+                <div>
+                  <input
+                    type="radio"
+                    id="A- estabilização da pirâmide etária.
                "
-               name="questao2" value="A- estabilização da pirâmide etária.
-               " />
-              <label for="A- estabilização da pirâmide etária.
-               ">A- estabilização da pirâmide etária.
-               
-            </label><br />
-              <input type="radio" id="B-conclusão da transição demográfica."
-               name="questao2" value="B-conclusão da transição demográfica." />
-              <label for="B-conclusão da transição demográfica.">B-conclusão da transição demográfica.
-            </label><br />
-              <input type="radio" id="C- contenção da entrada de imigrantes.
+                    name="questao2"
+                    value="A- estabilização da pirâmide etária.
+               "
+                  />
+                  <label
+                    for="A- estabilização da pirâmide etária.
+               "
+                    >A- estabilização da pirâmide etária.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="B-conclusão da transição demográfica."
+                    name="questao2"
+                    value="B-conclusão da transição demográfica."
+                  />
+                  <label for="B-conclusão da transição demográfica."
+                    >B-conclusão da transição demográfica.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="C- contenção da entrada de imigrantes.
               "
-               name="questao2" value="C- contenção da entrada de imigrantes.
-              " />
-              <label for="C- contenção da entrada de imigrantes.
-              ">C- contenção da entrada de imigrantes.
-              
-            </label><br />
-            <input type="radio" id="D-elevação do crescimento vegetativo."
-             name="questao2" value="D-elevação do crescimento vegetativo." />
-            <label for="D-elevação do crescimento vegetativo.">D-elevação do crescimento vegetativo.
-            </label><br />
-             <input type="radio" id="E- formação de espaços superpovoados.
+                    name="questao2"
+                    value="C- contenção da entrada de imigrantes.
               "
-                name="questao2" value="E- formação de espaços superpovoados.
-              " />
-               <label for="E- formação de espaços superpovoados.
-              ">E- formação de espaços superpovoados.
-              
-            </label><br />
-              <button type="button" onclick="verificarQuestao2G()">Verificar</button>
+                  />
+                  <label
+                    for="C- contenção da entrada de imigrantes.
+              "
+                    >C- contenção da entrada de imigrantes.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="D-elevação do crescimento vegetativo."
+                    name="questao2"
+                    value="D-elevação do crescimento vegetativo."
+                  />
+                  <label for="D-elevação do crescimento vegetativo."
+                    >D-elevação do crescimento vegetativo.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="E- formação de espaços superpovoados.
+              "
+                    name="questao2"
+                    value="E- formação de espaços superpovoados.
+              "
+                  />
+                  <label
+                    for="E- formação de espaços superpovoados.
+              "
+                    >E- formação de espaços superpovoados.
+                  </label>
+                </div>
+                <button
+                  id="btnQ2G"
+                  type="button"
+                  onclick="verificarQuestao2G()"
+                >
+                  Verificar
+                </button>
+              </div>
             </form>
             <div class="resultado" id="resultado2"></div>
-            <div id="resolucao2" style="display: none">
-              <p><strong>Resolução:</strong> B-conclusão da transição demográfica. <br />
-                <br> A-ERRADA. O período descrito no texto, mostra uma mudança de comportamento que limitou o número de nascimentos.
-                Com isso, houve, na verdade, uma desestabilização dessa pirâmide etária. A diminuição das taxas reprodutivas faz com que haja uma transformação da pirâmide etária.
-                A diminuição da taxa de natalidade faz com que aumente, relativamente, o número de adultos e idosos, podendo gerar um relevante "envelhecimento" das populações.<br>
-                
-                B-CORRETA. No século XX, observou-se a conclusão da transição demográfica nos países industrializados.
-                Segundo os estudos demográficos, a industrialização fez disparar as taxas de natalidade.
-                Entretanto, no período pós-industrialização, os avanços tecnológicos e sociais fazem com que as taxas de natalidade e de mortalidade regridam 
-                gradativamente e haja uma transformação na pirâmide etária desses países. Esse processo é chamado de "transição demográfica".
-                Essa diminuição voluntária das taxas de fecundidade é um fenômeno social regular observado nos países industrializados, fazendo com que se conclua 
-                a transição demográfica, mantendo relativamente equilibrados os números de nascimentos e mortes.<br>
-                
-                C- ERRADA. A contenção da entrada de imigrantes não tem uma relação direta com a redução das taxas de fecundidade.<br>
-                
-                Pelo contrário, o que se pode observar é que a diminuição das taxas de natalidade e o envelhecimento populacional geram políticas de estímulo à migração em certos países.<br>
-                
-                D- ERRADA. O crescimento vegetativo ou crescimento natural representa diferença entre o número de nascimentos e mortes dentro de uma população.<br>
-                
-                No caso dos países industrializados, esses números são muito próximos, não havendo o crescimento da população.<br>
-                
-                E- ERRADA. Da mesma forma, não há um superpovoamento dos espaços. As taxas de crescimento populacional encontram-se equilibradas ou mesmo em declínio em alguns casos.<br>
-                
-                </p>
+            <div class="resolucao" id="resolucao2" style="display: none">
+              <p>
+                <strong>Resolução:</strong> B-conclusão da transição
+                demográfica.
+              </p>
+              <P>
+                A-ERRADA. O período descrito no texto, mostra uma mudança de
+                comportamento que limitou o número de nascimentos. Com isso,
+                houve, na verdade, uma desestabilização dessa pirâmide etária. A
+                diminuição das taxas reprodutivas faz com que haja uma
+                transformação da pirâmide etária. A diminuição da taxa de
+                natalidade faz com que aumente, relativamente, o número de
+                adultos e idosos, podendo gerar um relevante "envelhecimento"
+                das populações. </P
+              ><P>
+                B-CORRETA. No século XX, observou-se a conclusão da transição
+                demográfica nos países industrializados. Segundo os estudos
+                demográficos, a industrialização fez disparar as taxas de
+                natalidade. Entretanto, no período pós-industrialização, os
+                avanços tecnológicos e sociais fazem com que as taxas de
+                natalidade e de mortalidade regridam gradativamente e haja uma
+                transformação na pirâmide etária desses países. Esse processo é
+                chamado de "transição demográfica". Essa diminuição voluntária
+                das taxas de fecundidade é um fenômeno social regular observado
+                nos países industrializados, fazendo com que se conclua a
+                transição demográfica, mantendo relativamente equilibrados os
+                números de nascimentos e mortes. </P
+              ><P>
+                C- ERRADA. A contenção da entrada de imigrantes não tem uma
+                relação direta com a redução das taxas de fecundidade. Pelo
+                contrário, o que se pode observar é que a diminuição das taxas
+                de natalidade e o envelhecimento populacional geram políticas de
+                estímulo à migração em certos países. </P
+              ><P>
+                D- ERRADA. O crescimento vegetativo ou crescimento natural
+                representa diferença entre o número de nascimentos e mortes
+                dentro de uma população. No caso dos países industrializados,
+                esses números são muito próximos, não havendo o crescimento da
+                população. </P
+              ><P>
+                E- ERRADA. Da mesma forma, não há um superpovoamento dos
+                espaços. As taxas de crescimento populacional encontram-se
+                equilibradas ou mesmo em declínio em alguns casos.
+              </P>
             </div>
           </div>
-          </div>
-          </div>
-          
-
-      
+        </div>
+      </div>
     </main>
     <%- include('components/footer') %>
   </body>

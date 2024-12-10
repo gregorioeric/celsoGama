@@ -1,414 +1,621 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <%- include('components/head') %>
   <head>
-    <title>Página de Questões</title>
+    <%- include('components/head') %>
+    <title>tecnilogia da informação</title>
   </head>
   <body>
     <%- include('components/header') %>
     <main>
-      <h1>Tecnologias da Informação e Comunicação</h1>
-
-      <h2>Página de Questões</h2>
-
       <div class="container-materias">
         <%- include('components/menuMaterias') %>
-        <div class="content-questao">
-          <div class="questao">
-            <h2>
-              1. QUESTÃO 1-(Enem 2021) 
-              <br />
-              Thumbs Up
+        <div class="container-questao">
+          <h1>Tecnologias da Informação e Comunicação</h1>
 
-              Ponto positivo para o Facebook, que vai dar uma ajeitada na casa para, quem sabe, não ser mais conhecido como espaço da treta. 
-              Durante a F8, sua conferência anual, a empresa anunciou a maior mudança de design do serviço em 5 anos. Agora, o polêmico feed 
-              de notícias deixa de ser o protagonista, e o queridinho da rede social se torna o segmento de Grupos (é o Orkut fazendo escola?). 
-              Segundo Mark Zuckerberg, mais de 1 bilhão de usuários mensais entraram nessa aba do aplicativo, e 400 mil deles já estão integrados 
-              em grupos de “assuntos significativos”. O objetivo agora é aumentar o tráfego, oferecendo mais sugestões e ferramentas especiais para quem 
-              gerencia essas comunidades. Além disso, o Marketplace, que já tem mais de 800 milhões de usuários, vai ganhar mais atenção e integração. 
-              Com isso, parece que há um novo padrão se montando na rede social: sai o feed, entra a segmentação, que pode ser uma boa porta para 
-              monetização nos próximos anos. No mesmo evento, Zuckerberg também disse que o futuro do Facebook é a privacidade, mas não deu muitos 
-              detalhes de como vai proteger seus clientes daqui para frente. Evitar que vazamentos de dados dos usuários aconteçam é um bom começo.<br>
-              
-              #FicaaDica<br>
+          <h2>Página de Questões</h2>
 
-              O texto relata que uma rede social virtual realizará sua maior mudança de design dos últimos anos. Esse fato revela que as tecnologias de informação e comunicação
-              
-            </h2>
+          <div class="content-questao">
+            <div class="questao">
+              <h3>1. QUESTÃO 1-(Enem 2021)</h3>
+              <p>
+                Thumbs Up Ponto positivo para o Facebook, que vai dar uma
+                ajeitada na casa para, quem sabe, não ser mais conhecido como
+                espaço da treta. Durante a F8, sua conferência anual, a empresa
+                anunciou a maior mudança de design do serviço em 5 anos. Agora,
+                o polêmico feed de notícias deixa de ser o protagonista, e o
+                queridinho da rede social se torna o segmento de Grupos (é o
+                Orkut fazendo escola?). Segundo Mark Zuckerberg, mais de 1
+                bilhão de usuários mensais entraram nessa aba do aplicativo, e
+                400 mil deles já estão integrados em grupos de “assuntos
+                significativos”. O objetivo agora é aumentar o tráfego,
+                oferecendo mais sugestões e ferramentas especiais para quem
+                gerencia essas comunidades. Além disso, o Marketplace, que já
+                tem mais de 800 milhões de usuários, vai ganhar mais atenção e
+                integração. Com isso, parece que há um novo padrão se montando
+                na rede social: sai o feed, entra a segmentação, que pode ser
+                uma boa porta para monetização nos próximos anos. No mesmo
+                evento, Zuckerberg também disse que o futuro do Facebook é a
+                privacidade, mas não deu muitos detalhes de como vai proteger
+                seus clientes daqui para frente. Evitar que vazamentos de dados
+                dos usuários aconteçam é um bom começo.
+              </p>
+
+              <p>#FicaaDica</p>
+
+              <p>
+                O texto relata que uma rede social virtual realizará sua maior
+                mudança de design dos últimos anos. Esse fato revela que as
+                tecnologias de informação e comunicação
+              </p>
+            </div>
             <form id="form1">
-              <br />
-              <input
-                type="radio"
-                id="A-buscam oferecer mais privacidade."
-                name="questao1"
-                value="A-buscam oferecer mais privacidade."
-              />
-              <label
-                for="A-buscam oferecer mais privacidade."
-                >A-buscam oferecer mais privacidade. 
-                </label
-              ><br />
-              <input
-                type="radio"
-                id="B-assimilam os comportamentos dos usuários."
-                name="questao1"
-                value="B-assimilam os comportamentos dos usuários."
-              />
-              <label
-                for="B-assimilam os comportamentos dos usuários."
-                >B-assimilam os comportamentos dos usuários.
-              </label
-              ><br />
-              <input
-                type="radio"
-                id="C-promovem maior interação em ambientes virtuais."
-                name="questao1"
-                value="C-promovem maior interação em ambientes virtuais."
-              />
-              <label for="C-promovem maior interação em ambientes virtuais."
-                >C-promovem maior interação em ambientes virtuais. 
-              </label
-              ><br />
-              <input
-                type="radio"
-                id="D-oferecem mais facilidades para obter cada vez mais lucro."
-                name="questao1"
-                value="D-oferecem mais facilidades para obter cada vez mais lucro."
-              />
-              <label
-                for="D-oferecem mais facilidades para obter cada vez mais lucro."
-                >D-oferecem mais facilidades para obter cada vez mais lucro.
-              </label
-              ><br />
-              <input
-                type="radio"
-                id="E-evoluem para ficar mais parecidas umas com as outras."
-                name="questao1"
-                value="E-evoluem para ficar mais parecidas umas com as outras."
-              />
-              <label
-                for="E-evoluem para ficar mais parecidas umas com as outras."
-                >E-evoluem para ficar mais parecidas umas com as outras. 
-              </label
-              ><br />
-              <button type="button" onclick="verificarQuestao1TI()">Verificar</button>
+              <div class="select-answer">
+                <div>
+                  <input
+                    type="radio"
+                    id="A-buscam oferecer mais privacidade."
+                    name="questao1"
+                    value="A-buscam oferecer mais privacidade."
+                  />
+                  <label for="A-buscam oferecer mais privacidade."
+                    >A-buscam oferecer mais privacidade.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="B-assimilam os comportamentos dos usuários."
+                    name="questao1"
+                    value="B-assimilam os comportamentos dos usuários."
+                  />
+                  <label for="B-assimilam os comportamentos dos usuários."
+                    >B-assimilam os comportamentos dos usuários.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="C-promovem maior interação em ambientes virtuais."
+                    name="questao1"
+                    value="C-promovem maior interação em ambientes virtuais."
+                  />
+                  <label for="C-promovem maior interação em ambientes virtuais."
+                    >C-promovem maior interação em ambientes virtuais.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="D-oferecem mais facilidades para obter cada vez mais lucro."
+                    name="questao1"
+                    value="D-oferecem mais facilidades para obter cada vez mais lucro."
+                  />
+                  <label
+                    for="D-oferecem mais facilidades para obter cada vez mais lucro."
+                    >D-oferecem mais facilidades para obter cada vez mais lucro.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="E-evoluem para ficar mais parecidas umas com as outras."
+                    name="questao1"
+                    value="E-evoluem para ficar mais parecidas umas com as outras."
+                  />
+                  <label
+                    for="E-evoluem para ficar mais parecidas umas com as outras."
+                    >E-evoluem para ficar mais parecidas umas com as outras.
+                  </label>
+                </div>
+                <button
+                  id="btnQ1TI"
+                  type="button"
+                  onclick="verificarQuestao1TI()"
+                >
+                  Verificar
+                </button>
+              </div>
             </form>
             <div class="resultado" id="resultado1"></div>
-            <div id="resolucao1" style="display: none">
+            <div class="resolucao" id="resolucao1" style="display: none">
               <p>
-                <strong>Resolução:</strong>B-assimilam os comportamentos dos usuários.
-                <br />
-                <br> As tecnologias de informação e comunicação (TICs) estão em constante evolução e muitas vezes são influenciadas pelo comportamento 
-                dos usuários. No caso específico mencionado no texto, a rede social está realizando uma mudança de design com o objetivo de promover mais 
-                interação em ambientes virtuais, oferecendo mais sugestões e ferramentas para quem gerencia grupos de "assuntos significativos" e dando 
-                mais atenção e integração ao Marketplace, que já tem mais de 800 milhões de usuários. Isso pode ser um indicativo de que a empresa está 
-                buscando promover ainda mais interação entre os usuários, o que pode ser considerado como uma tentativa de promover maior privacidade. 
-                A opção B, que afirma que as TICs assimilam os comportamentos dos usuários, é a resposta correta.                
+                <strong>Resolução:</strong>B-assimilam os comportamentos dos
+                usuários.
               </p>
+              <P>
+                As tecnologias de informação e comunicação (TICs) estão em
+                constante evolução e muitas vezes são influenciadas pelo
+                comportamento dos usuários. No caso específico mencionado no
+                texto, a rede social está realizando uma mudança de design com o
+                objetivo de promover mais interação em ambientes virtuais,
+                oferecendo mais sugestões e ferramentas para quem gerencia
+                grupos de "assuntos significativos" e dando mais atenção e
+                integração ao Marketplace, que já tem mais de 800 milhões de
+                usuários. Isso pode ser um indicativo de que a empresa está
+                buscando promover ainda mais interação entre os usuários, o que
+                pode ser considerado como uma tentativa de promover maior
+                privacidade. A opção B, que afirma que as TICs assimilam os
+                comportamentos dos usuários, é a resposta correta.
+              </P>
             </div>
           </div>
-    
-          <div class="questao">
-            <h2>2. QUESTÃO 2- (Enem Digital 2020) <br />
-              Indústria cultural da felicidade
-
-              Tornou-se perigoso o emprego da palavra felicidade desde seu mau uso pela propaganda. Os que se negam a usá-la acreditam liberar os 
-              demais dos desvios das falsas necessidades, das bugigangas que se podem comprar em shoppings grã-finos ou em camelôs na beira da calçada, 
-              que, juntos, sustentam a indústria cultural da felicidade à qual foi reduzido o que, antes, era o ideal ético de uma vida justa. 
-              Infelicidade poderia ser o nome próprio desse novo estado da alma humana que se perdeu de si ao perder-se do sentido do que está a fazer. 
-              Desespero é um termo ainda mais agudo quando se trata da perda do sentido das ações pela perda da capacidade de reflexão sobre o que se faz. 
-              A felicidade publicitária está ao alcance dos dedos e não promete um depois. Resulta disso a massa de “desesperados” trafegando como zumbis 
-              nos shoppings e nas farmácias do país em busca de alento.
-              <br>
-              Ao reprovar a ação da indústria da felicidade e um comportamento humano, o texto associa a
-                </h2>
+          <div class="content-questao">
+            <div class="questao">
+              <h3>2. QUESTÃO 2- (Enem Digital 2020)</h3>
+              <p>
+                Indústria cultural da felicidade Tornou-se perigoso o emprego da
+                palavra felicidade desde seu mau uso pela propaganda. Os que se
+                negam a usá-la acreditam liberar os demais dos desvios das
+                falsas necessidades, das bugigangas que se podem comprar em
+                shoppings grã-finos ou em camelôs na beira da calçada, que,
+                juntos, sustentam a indústria cultural da felicidade à qual foi
+                reduzido o que, antes, era o ideal ético de uma vida justa.
+                Infelicidade poderia ser o nome próprio desse novo estado da
+                alma humana que se perdeu de si ao perder-se do sentido do que
+                está a fazer. Desespero é um termo ainda mais agudo quando se
+                trata da perda do sentido das ações pela perda da capacidade de
+                reflexão sobre o que se faz. A felicidade publicitária está ao
+                alcance dos dedos e não promete um depois. Resulta disso a massa
+                de “desesperados” trafegando como zumbis nos shoppings e nas
+                farmácias do país em busca de alento.
+              </p>
+              <P>
+                Ao reprovar a ação da indústria da felicidade e um comportamento
+                humano, o texto associa a:</P
+              >
+            </div>
             <form id="form2">
-              <br />
-              <input type="radio" 
-              id="A-ansiedade recorrente ao lançamento de novidades no mercado."
-               name="questao2" 
-               value="A-ansiedade recorrente ao lançamento de novidades no mercado." />
-              <label for="A-ansiedade recorrente ao lançamento de novidades no mercado.">
-                A-ansiedade recorrente ao lançamento de novidades no mercado.
-            </label>
-            <br />
+              <div class="select-answer">
+                <div>
+                  <input
+                    type="radio"
+                    id="A-ansiedade recorrente ao lançamento de novidades no mercado."
+                    name="questao2"
+                    value="A-ansiedade recorrente ao lançamento de novidades no mercado."
+                  />
+                  <label
+                    for="A-ansiedade recorrente ao lançamento de novidades no mercado."
+                  >
+                    A-ansiedade recorrente ao lançamento de novidades no
+                    mercado.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="B-visita frequente ao shopping à resolução de problemas cotidianos."
+                    name="questao2"
+                    value="B-visita frequente ao shopping à resolução de problemas cotidianos."
+                  />
+                  <label
+                    for="B-visita frequente ao shopping à resolução de problemas cotidianos."
+                  >
+                    B-visita frequente ao shopping à resolução de problemas
+                    cotidianos.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="C-atitude impensada ao atendimento de necessidades emergenciais."
+                    name="questao2"
+                    value="C-atitude impensada ao atendimento de necessidades emergenciais."
+                  />
+                  <label
+                    for="C-atitude impensada ao atendimento de necessidades emergenciais."
+                  >
+                    C-atitude impensada ao atendimento de necessidades
+                    emergenciais.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="D-postura consumista à crença na promessa ilusória de anúncios publicitários."
+                    name="questao2"
+                    value="D-postura consumista à crença na promessa ilusória de anúncios publicitários."
+                  />
+                  <label
+                    for="D-postura consumista à crença na promessa ilusória de anúncios publicitários."
+                  >
+                    D-postura consumista à crença na promessa ilusória de
+                    anúncios publicitários.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="E-vantagem econômica à venda de produtos falsificados no mercado ambulante."
+                    name="questao2"
+                    value="E-vantagem econômica à venda de produtos falsificados no mercado ambulante."
+                  />
+                  <label
+                    for="E-vantagem econômica à venda de produtos falsificados no mercado ambulante."
+                  >
+                    E-vantagem econômica à venda de produtos falsificados no
+                    mercado ambulante.
+                  </label>
+                </div>
 
-              <input type="radio"
-               id="B-visita frequente ao shopping à resolução de problemas cotidianos."
-               name="questao2" 
-               value="B-visita frequente ao shopping à resolução de problemas cotidianos." />
-              <label for="B-visita frequente ao shopping à resolução de problemas cotidianos.">
-                B-visita frequente ao shopping à resolução de problemas cotidianos.
-            </label>
-            <br />
-
-              <input type="radio"
-               id="C-atitude impensada ao atendimento de necessidades emergenciais."
-               name="questao2" 
-               value="C-atitude impensada ao atendimento de necessidades emergenciais." />
-              <label for="C-atitude impensada ao atendimento de necessidades emergenciais.">
-                C-atitude impensada ao atendimento de necessidades emergenciais.
-            </label>
-            <br />
-
-            <input type="radio" 
-            id="D-postura consumista à crença na promessa ilusória de anúncios publicitários."
-             name="questao2" 
-             value="D-postura consumista à crença na promessa ilusória de anúncios publicitários." />
-            <label for="D-postura consumista à crença na promessa ilusória de anúncios publicitários.">
-              D-postura consumista à crença na promessa ilusória de anúncios publicitários.
-            </label>
-            <br />
-
-             <input type="radio" 
-             id="E-vantagem econômica à venda de produtos falsificados no mercado ambulante."
-                name="questao2"
-                value="E-vantagem econômica à venda de produtos falsificados no mercado ambulante." />
-               <label for="E-vantagem econômica à venda de produtos falsificados no mercado ambulante.">
-                E-vantagem econômica à venda de produtos falsificados no mercado ambulante.
-            </label>
-            <br />
-
-              <button type="button" onclick="verificarQuestao2TI()">Verificar</button>
+                <button
+                  id="btnQ2TI"
+                  type="button"
+                  onclick="verificarQuestao2TI()"
+                >
+                  Verificar
+                </button>
+              </div>
             </form>
             <div class="resultado" id="resultado2"></div>
-            <div id="resolucao2" style="display: none">
-              <p><strong>Resolução:</strong> D-postura consumista à crença na promessa ilusória de anúncios publicitários.
-                <br />
-                <br>O texto menciona que a indústria da felicidade promove a venda de "bugigangas" que podem ser compradas em shoppings ou em camelôs 
-                na beira da calçada, e que esses produtos são responsáveis por sustentar essa indústria. Além disso, o texto também menciona que a felicidade 
-                publicitária "está ao alcance dos dedos" e "não promete um depois", o que sugere que essa felicidade é ilusória e não duradoura. Esses fatos 
-                indicam que o texto associa a postura consumista à crença na promessa ilusória de anúncios publicitários. A opção D, que afirma que o texto 
-                associa a postura consumista à crença na promessa ilusória de anúncios publicitários, é a resposta correta.                
-                </p>
-            </div>
-          </div>
-
-          <div class="questao">
-            <h2>3. QUESTÃO 3- (Enem Digital 2020)   <br />
-              Ao lado da indústria da moda, a do rock é o melhor exemplo da vendabilidade elástica do passado cultural, com suas reciclagens regulares 
-              de sua própria história na forma de retomadas e releituras, retornos e versões cover. Nos últimos anos, o desenvolvimento de novas 
-              tecnologias acelerou e, de certa maneira, democratizou esse processo a ponto de permitir que as evidências culturais do rock sejam 
-              fisicamente desmanteladas e remontadas como pastiche e colagem, com mais rapidez e falta de controle do que em qualquer época.
-              <br>
-              O rock personifica o paradoxo da cultura de massas (pós-moderna), visto que seu alcance e influência globais, combinados com a sua tolerância, criam uma
-                </h2>
-            <form id="form3">
-              <br /><input type="radio" 
-              id="A-subversão ao sistema cultural vigente."
-               name="questao3" 
-               value="A-subversão ao sistema cultural vigente." />
-              <label for="A-subversão ao sistema cultural vigente.">
-                A-subversão ao sistema cultural vigente.
-
-              </label>
-              <br />
-
-              <input type="radio" 
-              id="B-identificação de pluralidade de estilos e mídias."
-               name="questao3" 
-               value="B-identificação de pluralidade de estilos e mídias." />
-              <label for="B-identificação de pluralidade de estilos e mídias.">
-                B-identificação de pluralidade de estilos e mídias.
-    
-            </label>
-            <br />
-    
-              <input type="radio" 
-              id="C-homogeneização dos ritmos nas novas criações."
-               name="questao3" 
-               value="C-homogeneização dos ritmos nas novas criações." />
-              <label for="C-homogeneização dos ritmos nas novas criações.">
-                C-homogeneização dos ritmos nas novas criações.
-            </label>
-            <br />
-    
-            <input type="radio" 
-            id="D-desvinculação identitária nos hábitos de escuta."
-             name="questao3" 
-             value="D-desvinculação identitária nos hábitos de escuta." />
-            <label for="D-desvinculação identitária nos hábitos de escuta.">
-              D-desvinculação identitária nos hábitos de escuta.
-            </label>
-            <br />
-    
-             <input type="radio" 
-             id="E-formação de confluência de métodos e pensamento."
-                name="questao3" 
-                value="E-formação de confluência de métodos e pensamento." />
-               <label for="E-formação de confluência de métodos e pensamento.">
-                E-formação de confluência de métodos e pensamento.
-            </label>
-            <br />
-    
-              <button type="button" onclick="verificarQuestao3TI()">Verificar</button>
-            </form>
-    
-            <div class="resultado" id="resultado3"></div>
-            <div id="resolucao3" style="display: none">
-              <p><strong>Resolução:</strong> 
-                B-identificação de pluralidade de estilos e mídias.
-                 <br />
-                <br>O texto menciona que a indústria do rock tem a habilidade de reciclar e reinventar sua própria história através de retomadas, 
-                releituras, retornos e versões cover, e que o desenvolvimento de novas tecnologias permitiu que esses processos ocorressem com mais rapidez 
-                e menos controle. Isso sugere que o rock é uma forma de cultura de massas que tem tolerância e amplo alcance e influência global, o que pode 
-                levar à identificação de uma pluralidade de estilos e mídias. A opção B, que afirma que o rock personifica o paradoxo da cultura de massas 
-                (pós-moderna) por criar uma identificação de pluralidade de estilos e mídias, é a resposta correta.
-                </p>
-            </div>
-          </div>
-
-          <div class="questao">
-            <h2>4. QUESTÃO 4- (Enem Digital 2020)   <br />
-              Durante cinco minutos, a banda norte-americana Atomic Tom deixou de lado microfones, guitarras, baixo e bateria. Mas eles não 
-              fizeram um show acústico como pode parecer. Eles utilizaram quatro aparelhos de telefone celular, cada um substituindo um instrumento, 
-              por meio de quatro aplicativos diferentes: Shred, Drum Meister, Pocket Guitar e Microphone. Os quatro membros da banda embarcaram no 
-              metrô de Nova Iorque, ligaram seus celulares e começaram a tocar a música Take me Out sem nenhum tipo de anúncio, filmando a apresentação 
-              com outros aparelhos de telefone. O vídeo resultante foi sucesso no YouTube com mais de 2 milhões de visualizações.
-              <br>
-              A apresentação da banda Atomic Tom revela
-                </h2>
-            <form id="form4">
-              <br /><input type="radio" 
-              id="A-alternativas inusitadas para enfrentar a difícil aquisição de instrumentos musicais tradicionais."
-               name="questao4" 
-               value="A-alternativas inusitadas para enfrentar a difícil aquisição de instrumentos musicais tradicionais." />
-              <label for="A-alternativas inusitadas para enfrentar a difícil aquisição de instrumentos musicais tradicionais.">
-                A-alternativas inusitadas para enfrentar a difícil aquisição de instrumentos musicais tradicionais.
-              </label>
-              <br />
-
-              <input type="radio" 
-              id="B-formas descartáveis de produção musical ligadas à efemeridade da sociedade atual. "
-               name="questao4" 
-               value="B-formas descartáveis de produção musical ligadas à efemeridade da sociedade atual. " />
-              <label for="B-formas descartáveis de produção musical ligadas à efemeridade da sociedade atual. ">
-                B-formas descartáveis de produção musical ligadas à efemeridade da sociedade atual.
-            </label>
-            <br />
-    
-              <input type="radio" 
-              id="C-maneiras inovadoras de ouvir música por meio de aparelhos eletrônicos portáteis."
-               name="questao4" 
-               value="C-maneiras inovadoras de ouvir música por meio de aparelhos eletrônicos portáteis." />
-              <label for="C-maneiras inovadoras de ouvir música por meio de aparelhos eletrônicos portáteis. ">
-                C-maneiras inovadoras de ouvir música por meio de aparelhos eletrônicos portáteis.
-            </label>
-            <br />
-    
-            <input type="radio" 
-            id="D-possibilidades de fazer música decorrentes dos avanços tecnológicos."
-             name="questao4" 
-             value="D-possibilidades de fazer música decorrentes dos avanços tecnológicos." />
-            <label for="D-possibilidades de fazer música decorrentes dos avanços tecnológicos.">
-              D-possibilidades de fazer música decorrentes dos avanços tecnológicos.
-            </label>
-            <br />
-    
-             <input type="radio" 
-             id="E-soluções originais de levar a cultura musical para os meios de transporte."
-                name="questao4" 
-                value="E-soluções originais de levar a cultura musical para os meios de transporte." />
-               <label for="E-soluções originais de levar a cultura musical para os meios de transporte.">
-               E-soluções originais de levar a cultura musical para os meios de transporte.
-            </label>
-            <br />
-    
-              <button type="button" onclick="verificarQuestao4TI()">Verificar</button>
-            </form>
-    
-            <div class="resultado" id="resultado4"></div>
-            <div id="resolucao4" style="display: none">
-              <p><strong>Resolução:</strong> 
-                D-possibilidades de fazer música decorrentes dos avanços tecnológicos.
-
-                 <br />
-                <br> A apresentação da banda Atomic Tom revela as possibilidades de fazer música decorrentes dos avanços tecnológicos. 
-                A banda utilizou aparelhos de telefone celular e aplicativos para tocar uma música, o que demonstra que é possível produzir música 
-                de maneira inovadora e original graças aos avanços tecnológicos. A opção D, que afirma que a apresentação da banda Atomic Tom revela 
-                possibilidades de fazer música decorrentes dos avanços tecnológicos, é a resposta correta.
-                
-                </p>
-            </div>
-        </div>
-        <div class="questao">
-          <h2>5. QUESTÃO 5- (Enem PPL 2020)  <br />
-            <br>
-            <img src="/img/IMAGEM TECNOLOGIA E INFORMAÇÃO QUESTÃO 5.png">
-            <br>
-            <br>
-            Os quadrinhos apresentam a sequência de certos dispositivos eletrônicos criados no decorrer da história, destacando
-
-
-              </h2>
-          <form id="form5">
-            <br />
-            <input type="radio" 
-            id="A-a alienação provocada pelo uso excessivo da tecnologia nas sociedades urbanas contemporâneas."
-             name="questao5" 
-             value="A-a alienação provocada pelo uso excessivo da tecnologia nas sociedades urbanas contemporâneas." />
-            <label for="A-a alienação provocada pelo uso excessivo da tecnologia nas sociedades urbanas contemporâneas.">
-            A-a alienação provocada pelo uso excessivo da tecnologia nas sociedades urbanas contemporâneas.
-            </label>
-            <br />
-
-            <input type="radio" 
-            id="B-o estágio mais recente da evolução tecnológica para o armazenamento de dados digitais."
-             name="questao5" 
-             value="B-o estágio mais recente da evolução tecnológica para o armazenamento de dados digitais." />
-            <label for="B-o estágio mais recente da evolução tecnológica para o armazenamento de dados digitais.">
-             B-o estágio mais recente da evolução tecnológica para o armazenamento de dados digitais.
-          </label>
-          <br />
-  
-            <input type="radio" 
-            id="C-os diferentes tipos de dispositivos usados atualmente para a gravação de dados digitais."
-             name="questao5" 
-             value="C-os diferentes tipos de dispositivos usados atualmente para a gravação de dados digitais." />
-            <label for="C-os diferentes tipos de dispositivos usados atualmente para a gravação de dados digitais.">
-            C-os diferentes tipos de dispositivos usados atualmente para a gravação de dados digitais.
-          </label>
-          <br />
-  
-          <input type="radio" 
-          id="D-o desperdício de matéria-prima proveniente da indústria tecnológica."
-           name="questao5" 
-           value="D-o desperdício de matéria-prima proveniente da indústria tecnológica." />
-          <label for="D-o desperdício de matéria-prima proveniente da indústria tecnológica.">
-          D-o desperdício de matéria-prima proveniente da indústria tecnológica.
-          </label>
-          <br />
-  
-           <input type="radio" 
-           id="E-a comparação entre evolução humana e tecnológica."
-              name="questao5" 
-              value="E-a comparação entre evolução humana e tecnológica." />
-             <label for="E-a comparação entre evolução humana e tecnológica.">
-             E-a comparação entre evolução humana e tecnológica.
-          </label>
-          <br />
-  
-            <button type="button" onclick="verificarQuestao5TI()">Verificar</button>
-          </form>
-  
-          <div class="resultado" id="resultado5"></div>
-          <div id="resolucao5" style="display: none">
-            <p><strong>Resolução:</strong> 
-              B-o estágio mais recente da evolução tecnológica para o armazenamento de dados digitais.
-
-
-               <br />
-              <br>Os quadrinhos apresentam a sequência de dispositivos eletrônicos criados no decorrer da história, destacando o estágio 
-              mais recente da evolução tecnológica para o armazenamento de dados digitais. A opção B é a resposta correta, pois os quadrinhos 
-              mostram a evolução da capacidade de armazenamento de dados, desde os primeiros discos de vinil até o armazenamento em nuvem atual. 
-              As outras opções não estão corretas, pois não são mencionadas no texto ou nas imagens dos quadrinhos.
-              
-                            
+            <div class="resolucao" id="resolucao2" style="display: none">
+              <p>
+                <strong>Resolução:</strong> D-postura consumista à crença na
+                promessa ilusória de anúncios publicitários.
               </p>
+              <P>
+                O texto menciona que a indústria da felicidade promove a venda
+                de "bugigangas" que podem ser compradas em shoppings ou em
+                camelôs na beira da calçada, e que esses produtos são
+                responsáveis por sustentar essa indústria. Além disso, o texto
+                também menciona que a felicidade publicitária "está ao alcance
+                dos dedos" e "não promete um depois", o que sugere que essa
+                felicidade é ilusória e não duradoura. Esses fatos indicam que o
+                texto associa a postura consumista à crença na promessa ilusória
+                de anúncios publicitários. A opção D, que afirma que o texto
+                associa a postura consumista à crença na promessa ilusória de
+                anúncios publicitários, é a resposta correta.
+              </P>
+            </div>
           </div>
-      </div>
+          <div class="content-questao">
+            <div class="questao">
+              <h3>3. QUESTÃO 3- (Enem Digital 2020)</h3>
+              <P>
+                Ao lado da indústria da moda, a do rock é o melhor exemplo da
+                vendabilidade elástica do passado cultural, com suas reciclagens
+                regulares de sua própria história na forma de retomadas e
+                releituras, retornos e versões cover. Nos últimos anos, o
+                desenvolvimento de novas tecnologias acelerou e, de certa
+                maneira, democratizou esse processo a ponto de permitir que as
+                evidências culturais do rock sejam fisicamente desmanteladas e
+                remontadas como pastiche e colagem, com mais rapidez e falta de
+                controle do que em qualquer época.
+              </P>
+              <P
+                >O rock personifica o paradoxo da cultura de massas
+                (pós-moderna), visto que seu alcance e influência globais,
+                combinados com a sua tolerância, criam uma:</P
+              >
+            </div>
+            <form id="form3">
+              <div class="select-answer">
+                <div>
+                  <input
+                    type="radio"
+                    id="A-subversão ao sistema cultural vigente."
+                    name="questao3"
+                    value="A-subversão ao sistema cultural vigente."
+                  />
+                  <label for="A-subversão ao sistema cultural vigente.">
+                    A-subversão ao sistema cultural vigente.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="B-identificação de pluralidade de estilos e mídias."
+                    name="questao3"
+                    value="B-identificação de pluralidade de estilos e mídias."
+                  />
+                  <label
+                    for="B-identificação de pluralidade de estilos e mídias."
+                  >
+                    B-identificação de pluralidade de estilos e mídias.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="C-homogeneização dos ritmos nas novas criações."
+                    name="questao3"
+                    value="C-homogeneização dos ritmos nas novas criações."
+                  />
+                  <label for="C-homogeneização dos ritmos nas novas criações.">
+                    C-homogeneização dos ritmos nas novas criações.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="D-desvinculação identitária nos hábitos de escuta."
+                    name="questao3"
+                    value="D-desvinculação identitária nos hábitos de escuta."
+                  />
+                  <label
+                    for="D-desvinculação identitária nos hábitos de escuta."
+                  >
+                    D-desvinculação identitária nos hábitos de escuta.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="E-formação de confluência de métodos e pensamento."
+                    name="questao3"
+                    value="E-formação de confluência de métodos e pensamento."
+                  />
+                  <label
+                    for="E-formação de confluência de métodos e pensamento."
+                  >
+                    E-formação de confluência de métodos e pensamento.
+                  </label>
+                </div>
 
-      
+                <button
+                  id="btnQ3TI"
+                  type="button"
+                  onclick="verificarQuestao3TI()"
+                >
+                  Verificar
+                </button>
+              </div>
+            </form>
+
+            <div class="resultado" id="resultado3"></div>
+            <div class="resolucao" id="resolucao3" style="display: none">
+              <p>
+                <strong>Resolução:</strong>
+                B-identificação de pluralidade de estilos e mídias.
+              </p>
+              <P>
+                O texto menciona que a indústria do rock tem a habilidade de
+                reciclar e reinventar sua própria história através de retomadas,
+                releituras, retornos e versões cover, e que o desenvolvimento de
+                novas tecnologias permitiu que esses processos ocorressem com
+                mais rapidez e menos controle. Isso sugere que o rock é uma
+                forma de cultura de massas que tem tolerância e amplo alcance e
+                influência global, o que pode levar à identificação de uma
+                pluralidade de estilos e mídias. A opção B, que afirma que o
+                rock personifica o paradoxo da cultura de massas (pós-moderna)
+                por criar uma identificação de pluralidade de estilos e mídias,
+                é a resposta correta.
+              </P>
+            </div>
+          </div>
+          <div class="content-questao">
+            <div class="questao">
+              <h3>4. QUESTÃO 4- (Enem Digital 2020)</h3>
+              <P
+                >Durante cinco minutos, a banda norte-americana Atomic Tom
+                deixou de lado microfones, guitarras, baixo e bateria. Mas eles
+                não fizeram um show acústico como pode parecer. Eles utilizaram
+                quatro aparelhos de telefone celular, cada um substituindo um
+                instrumento, por meio de quatro aplicativos diferentes: Shred,
+                Drum Meister, Pocket Guitar e Microphone. Os quatro membros da
+                banda embarcaram no metrô de Nova Iorque, ligaram seus celulares
+                e começaram a tocar a música Take me Out sem nenhum tipo de
+                anúncio, filmando a apresentação com outros aparelhos de
+                telefone. O vídeo resultante foi sucesso no YouTube com mais de
+                2 milhões de visualizações.
+              </P>
+              <P>A apresentação da banda Atomic Tom revela:</P>
+            </div>
+            <form id="form4">
+              <div class="select-answer">
+                <div>
+                  <input
+                    type="radio"
+                    id="A-alternativas inusitadas para enfrentar a difícil aquisição de instrumentos musicais tradicionais."
+                    name="questao4"
+                    value="A-alternativas inusitadas para enfrentar a difícil aquisição de instrumentos musicais tradicionais."
+                  />
+                  <label
+                    for="A-alternativas inusitadas para enfrentar a difícil aquisição de instrumentos musicais tradicionais."
+                  >
+                    A-alternativas inusitadas para enfrentar a difícil aquisição
+                    de instrumentos musicais tradicionais.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="B-formas descartáveis de produção musical ligadas à efemeridade da sociedade atual. "
+                    name="questao4"
+                    value="B-formas descartáveis de produção musical ligadas à efemeridade da sociedade atual. "
+                  />
+                  <label
+                    for="B-formas descartáveis de produção musical ligadas à efemeridade da sociedade atual. "
+                  >
+                    B-formas descartáveis de produção musical ligadas à
+                    efemeridade da sociedade atual.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="C-maneiras inovadoras de ouvir música por meio de aparelhos eletrônicos portáteis."
+                    name="questao4"
+                    value="C-maneiras inovadoras de ouvir música por meio de aparelhos eletrônicos portáteis."
+                  />
+                  <label
+                    for="C-maneiras inovadoras de ouvir música por meio de aparelhos eletrônicos portáteis. "
+                  >
+                    C-maneiras inovadoras de ouvir música por meio de aparelhos
+                    eletrônicos portáteis.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="D-possibilidades de fazer música decorrentes dos avanços tecnológicos."
+                    name="questao4"
+                    value="D-possibilidades de fazer música decorrentes dos avanços tecnológicos."
+                  />
+                  <label
+                    for="D-possibilidades de fazer música decorrentes dos avanços tecnológicos."
+                  >
+                    D-possibilidades de fazer música decorrentes dos avanços
+                    tecnológicos.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="E-soluções originais de levar a cultura musical para os meios de transporte."
+                    name="questao4"
+                    value="E-soluções originais de levar a cultura musical para os meios de transporte."
+                  />
+                  <label
+                    for="E-soluções originais de levar a cultura musical para os meios de transporte."
+                  >
+                    E-soluções originais de levar a cultura musical para os
+                    meios de transporte.
+                  </label>
+                </div>
+
+                <button
+                  id="btnQ4TI"
+                  type="button"
+                  onclick="verificarQuestao4TI()"
+                >
+                  Verificar
+                </button>
+              </div>
+            </form>
+
+            <div class="resultado" id="resultado4"></div>
+            <div class="resolucao" id="resolucao4" style="display: none">
+              <p>
+                <strong>Resolução:</strong>
+                D-possibilidades de fazer música decorrentes dos avanços
+                tecnológicos.
+              </p>
+              <P>
+                A apresentação da banda Atomic Tom revela as possibilidades de
+                fazer música decorrentes dos avanços tecnológicos. A banda
+                utilizou aparelhos de telefone celular e aplicativos para tocar
+                uma música, o que demonstra que é possível produzir música de
+                maneira inovadora e original graças aos avanços tecnológicos. A
+                opção D, que afirma que a apresentação da banda Atomic Tom
+                revela possibilidades de fazer música decorrentes dos avanços
+                tecnológicos, é a resposta correta.
+              </P>
+            </div>
+          </div>
+          <div class="content-questao">
+            <div class="questao">
+              <h3>5. QUESTÃO 5- (Enem PPL 2020)</h3>
+              <P>
+                <img src="/img/IMAGEM TECNOLOGIA E INFORMAÇÃO QUESTÃO 5.png" />
+              </P>
+              <P>
+                Os quadrinhos apresentam a sequência de certos dispositivos
+                eletrônicos criados no decorrer da história, destacando:</P
+              >
+            </div>
+            <form id="form5">
+              <div class="select-answer">
+                <div>
+                  <input
+                    type="radio"
+                    id="A-a alienação provocada pelo uso excessivo da tecnologia nas sociedades urbanas contemporâneas."
+                    name="questao5"
+                    value="A-a alienação provocada pelo uso excessivo da tecnologia nas sociedades urbanas contemporâneas."
+                  />
+                  <label
+                    for="A-a alienação provocada pelo uso excessivo da tecnologia nas sociedades urbanas contemporâneas."
+                  >
+                    A-a alienação provocada pelo uso excessivo da tecnologia nas
+                    sociedades urbanas contemporâneas.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="B-o estágio mais recente da evolução tecnológica para o armazenamento de dados digitais."
+                    name="questao5"
+                    value="B-o estágio mais recente da evolução tecnológica para o armazenamento de dados digitais."
+                  />
+                  <label
+                    for="B-o estágio mais recente da evolução tecnológica para o armazenamento de dados digitais."
+                  >
+                    B-o estágio mais recente da evolução tecnológica para o
+                    armazenamento de dados digitais.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="C-os diferentes tipos de dispositivos usados atualmente para a gravação de dados digitais."
+                    name="questao5"
+                    value="C-os diferentes tipos de dispositivos usados atualmente para a gravação de dados digitais."
+                  />
+                  <label
+                    for="C-os diferentes tipos de dispositivos usados atualmente para a gravação de dados digitais."
+                  >
+                    C-os diferentes tipos de dispositivos usados atualmente para
+                    a gravação de dados digitais.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="D-o desperdício de matéria-prima proveniente da indústria tecnológica."
+                    name="questao5"
+                    value="D-o desperdício de matéria-prima proveniente da indústria tecnológica."
+                  />
+                  <label
+                    for="D-o desperdício de matéria-prima proveniente da indústria tecnológica."
+                  >
+                    D-o desperdício de matéria-prima proveniente da indústria
+                    tecnológica.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="E-a comparação entre evolução humana e tecnológica."
+                    name="questao5"
+                    value="E-a comparação entre evolução humana e tecnológica."
+                  />
+                  <label
+                    for="E-a comparação entre evolução humana e tecnológica."
+                  >
+                    E-a comparação entre evolução humana e tecnológica.
+                  </label>
+                </div>
+
+                <button
+                  id="btnQ5TI"
+                  type="button"
+                  onclick="verificarQuestao5TI()"
+                >
+                  Verificar
+                </button>
+              </div>
+            </form>
+
+            <div class="resultado" id="resultado5"></div>
+            <div class="resolucao" id="resolucao5" style="display: none">
+              <p>
+                <strong>Resolução:</strong>
+                B-o estágio mais recente da evolução tecnológica para o
+                armazenamento de dados digitais.
+              </p>
+              <P>
+                Os quadrinhos apresentam a sequência de dispositivos eletrônicos
+                criados no decorrer da história, destacando o estágio mais
+                recente da evolução tecnológica para o armazenamento de dados
+                digitais. A opção B é a resposta correta, pois os quadrinhos
+                mostram a evolução da capacidade de armazenamento de dados,
+                desde os primeiros discos de vinil até o armazenamento em nuvem
+                atual. As outras opções não estão corretas, pois não são
+                mencionadas no texto ou nas imagens dos quadrinhos.
+              </P>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <%- include('components/footer') %>
   </body>

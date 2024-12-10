@@ -768,7 +768,7 @@ estilo da pagina vestibular
   border: O.1rem solid var(--cor-preto);
   border-radius: 0.2rem;
   font-size: 1.3rem;
-  padding: o.3rem 0.6rem;
+  padding: 0.3rem 0.6rem;
   width: 60%;
 }
 .btn-position button {
@@ -1013,14 +1013,14 @@ estilo da pagina vestibular
 }
 
 .col .delete {
-  color: var(--cor-vermelho-little-light);
+  color: var(--cor-vermelho);
   font-weight: bold;
   border-bottom: 5px solid transparent;
   transition: border-bottom 300ms ease-in-out;
 }
 
 .col .delete:hover {
-  border-bottom: 5px solid var(--cor-vermelho-little-light);
+  border-bottom: 5px solid var(--cor-vermelho);
 }
 
 .col .delete i {

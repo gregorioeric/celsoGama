@@ -57,6 +57,15 @@ CREATE TABLE IF NOT EXISTS `comments` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+ALTER TABLE `comments`
+DROP FOREIGN KEY `fk_comments_posts1`;
+
+ALTER TABLE `comments` ADD CONSTRAINT `fk_comments_posts1`
+FOREIGN KEY (`posts_post_id`)
+REFERENCES `posts` (`post_id`)
+ON DELETE CASCADE
+ON UPDATE NO ACTION;
+
 
 SELECT 
     c.commnet_id AS comment_id,
@@ -75,10 +84,30 @@ JOIN
 JOIN 
     posts p ON c.posts_post_id = p.post_id
 WHERE 
-    p.post_id = 3
+    p.post_id = 7
 ORDER BY 
 	c.comment_date DESC;
     
 SELECT * FROM posts;
+SELECT * FROM users;
 
 ALTER TABLE comments ADD comment_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+
+SELECT users.user_id,
+	users.user_name,
+	users.user_email,
+	users.user_img_profile,
+	posts.post_id,
+	posts.post_title,
+	posts.post_content,
+	posts.post_slug,
+	posts.post_date
+FROM 
+	users
+INNER JOIN 
+	posts 
+ON 
+	users.user_id = posts.users_user_id
+ORDER BY 
+	posts.post_date DESC;

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('components/head') %>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal de Notícias</title>
+  <%- include('components/header') %>
+
+  <!-- Artigo de Destaque -->
+  <body style="margin: 0; padding: 0; height: 100vh; background-color: #f4f4f4">
+    <div class="news-slider">
+      <button class="nav prev">&#10094;</button>
+      <div class="slider-wrapper">
+        <div class="slider">
+          <div class="news-item">
+            <img src="img/anime-8788959_1920.jpg" alt="Notícia 1" />
+            <div class="news-text">
+              <h2>
+                Notícia de Destaque: entenda o processo de adaptação do universo
+                Ordem Paranormal
+              </h2>
+              <p>Criado por Cellbit, a Ordem Paranormal ganhou destaque...</p>
+              <a
+                href="https://g1.globo.com/rs/rio-grande-do-sul/noticia/2023/12/22/live-quadrinho-cellbit.ghtml"
+                class="btn"
+                >Clique aqui</a
+              >
+            </div>
+          </div>
+          <div class="news-item">
+            <img src="img/anime-8788959_1920.jpg" alt="Notícia 2" />
+            <div class="news-text">
+              <h2>Notícia 2</h2>
+              <p>Resumo da segunda notícia. Clique para saber mais!</p>
+              <a href="https://example.com/news2" class="btn">Clique aqui</a>
+            </div>
+          </div>
+          <div class="news-item">
+            <img
+              src="https://via.placeholder.com/800x400/555555"
+              alt="Notícia 3"
+            />
+            <div class="news-text">
+              <h2>Notícia 3</h2>
+              <p>Resumo da terceira notícia. Clique para saber mais!</p>
+              <a href="https://example.com/news3" class="btn">Clique aqui</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="nav next">&#10095;</button>
+    </div>
+    <section>
+      <div class="container__noticias">
+        <div class="noticia-1">
+            <ul><li><img src="/img/lula.jpg" /></li><div>AKSDKASDKASK</div></ul></div>
+        <div class="noticia-2"><ul><li><img src="/img/rebelde.jpg" /></li><div>KAKASKDKASDKASKD</div></ul></div>
+        <div class="noticia-3"><ul><li><img src="/img/militar.jpg" /></li><div>KAKASKDKASDKASKD</div></ul></div>
+        <div class="noticia-4"><ul><li><img src="/img/jogo.jpg" /></li><div>KAKASKDKASDKASKD</div></ul></div>
+      </div>
+    </section>
+    <%- include('components/footer') %>
+  </body>
+</html>

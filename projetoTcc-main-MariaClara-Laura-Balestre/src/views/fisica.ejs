@@ -1,156 +1,198 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <%- include('components/head') %>
   <head>
-    <title>Página de Questões</title>
+    <%- include('components/head') %>
+    <title>fisica</title>
   </head>
   <body>
     <%- include('components/header') %>
     <main>
-      <h1>Física</h1>
-
-      <h2>Página de Questões</h2>
-
       <div class="container-materias">
         <%- include('components/menuMaterias') %>
-        <div class="content-questao">
-          <div class="questao">
-            <h2>
-              1.QUESTÃO 1-(Enem/2017)<br />
-              Em uma colisão frontal entre dois automóveis, a força que o cinto de segurança exerce sobre o tórax e abdômen 
-              do motorista pode causar lesões graves nos órgãos internos. Pensando na segurança do seu produto, um fabricante 
-              de automóveis realizou testes em cinco modelos diferentes de cinto. Os testes simularam uma colisão de 0,30 segundo 
-              de duração, e os bonecos que representavam os ocupantes foram equipados com acelerômetros. Esse equipamento registra 
-              o módulo da desaceleração do boneco em função do tempo. Os parâmetros como massa dos bonecos, dimensões dos cintos e 
-              velocidade imediatamente antes e após o impacto foram os mesmos para todos os testes. O resultado final obtido está 
-              no gráfico de aceleração por tempo.<br>
-              <img src="/img/IMAGEM FISICA QUESTAO 5 ENEM.png"> <br> 
-              Qual modelo de cinto oferece menor risco de lesão ao motorista?
+        <div class="container-questao">
+          <h1>Física</h1>
 
-            </h2>
-            <form id="form1">
-              <br />
-              <input
-                type="radio"
-                id="A-1"
-                name="questao1"
-                value="A-1"
-              />
-              <label
-                for="A-1"
-                >A-1</label
-              ><br />
-              <input
-                type="radio"
-                id="B-2"
-                name="questao1"
-                value="B-2"
-              />
-              <label
-                for="B-2"
-                >B-2</label
-              ><br />
-              <input
-                type="radio"
-                id="C-3"
-                name="questao1"
-                value="C-3"
-              />
-              <label for="C-3"
-                >C-3 </label
-              ><br />
-              <input
-                type="radio"
-                id="D-4"
-                name="questao1"
-                value="D-4"
-              />
-              <label
-                for="D-4
-                "
-                >D-4 </label
-              ><br />
-              <input
-                type="radio"
-                id="E-5"
-                name="questao1"
-                value="E-5"
-              />
-              <label
-                for="E-5
-                "
-                >E-5 </label
-              ><br />
-              <button type="button" onclick="verificarQuestao1FISICA()">Verificar</button>
-            </form>
-            <div class="resultado" id="resultado1"></div>
-            <div id="resolucao1" style="display: none">
+          <h2>Página de Questões</h2>
+
+          <div class="content-questao">
+            <div class="questao">
+              <h3>1.QUESTÃO 1-(Enem/2017)</h3>
               <p>
-                <strong>Resolução:</strong>B-2
-                <br />
-                <br> Perceba que esta questão apresenta uma situação-problema relacionada com um equipamento de segurança que utilizamos no nosso cotidiano.
-                Esta é uma questão de dinâmica, onde precisamos identificar as relações entre as grandezas associadas à situação. 
-                Neste caso as grandezas são força e aceleração.
-                Sabemos, pela segunda lei de Newton, que a força é diretamente proporcional ao produto da massa pela aceleração.
-                Como em todos os experimentos a massa do passageiro é a mesma, então teremos que quanto maior é a aceleração maior 
-                será a força que o cinto irá exercer sobre o passageiro (força de frenagem).
-                Após identificar as grandezas e suas relações, o próximo passo é analisar o gráfico apresentado.
-                Se procuramos o cinto que oferece menor risco de lesão, então terá que ser o que apresenta menor aceleração, 
-                visto que no próprio enunciado do problema é sinalizado que quanto maior a força maior o risco de lesão.
-                Assim, chegamos à conclusão que será o cinto de número 2, pois é o que apresenta menor aceleração.
-                
+                Em uma colisão frontal entre dois automóveis, a força que o
+                cinto de segurança exerce sobre o tórax e abdômen do motorista
+                pode causar lesões graves nos órgãos internos. Pensando na
+                segurança do seu produto, um fabricante de automóveis realizou
+                testes em cinco modelos diferentes de cinto. Os testes simularam
+                uma colisão de 0,30 segundo de duração, e os bonecos que
+                representavam os ocupantes foram equipados com acelerômetros.
+                Esse equipamento registra o módulo da desaceleração do boneco em
+                função do tempo. Os parâmetros como massa dos bonecos, dimensões
+                dos cintos e velocidade imediatamente antes e após o impacto
+                foram os mesmos para todos os testes. O resultado final obtido
+                está no gráfico de aceleração por tempo.
+              </p>
+              <p>
+                <img src="/img/IMAGEM FISICA QUESTAO 5 ENEM.png" />
+                Qual modelo de cinto oferece menor risco de lesão ao motorista?
               </p>
             </div>
-          </div>
-    
-          <div class="questao">
-            <h2>2. QUESTÃO 2-(Enem/2022) <br />
-                
-            As notas musicais, assim como a grande maioria dos sons encontrados na natureza, são complexas e formadas pela superposição de várias ondas senoidais. 
-            A figura apresenta três componentes harmônicas e a composição resultante, construídas na mesma escala, para um instrumento sonoro. Essa composição 
-           carrega uma “assinatura sônica” ou timbre do corpo que a produz.<br>
-           <img src="/img/IMAGEM FISICA QUESTAO 6 ENEM.png"> <br>
-           Essas componentes harmônicas apresentam iguais
-
-
-                </h2>
-            <form id="form2">
-              <br /><input type="radio" id="A-amplitude e velocidade."
-               name="questao2" value="A-amplitude e velocidade." />
-              <label for="A-amplitude e velocidade.">A-amplitude e velocidade.
-            </label><br />
-              <input type="radio" id="B-amplitude e frequência."
-               name="questao2" value="B-amplitude e frequência." />
-              <label for="B-amplitude e frequência.">B-amplitude e frequência.
-            </label><br />
-              <input type="radio" id="C-frequência e velocidade."
-               name="questao2" value="C-frequência e velocidade." />
-              <label for="C-frequência e velocidade.">C-frequência e velocidade.
-            </label><br />
-            <input type="radio" id="D-amplitude e comprimento de onda."
-             name="questao2" value="D-amplitude e comprimento de onda." />
-            <label for="D-amplitude e comprimento de onda.">D-amplitude e comprimento de onda.
-            </label><br />
-             <input type="radio" id="E-frequência e comprimento de onda."
-                name="questao2" value="E-frequência e comprimento de onda." />
-               <label for="E-frequência e comprimento de onda.">E-frequência e comprimento de onda.
-            </label><br />
-              <button type="button" onclick="verificarQuestao2FISICA()">Verificar</button>
+            <form id="form1">
+              <div class="select-answer">
+                <div>
+                  <input type="radio" id="A-1" name="questao1" value="A-1" />
+                  <label for="A-1"> A-1 </label>
+                </div>
+                <div>
+                  <input type="radio" id="B-2" name="questao1" value="B-2" />
+                  <label for="B-2"> B-2 </label>
+                </div>
+                <div>
+                  <input type="radio" id="C-3" name="questao1" value="C-3" />
+                  <label for="C-3"> C-3 </label>
+                </div>
+                <div>
+                  <input type="radio" id="D-4" name="questao1" value="D-4" />
+                  <label
+                    for="D-4
+                "
+                    >D-4
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" id="E-5" name="questao1" value="E-5" />
+                  <label
+                    for="E-5
+                "
+                    >E-5
+                  </label>
+                </div>
+                <button
+                  id="btnQ1FISICA"
+                  type="button"
+                  onclick="verificarQuestao1FISICA()"
+                >
+                  Verificar
+                </button>
+              </div>
             </form>
-            <div class="resultado" id="resultado2"></div>
-            <div id="resolucao2" style="display: none">
-              <p><strong>Resolução:</strong> A-amplitude e velocidade. <br />
-                <br> As três componentes A, B e C se propagam no mesmo meio, viajando a mesma velocidade.
-
-                Como as três componentes possuem o mesmo comprimento vertical, suas amplitudes são iguais.
-                
-                </p>
+            <div class="resultado" id="resultado1"></div>
+            <div class="resolucao" id="resolucao1" style="display: none">
+              <p><strong>Resolução:</strong>B-2</p>
+              <P>
+                Perceba que esta questão apresenta uma situação-problema
+                relacionada com um equipamento de segurança que utilizamos no
+                nosso cotidiano. Esta é uma questão de dinâmica, onde precisamos
+                identificar as relações entre as grandezas associadas à
+                situação. Neste caso as grandezas são força e aceleração.
+                Sabemos, pela segunda lei de Newton, que a força é diretamente
+                proporcional ao produto da massa pela aceleração. Como em todos
+                os experimentos a massa do passageiro é a mesma, então teremos
+                que quanto maior é a aceleração maior será a força que o cinto
+                irá exercer sobre o passageiro (força de frenagem). Após
+                identificar as grandezas e suas relações, o próximo passo é
+                analisar o gráfico apresentado. Se procuramos o cinto que
+                oferece menor risco de lesão, então terá que ser o que apresenta
+                menor aceleração, visto que no próprio enunciado do problema é
+                sinalizado que quanto maior a força maior o risco de lesão.
+                Assim, chegamos à conclusão que será o cinto de número 2, pois é
+                o que apresenta menor aceleração.
+              </P>
             </div>
           </div>
-         </div>
-         </div>
-         
-      
+          <div class="content-questao">
+            <div class="questao">
+              <h3>2. QUESTÃO 2-(Enem/2022)</h3>
+
+              <P
+                >As notas musicais, assim como a grande maioria dos sons
+                encontrados na natureza, são complexas e formadas pela
+                superposição de várias ondas senoidais. A figura apresenta três
+                componentes harmônicas e a composição resultante, construídas na
+                mesma escala, para um instrumento sonoro. Essa composição
+                carrega uma “assinatura sônica” ou timbre do corpo que a
+                produz.</P
+              >
+              <P><img src="/img/IMAGEM FISICA QUESTAO 6 ENEM.png" /> </P>
+              <P> Essas componentes harmônicas apresentam iguais:</P>
+            </div>
+            <form id="form2">
+              <div class="select-answer">
+                <div>
+                  <input
+                    type="radio"
+                    id="A-amplitude e velocidade."
+                    name="questao2"
+                    value="A-amplitude e velocidade."
+                  />
+                  <label for="A-amplitude e velocidade."
+                    >A-amplitude e velocidade.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="B-amplitude e frequência."
+                    name="questao2"
+                    value="B-amplitude e frequência."
+                  />
+                  <label for="B-amplitude e frequência."
+                    >B-amplitude e frequência.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="C-frequência e velocidade."
+                    name="questao2"
+                    value="C-frequência e velocidade."
+                  />
+                  <label for="C-frequência e velocidade."
+                    >C-frequência e velocidade.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="D-amplitude e comprimento de onda."
+                    name="questao2"
+                    value="D-amplitude e comprimento de onda."
+                  />
+                  <label for="D-amplitude e comprimento de onda."
+                    >D-amplitude e comprimento de onda.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="E-frequência e comprimento de onda."
+                    name="questao2"
+                    value="E-frequência e comprimento de onda."
+                  />
+                  <label for="E-frequência e comprimento de onda."
+                    >E-frequência e comprimento de onda.
+                  </label>
+                </div>
+                <button
+                  id="btnQ2FISICA"
+                  type="button"
+                  onclick="verificarQuestao2FISICA()"
+                >
+                  Verificar
+                </button>
+              </div>
+            </form>
+            <div class="resultado" id="resultado2"></div>
+            <div class="resolucao" id="resolucao2" style="display: none">
+              <p><strong>Resolução:</strong> A-amplitude e velocidade.</p>
+              <P>
+                As três componentes A, B e C se propagam no mesmo meio, viajando
+                a mesma velocidade. Como as três componentes possuem o mesmo
+                comprimento vertical, suas amplitudes são iguais.
+              </P>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <%- include('components/footer') %>
   </body>

@@ -1,421 +1,495 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <%- include('components/head') %>
   <head>
-    <title>Página de Questões</title>
+    <%- include('components/head') %>
+    <title>matematica</title>
   </head>
   <body>
     <%- include('components/header') %>
     <main>
-      <h1>Matemática</h1>
-
-      <h2>Página de Questões</h2>
-
       <div class="container-materias">
         <%- include('components/menuMaterias') %>
-        <div class="content-questao">
-          <div class="questao">
-            <h2>
-              1.QUESTÃO 1-(Enem 2018)<br />
-              Um brinquedo chamado pula-pula, quando visto de cima, consiste de uma cama elástica com contorno em formato de um hexágono regular.<br>
-              <img src="/img/geometria-questao-1.png"> <br>
-              Se a área do círculo inscrito no hexágono é 3π metros quadrados, então a área do hexágono, em metro quadrado, é:
+        <div class="container-questao">
+          <h1>Matemática</h1>
 
-
-            </h2>
+          <h2>Página de Questões</h2>
+          <div class="content-questao">
+            <div class="questao">
+              <h3>1.QUESTÃO 1-(Enem 2018)</h3>
+              <p>
+                Um brinquedo chamado pula-pula, quando visto de cima, consiste
+                de uma cama elástica com contorno em formato de um hexágono
+                regular.
+              </p>
+              <p><img src="/img/geometria-questao-1.png" /></p>
+              <p>
+                Se a área do círculo inscrito no hexágono é 3π metros quadrados,
+                então a área do hexágono, em metro quadrado, é:
+              </p>
+            </div>
             <form id="form1">
-              <br />
-              <input
-                type="radio"
-                id="A-9"
-                name="questao1"
-                value="A-9"
-              />
-              <label
-                for="A-9"
-                >A-9</label
-              ><br />
-              <input
-                type="radio"
-                id="B-6√3 "
-                name="questao1"
-                value="B-6√3 "
-              />
-              <label
-                for="B-6√3 "
-                >B-6√3 </label
-              ><br />
-              <input
-                type="radio"
-                id="C-9√2"
-                name="questao1"
-                value="C-9√2"
-              />
-              <label for="C-9√2"
-                >C-9√2 </label
-              ><br />
-              <input
-                type="radio"
-                id="D-12"
-                name="questao1"
-                value="D-12"
-              />
-              <label
-                for="D-12
+              <div class="select-answer">
+                <div>
+                  <input type="radio" id="A-9" name="questao1" value="A-9" />
+                  <label for="A-9"> A-9</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="B-6√3 "
+                    name="questao1"
+                    value="B-6√3 "
+                  />
+                  <label for="B-6√3 "> B-6√3 </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="C-9√2"
+                    name="questao1"
+                    value="C-9√2"
+                  />
+                  <label for="C-9√2"> C-9√2 </label>
+                </div>
+                <div>
+                  <input type="radio" id="D-12" name="questao1" value="D-12" />
+                  <label
+                    for="D-12
                 "
-                >D-12 </label
-              ><br />
-              <input
-                type="radio"
-                id="E-12√3"
-                name="questao1"
-                value="E-12√3"
-              />
-              <label
-                for="E-12√3
+                    >D-12
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="E-12√3"
+                    name="questao1"
+                    value="E-12√3"
+                  />
+                  <label
+                    for="E-12√3
                 "
-                >E-12√3 </label
-              ><br />
-              <button type="button" onclick="verificarQuestao1MAT()">Verificar</button>
+                    >E-12√3
+                  </label>
+                </div>
+                <button
+                  id="btnQ1MAT"
+                  type="button"
+                  onclick="verificarQuestao1MAT()"
+                >
+                  Verificar
+                </button>
+              </div>
             </form>
             <div class="resultado" id="resultado1"></div>
-            <div id="resolucao1" style="display: none">
-              <p>
-                <strong>Resolução:</strong>B-6√3
-                <br />
-                <br> Primeiro encontraremos o raio da circunferência que coincide com a altura do triângulo mostrado na imagem.<br>
-
-                A = πr²<br>
-                
-                Sabemos que a área é igual a 3π:<br>
-                
-                3π = πr²<br>
-                
-                3 = r²<br>
-                
-                r = √3<br>
-                
-                Sabendo o valor do raio, se traçarmos o triângulo AOB, o raio será a sua altura. No hexágono, esse triângulo é sempre equilátero, então, utilizando a fórmula da altura de um triângulo equilátero, temos que:<br>
-                
-                L√3/2
-                 = H<br>
-                 
-                
-                L√3/2
-                 = √3<br>
-                 
-                
-                L√3=2 √3<br>
-                
-                L=2
-                
-                Agora que conhecemos o comprimento do lado do hexágono, basta utilizar a fórmula da área do hexágono.<br>
-                
-                A=3.L^2.√3/2
-                <br>
-                     
-                
-                
-                A=3.2^2.√3/2
-                <br>
-                     
-                
-                A=3.4.√3/2
-                <br>
-                    
-                
-                A=12√3/2
-                <br>
-                   
-                
-                A=6√3
-                
-              </p>
+            <div class="resolucao" id="resolucao1" style="display: none">
+              <p><strong>Resolução:</strong>B-6√3</p>
+              <P>
+                Primeiro encontraremos o raio da circunferência que coincide com
+                a altura do triângulo mostrado na imagem.</P
+              ><P> A = πr²</P><P> Sabemos que a área é igual a 3π:</P
+              ><P> 3π = πr²</P><P> 3 = r²</P><P> r = √3</P
+              ><P>
+                Sabendo o valor do raio, se traçarmos o triângulo AOB, o raio
+                será a sua altura. No hexágono, esse triângulo é sempre
+                equilátero, então, utilizando a fórmula da altura de um
+                triângulo equilátero, temos que:</P
+              ><P> L√3/2 = H</P><P> L√3/2 = √3</P><P> L√3=2 √3</P
+              ><P>
+                L=2 Agora que conhecemos o comprimento do lado do hexágono,
+                basta utilizar a fórmula da área do hexágono.</P
+              ><P> A=3.L^2.√3/2</P><P> A=3.2^2.√3/2</P><P> A=3.4.√3/2</P
+              ><P> A=12√3/2</P><P> A=6√3 </P>
             </div>
           </div>
-    
-          <div class="questao">
-            <h2>2. QUESTÃO 2-(Enem 2020 - digital) <br />
-              Uma empresa deseja construir um edifício residencial de 12 pavimentos, num lote retangular de lados medindo 22 e 26 m. Em 3 dos lados do lote serão construídos muros. 
-              A frente do prédio será sobre o lado do lote de menor comprimento. Sabe-se que em cada pavimento 32 m2 serão destinados à área comum (hall de entrada, elevadores e escada), 
-              e o restante da área será destinado às unidades habitacionais. A legislação vigente exige que prédios sejam construídos mantendo distâncias mínimas dos limites dos lotes
-              onde se encontram. Em obediência à legislação, o prédio ficará 5 m afastado da rua onde terá sua entrada, 3 m de distância do muro no fundo do lote e 4 m de distância dos muros 
-              nas laterais do lote, como mostra a figura.<br>
-              <img src="/img/GEOMETRIA-QUESTAO-2.png"> <br>
-              A área total, em metro quadrado, destinada às unidades habitacionais desse edifício será de
-
-              
-              
-                </h2>
+          <div class="content-questao">
+            <div class="questao">
+              <h3>2. QUESTÃO 2-(Enem 2020 - digital)</h3>
+              <P>
+                Uma empresa deseja construir um edifício residencial de 12
+                pavimentos, num lote retangular de lados medindo 22 e 26 m. Em 3
+                dos lados do lote serão construídos muros. A frente do prédio
+                será sobre o lado do lote de menor comprimento. Sabe-se que em
+                cada pavimento 32 m2 serão destinados à área comum (hall de
+                entrada, elevadores e escada), e o restante da área será
+                destinado às unidades habitacionais. A legislação vigente exige
+                que prédios sejam construídos mantendo distâncias mínimas dos
+                limites dos lotes onde se encontram. Em obediência à legislação,
+                o prédio ficará 5 m afastado da rua onde terá sua entrada, 3 m
+                de distância do muro no fundo do lote e 4 m de distância dos
+                muros nas laterais do lote, como mostra a figura.</P
+              >
+              <P> <img src="/img/GEOMETRIA-QUESTAO-2.png" /> </P>
+              <P>
+                A área total, em metro quadrado, destinada às unidades
+                habitacionais desse edifício será de:</P
+              >
+            </div>
             <form id="form2">
-              <br /><input type="radio" id="A-2640."
-               name="questao2" value="A-2640." />
-              <label for="A-2640.">A-2640.
-            </label><br />
-              <input type="radio" id="B-3024."
-               name="questao2" value="B-3024." />
-              <label for="B-3024.">B-3024.
-            </label><br />
-              <input type="radio" id="C-3840."
-               name="questao2" value="C-3840." />
-              <label for="C-3840.">C-3840.
-            </label><br />
-            <input type="radio" id="D-6480."
-             name="questao2" value="D-6480." />
-            <label for="D-6480.">D-6480.
-            </label><br />
-             <input type="radio" id="E-6864."
-                name="questao2" value="E-6864." />
-               <label for="E-6864.">E-6864.
-            </label><br />
-              <button type="button" onclick="verificarQuestao2MAT()">Verificar</button>
+              <div class="select-answer">
+                <div>
+                  <input
+                    type="radio"
+                    id="A-2640."
+                    name="questao2"
+                    value="A-2640."
+                  />
+                  <label for="A-2640.">A-2640. </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="B-3024."
+                    name="questao2"
+                    value="B-3024."
+                  />
+                  <label for="B-3024.">B-3024. </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="C-3840."
+                    name="questao2"
+                    value="C-3840."
+                  />
+                  <label for="C-3840.">C-3840. </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="D-6480."
+                    name="questao2"
+                    value="D-6480."
+                  />
+                  <label for="D-6480.">D-6480. </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="E-6864."
+                    name="questao2"
+                    value="E-6864."
+                  />
+                  <label for="E-6864.">E-6864. </label>
+                </div>
+                <button
+                  id="btnQ2MAT"
+                  type="button"
+                  onclick="verificarQuestao2MAT()"
+                >
+                  Verificar
+                </button>
+              </div>
             </form>
             <div class="resultado" id="resultado2"></div>
-            <div id="resolucao2" style="display: none">
-              <p><strong>Resolução:</strong> A-2640.<br />
-                <br> Para encontrar as medidas do retângulo central, na altura de 22 metros, é necessário subtrair o espaço que não será utilizado. 
-                Esse espaço é de 4 metros, tanto em cima quanto em baixo, então, temos que 22 – 4 – 4 = 14 m. Analisando a base do retângulo que mede 26 metros,
-                 é necessário subtrair 3 m e 5 m, então, 26 – 3 – 5 = 18 m. Assim, área construída é de 18 .14 = 252 m.
-                 <br>
-                Nessa área de 252 m², serão retirados 32 m² para a área de convivência, então, 252 – 32 = 220. Agora, multiplicando pelos 12 pavimentos, temos que 220 .12 = 2640.
-                
-                
-                </p>
+            <div class="resolucao" id="resolucao2" style="display: none">
+              <p><strong>Resolução:</strong> A-2640.</p>
+              <P>
+                Para encontrar as medidas do retângulo central, na altura de 22
+                metros, é necessário subtrair o espaço que não será utilizado.
+                Esse espaço é de 4 metros, tanto em cima quanto em baixo, então,
+                temos que 22 – 4 – 4 = 14 m. Analisando a base do retângulo que
+                mede 26 metros, é necessário subtrair 3 m e 5 m, então, 26 – 3 –
+                5 = 18 m. Assim, área construída é de 18 .14 = 252 m.</P
+              >
+              <P>
+                Nessa área de 252 m², serão retirados 32 m² para a área de
+                convivência, então, 252 – 32 = 220. Agora, multiplicando pelos
+                12 pavimentos, temos que 220 .12 = 2640.
+              </P>
             </div>
           </div>
-          <div class="questao">
-            <h2>3. QUESTÃO 3-(Enem - PPL)  <br />
-              Uma escola tem um terreno vazio no formato retangular cujo perímetro é 40 m, onde se pretende realizar uma única construção que aproveite o máximo de área possível.
-              Após a análise realizada por um engenheiro, este concluiu que, para atingir o máximo de área do terreno com uma única construção, a obra ideal seria
-              
-              
-                </h2>
-            <form id="form3">
-              <br /><input type="radio" id="A-um banheiro com 8 m²."
-               name="questao3" value="A-um banheiro com 8 m²." />
-              <label for="A-um banheiro com 8 m².">
-                A-um banheiro com 8 m².
-              </label><br />
-
-              <input type="radio" id="B-uma sala de aula com 16 m²."
-               name="questao3" value="B-uma sala de aula com 16 m²." />
-              <label for="B-uma sala de aula com 16 m².">
-                B-uma sala de aula com 16 m².
-    
-            </label><br />
-    
-              <input type="radio" id="C-um auditório com 36 m²."
-               name="questao3" value="C-um auditório com 36 m²." />
-              <label for="C-um auditório com 36 m².">
-                C-um auditório com 36 m².
-            </label><br />
-    
-            <input type="radio" id="D-um pátio com 100 m²."
-             name="questao3" value="D-um pátio com 100 m²." />
-            <label for="D-um pátio com 100 m².">
-              D-um pátio com 100 m².
-
-            </label><br />
-    
-             <input type="radio" id="E-uma quadra com 160 m²."
-                name="questao3" value="E-uma quadra com 160 m²." />
-               <label for="E-uma quadra com 160 m².">
-                E-uma quadra com 160 m².
-
-            </label><br />
-    
-              <button type="button" onclick="verificarQuestao3MAT()">Verificar</button>
-            </form>
-    
-            <div class="resultado" id="resultado3"></div>
-            <div id="resolucao3" style="display: none">
-              <p><strong>Resolução:</strong> 
-                D-um pátio com 100 m².
-                 <br />
-                <br> Para encontrar a área desse terreno, basta supor que ele seja um quadrado (a figura mais simples na qual podemos pensar) com o perímetro igual a 40. Assim, temos que:<br>
-
-                40 : 4 = 10 metros<br>
-                
-                A área de um quadrado de 10 metros é igual a 10² = 100 m.<br>
-                
-                Como a área máxima desse terreno é de 100 metros quadrados, então podemos construir um pátio com 100 m².<br>
-                
-                
-                
-                </p>
-            </div>
-          </div>
-          <div class="questao">
-            <h2>4. QUESTÃO 4-(Enem 2016)  <br />
-              Para evitar uma epidemia, a Secretaria de Saúde de uma cidade dedetizou todos os bairros, de modo a evitar a proliferação do mosquito da dengue. Sabe-se que o número f de infectados é dado pela função f(t) = −2t²+ 120t (em que t é expresso em dia e t = 0 é o dia anterior à primeira infecção) e que tal expressão é válida para os 60 primeiros dias da epidemia.<br>
-
-              A Secretaria de Saúde decidiu que uma segunda dedetização deveria ser feita no dia em que o número de infectados chegasse à marca de 1 600 pessoas, e uma segunda dedetização precisou acontecer.<br>
-              
-              A segunda dedetização começou no:
-              
-
-                </h2>
-            <form id="form4">
-              <br /><input type="radio" id="A-19º dia."
-               name="questao4" value="A-19º dia." />
-              <label for="A-19º dia.">
-                A-19º dia.
-              </label><br />
-
-              <input type="radio" id="B-20º dia."
-               name="questao4" value="B-20º dia." />
-              <label for="B-20º dia.">
-                B-20º dia.
-            </label><br />
-    
-              <input type="radio" id="C-29º dia."
-               name="questao4" value="C-29º dia." />
-              <label for="C-29º dia. ">
-                C-29º dia.
-
-            </label><br />
-    
-            <input type="radio" id="D-30º dia."
-             name="questao4" value="D-30º dia." />
-            <label for="D-30º dia.">
-              D-30º dia.
-
-            </label><br />
-    
-             <input type="radio" id="E-60º dia."
-                name="questao4" value="E-60º dia." />
-               <label for="E-60º dia.">
-               E-60º dia.
-
-
-            </label><br />
-    
-              <button type="button" onclick="verificarQuestao4MAT()">Verificar</button>
-            </form>
-    
-            <div class="resultado" id="resultado4"></div>
-            <div id="resolucao4" style="display: none">
-              <p><strong>Resolução:</strong> 
-                B-20º dia.
-                 <br />
-                <br>  Queremos o valor de t para que – 2t² + 120t = 1600.<br>
-
-                Arrumando a equação do 2º grau, temos que:<br>
-                
-                
-                – 2t² + 120t – 1600 = 0<br>
-                
-                
-                a = – 2; b = 120 e c = – 1600<br>
-                
-                
-                ∆ = (-120)² – 4.2.160<br>
-                
-                
-                ∆ = 14400 – 12800<br>
-                
-                
-                ∆ = 1600<br>
-                
-                
-                Agora aplicando a fórmula de Bhaskara:<br>
-                
-                
-                t=−b±Δ√2a<br>
-                
-                
-                t=−b±Δ√2a<br>
-                
-                
-                t=−120±1600√2⋅(−2)<br>
-                
-                
-                t=−120±40−4<br>
-                
-                
-                t1=−120+40−4=−80−4=20<br>
-                
-                
-                t2=−120−40−4=−160−4=40<br>
-                
-                
-                Logo, a segunda dedetização começou no 20º dia.<br>
-                </p>
-            </div>
-        </div>
-        <div class="questao">
-          <h2>5. QUESTÃO 5-(ENEM 2012)  <br />
-            O esporte de alta competição da atualidade produziu uma questão ainda sem resposta: Qual é o limite do corpo humano? O maratonista original, o grego da lenda, morreu de fadiga por ter corrido 42 quilômetros. O americano Dean Karnazes, cruzando sozinho as planícies da Califórnia, conseguiu correr dez vezes mais em 75 horas.Um professor de Educação Física, ao discutir com a turma o texto sobre a capacidade do maratonista americano, desenhou na lousa uma pista reta de 60 centímetros, que representaria o percurso referido.
-              <br>
-            Se o percurso de Dean Karnazes fosse também em uma pista reta, qual seria a escala entre a pista feita pelo professor e a percorrida pelo atleta?
-
-              </h2>
-          <form id="form5">
-            <br /><input type="radio" id="A-1: 700"
-             name="questao5" value="A-1: 700" />
-            <label for="A-1: 700">
-            A-1: 700
-
-            </label><br />
-
-            <input type="radio" id="B-1: 7.000"
-             name="questao5" value="B-1: 7.000" />
-            <label for="B-1: 7.000">
-             B-1: 7.000
-
-          </label><br />
-  
-            <input type="radio" id="C-1: 70.000"
-             name="questao5" value="C-1: 70.000" />
-            <label for="C-1: 70.000">
-            C-1: 70.000
-
-          </label><br />
-  
-          <input type="radio" id="D-1: 700.000"
-           name="questao5" value="D-1: 700.000" />
-          <label for="D-1: 700.000">
-          D-1: 700.000
-
-
-          </label><br />
-  
-           <input type="radio" id="E- 1: 7.000.000"
-              name="questao5" value="E- 1: 7.000.000" />
-             <label for="E- 1: 7.000.000">
-             E- 1: 7.000.000
-
-          </label><br />
-  
-            <button type="button" onclick="verificarQuestao5MAT()">Verificar</button>
-          </form>
-  
-          <div class="resultado" id="resultado5"></div>
-          <div id="resolucao5" style="display: none">
-            <p><strong>Resolução:</strong> 
-              D-1: 700.000
-
-               <br />
-              <br>A escala é a razão entre a medida do desenho e a medida real.<br>
-
-              Desenho: 60cm<br>
-              
-              Objeto real: 42km = 42.000.000cm<br>
-              
-              Escala: 42.000.000cm/60cm = 700.000<br>
-              
-              Ou seja, a escala é 1:700.000.
-              
-                            
+          <div class="content-questao">
+            <div class="questao">
+              <h3>3. QUESTÃO 3-(Enem - PPL)</h3>
+              <p>
+                Uma escola tem um terreno vazio no formato retangular cujo
+                perímetro é 40 m, onde se pretende realizar uma única construção
+                que aproveite o máximo de área possível. Após a análise
+                realizada por um engenheiro, este concluiu que, para atingir o
+                máximo de área do terreno com uma única construção, a obra ideal
+                seria:
               </p>
-          </div>
-      </div>
-      </div>
-      </div>
-      
-    
+            </div>
+            <form id="form3">
+              <div class="select-answer">
+                <div>
+                  <input
+                    type="radio"
+                    id="A-um banheiro com 8 m²."
+                    name="questao3"
+                    value="A-um banheiro com 8 m²."
+                  />
+                  <label for="A-um banheiro com 8 m².">
+                    A-um banheiro com 8 m².
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="B-uma sala de aula com 16 m²."
+                    name="questao3"
+                    value="B-uma sala de aula com 16 m²."
+                  />
+                  <label for="B-uma sala de aula com 16 m².">
+                    B-uma sala de aula com 16 m².
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="C-um auditório com 36 m²."
+                    name="questao3"
+                    value="C-um auditório com 36 m²."
+                  />
+                  <label for="C-um auditório com 36 m².">
+                    C-um auditório com 36 m².
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="D-um pátio com 100 m²."
+                    name="questao3"
+                    value="D-um pátio com 100 m²."
+                  />
+                  <label for="D-um pátio com 100 m².">
+                    D-um pátio com 100 m².
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="E-uma quadra com 160 m²."
+                    name="questao3"
+                    value="E-uma quadra com 160 m²."
+                  />
+                  <label for="E-uma quadra com 160 m².">
+                    E-uma quadra com 160 m².
+                  </label>
+                </div>
 
-      
+                <button
+                  id="btnQ3MAT"
+                  type="button"
+                  onclick="verificarQuestao3MAT()"
+                >
+                  Verificar
+                </button>
+              </div>
+            </form>
+
+            <div class="resultado" id="resultado3"></div>
+            <div class="resolucao" id="resolucao3" style="display: none">
+              <p>
+                <strong>Resolução:</strong>
+                D-um pátio com 100 m².
+              </p>
+              <P>
+                Para encontrar a área desse terreno, basta supor que ele seja um
+                quadrado (a figura mais simples na qual podemos pensar) com o
+                perímetro igual a 40. Assim, temos que:</P
+              ><P> 40 : 4 = 10 metros</P
+              ><P> A área de um quadrado de 10 metros é igual a 10² = 100 m.</P
+              ><P>
+                Como a área máxima desse terreno é de 100 metros quadrados,
+                então podemos construir um pátio com 100 m².</P
+              >
+            </div>
+          </div>
+          <div class="content-questao">
+            <div class="questao">
+              <h3>4. QUESTÃO 4-(Enem 2016)</h3>
+              <P
+                >Para evitar uma epidemia, a Secretaria de Saúde de uma cidade
+                dedetizou todos os bairros, de modo a evitar a proliferação do
+                mosquito da dengue. Sabe-se que o número f de infectados é dado
+                pela função f(t) = −2t²+ 120t (em que t é expresso em dia e t =
+                0 é o dia anterior à primeira infecção) e que tal expressão é
+                válida para os 60 primeiros dias da epidemia.</P
+              >
+
+              <P
+                >A Secretaria de Saúde decidiu que uma segunda dedetização
+                deveria ser feita no dia em que o número de infectados chegasse
+                à marca de 1 600 pessoas, e uma segunda dedetização precisou
+                acontecer.</P
+              >
+
+              <p>A segunda dedetização começou no:</p>
+            </div>
+            <form id="form4">
+              <div class="select-answer">
+                <div>
+                  <input
+                    type="radio"
+                    id="A-19º dia."
+                    name="questao4"
+                    value="A-19º dia."
+                  />
+                  <label for="A-19º dia."> A-19º dia. </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="B-20º dia."
+                    name="questao4"
+                    value="B-20º dia."
+                  />
+                  <label for="B-20º dia."> B-20º dia. </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="C-29º dia."
+                    name="questao4"
+                    value="C-29º dia."
+                  />
+                  <label for="C-29º dia. "> C-29º dia. </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="D-30º dia."
+                    name="questao4"
+                    value="D-30º dia."
+                  />
+                  <label for="D-30º dia."> D-30º dia. </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="E-60º dia."
+                    name="questao4"
+                    value="E-60º dia."
+                  />
+                  <label for="E-60º dia."> E-60º dia. </label>
+                </div>
+                <div>
+                  <button
+                    id="btnQ4MAT"
+                    type="button"
+                    onclick="verificarQuestao4MAT()"
+                  >
+                    Verificar
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <div class="resultado" id="resultado4"></div>
+            <div class="resolucao" id="resolucao4" style="display: none">
+              <p>
+                <strong>Resolução:</strong>
+                B-20º dia.
+              </p>
+              <p>
+                Queremos o valor de t para que – 2t² + 120t = 1600. Arrumando a
+                equação do 2º grau, temos que: – 2t² + 120t – 1600 = 0 a = – 2;
+                b = 120 e c = – 1600 ∆ = (-120)² – 4.2.160 ∆ = 14400 – 12800 ∆ =
+                1600
+              </p>
+              <p>
+                Agora aplicando a fórmula de Bhaskara: t=−b±Δ√2a t=−b±Δ√2a
+                t=−120±1600√2⋅(−2) t=−120±40−4 t1=−120+40−4=−80−4=20
+                t2=−120−40−4=−160−4=40
+              </p>
+              <p>Logo, a segunda dedetização começou no 20º dia.</p>
+            </div>
+          </div>
+          <div class="content-questao">
+            <div class="questao">
+              <h3>5. QUESTÃO 5-(ENEM 2012)</h3>
+              <P
+                >O esporte de alta competição da atualidade produziu uma questão
+                ainda sem resposta: Qual é o limite do corpo humano? O
+                maratonista original, o grego da lenda, morreu de fadiga por ter
+                corrido 42 quilômetros. O americano Dean Karnazes, cruzando
+                sozinho as planícies da Califórnia, conseguiu correr dez vezes
+                mais em 75 horas.Um professor de Educação Física, ao discutir
+                com a turma o texto sobre a capacidade do maratonista americano,
+                desenhou na lousa uma pista reta de 60 centímetros, que
+                representaria o percurso referido.
+              </P>
+              <P
+                >Se o percurso de Dean Karnazes fosse também em uma pista reta,
+                qual seria a escala entre a pista feita pelo professor e a
+                percorrida pelo atleta?</P
+              >
+            </div>
+            <form id="form5">
+              <div class="select-answer">
+                <div>
+                  <input
+                    type="radio"
+                    id="A-1: 700"
+                    name="questao5"
+                    value="A-1: 700"
+                  />
+                  <label for="A-1: 700"> A-1: 700 </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="B-1: 7.000"
+                    name="questao5"
+                    value="B-1: 7.000"
+                  />
+                  <label for="B-1: 7.000"> B-1: 7.000 </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="C-1: 70.000"
+                    name="questao5"
+                    value="C-1: 70.000"
+                  />
+                  <label for="C-1: 70.000"> C-1: 70.000 </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="D-1: 700.000"
+                    name="questao5"
+                    value="D-1: 700.000"
+                  />
+                  <label for="D-1: 700.000"> D-1: 700.000 </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="E- 1: 7.000.000"
+                    name="questao5"
+                    value="E- 1: 7.000.000"
+                  />
+                  <label for="E- 1: 7.000.000"> E- 1: 7.000.000 </label>
+                </div>
+
+                <button
+                  id="btnQ5MAT"
+                  type="button"
+                  onclick="verificarQuestao5MAT()"
+                >
+                  Verificar
+                </button>
+              </div>
+            </form>
+
+            <div class="resultado" id="resultado5"></div>
+            <div class="resolucao" id="resolucao5" style="display: none">
+              <p>
+                <strong>Resolução:</strong>
+                D-1: 700.000
+              </p>
+              <P>
+                A escala é a razão entre a medida do desenho e a medida real.
+                Desenho: 60cm Objeto real: 42km = 42.000.000cm Escala:
+                42.000.000cm/60cm = 700.000 </P
+              ><P> Ou seja, a escala é 1:700.000. </P>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <%- include('components/footer') %>
   </body>

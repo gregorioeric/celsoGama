@@ -44,16 +44,20 @@
                       <%= page.page_status === 1 ? 'Publicado' : 'Rascunho' %>
                     </div>
                     <div class="col">
-                      <a href="/pages/editPage/<%= page.page_id %>">Editar</a>
+                      <a class="edit" href="/pages/editPage/<%= page.page_id %>"
+                        >Editar</a
+                      >
                     </div>
                     <div class="col">
-                      <button
+                      <a
+                        href="#"
                         onclick="openDeleteModal('<%= page.page_id %>', '<%= page.page_title %>')"
                         id="Delete"
+                        class="delete"
                         data-id="<%= page.page_id %>"
                       >
                         Delete
-                      </button>
+                      </a>
                     </div>
                   </div>
                   <% }) %>

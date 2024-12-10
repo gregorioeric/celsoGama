@@ -29,16 +29,17 @@ module.exports = class HomeController {
   }
 
   static async postComment(req, res) {
-    const { users_user_id, posts_post_id, comment_content } = req.body;
+    const { posts_post_id, comment_content } = req.body;
     const result = await PostModel.selectJoinAllPosts();
     const getSlug = req.params.slug;
+    const getUserId = req.session.user;
 
     const [getPost] = result.filter((item) => item.post_slug === getSlug);
 
     const comment = {
       comment_content,
-      users_user_id,
-      posts_post_id,
+      users_user_id: getUserId.user_id,
+      posts_post_id: Number(posts_post_id),
     };
 
     const insertComment = CommentsModel.insertComment(comment);

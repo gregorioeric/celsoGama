@@ -1,167 +1,234 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <%- include('components/head') %>
   <head>
-    <title>Página de Questões</title>
+    <%- include('components/head') %>
+    <title>quimica</title>
   </head>
   <body>
     <%- include('components/header') %>
     <main>
-      <h1>Química</h1>
-
-      <h2>Página de Questões</h2>
-
       <div class="container-materias">
         <%- include('components/menuMaterias') %>
-        <div class="content-questao">
-          <div class="questao">
-            <h2>
-              1.QUESTÃO 1-(Enem-2018)<br />
-              As abelhas utilizam a sinalização química para distinguir a abelha-rainha de uma operária, 
-              sendo capazes de reconhecer diferenças entre moléculas. A rainha produz o sinalizador químico conhecido como ácido 
-              9-hidroxidec-2-enoico, enquanto as abelhas-operárias produzem o ácido 10-hidroxidec-2-enoico. Nós podemos distinguir 
-              as abelhas-operárias e rainhas por sua aparência, mas, entre si, elas usam essa sinalização química para perceber a 
-              diferença. Pode-se dizer que veem por meio da química.
+        <div class="container-questao">
+          <h1>Química</h1>
 
-              As moléculas dos sinalizadores químicos produzidas pelas abelhas rainha e operária possuem diferença na
-            </h2>
-            <form id="form1">
-              <br />
-              <input
-                type="radio"
-                id="A-fórmula estrutural."
-                name="questao1"
-                value="A-fórmula estrutural."
-              />
-              <label
-                for="A-fórmula estrutural."
-                >A-fórmula estrutural.
-                </label
-              ><br />
-              <input
-                type="radio"
-                id="B-fórmula molecular."
-                name="questao1"
-                value="B-fórmula molecular."
-              />
-              <label
-                for="B-fórmula molecular."
-                >B-fórmula molecular.</label
-              ><br />
-              <input
-                type="radio"
-                id="C-identificação dos tipos de ligação."
-                name="questao1"
-                value="C-identificação dos tipos de ligação."
-              />
-              <label for="C-identificação dos tipos de ligação."
-                >C-identificação dos tipos de ligação. </label
-              ><br />
-              <input
-                type="radio"
-                id="D-contagem do número de carbonos."
-                name="questao1"
-                value="D-contagem do número de carbonos."
-              />
-              <label
-                for="D-contagem do número de carbonos.
-                "
-                >D-contagem do número de carbonos. </label
-              ><br />
-              <input
-                type="radio"
-                id="E-identificação dos grupos funcionais."
-                name="questao1"
-                value="E-identificação dos grupos funcionais."
-              />
-              <label
-                for="E-identificação dos grupos funcionais.
-                "
-                >E-identificação dos grupos funcionais. </label
-              ><br />
-              <button type="button" onclick="verificarQuestao1Q()">Verificar</button>
-            </form>
-            <div class="resultado" id="resultado1"></div>
-            <div id="resolucao1" style="display: none">
+          <h2>Página de Questões</h2>
+          <div class="content-questao">
+            <div class="questao">
+              <h3>1.QUESTÃO 1-(Enem-2018)</h3>
               <p>
-                <strong>Resolução:</strong>A-fórmula estrutural.
-                <br />
-                <br> Analisando o nome dos compostos, temos:<br>
-                  <img src="/img/IMAGEM 1 QUIMICA QUESTAO 3.png"> <br>
-                
-                Desenhando os compostos, chegamos as seguintes estruturas:<br>
-                <img src="/img/IMAGEM 2 QUIMICA QUESTAO 3.png"> <br>
-                
-                Com isso, podemos observar que as duas estruturas:<br>
-                 <img src="/img/IMAGEM 3 QUIMICA QUESTAO 3.png"> <br>
-                
-                A diferença entre os sinalizadores está na posição da hidroxila (OH), pois para a rainha está no carbono 9 e para as operárias está no carbono 10.<br>
-                
-                Esses dois compostos são isômeros estruturais, possuem a mesma fórmula molecular, mas as formas como os átomos se ligam são diferentes.<br>
-                
-                Dessa forma, ocorre então uma diferença estrutural que distingue umas das outras.<br>
-                
+                As abelhas utilizam a sinalização química para distinguir a
+                abelha-rainha de uma operária, sendo capazes de reconhecer
+                diferenças entre moléculas. A rainha produz o sinalizador
+                químico conhecido como ácido 9-hidroxidec-2-enoico, enquanto as
+                abelhas-operárias produzem o ácido 10-hidroxidec-2-enoico. Nós
+                podemos distinguir as abelhas-operárias e rainhas por sua
+                aparência, mas, entre si, elas usam essa sinalização química
+                para perceber a diferença. Pode-se dizer que veem por meio da
+                química. As moléculas dos sinalizadores químicos produzidas
+                pelas abelhas rainha e operária possuem diferença na
               </p>
             </div>
-          </div>
-    
-          <div class="questao">
-            <h2>2. QUESTÃO 2-(Enem-2018) <br />
-              Companhias que fabricam jeans usam cloro para o clareamento, seguido de lavagem. Algumas estão substituindo 
-              o cloro por substâncias ambientalmente mais seguras como peróxidos, que podem ser degradados por enzimas 
-              chamadas peroxidases. Pensando nisso, pesquisadores inseriram genes codificadores de peroxidases em leveduras 
-              cultivadas nas condições de clareamento e lavagem dos jeans e selecionaram as sobreviventes para produção dessas enzimas.
-              
-              Nesse caso, o uso dessas leveduras modificadas objetiva
-              
-                </h2>
-            <form id="form2">
-              <br /><input type="radio" id="A-reduzir a quantidade de resíduos tóxicos nos efluentes da lavagem."
-               name="questao2" value="A-reduzir a quantidade de resíduos tóxicos nos efluentes da lavagem." />
-              <label for="A-reduzir a quantidade de resíduos tóxicos nos efluentes da lavagem.">A-reduzir a quantidade de resíduos tóxicos nos efluentes da lavagem.
-            </label><br />
-              <input type="radio" id="B-eliminar a necessidade de tratamento da água consumida."
-               name="questao2" value="B-eliminar a necessidade de tratamento da água consumida." />
-              <label for="B-eliminar a necessidade de tratamento da água consumida.">B-eliminar a necessidade de tratamento da água consumida.
-            </label><br />
-              <input type="radio" id="C-elevar a capacidade de clareamento dos jeans."
-               name="questao2" value="C-elevar a capacidade de clareamento dos jeans." />
-              <label for="C-elevar a capacidade de clareamento dos jeans.">C-elevar a capacidade de clareamento dos jeans.
-            </label><br />
-            <input type="radio" id="D-aumentar a resistência do jeans a peróxidos."
-             name="questao2" value="D-aumentar a resistência do jeans a peróxidos." />
-            <label for="D-aumentar a resistência do jeans a peróxidos.">D-aumentar a resistência do jeans a peróxidos.
-            </label><br />
-             <input type="radio" id="E-associar ação bactericida ao clareamento."
-                name="questao2" value="E-associar ação bactericida ao clareamento." />
-               <label for="E-associar ação bactericida ao clareamento.">E-associar ação bactericida ao clareamento.
-            </label><br />
-              <button type="button" onclick="verificarQuestao2Q()">Verificar</button>
+            <form id="form1">
+              <div class="select-answer">
+                <div>
+                  <input
+                    type="radio"
+                    id="A-fórmula estrutural."
+                    name="questao1"
+                    value="A-fórmula estrutural."
+                  />
+                  <label for="A-fórmula estrutural."
+                    >A-fórmula estrutural.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="B-fórmula molecular."
+                    name="questao1"
+                    value="B-fórmula molecular."
+                  />
+                  <label for="B-fórmula molecular.">B-fórmula molecular.</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="C-identificação dos tipos de ligação."
+                    name="questao1"
+                    value="C-identificação dos tipos de ligação."
+                  />
+                  <label for="C-identificação dos tipos de ligação."
+                    >C-identificação dos tipos de ligação.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="D-contagem do número de carbonos."
+                    name="questao1"
+                    value="D-contagem do número de carbonos."
+                  />
+                  <label
+                    for="D-contagem do número de carbonos.
+                "
+                    >D-contagem do número de carbonos.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="E-identificação dos grupos funcionais."
+                    name="questao1"
+                    value="E-identificação dos grupos funcionais."
+                  />
+                  <label
+                    for="E-identificação dos grupos funcionais.
+                "
+                    >E-identificação dos grupos funcionais.
+                  </label>
+                </div>
+                <button
+                  id="btnQ1Q"
+                  type="button"
+                  onclick="verificarQuestao1Q()"
+                >
+                  Verificar
+                </button>
+              </div>
             </form>
-            <div class="resultado" id="resultado2"></div>
-            <div id="resolucao2" style="display: none">
-              <p><strong>Resolução:</strong> A-reduzir a quantidade de resíduos tóxicos nos efluentes da lavagem. <br />
-                <br> O cloro tem grande aplicação industrial como branqueador por causa de seu custo e eficiência.
-                Entretanto, novas alternativas estão sendo buscadas devido a formação de compostos organoclorados 
-                nos efluentes industriais quando os íons de cloro entram em contato com matéria orgânica.
-                Elevadas concentrações desse elemento podem ter efeitos tóxicos, por exemplo:
-                O acúmulo dos íons cloro, transportados pela água, podem causar queimaduras nas folhas das plantas
-                Os efluentes podem se tornar geradores de mutagenicidade
-                A vantagem de substituir o cloro por peróxidos é que os peróxidos são degradados por enzimas e, 
-                assim, diminui-se a quantidade de resíduos tóxicos nos efluentes de lavagem.
-                
-                Além do peróxido, outros compostos químicos e microrganismos podem estar presentes nos efluentes, então, 
-                o uso de peroxidases não elimina o tratamento da água.
-                
-                
-                </p>
+            <div class="resultado" id="resultado1"></div>
+            <div class="resolucao" id="resolucao1" style="display: none">
+              <p><strong>Resolução:</strong>A-fórmula estrutural.</p>
+              <P>
+                Analisando o nome dos compostos, temos:
+                <img src="/img/IMAGEM 1 QUIMICA QUESTAO 3.png" /> </P
+              ><P>
+                Desenhando os compostos, chegamos as seguintes estruturas:
+                <img src="/img/IMAGEM 2 QUIMICA QUESTAO 3.png" /> </P
+              ><P>
+                Com isso, podemos observar que as duas estruturas:
+                <img src="/img/IMAGEM 3 QUIMICA QUESTAO 3.png" /> </P
+              ><P>
+                A diferença entre os sinalizadores está na posição da hidroxila
+                (OH), pois para a rainha está no carbono 9 e para as operárias
+                está no carbono 10. Esses dois compostos são isômeros
+                estruturais, possuem a mesma fórmula molecular, mas as formas
+                como os átomos se ligam são diferentes. Dessa forma, ocorre
+                então uma diferença estrutural que distingue umas das outras.
+              </P>
             </div>
           </div>
+          <div class="content-questao">
+            <div class="questao">
+              <h3>2. QUESTÃO 2-(Enem-2018)</h3>
+              <P
+                >Companhias que fabricam jeans usam cloro para o clareamento,
+                seguido de lavagem. Algumas estão substituindo o cloro por
+                substâncias ambientalmente mais seguras como peróxidos, que
+                podem ser degradados por enzimas chamadas peroxidases. Pensando
+                nisso, pesquisadores inseriram genes codificadores de
+                peroxidases em leveduras cultivadas nas condições de clareamento
+                e lavagem dos jeans e selecionaram as sobreviventes para
+                produção dessas enzimas. Nesse caso, o uso dessas leveduras
+                modificadas objetiva:</P
+              >
+            </div>
+            <form id="form2">
+              <div class="select-answer">
+                <div>
+                  <input
+                    type="radio"
+                    id="A-reduzir a quantidade de resíduos tóxicos nos efluentes da lavagem."
+                    name="questao2"
+                    value="A-reduzir a quantidade de resíduos tóxicos nos efluentes da lavagem."
+                  />
+                  <label
+                    for="A-reduzir a quantidade de resíduos tóxicos nos efluentes da lavagem."
+                    >A-reduzir a quantidade de resíduos tóxicos nos efluentes da
+                    lavagem.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="B-eliminar a necessidade de tratamento da água consumida."
+                    name="questao2"
+                    value="B-eliminar a necessidade de tratamento da água consumida."
+                  />
+                  <label
+                    for="B-eliminar a necessidade de tratamento da água consumida."
+                    >B-eliminar a necessidade de tratamento da água consumida.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="C-elevar a capacidade de clareamento dos jeans."
+                    name="questao2"
+                    value="C-elevar a capacidade de clareamento dos jeans."
+                  />
+                  <label for="C-elevar a capacidade de clareamento dos jeans."
+                    >C-elevar a capacidade de clareamento dos jeans.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="D-aumentar a resistência do jeans a peróxidos."
+                    name="questao2"
+                    value="D-aumentar a resistência do jeans a peróxidos."
+                  />
+                  <label for="D-aumentar a resistência do jeans a peróxidos."
+                    >D-aumentar a resistência do jeans a peróxidos.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="E-associar ação bactericida ao clareamento."
+                    name="questao2"
+                    value="E-associar ação bactericida ao clareamento."
+                  />
+                  <label for="E-associar ação bactericida ao clareamento."
+                    >E-associar ação bactericida ao clareamento.
+                  </label>
+                </div>
+                <button
+                  id="btnQ2Q"
+                  type="button"
+                  onclick="verificarQuestao2Q()"
+                >
+                  Verificar
+                </button>
+              </div>
+            </form>
+            <div class="resultado" id="resultado2"></div>
+            <div class="resolucao" id="resolucao2" style="display: none">
+              <p>
+                <strong>Resolução:</strong> A-reduzir a quantidade de resíduos
+                tóxicos nos efluentes da lavagem.
+              </p>
+              <P>
+                O cloro tem grande aplicação industrial como branqueador por
+                causa de seu custo e eficiência. Entretanto, novas alternativas
+                estão sendo buscadas devido a formação de compostos
+                organoclorados nos efluentes industriais quando os íons de cloro
+                entram em contato com matéria orgânica. Elevadas concentrações
+                desse elemento podem ter efeitos tóxicos, por exemplo: O acúmulo
+                dos íons cloro, transportados pela água, podem causar
+                queimaduras nas folhas das plantas Os efluentes podem se tornar
+                geradores de mutagenicidade A vantagem de substituir o cloro por
+                peróxidos é que os peróxidos são degradados por enzimas e,
+                assim, diminui-se a quantidade de resíduos tóxicos nos efluentes
+                de lavagem. Além do peróxido, outros compostos químicos e
+                microrganismos podem estar presentes nos efluentes, então, o uso
+                de peroxidases não elimina o tratamento da água.
+              </P>
+            </div>
           </div>
-          </div>
-          
-
-      
+        </div>
+      </div>
     </main>
     <%- include('components/footer') %>
   </body>

@@ -1,145 +1,237 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <%- include('components/head') %>
   <head>
-    <title>Página de Questões</title>
+    <%- include('components/head') %>
+    <title>historia</title>
   </head>
   <body>
     <%- include('components/header') %>
     <main>
-      <h1>História</h1>
-
-      <h2>Página de Questões</h2>
-
       <div class="container-materias">
         <%- include('components/menuMaterias') %>
-        <div class="content-questao">
-          <div class="questao">
-            <h2>
-              1.QUESTÃO 1-(Enem/2013)<br />
-              É preciso ressaltar que, de todas as capitanias brasileiras, Minas era a mais urbanizada. 
-              Não havia ali hegemonia de um ou dois grandes centros. A região era repleta de vilas e arraiais, 
-              grandes e pequenos, em cujas ruas muita gente circulava.
-              
-              As regiões da América portuguesa tiveram distintas lógicas de ocupação. Uma explicação para a especificidade da região descrita no texto está identificada na:
-              
-            </h2>
+        <div class="container-questao">
+          <h1>História</h1>
+
+          <h2>Página de Questões</h2>
+
+          <div class="content-questao">
+            <div class="questao">
+              <h3>1.QUESTÃO 1-(Enem/2013)</h3>
+              <p>
+                É preciso ressaltar que, de todas as capitanias brasileiras,
+                Minas era a mais urbanizada. Não havia ali hegemonia de um ou
+                dois grandes centros. A região era repleta de vilas e arraiais,
+                grandes e pequenos, em cujas ruas muita gente circulava. As
+                regiões da América portuguesa tiveram distintas lógicas de
+                ocupação. Uma explicação para a especificidade da região
+                descrita no texto está identificada na:
+              </p>
+            </div>
             <form id="form1">
-              <br />
-              <input
-                type="radio"
-                id="A-apropriação cultural diante das influências externas."
-                name="questao1"
-                value="A-apropriação cultural diante das influências externas."
-              />
-              <label
-                for="A-apropriação cultural diante das influências externas."
-                >A-apropriação cultural diante das influências externas.</label
-              ><br />
-              <input
-                type="radio"
-                id="B-produção manufatureira diante do exclusivo comercial."
-                name="questao1"
-                value="B-produção manufatureira diante do exclusivo comercial."
-              />
-              <label
-                for="B-produção manufatureira diante do exclusivo comercial."
-                >B-produção manufatureira diante do exclusivo comercial.</label
-              ><br />
-              <input
-                type="radio"
-                id="C-insubordinação religiosa diante da hierarquia eclesiástica."
-                name="questao1"
-                value="C-insubordinação religiosa diante da hierarquia eclesiástica."
-              />
-              <label for="C-insubordinação religiosa diante da hierarquia eclesiástica."
-                >C-insubordinação religiosa diante da hierarquia eclesiástica. </label
-              ><br />
-              <input
-                type="radio"
-                id="D-fiscalização estatal diante das particularidades econômicas."
-                name="questao1"
-                value="D-fiscalização estatal diante das particularidades econômicas."
-              />
-              <label
-                for="D-fiscalização estatal diante das particularidades econômicas.
+              <div class="select-answer">
+                <div>
+                  <input
+                    type="radio"
+                    id="A-apropriação cultural diante das influências externas."
+                    name="questao1"
+                    value="A-apropriação cultural diante das influências externas."
+                  />
+                  <label
+                    for="A-apropriação cultural diante das influências externas."
+                    >A-apropriação cultural diante das influências
+                    externas.</label
+                  >
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="B-produção manufatureira diante do exclusivo comercial."
+                    name="questao1"
+                    value="B-produção manufatureira diante do exclusivo comercial."
+                  />
+                  <label
+                    for="B-produção manufatureira diante do exclusivo comercial."
+                    >B-produção manufatureira diante do exclusivo
+                    comercial.</label
+                  >
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="C-insubordinação religiosa diante da hierarquia eclesiástica."
+                    name="questao1"
+                    value="C-insubordinação religiosa diante da hierarquia eclesiástica."
+                  />
+                  <label
+                    for="C-insubordinação religiosa diante da hierarquia eclesiástica."
+                    >C-insubordinação religiosa diante da hierarquia
+                    eclesiástica.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="D-fiscalização estatal diante das particularidades econômicas."
+                    name="questao1"
+                    value="D-fiscalização estatal diante das particularidades econômicas."
+                  />
+                  <label
+                    for="D-fiscalização estatal diante das particularidades econômicas.
                 "
-                >D-fiscalização estatal diante das particularidades econômicas. </label
-              ><br />
-              <input
-                type="radio"
-                id="E-autonomia administrativa diante das instituições metropolitanas."
-                name="questao1"
-                value="E-autonomia administrativa diante das instituições metropolitanas."
-              />
-              <label
-                for="E-autonomia administrativa diante das instituições metropolitanas."
-                >E-autonomia administrativa diante das instituições metropolitanas. </label
-              ><br />
-              <button type="button" onclick="verificarQuestao1H()">Verificar</button>
+                    >D-fiscalização estatal diante das particularidades
+                    econômicas.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="E-autonomia administrativa diante das instituições metropolitanas."
+                    name="questao1"
+                    value="E-autonomia administrativa diante das instituições metropolitanas."
+                  />
+                  <label
+                    for="E-autonomia administrativa diante das instituições metropolitanas."
+                    >E-autonomia administrativa diante das instituições
+                    metropolitanas.
+                  </label>
+                </div>
+                <button
+                  id="btnQ1H"
+                  type="button"
+                  onclick="verificarQuestao1H()"
+                >
+                  Verificar
+                </button>
+              </div>
             </form>
             <div class="resultado" id="resultado1"></div>
-            <div id="resolucao1" style="display: none">
+            <div class="resolucao" id="resolucao1" style="display: none">
               <p>
-                <strong>Resolução:</strong>D-fiscalização estatal diante das particularidades econômicas.
-                <br />
-                <br>Por conta da extração do ouro, Minas Gerais sempre foi mais vigiada pelo poder público a fim de garantir que as riquezas encontradas chegariam à Corte.
-                As outras opções não refletem a realidade histórica da região neste período com exageros como "produção manufatureira" e "autonomia administrativa".
-                
+                <strong>Resolução:</strong>D-fiscalização estatal diante das
+                particularidades econômicas.
+              </p>
+              <p>
+                Por conta da extração do ouro, Minas Gerais sempre foi mais
+                vigiada pelo poder público a fim de garantir que as riquezas
+                encontradas chegariam à Corte. As outras opções não refletem a
+                realidade histórica da região neste período com exageros como
+                "produção manufatureira" e "autonomia administrativa".
               </p>
             </div>
           </div>
-    
-          <div class="questao">
-            <h2>2. QUESTÃO 2-(Enem/2016)  <br />
-              No aniversário do primeiro decênio da Marcha sobre Roma, em outubro de 1932, Mussolini irá inaugurar sua Via dell Impero; a nova Via Sacra do Fascismo, 
-              ornada com estátuas de César, Augusto, Trajano, servirá ao culto do antigo e à glória do Império Romano e de espaço comemorativo do ufanismo italiano. 
-              Às sombras do passado recriado ergue-se a nova Roma, que pode vangloriar-se e celebrar seus imperadores e homens fortes; seus grandes poetas e apólogos 
-              como Horácio e Virgílio.
-              
-              A retomada da Antiguidade clássica pela perspectiva do patrimônio cultural foi realizada com o objetivo de
-              
-                </h2>
+          <div class="content-questao">
+            <div class="questao">
+              <h3>2. QUESTÃO 2-(Enem/2016)</h3>
+              <P
+                >No aniversário do primeiro decênio da Marcha sobre Roma, em
+                outubro de 1932, Mussolini irá inaugurar sua Via dell Impero; a
+                nova Via Sacra do Fascismo, ornada com estátuas de César,
+                Augusto, Trajano, servirá ao culto do antigo e à glória do
+                Império Romano e de espaço comemorativo do ufanismo italiano. Às
+                sombras do passado recriado ergue-se a nova Roma, que pode
+                vangloriar-se e celebrar seus imperadores e homens fortes; seus
+                grandes poetas e apólogos como Horácio e Virgílio. A retomada da
+                Antiguidade clássica pela perspectiva do patrimônio cultural foi
+                realizada com o objetivo de:</P
+              >
+            </div>
             <form id="form2">
-              <br /><input type="radio" id="A-afirmar o ideário cristão para reconquistar a grandeza perdida."
-               name="questao2" value="A-afirmar o ideário cristão para reconquistar a grandeza perdida." />
-              <label for="A-afirmar o ideário cristão para reconquistar a grandeza perdida.">A-afirmar o ideário cristão para reconquistar a grandeza perdida.
-            </label><br />
-              <input type="radio" id="B-utilizar os vestígios restaurados para justificar o regime político."
-               name="questao2" value="B-utilizar os vestígios restaurados para justificar o regime político." />
-              <label for="B-utilizar os vestígios restaurados para justificar o regime político.">B-utilizar os vestígios restaurados para justificar o regime político.
-            </label><br />
-              <input type="radio" id="C-difundir os saberes ancestrais para moralizar os costumes sociais."
-               name="questao2" value="C-difundir os saberes ancestrais para moralizar os costumes sociais." />
-              <label for="C-difundir os saberes ancestrais para moralizar os costumes sociais.">C-difundir os saberes ancestrais para moralizar os costumes sociais.
-            </label><br />
-            <input type="radio" id="D-refazer o urbanismo clássico para favorecer a participação política."
-             name="questao2" value="D-refazer o urbanismo clássico para favorecer a participação política." />
-            <label for="D-refazer o urbanismo clássico para favorecer a participação política.">D-refazer o urbanismo clássico para favorecer a participação política.
-            </label><br />
-             <input type="radio" id="E- recompor a organização republicana para fortalecer a administração estatal."
-                name="questao2" value="E- recompor a organização republicana para fortalecer a administração estatal." />
-               <label for="E- recompor a organização republicana para fortalecer a administração estatal.">E- recompor a organização republicana para fortalecer a administração estatal.
-            </label><br />
-              <button type="button" onclick="verificarQuestao2H()">Verificar</button>
+              <div class="select-answer">
+                <div>
+                  <input
+                    type="radio"
+                    id="A-afirmar o ideário cristão para reconquistar a grandeza perdida."
+                    name="questao2"
+                    value="A-afirmar o ideário cristão para reconquistar a grandeza perdida."
+                  />
+                  <label
+                    for="A-afirmar o ideário cristão para reconquistar a grandeza perdida."
+                    >A-afirmar o ideário cristão para reconquistar a grandeza
+                    perdida.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="B-utilizar os vestígios restaurados para justificar o regime político."
+                    name="questao2"
+                    value="B-utilizar os vestígios restaurados para justificar o regime político."
+                  />
+                  <label
+                    for="B-utilizar os vestígios restaurados para justificar o regime político."
+                    >B-utilizar os vestígios restaurados para justificar o
+                    regime político.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="C-difundir os saberes ancestrais para moralizar os costumes sociais."
+                    name="questao2"
+                    value="C-difundir os saberes ancestrais para moralizar os costumes sociais."
+                  />
+                  <label
+                    for="C-difundir os saberes ancestrais para moralizar os costumes sociais."
+                    >C-difundir os saberes ancestrais para moralizar os costumes
+                    sociais.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="D-refazer o urbanismo clássico para favorecer a participação política."
+                    name="questao2"
+                    value="D-refazer o urbanismo clássico para favorecer a participação política."
+                  />
+                  <label
+                    for="D-refazer o urbanismo clássico para favorecer a participação política."
+                    >D-refazer o urbanismo clássico para favorecer a
+                    participação política.
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="E- recompor a organização republicana para fortalecer a administração estatal."
+                    name="questao2"
+                    value="E- recompor a organização republicana para fortalecer a administração estatal."
+                  />
+                  <label
+                    for="E- recompor a organização republicana para fortalecer a administração estatal."
+                    >E- recompor a organização republicana para fortalecer a
+                    administração estatal.
+                  </label>
+                </div>
+                <button
+                  id="btnQ2H"
+                  type="button"
+                  onclick="verificarQuestao2H()"
+                >
+                  Verificar
+                </button>
+              </div>
             </form>
             <div class="resultado" id="resultado2"></div>
-            <div id="resolucao2" style="display: none">
-              <p><strong>Resolução:</strong> B-utilizar os vestígios restaurados para justificar o regime político. <br />
-                <br> Mussolini utiliza o passado do Império Romano para mostrar a continuidade entre os dois regimes e assim, 
-                empregava vários símbolos desta época a fim de reforçar esta ligação. Desta maneira, ele reforçava a ideia de um 
-                passado expansionista para justificar as conquistas na África, por exemplo.
-                As demais opções não são corretas, pois o regime de Mussolini não tinha intenção de "afirmar o ideário cristão para 
-                reconquistar a grandeza perdida" e também não utilizou a Antiguidade para "favorecer a participação política".
-                
-                </p>
+            <div class="resolucao" id="resolucao2" style="display: none">
+              <p>
+                <strong>Resolução:</strong> B-utilizar os vestígios restaurados
+                para justificar o regime político.
+              </p>
+              <P>
+                Mussolini utiliza o passado do Império Romano para mostrar a
+                continuidade entre os dois regimes e assim, empregava vários
+                símbolos desta época a fim de reforçar esta ligação. Desta
+                maneira, ele reforçava a ideia de um passado expansionista para
+                justificar as conquistas na África, por exemplo. As demais
+                opções não são corretas, pois o regime de Mussolini não tinha
+                intenção de "afirmar o ideário cristão para reconquistar a
+                grandeza perdida" e também não utilizou a Antiguidade para
+                "favorecer a participação política".
+              </P>
             </div>
           </div>
-          </div>
-          </div>
-          
-
-      
+        </div>
+      </div>
     </main>
     <%- include('components/footer') %>
   </body>

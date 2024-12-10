@@ -1,11 +1,7 @@
-// class LoginUserControllers {
-//   static async getLogin(req, res) {
-//     return res.render('login');
-//   }
+class LoginUsesrControllers {
+  loginGet() {
+    console.log("Login Page");
+  }
+}
 
-//   static async postLogin(req, res) {
-//     return res.redirect('/');
-//   }
-// }
-
-// module.exports = LoginUserControllers;
+module.exports = LoginUsesrControllers;

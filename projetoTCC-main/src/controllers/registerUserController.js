@@ -1,16 +1,17 @@
 const RegisterUserModel = require("../models/registerUserModels");
 
+const registerUser = new RegisterUserModel();
+
 class RegisterUserController {
-  static getRegister(req, res) {
+  getRegister(req, res) {
     return res.render("register", {
       msg: "",
     });
   }
 
-  static async store(req, res) {
-    
+  async store(req, res) {
+    // console.log(data_user);
     return res.send("user register");
   }
 }
-
 module.exports = RegisterUserController;
